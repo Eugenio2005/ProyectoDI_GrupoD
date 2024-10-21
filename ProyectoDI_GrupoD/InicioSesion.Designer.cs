@@ -31,6 +31,7 @@ namespace ProyectoDI_GrupoD
         private void InitializeComponent()
         {
             System.Windows.Forms.PictureBox imgKAE_InSe;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             this.txtUsuarioInSe = new System.Windows.Forms.TextBox();
             this.txtContraseñaInSe = new System.Windows.Forms.TextBox();
             this.lblUsuarioInSe = new System.Windows.Forms.Label();
@@ -40,6 +41,21 @@ namespace ProyectoDI_GrupoD
             imgKAE_InSe = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).BeginInit();
             this.SuspendLayout();
+            // 
+            // imgKAE_InSe
+            // 
+            imgKAE_InSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            imgKAE_InSe.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgKAE_InSe.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM;
+            imgKAE_InSe.Location = new System.Drawing.Point(85, 22);
+            imgKAE_InSe.Name = "imgKAE_InSe";
+            imgKAE_InSe.Size = new System.Drawing.Size(212, 104);
+            imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            imgKAE_InSe.TabIndex = 0;
+            imgKAE_InSe.TabStop = false;
+            imgKAE_InSe.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtUsuarioInSe
             // 
@@ -72,7 +88,7 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtContraseñaInSe.Name = "txtContraseñaInSe";
             this.txtContraseñaInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtContraseñaInSe.Size = new System.Drawing.Size(307, 24);
+            this.txtContraseñaInSe.Size = new System.Drawing.Size(313, 24);
             this.txtContraseñaInSe.TabIndex = 2;
             this.txtContraseñaInSe.Text = "Contraseña";
             // 
@@ -94,6 +110,7 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIniciarSesionInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnIniciarSesionInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesionInSe.Location = new System.Drawing.Point(85, 307);
             this.btnIniciarSesionInSe.Name = "btnIniciarSesionInSe";
             this.btnIniciarSesionInSe.Size = new System.Drawing.Size(91, 38);
@@ -107,6 +124,7 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.brnRegistrarInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.brnRegistrarInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brnRegistrarInSe.Location = new System.Drawing.Point(206, 307);
             this.brnRegistrarInSe.Name = "brnRegistrarInSe";
             this.brnRegistrarInSe.Size = new System.Drawing.Size(91, 38);
@@ -129,21 +147,6 @@ namespace ProyectoDI_GrupoD
             this.lblContraseñaInSe.TabIndex = 6;
             this.lblContraseñaInSe.Text = "Contraseña";
             // 
-            // imgKAE_InSe
-            // 
-            imgKAE_InSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            imgKAE_InSe.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            imgKAE_InSe.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM;
-            imgKAE_InSe.Location = new System.Drawing.Point(85, 22);
-            imgKAE_InSe.Name = "imgKAE_InSe";
-            imgKAE_InSe.Size = new System.Drawing.Size(212, 104);
-            imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            imgKAE_InSe.TabIndex = 0;
-            imgKAE_InSe.TabStop = false;
-            imgKAE_InSe.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +160,7 @@ namespace ProyectoDI_GrupoD
             this.Controls.Add(this.txtContraseñaInSe);
             this.Controls.Add(this.txtUsuarioInSe);
             this.Controls.Add(imgKAE_InSe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(400, 420);
             this.MinimumSize = new System.Drawing.Size(400, 420);

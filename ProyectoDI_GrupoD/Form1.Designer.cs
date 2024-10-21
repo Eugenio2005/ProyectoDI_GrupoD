@@ -1,6 +1,6 @@
 ﻿namespace ProyectoDI_GrupoD
 {
-    partial class imgKAE_Re
+    partial class Registro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.PictureBox imgKAE;
+            System.Windows.Forms.PictureBox imgKAE_Re;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.lblEmailRe = new System.Windows.Forms.Label();
             this.lblNombreRe = new System.Windows.Forms.Label();
             this.txtContraseñaInSe = new System.Windows.Forms.TextBox();
@@ -47,23 +48,23 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.brnBorrarRe = new System.Windows.Forms.Button();
             this.brnRegistrarRe = new System.Windows.Forms.Button();
-            imgKAE = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(imgKAE)).BeginInit();
+            imgKAE_Re = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).BeginInit();
             this.SuspendLayout();
             // 
-            // imgKAE
+            // imgKAE_Re
             // 
-            imgKAE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            imgKAE_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            imgKAE.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            imgKAE.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM;
-            imgKAE.Location = new System.Drawing.Point(83, 19);
-            imgKAE.Name = "imgKAE";
-            imgKAE.Size = new System.Drawing.Size(612, 120);
-            imgKAE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            imgKAE.TabIndex = 1;
-            imgKAE.TabStop = false;
+            imgKAE_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgKAE_Re.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM;
+            imgKAE_Re.Location = new System.Drawing.Point(83, 19);
+            imgKAE_Re.Name = "imgKAE_Re";
+            imgKAE_Re.Size = new System.Drawing.Size(612, 120);
+            imgKAE_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            imgKAE_Re.TabIndex = 1;
+            imgKAE_Re.TabStop = false;
             // 
             // lblEmailRe
             // 
@@ -100,12 +101,12 @@
             this.txtContraseñaInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.txtContraseñaInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseñaInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.txtContraseñaInSe.Location = new System.Drawing.Point(63, 290);
+            this.txtContraseñaInSe.Location = new System.Drawing.Point(59, 290);
             this.txtContraseñaInSe.Margin = new System.Windows.Forms.Padding(10);
             this.txtContraseñaInSe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtContraseñaInSe.Name = "txtContraseñaInSe";
             this.txtContraseñaInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtContraseñaInSe.Size = new System.Drawing.Size(313, 24);
+            this.txtContraseñaInSe.Size = new System.Drawing.Size(317, 24);
             this.txtContraseñaInSe.TabIndex = 8;
             this.txtContraseñaInSe.Text = "Contraseña";
             // 
@@ -122,7 +123,7 @@
             this.txtUsuarioInSe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtUsuarioInSe.Name = "txtUsuarioInSe";
             this.txtUsuarioInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsuarioInSe.Size = new System.Drawing.Size(313, 24);
+            this.txtUsuarioInSe.Size = new System.Drawing.Size(317, 24);
             this.txtUsuarioInSe.TabIndex = 7;
             this.txtUsuarioInSe.Text = "Nombre de usuario";
             // 
@@ -166,7 +167,7 @@
             this.textBox1.MinimumSize = new System.Drawing.Size(10, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(313, 24);
+            this.textBox1.Size = new System.Drawing.Size(317, 24);
             this.textBox1.TabIndex = 12;
             this.textBox1.Text = "Contraseña";
             // 
@@ -183,7 +184,7 @@
             this.textBox2.MinimumSize = new System.Drawing.Size(10, 10);
             this.textBox2.Name = "textBox2";
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(313, 24);
+            this.textBox2.Size = new System.Drawing.Size(317, 24);
             this.textBox2.TabIndex = 11;
             this.textBox2.Text = "Nombre de usuario";
             // 
@@ -335,7 +336,7 @@
             this.brnRegistrarRe.Text = "Registrar";
             this.brnRegistrarRe.UseVisualStyleBackColor = false;
             // 
-            // imgKAE_Re
+            // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -359,12 +360,13 @@
             this.Controls.Add(this.lblNombreRe);
             this.Controls.Add(this.txtContraseñaInSe);
             this.Controls.Add(this.txtUsuarioInSe);
-            this.Controls.Add(imgKAE);
+            this.Controls.Add(imgKAE_Re);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(800, 500);
             this.MinimumSize = new System.Drawing.Size(800, 500);
-            this.Name = "imgKAE_Re";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(imgKAE)).EndInit();
+            this.Name = "Registro";
+            this.Text = "Registro";
+            ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
