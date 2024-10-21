@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ProyectoDI_GrupoD
 {
-    public partial class InicioSesion : Form
+    public partial class Form1 : Form
     {
-        public InicioSesion()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuarioInSe_TextChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }
