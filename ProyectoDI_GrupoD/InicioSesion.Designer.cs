@@ -30,31 +30,16 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.PictureBox imgKAE;
+            System.Windows.Forms.PictureBox imgKAE_InSe;
             this.txtUsuarioInSe = new System.Windows.Forms.TextBox();
             this.txtContraseñaInSe = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblUsuarioInSe = new System.Windows.Forms.Label();
+            this.btnIniciarSesionInSe = new System.Windows.Forms.Button();
             this.brnRegistrarInSe = new System.Windows.Forms.Button();
             this.lblContraseñaInSe = new System.Windows.Forms.Label();
-            imgKAE = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(imgKAE)).BeginInit();
+            imgKAE_InSe = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgKAE
-            // 
-            imgKAE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            imgKAE.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            imgKAE.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM;
-            imgKAE.Location = new System.Drawing.Point(85, 24);
-            imgKAE.Name = "imgKAE";
-            imgKAE.Size = new System.Drawing.Size(199, 97);
-            imgKAE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            imgKAE.TabIndex = 0;
-            imgKAE.TabStop = false;
-            imgKAE.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtUsuarioInSe
             // 
@@ -69,7 +54,7 @@ namespace ProyectoDI_GrupoD
             this.txtUsuarioInSe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtUsuarioInSe.Name = "txtUsuarioInSe";
             this.txtUsuarioInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsuarioInSe.Size = new System.Drawing.Size(300, 24);
+            this.txtUsuarioInSe.Size = new System.Drawing.Size(313, 24);
             this.txtUsuarioInSe.TabIndex = 1;
             this.txtUsuarioInSe.Text = "Nombre de usuario";
             this.txtUsuarioInSe.TextChanged += new System.EventHandler(this.txtUsuarioInSe_TextChanged);
@@ -87,34 +72,34 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtContraseñaInSe.Name = "txtContraseñaInSe";
             this.txtContraseñaInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtContraseñaInSe.Size = new System.Drawing.Size(294, 24);
+            this.txtContraseñaInSe.Size = new System.Drawing.Size(307, 24);
             this.txtContraseñaInSe.TabIndex = 2;
             this.txtContraseñaInSe.Text = "Contraseña";
             // 
-            // label1
+            // lblUsuarioInSe
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.label1.Location = new System.Drawing.Point(42, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario";
+            this.lblUsuarioInSe.AutoSize = true;
+            this.lblUsuarioInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.lblUsuarioInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.lblUsuarioInSe.Location = new System.Drawing.Point(42, 142);
+            this.lblUsuarioInSe.Name = "lblUsuarioInSe";
+            this.lblUsuarioInSe.Size = new System.Drawing.Size(64, 20);
+            this.lblUsuarioInSe.TabIndex = 3;
+            this.lblUsuarioInSe.Text = "Usuario";
             // 
-            // btnAceptar
+            // btnIniciarSesionInSe
             // 
-            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnIniciarSesionInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnAceptar.Location = new System.Drawing.Point(85, 307);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(78, 31);
-            this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnIniciarSesionInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnIniciarSesionInSe.Location = new System.Drawing.Point(85, 307);
+            this.btnIniciarSesionInSe.Name = "btnIniciarSesionInSe";
+            this.btnIniciarSesionInSe.Size = new System.Drawing.Size(91, 38);
+            this.btnIniciarSesionInSe.TabIndex = 4;
+            this.btnIniciarSesionInSe.Text = "Iniciar sesión";
+            this.btnIniciarSesionInSe.UseVisualStyleBackColor = false;
             // 
             // brnRegistrarInSe
             // 
@@ -124,7 +109,7 @@ namespace ProyectoDI_GrupoD
             this.brnRegistrarInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.brnRegistrarInSe.Location = new System.Drawing.Point(206, 307);
             this.brnRegistrarInSe.Name = "brnRegistrarInSe";
-            this.brnRegistrarInSe.Size = new System.Drawing.Size(78, 31);
+            this.brnRegistrarInSe.Size = new System.Drawing.Size(91, 38);
             this.brnRegistrarInSe.TabIndex = 5;
             this.brnRegistrarInSe.Text = "Registrar";
             this.brnRegistrarInSe.UseVisualStyleBackColor = false;
@@ -144,25 +129,41 @@ namespace ProyectoDI_GrupoD
             this.lblContraseñaInSe.TabIndex = 6;
             this.lblContraseñaInSe.Text = "Contraseña";
             // 
+            // imgKAE_InSe
+            // 
+            imgKAE_InSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            imgKAE_InSe.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgKAE_InSe.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM;
+            imgKAE_InSe.Location = new System.Drawing.Point(85, 22);
+            imgKAE_InSe.Name = "imgKAE_InSe";
+            imgKAE_InSe.Size = new System.Drawing.Size(212, 104);
+            imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            imgKAE_InSe.TabIndex = 0;
+            imgKAE_InSe.TabStop = false;
+            imgKAE_InSe.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(371, 374);
+            this.ClientSize = new System.Drawing.Size(384, 381);
             this.Controls.Add(this.lblContraseñaInSe);
             this.Controls.Add(this.brnRegistrarInSe);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnIniciarSesionInSe);
+            this.Controls.Add(this.lblUsuarioInSe);
             this.Controls.Add(this.txtContraseñaInSe);
             this.Controls.Add(this.txtUsuarioInSe);
-            this.Controls.Add(imgKAE);
-            this.MaximumSize = new System.Drawing.Size(387, 413);
-            this.MinimumSize = new System.Drawing.Size(387, 413);
+            this.Controls.Add(imgKAE_InSe);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(400, 420);
+            this.MinimumSize = new System.Drawing.Size(400, 420);
             this.Name = "InicioSesion";
             this.Text = "Inicio Sesion";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            ((System.ComponentModel.ISupportInitialize)(imgKAE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,8 +179,8 @@ namespace ProyectoDI_GrupoD
         private System.Windows.Forms.Label lblContraseñaInSeRe;
         private TextBox txtUsuarioInSe;
         private TextBox txtContraseñaInSe;
-        private Label label1;
-        private Button btnAceptar;
+        private Label lblUsuarioInSe;
+        private Button btnIniciarSesionInSe;
         private Button brnRegistrarInSe;
         private Label lblContraseñaInSe;
     }

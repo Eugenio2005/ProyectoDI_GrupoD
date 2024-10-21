@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoDI_GrupoD
 {
-    public partial class Form1 : Form
+    public partial class imgKAE_Re : Form
     {
-        public Form1()
+        public imgKAE_Re()
         {
             InitializeComponent();
         }
