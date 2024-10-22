@@ -55,7 +55,6 @@ namespace ProyectoDI_GrupoD
             imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             imgKAE_InSe.TabIndex = 0;
             imgKAE_InSe.TabStop = false;
-            imgKAE_InSe.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtUsuarioInSe
             // 
@@ -91,6 +90,7 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe.Size = new System.Drawing.Size(313, 24);
             this.txtContraseñaInSe.TabIndex = 2;
             this.txtContraseñaInSe.Text = "Contraseña";
+            this.txtContraseñaInSe.TextChanged += new System.EventHandler(this.txtContraseñaInSe_TextChanged);
             // 
             // lblUsuarioInSe
             // 
@@ -117,6 +117,7 @@ namespace ProyectoDI_GrupoD
             this.btnIniciarSesionInSe.TabIndex = 4;
             this.btnIniciarSesionInSe.Text = "Iniciar sesión";
             this.btnIniciarSesionInSe.UseVisualStyleBackColor = false;
+            this.btnIniciarSesionInSe.Click += new System.EventHandler(this.btnIniciarSesionInSe_Click);
             // 
             // brnRegistrarInSe
             // 
@@ -131,6 +132,7 @@ namespace ProyectoDI_GrupoD
             this.brnRegistrarInSe.TabIndex = 5;
             this.brnRegistrarInSe.Text = "Registrar";
             this.brnRegistrarInSe.UseVisualStyleBackColor = false;
+            this.brnRegistrarInSe.Click += new System.EventHandler(this.brnRegistrarInSe_Click);
             // 
             // lblContraseñaInSe
             // 

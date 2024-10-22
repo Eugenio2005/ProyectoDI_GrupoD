@@ -32,20 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.lblEmailRe = new System.Windows.Forms.Label();
             this.lblNombreRe = new System.Windows.Forms.Label();
-            this.txtContraseñaInSe = new System.Windows.Forms.TextBox();
-            this.txtUsuarioInSe = new System.Windows.Forms.TextBox();
+            this.txtEmailRe = new System.Windows.Forms.TextBox();
+            this.txtUsuarioRe = new System.Windows.Forms.TextBox();
             this.lblCuentaCorrienteRe = new System.Windows.Forms.Label();
             this.lblDNI_Re = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCuentaCorrienteRe = new System.Windows.Forms.TextBox();
+            this.txtDNI_Re = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDirecciónRe = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtContraseñaRe = new System.Windows.Forms.TextBox();
+            this.txtDireccionRe = new System.Windows.Forms.TextBox();
             this.lblTelefonoRe = new System.Windows.Forms.Label();
             this.lblApellidosRe = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTelefonoRe = new System.Windows.Forms.TextBox();
+            this.txtApellidosRe = new System.Windows.Forms.TextBox();
             this.brnBorrarRe = new System.Windows.Forms.Button();
             this.brnRegistrarRe = new System.Windows.Forms.Button();
             imgKAE_Re = new System.Windows.Forms.PictureBox();
@@ -93,39 +93,39 @@
             this.lblNombreRe.TabIndex = 9;
             this.lblNombreRe.Text = "Nombre";
             // 
-            // txtContraseñaInSe
+            // txtEmailRe
             // 
-            this.txtContraseñaInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtEmailRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtContraseñaInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtContraseñaInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseñaInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.txtContraseñaInSe.Location = new System.Drawing.Point(59, 290);
-            this.txtContraseñaInSe.Margin = new System.Windows.Forms.Padding(10);
-            this.txtContraseñaInSe.MinimumSize = new System.Drawing.Size(10, 10);
-            this.txtContraseñaInSe.Name = "txtContraseñaInSe";
-            this.txtContraseñaInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtContraseñaInSe.Size = new System.Drawing.Size(317, 24);
-            this.txtContraseñaInSe.TabIndex = 8;
-            this.txtContraseñaInSe.Text = "Contraseña";
+            this.txtEmailRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtEmailRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtEmailRe.Location = new System.Drawing.Point(59, 290);
+            this.txtEmailRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtEmailRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtEmailRe.Name = "txtEmailRe";
+            this.txtEmailRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtEmailRe.Size = new System.Drawing.Size(317, 24);
+            this.txtEmailRe.TabIndex = 8;
+            this.txtEmailRe.Text = "Email";
             // 
-            // txtUsuarioInSe
+            // txtUsuarioRe
             // 
-            this.txtUsuarioInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtUsuarioRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsuarioInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtUsuarioInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.txtUsuarioInSe.Location = new System.Drawing.Point(59, 152);
-            this.txtUsuarioInSe.Margin = new System.Windows.Forms.Padding(10);
-            this.txtUsuarioInSe.MinimumSize = new System.Drawing.Size(10, 10);
-            this.txtUsuarioInSe.Name = "txtUsuarioInSe";
-            this.txtUsuarioInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsuarioInSe.Size = new System.Drawing.Size(317, 24);
-            this.txtUsuarioInSe.TabIndex = 7;
-            this.txtUsuarioInSe.Text = "Nombre de usuario";
+            this.txtUsuarioRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtUsuarioRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuarioRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtUsuarioRe.Location = new System.Drawing.Point(59, 152);
+            this.txtUsuarioRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtUsuarioRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtUsuarioRe.Name = "txtUsuarioRe";
+            this.txtUsuarioRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtUsuarioRe.Size = new System.Drawing.Size(317, 24);
+            this.txtUsuarioRe.TabIndex = 7;
+            this.txtUsuarioRe.Text = "Nombre de usuario";
             // 
             // lblCuentaCorrienteRe
             // 
@@ -154,39 +154,39 @@
             this.lblDNI_Re.TabIndex = 13;
             this.lblDNI_Re.Text = "DNI";
             // 
-            // textBox1
+            // txtCuentaCorrienteRe
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtCuentaCorrienteRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.textBox1.Location = new System.Drawing.Point(59, 361);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox1.MinimumSize = new System.Drawing.Size(10, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(317, 24);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "Contraseña";
+            this.txtCuentaCorrienteRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtCuentaCorrienteRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCuentaCorrienteRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(59, 361);
+            this.txtCuentaCorrienteRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtCuentaCorrienteRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
+            this.txtCuentaCorrienteRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(317, 24);
+            this.txtCuentaCorrienteRe.TabIndex = 12;
+            this.txtCuentaCorrienteRe.Text = "Cuenta corriente";
             // 
-            // textBox2
+            // txtDNI_Re
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtDNI_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.textBox2.Location = new System.Drawing.Point(59, 223);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox2.MinimumSize = new System.Drawing.Size(10, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(317, 24);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.Text = "Nombre de usuario";
+            this.txtDNI_Re.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDNI_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI_Re.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtDNI_Re.Location = new System.Drawing.Point(59, 223);
+            this.txtDNI_Re.Margin = new System.Windows.Forms.Padding(10);
+            this.txtDNI_Re.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtDNI_Re.Name = "txtDNI_Re";
+            this.txtDNI_Re.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDNI_Re.Size = new System.Drawing.Size(317, 24);
+            this.txtDNI_Re.TabIndex = 11;
+            this.txtDNI_Re.Text = "DNI de usuario";
             // 
             // label3
             // 
@@ -215,39 +215,39 @@
             this.lblDirecciónRe.TabIndex = 21;
             this.lblDirecciónRe.Text = "Dirección";
             // 
-            // textBox3
+            // txtContraseñaRe
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtContraseñaRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.textBox3.Location = new System.Drawing.Point(413, 361);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox3.MinimumSize = new System.Drawing.Size(10, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox3.Size = new System.Drawing.Size(313, 24);
-            this.textBox3.TabIndex = 20;
-            this.textBox3.Text = "Contraseña";
+            this.txtContraseñaRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtContraseñaRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseñaRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtContraseñaRe.Location = new System.Drawing.Point(413, 361);
+            this.txtContraseñaRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtContraseñaRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtContraseñaRe.Name = "txtContraseñaRe";
+            this.txtContraseñaRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtContraseñaRe.Size = new System.Drawing.Size(313, 24);
+            this.txtContraseñaRe.TabIndex = 20;
+            this.txtContraseñaRe.Text = "Contraseña";
             // 
-            // textBox4
+            // txtDireccionRe
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtDireccionRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.textBox4.Location = new System.Drawing.Point(413, 290);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox4.MinimumSize = new System.Drawing.Size(10, 10);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox4.Size = new System.Drawing.Size(313, 24);
-            this.textBox4.TabIndex = 19;
-            this.textBox4.Text = "Nombre de usuario";
+            this.txtDireccionRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDireccionRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccionRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtDireccionRe.Location = new System.Drawing.Point(413, 290);
+            this.txtDireccionRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtDireccionRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtDireccionRe.Name = "txtDireccionRe";
+            this.txtDireccionRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDireccionRe.Size = new System.Drawing.Size(313, 24);
+            this.txtDireccionRe.TabIndex = 19;
+            this.txtDireccionRe.Text = "Nombre de la dirección";
             // 
             // lblTelefonoRe
             // 
@@ -276,39 +276,39 @@
             this.lblApellidosRe.TabIndex = 17;
             this.lblApellidosRe.Text = "Apellidos";
             // 
-            // textBox5
+            // txtTelefonoRe
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtTelefonoRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.textBox5.Location = new System.Drawing.Point(413, 223);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox5.MinimumSize = new System.Drawing.Size(10, 10);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox5.Size = new System.Drawing.Size(313, 24);
-            this.textBox5.TabIndex = 16;
-            this.textBox5.Text = "Contraseña";
+            this.txtTelefonoRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtTelefonoRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtTelefonoRe.Location = new System.Drawing.Point(413, 223);
+            this.txtTelefonoRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtTelefonoRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtTelefonoRe.Name = "txtTelefonoRe";
+            this.txtTelefonoRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTelefonoRe.Size = new System.Drawing.Size(313, 24);
+            this.txtTelefonoRe.TabIndex = 16;
+            this.txtTelefonoRe.Text = "Telefono";
             // 
-            // textBox6
+            // txtApellidosRe
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtApellidosRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.textBox6.Location = new System.Drawing.Point(413, 152);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(10);
-            this.textBox6.MinimumSize = new System.Drawing.Size(10, 10);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox6.Size = new System.Drawing.Size(313, 24);
-            this.textBox6.TabIndex = 15;
-            this.textBox6.Text = "Nombre de usuario";
+            this.txtApellidosRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtApellidosRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidosRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtApellidosRe.Location = new System.Drawing.Point(413, 152);
+            this.txtApellidosRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtApellidosRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtApellidosRe.Name = "txtApellidosRe";
+            this.txtApellidosRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtApellidosRe.Size = new System.Drawing.Size(313, 24);
+            this.txtApellidosRe.TabIndex = 15;
+            this.txtApellidosRe.Text = "Apellidos de usuario";
             // 
             // brnBorrarRe
             // 
@@ -322,6 +322,7 @@
             this.brnBorrarRe.TabIndex = 24;
             this.brnBorrarRe.Text = "Borrar";
             this.brnBorrarRe.UseVisualStyleBackColor = false;
+            this.brnBorrarRe.Click += new System.EventHandler(this.brnBorrarRe_Click);
             // 
             // brnRegistrarRe
             // 
@@ -335,6 +336,7 @@
             this.brnRegistrarRe.TabIndex = 23;
             this.brnRegistrarRe.Text = "Registrar";
             this.brnRegistrarRe.UseVisualStyleBackColor = false;
+            this.brnRegistrarRe.Click += new System.EventHandler(this.brnRegistrarRe_Click);
             // 
             // Registro
             // 
@@ -346,26 +348,27 @@
             this.Controls.Add(this.brnRegistrarRe);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDirecciónRe);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtContraseñaRe);
+            this.Controls.Add(this.txtDireccionRe);
             this.Controls.Add(this.lblTelefonoRe);
             this.Controls.Add(this.lblApellidosRe);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtTelefonoRe);
+            this.Controls.Add(this.txtApellidosRe);
             this.Controls.Add(this.lblCuentaCorrienteRe);
             this.Controls.Add(this.lblDNI_Re);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCuentaCorrienteRe);
+            this.Controls.Add(this.txtDNI_Re);
             this.Controls.Add(this.lblEmailRe);
             this.Controls.Add(this.lblNombreRe);
-            this.Controls.Add(this.txtContraseñaInSe);
-            this.Controls.Add(this.txtUsuarioInSe);
+            this.Controls.Add(this.txtEmailRe);
+            this.Controls.Add(this.txtUsuarioRe);
             this.Controls.Add(imgKAE_Re);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(800, 500);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Registro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -376,20 +379,20 @@
 
         private System.Windows.Forms.Label lblEmailRe;
         private System.Windows.Forms.Label lblNombreRe;
-        private System.Windows.Forms.TextBox txtContraseñaInSe;
-        private System.Windows.Forms.TextBox txtUsuarioInSe;
+        private System.Windows.Forms.TextBox txtEmailRe;
+        private System.Windows.Forms.TextBox txtUsuarioRe;
         private System.Windows.Forms.Label lblCuentaCorrienteRe;
         private System.Windows.Forms.Label lblDNI_Re;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCuentaCorrienteRe;
+        private System.Windows.Forms.TextBox txtDNI_Re;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDirecciónRe;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtContraseñaRe;
+        private System.Windows.Forms.TextBox txtDireccionRe;
         private System.Windows.Forms.Label lblTelefonoRe;
         private System.Windows.Forms.Label lblApellidosRe;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtTelefonoRe;
+        private System.Windows.Forms.TextBox txtApellidosRe;
         private System.Windows.Forms.Button brnBorrarRe;
         private System.Windows.Forms.Button brnRegistrarRe;
     }
