@@ -46,10 +46,12 @@
             this.lblApellidosRe = new System.Windows.Forms.Label();
             this.txtTelefonoRe = new System.Windows.Forms.TextBox();
             this.txtApellidosRe = new System.Windows.Forms.TextBox();
-            this.brnBorrarRe = new System.Windows.Forms.Button();
-            this.brnRegistrarRe = new System.Windows.Forms.Button();
+            this.btnBorrarRe = new System.Windows.Forms.Button();
+            this.btnRegistrarRe = new System.Windows.Forms.Button();
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             imgKAE_Re = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
             // 
             // imgKAE_Re
@@ -108,7 +110,6 @@
             this.txtEmailRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtEmailRe.Size = new System.Drawing.Size(317, 24);
             this.txtEmailRe.TabIndex = 8;
-            this.txtEmailRe.Text = "Email";
             // 
             // txtUsuarioRe
             // 
@@ -125,7 +126,6 @@
             this.txtUsuarioRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtUsuarioRe.Size = new System.Drawing.Size(317, 24);
             this.txtUsuarioRe.TabIndex = 7;
-            this.txtUsuarioRe.Text = "Nombre de usuario";
             // 
             // lblCuentaCorrienteRe
             // 
@@ -169,7 +169,6 @@
             this.txtCuentaCorrienteRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(317, 24);
             this.txtCuentaCorrienteRe.TabIndex = 12;
-            this.txtCuentaCorrienteRe.Text = "Cuenta corriente";
             // 
             // txtDNI_Re
             // 
@@ -186,7 +185,6 @@
             this.txtDNI_Re.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDNI_Re.Size = new System.Drawing.Size(317, 24);
             this.txtDNI_Re.TabIndex = 11;
-            this.txtDNI_Re.Text = "DNI de usuario";
             // 
             // label3
             // 
@@ -230,7 +228,6 @@
             this.txtContraseñaRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtContraseñaRe.Size = new System.Drawing.Size(313, 24);
             this.txtContraseñaRe.TabIndex = 20;
-            this.txtContraseñaRe.Text = "Contraseña";
             // 
             // txtDireccionRe
             // 
@@ -247,7 +244,6 @@
             this.txtDireccionRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDireccionRe.Size = new System.Drawing.Size(313, 24);
             this.txtDireccionRe.TabIndex = 19;
-            this.txtDireccionRe.Text = "Nombre de la dirección";
             // 
             // lblTelefonoRe
             // 
@@ -291,7 +287,6 @@
             this.txtTelefonoRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTelefonoRe.Size = new System.Drawing.Size(313, 24);
             this.txtTelefonoRe.TabIndex = 16;
-            this.txtTelefonoRe.Text = "Telefono";
             // 
             // txtApellidosRe
             // 
@@ -308,35 +303,51 @@
             this.txtApellidosRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtApellidosRe.Size = new System.Drawing.Size(313, 24);
             this.txtApellidosRe.TabIndex = 15;
-            this.txtApellidosRe.Text = "Apellidos de usuario";
             // 
-            // brnBorrarRe
+            // btnBorrarRe
             // 
-            this.brnBorrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnBorrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.brnBorrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.brnBorrarRe.Location = new System.Drawing.Point(402, 411);
-            this.brnBorrarRe.Name = "brnBorrarRe";
-            this.brnBorrarRe.Size = new System.Drawing.Size(91, 38);
-            this.brnBorrarRe.TabIndex = 24;
-            this.brnBorrarRe.Text = "Borrar";
-            this.brnBorrarRe.UseVisualStyleBackColor = false;
-            this.brnBorrarRe.Click += new System.EventHandler(this.brnBorrarRe_Click);
+            this.btnBorrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnBorrarRe.Location = new System.Drawing.Point(402, 411);
+            this.btnBorrarRe.Name = "btnBorrarRe";
+            this.btnBorrarRe.Size = new System.Drawing.Size(91, 38);
+            this.btnBorrarRe.TabIndex = 24;
+            this.btnBorrarRe.Text = "Borrar";
+            this.btnBorrarRe.UseVisualStyleBackColor = false;
+            this.btnBorrarRe.Click += new System.EventHandler(this.btnBorrarRe_Click);
             // 
-            // brnRegistrarRe
+            // btnRegistrarRe
             // 
-            this.brnRegistrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnRegistrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.brnRegistrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.brnRegistrarRe.Location = new System.Drawing.Point(281, 411);
-            this.brnRegistrarRe.Name = "brnRegistrarRe";
-            this.brnRegistrarRe.Size = new System.Drawing.Size(91, 38);
-            this.brnRegistrarRe.TabIndex = 23;
-            this.brnRegistrarRe.Text = "Registrar";
-            this.brnRegistrarRe.UseVisualStyleBackColor = false;
-            this.brnRegistrarRe.Click += new System.EventHandler(this.brnRegistrarRe_Click);
+            this.btnRegistrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnRegistrarRe.Location = new System.Drawing.Point(281, 411);
+            this.btnRegistrarRe.Name = "btnRegistrarRe";
+            this.btnRegistrarRe.Size = new System.Drawing.Size(91, 38);
+            this.btnRegistrarRe.TabIndex = 23;
+            this.btnRegistrarRe.Text = "Registrar";
+            this.btnRegistrarRe.UseVisualStyleBackColor = false;
+            this.btnRegistrarRe.Click += new System.EventHandler(this.btnRegistrarRe_Click);
+            // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgAtras_Re.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgAtras_Re.ErrorImage")));
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = ((System.Drawing.Image)(resources.GetObject("imgAtras_Re.InitialImage")));
+            this.imgAtras_Re.Location = new System.Drawing.Point(12, 12);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(65, 40);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 25;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Registro
             // 
@@ -344,8 +355,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.brnBorrarRe);
-            this.Controls.Add(this.brnRegistrarRe);
+            this.Controls.Add(this.imgAtras_Re);
+            this.Controls.Add(this.btnBorrarRe);
+            this.Controls.Add(this.btnRegistrarRe);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDirecciónRe);
             this.Controls.Add(this.txtContraseñaRe);
@@ -367,8 +379,10 @@
             this.MaximumSize = new System.Drawing.Size(800, 500);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,7 +406,8 @@
         private System.Windows.Forms.Label lblApellidosRe;
         private System.Windows.Forms.TextBox txtTelefonoRe;
         private System.Windows.Forms.TextBox txtApellidosRe;
-        private System.Windows.Forms.Button brnBorrarRe;
-        private System.Windows.Forms.Button brnRegistrarRe;
+        private System.Windows.Forms.Button btnBorrarRe;
+        private System.Windows.Forms.Button btnRegistrarRe;
+        private System.Windows.Forms.PictureBox imgAtras_Re;
     }
 }

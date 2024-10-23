@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,13 @@ namespace ProyectoDI_GrupoD
 {
     public partial class Registro : Form
     {
-        private String nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña;
+        private string nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña;
 
         public Registro()
         {
             InitializeComponent();
+
+            btnRegistrarRe.Enabled = false;
 
             txtContraseñaRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtEmailRe.TextChanged += new EventHandler(ComprobarTextBox);
@@ -26,7 +29,7 @@ namespace ProyectoDI_GrupoD
             txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
         }
 
-        private void brnRegistrarRe_Click(object sender, EventArgs e)
+        private void btnRegistrarRe_Click(object sender, EventArgs e)
         {
             nombre = txtUsuarioRe.Text;
             apellidos = txtApellidosRe.Text;
@@ -36,9 +39,13 @@ namespace ProyectoDI_GrupoD
             direccion = txtDireccionRe.Text;
             cuentaCorriente = txtCuentaCorrienteRe.Text;
             contraseña = txtContraseñaRe.Text;
+
+            this.Hide();
+            PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+            pantallaPrincipal.ShowDialog();
         }
 
-        private void brnBorrarRe_Click(object sender, EventArgs e)
+        private void btnBorrarRe_Click(object sender, EventArgs e)
         {
             txtUsuarioRe.Clear();
             txtApellidosRe.Clear();
@@ -48,6 +55,13 @@ namespace ProyectoDI_GrupoD
             txtDireccionRe.Clear();
             txtCuentaCorrienteRe.Clear();
             txtContraseñaRe.Clear();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InicioSesion inicioSesion = new InicioSesion();
+            inicioSesion.ShowDialog();
         }
 
         private void ComprobarTextBox(object sender, EventArgs e)
@@ -64,11 +78,11 @@ namespace ProyectoDI_GrupoD
                 !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(dni) &&
                 !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente))
             {
-                brnRegistrarRe.Enabled = true;
+                btnRegistrarRe.Enabled = true;
             }
             else
             {
-                brnRegistrarRe.Enabled = false;
+                btnRegistrarRe.Enabled = false;
             }
 
         }

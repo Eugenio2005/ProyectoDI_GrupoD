@@ -12,8 +12,7 @@ namespace ProyectoDI_GrupoD
 {
     public partial class InicioSesion : Form
     {
-        private String usuario;
-        private String contraseña;
+        private string usuario, contraseña;
         public InicioSesion()
         {
             InitializeComponent();
@@ -31,7 +30,9 @@ namespace ProyectoDI_GrupoD
 
         private void btnIniciarSesionInSe_Click(object sender, EventArgs e)
         {
-
+            this.Hide();  // Oculta la ventana actual (inicio de sesión)
+            PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+            pantallaPrincipal.ShowDialog();  // Muestra la ventana principal como diálogo modal
         }
 
         private void brnRegistrarInSe_Click(object sender, EventArgs e)
@@ -39,7 +40,6 @@ namespace ProyectoDI_GrupoD
             this.Hide();  // Oculta la ventana actual (inicio de sesión)
             Registro registro = new Registro();
             registro.ShowDialog();  // Muestra la ventana de registro como diálogo modal
-            this.Show();  // Vuelve a mostrar la ventana de inicio de sesión después de cerrar la ventana de registro
         }
 
         private void btnPrueba_Click(object sender, EventArgs e)
@@ -52,6 +52,11 @@ namespace ProyectoDI_GrupoD
             {
                 lblPrueba.Text = "Fallo";
             }
+        }
+
+        private void InicioSesion_Load(object sender, EventArgs e)
+        {
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

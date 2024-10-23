@@ -36,7 +36,7 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe = new System.Windows.Forms.TextBox();
             this.lblUsuarioInSe = new System.Windows.Forms.Label();
             this.btnIniciarSesionInSe = new System.Windows.Forms.Button();
-            this.brnRegistrarInSe = new System.Windows.Forms.Button();
+            this.btnRegistrarInSe = new System.Windows.Forms.Button();
             this.lblContraseñaInSe = new System.Windows.Forms.Label();
             this.btnPrueba = new System.Windows.Forms.Button();
             this.lblPrueba = new System.Windows.Forms.Label();
@@ -50,10 +50,9 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             imgKAE_InSe.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            imgKAE_InSe.Location = new System.Drawing.Point(113, 27);
-            imgKAE_InSe.Margin = new System.Windows.Forms.Padding(4);
+            imgKAE_InSe.Location = new System.Drawing.Point(85, 22);
             imgKAE_InSe.Name = "imgKAE_InSe";
-            imgKAE_InSe.Size = new System.Drawing.Size(283, 128);
+            imgKAE_InSe.Size = new System.Drawing.Size(213, 106);
             imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             imgKAE_InSe.TabIndex = 0;
             imgKAE_InSe.TabStop = false;
@@ -66,14 +65,13 @@ namespace ProyectoDI_GrupoD
             this.txtUsuarioInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.txtUsuarioInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.txtUsuarioInSe.Location = new System.Drawing.Point(56, 207);
-            this.txtUsuarioInSe.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.txtUsuarioInSe.MinimumSize = new System.Drawing.Size(12, 10);
+            this.txtUsuarioInSe.Location = new System.Drawing.Point(42, 168);
+            this.txtUsuarioInSe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtUsuarioInSe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtUsuarioInSe.Name = "txtUsuarioInSe";
             this.txtUsuarioInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsuarioInSe.Size = new System.Drawing.Size(416, 29);
+            this.txtUsuarioInSe.Size = new System.Drawing.Size(314, 24);
             this.txtUsuarioInSe.TabIndex = 1;
-            this.txtUsuarioInSe.Text = "Nombre de usuario";
             this.txtUsuarioInSe.TextChanged += new System.EventHandler(this.txtUsuarioInSe_TextChanged);
             // 
             // txtContraseñaInSe
@@ -84,14 +82,13 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.txtContraseñaInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseñaInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.txtContraseñaInSe.Location = new System.Drawing.Point(56, 294);
-            this.txtContraseñaInSe.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.txtContraseñaInSe.MinimumSize = new System.Drawing.Size(12, 10);
+            this.txtContraseñaInSe.Location = new System.Drawing.Point(42, 239);
+            this.txtContraseñaInSe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtContraseñaInSe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtContraseñaInSe.Name = "txtContraseñaInSe";
             this.txtContraseñaInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtContraseñaInSe.Size = new System.Drawing.Size(416, 29);
+            this.txtContraseñaInSe.Size = new System.Drawing.Size(314, 24);
             this.txtContraseñaInSe.TabIndex = 2;
-            this.txtContraseñaInSe.Text = "Contraseña";
             this.txtContraseñaInSe.TextChanged += new System.EventHandler(this.txtContraseñaInSe_TextChanged);
             // 
             // lblUsuarioInSe
@@ -100,10 +97,9 @@ namespace ProyectoDI_GrupoD
             this.lblUsuarioInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.lblUsuarioInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.lblUsuarioInSe.Location = new System.Drawing.Point(56, 175);
-            this.lblUsuarioInSe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuarioInSe.Location = new System.Drawing.Point(42, 142);
             this.lblUsuarioInSe.Name = "lblUsuarioInSe";
-            this.lblUsuarioInSe.Size = new System.Drawing.Size(79, 25);
+            this.lblUsuarioInSe.Size = new System.Drawing.Size(64, 20);
             this.lblUsuarioInSe.TabIndex = 3;
             this.lblUsuarioInSe.Text = "Usuario";
             // 
@@ -114,30 +110,28 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIniciarSesionInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.btnIniciarSesionInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesionInSe.Location = new System.Drawing.Point(113, 378);
-            this.btnIniciarSesionInSe.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIniciarSesionInSe.Location = new System.Drawing.Point(85, 307);
             this.btnIniciarSesionInSe.Name = "btnIniciarSesionInSe";
-            this.btnIniciarSesionInSe.Size = new System.Drawing.Size(121, 47);
+            this.btnIniciarSesionInSe.Size = new System.Drawing.Size(92, 40);
             this.btnIniciarSesionInSe.TabIndex = 4;
             this.btnIniciarSesionInSe.Text = "Iniciar sesión";
             this.btnIniciarSesionInSe.UseVisualStyleBackColor = false;
             this.btnIniciarSesionInSe.Click += new System.EventHandler(this.btnIniciarSesionInSe_Click);
             // 
-            // brnRegistrarInSe
+            // btnRegistrarInSe
             // 
-            this.brnRegistrarInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnRegistrarInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.brnRegistrarInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.brnRegistrarInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnRegistrarInSe.Location = new System.Drawing.Point(275, 378);
-            this.brnRegistrarInSe.Margin = new System.Windows.Forms.Padding(4);
-            this.brnRegistrarInSe.Name = "brnRegistrarInSe";
-            this.brnRegistrarInSe.Size = new System.Drawing.Size(121, 47);
-            this.brnRegistrarInSe.TabIndex = 5;
-            this.brnRegistrarInSe.Text = "Registrar";
-            this.brnRegistrarInSe.UseVisualStyleBackColor = false;
-            this.brnRegistrarInSe.Click += new System.EventHandler(this.brnRegistrarInSe_Click);
+            this.btnRegistrarInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnRegistrarInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarInSe.Location = new System.Drawing.Point(206, 307);
+            this.btnRegistrarInSe.Name = "btnRegistrarInSe";
+            this.btnRegistrarInSe.Size = new System.Drawing.Size(92, 40);
+            this.btnRegistrarInSe.TabIndex = 5;
+            this.btnRegistrarInSe.Text = "Registrar";
+            this.btnRegistrarInSe.UseVisualStyleBackColor = false;
+            this.btnRegistrarInSe.Click += new System.EventHandler(this.brnRegistrarInSe_Click);
             // 
             // lblContraseñaInSe
             // 
@@ -148,18 +142,18 @@ namespace ProyectoDI_GrupoD
             this.lblContraseñaInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.lblContraseñaInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContraseñaInSe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.lblContraseñaInSe.Location = new System.Drawing.Point(56, 257);
-            this.lblContraseñaInSe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContraseñaInSe.Location = new System.Drawing.Point(42, 209);
             this.lblContraseñaInSe.Name = "lblContraseñaInSe";
-            this.lblContraseñaInSe.Size = new System.Drawing.Size(114, 25);
+            this.lblContraseñaInSe.Size = new System.Drawing.Size(92, 20);
             this.lblContraseñaInSe.TabIndex = 6;
             this.lblContraseñaInSe.Text = "Contraseña";
             // 
             // btnPrueba
             // 
-            this.btnPrueba.Location = new System.Drawing.Point(100, 339);
+            this.btnPrueba.Location = new System.Drawing.Point(75, 275);
+            this.btnPrueba.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrueba.Name = "btnPrueba";
-            this.btnPrueba.Size = new System.Drawing.Size(143, 23);
+            this.btnPrueba.Size = new System.Drawing.Size(107, 19);
             this.btnPrueba.TabIndex = 7;
             this.btnPrueba.Text = "PruebaConexion";
             this.btnPrueba.UseVisualStyleBackColor = true;
@@ -169,35 +163,36 @@ namespace ProyectoDI_GrupoD
             // 
             this.lblPrueba.AutoSize = true;
             this.lblPrueba.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPrueba.Location = new System.Drawing.Point(275, 345);
+            this.lblPrueba.Location = new System.Drawing.Point(206, 280);
+            this.lblPrueba.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrueba.Name = "lblPrueba";
-            this.lblPrueba.Size = new System.Drawing.Size(44, 16);
+            this.lblPrueba.Size = new System.Drawing.Size(35, 13);
             this.lblPrueba.TabIndex = 8;
             this.lblPrueba.Text = "label1";
             // 
             // InicioSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(509, 459);
+            this.ClientSize = new System.Drawing.Size(384, 381);
             this.Controls.Add(this.lblPrueba);
             this.Controls.Add(this.btnPrueba);
             this.Controls.Add(this.lblContraseñaInSe);
-            this.Controls.Add(this.brnRegistrarInSe);
+            this.Controls.Add(this.btnRegistrarInSe);
             this.Controls.Add(this.btnIniciarSesionInSe);
             this.Controls.Add(this.lblUsuarioInSe);
             this.Controls.Add(this.txtContraseñaInSe);
             this.Controls.Add(this.txtUsuarioInSe);
             this.Controls.Add(imgKAE_InSe);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(527, 506);
-            this.MinimumSize = new System.Drawing.Size(527, 506);
+            this.MaximumSize = new System.Drawing.Size(400, 420);
+            this.MinimumSize = new System.Drawing.Size(400, 420);
             this.Name = "InicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio Sesion";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.InicioSesion_Load);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,7 +211,7 @@ namespace ProyectoDI_GrupoD
         private TextBox txtContraseñaInSe;
         private Label lblUsuarioInSe;
         private Button btnIniciarSesionInSe;
-        private Button brnRegistrarInSe;
+        private Button btnRegistrarInSe;
         private Label lblContraseñaInSe;
         private Button btnPrueba;
         private Label lblPrueba;
