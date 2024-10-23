@@ -368,7 +368,6 @@
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Registro";
             this.Text = "Registro";
-            this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

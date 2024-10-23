@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="equipodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="activities">
+          <Key>
+            <PropertyRef Name="names" />
+          </Key>
+          <Property Name="names" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="val" Type="int" />
+        </EntityType>
+        <EntityType Name="administradores">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monitor_activities">
+          <Key>
+            <PropertyRef Name="monitor_dni" />
+            <PropertyRef Name="activity_name" />
+          </Key>
+          <Property Name="monitor_dni" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="activity_name" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="monitores">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_activities">
+          <Key>
+            <PropertyRef Name="user_dni" />
+            <PropertyRef Name="activity_name" />
+          </Key>
+          <Property Name="user_dni" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="activity_name" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="names" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phoneN" Type="int" />
+          <Property Name="addres" Type="varchar" MaxLength="100" />
+          <Property Name="ccc" Type="varchar" MaxLength="22" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_type" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__administrad__dni__5224328E">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="administradores" Type="Self.administradores" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="administradores">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__clientes__dni__55F4C372">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="clientes" Type="Self.clientes" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="clientes">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__monitor_a__activ__4A8310C6">
+          <End Role="activities" Type="Self.activities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="monitor_activities" Type="Self.monitor_activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="activities">
+              <PropertyRef Name="names" />
+            </Principal>
+            <Dependent Role="monitor_activities">
+              <PropertyRef Name="activity_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__monitor_a__monit__498EEC8D">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="monitor_activities" Type="Self.monitor_activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="monitor_activities">
+              <PropertyRef Name="monitor_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__monitores__dni__4E53A1AA">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="monitores" Type="Self.monitores" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="monitores">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__user_acti__activ__45BE5BA9">
+          <End Role="activities" Type="Self.activities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="user_activities" Type="Self.user_activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="activities">
+              <PropertyRef Name="names" />
+            </Principal>
+            <Dependent Role="user_activities">
+              <PropertyRef Name="activity_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__user_acti__user___44CA3770">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="user_activities" Type="Self.user_activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="user_activities">
+              <PropertyRef Name="user_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="equipodModelStoreContainer">
+          <EntitySet Name="activities" EntityType="Self.activities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="administradores" EntityType="Self.administradores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="monitor_activities" EntityType="Self.monitor_activities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="monitores" EntityType="Self.monitores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_activities" EntityType="Self.user_activities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__administrad__dni__5224328E" Association="Self.FK__administrad__dni__5224328E">
+            <End Role="users" EntitySet="users" />
+            <End Role="administradores" EntitySet="administradores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__clientes__dni__55F4C372" Association="Self.FK__clientes__dni__55F4C372">
+            <End Role="users" EntitySet="users" />
+            <End Role="clientes" EntitySet="clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__monitor_a__activ__4A8310C6" Association="Self.FK__monitor_a__activ__4A8310C6">
+            <End Role="activities" EntitySet="activities" />
+            <End Role="monitor_activities" EntitySet="monitor_activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__monitor_a__monit__498EEC8D" Association="Self.FK__monitor_a__monit__498EEC8D">
+            <End Role="users" EntitySet="users" />
+            <End Role="monitor_activities" EntitySet="monitor_activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__monitores__dni__4E53A1AA" Association="Self.FK__monitores__dni__4E53A1AA">
+            <End Role="users" EntitySet="users" />
+            <End Role="monitores" EntitySet="monitores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__user_acti__activ__45BE5BA9" Association="Self.FK__user_acti__activ__45BE5BA9">
+            <End Role="activities" EntitySet="activities" />
+            <End Role="user_activities" EntitySet="user_activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__user_acti__user___44CA3770" Association="Self.FK__user_acti__user___44CA3770">
+            <End Role="users" EntitySet="users" />
+            <End Role="user_activities" EntitySet="user_activities" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="equipodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="activities">
+          <Key>
+            <PropertyRef Name="names" />
+          </Key>
+          <Property Name="names" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="val" Type="Int32" />
+          <NavigationProperty Name="users" Relationship="Self.monitor_activities" FromRole="activities" ToRole="users" />
+          <NavigationProperty Name="users1" Relationship="Self.user_activities" FromRole="activities" ToRole="users" />
+        </EntityType>
+        <EntityType Name="administradores">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK__administrad__dni__5224328E" FromRole="administradores" ToRole="users" />
+        </EntityType>
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK__clientes__dni__55F4C372" FromRole="clientes" ToRole="users" />
+        </EntityType>
+        <EntityType Name="monitores">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK__monitores__dni__4E53A1AA" FromRole="monitores" ToRole="users" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="names" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneN" Type="Int32" />
+          <Property Name="addres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ccc" Type="String" MaxLength="22" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="administradores" Relationship="Self.FK__administrad__dni__5224328E" FromRole="users" ToRole="administradores" />
+          <NavigationProperty Name="clientes" Relationship="Self.FK__clientes__dni__55F4C372" FromRole="users" ToRole="clientes" />
+          <NavigationProperty Name="monitores" Relationship="Self.FK__monitores__dni__4E53A1AA" FromRole="users" ToRole="monitores" />
+          <NavigationProperty Name="activities" Relationship="Self.monitor_activities" FromRole="users" ToRole="activities" />
+          <NavigationProperty Name="activities1" Relationship="Self.user_activities" FromRole="users" ToRole="activities" />
+        </EntityType>
+        <Association Name="FK__administrad__dni__5224328E">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="administradores" Type="Self.administradores" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="administradores">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__clientes__dni__55F4C372">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="clientes" Type="Self.clientes" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="clientes">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__monitores__dni__4E53A1AA">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="monitores" Type="Self.monitores" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="monitores">
+              <PropertyRef Name="dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="monitor_activities">
+          <End Role="activities" Type="Self.activities" Multiplicity="*" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+        </Association>
+        <Association Name="user_activities">
+          <End Role="activities" Type="Self.activities" Multiplicity="*" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="equipodEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="activities" EntityType="Self.activities" />
+          <EntitySet Name="administradores" EntityType="Self.administradores" />
+          <EntitySet Name="clientes" EntityType="Self.clientes" />
+          <EntitySet Name="monitores" EntityType="Self.monitores" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK__administrad__dni__5224328E" Association="Self.FK__administrad__dni__5224328E">
+            <End Role="users" EntitySet="users" />
+            <End Role="administradores" EntitySet="administradores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__clientes__dni__55F4C372" Association="Self.FK__clientes__dni__55F4C372">
+            <End Role="users" EntitySet="users" />
+            <End Role="clientes" EntitySet="clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__monitores__dni__4E53A1AA" Association="Self.FK__monitores__dni__4E53A1AA">
+            <End Role="users" EntitySet="users" />
+            <End Role="monitores" EntitySet="monitores" />
+          </AssociationSet>
+          <AssociationSet Name="monitor_activities" Association="Self.monitor_activities">
+            <End Role="activities" EntitySet="activities" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="user_activities" Association="Self.user_activities">
+            <End Role="activities" EntitySet="activities" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="equipodModelStoreContainer" CdmEntityContainer="equipodEntities">
+          <EntitySetMapping Name="activities">
+            <EntityTypeMapping TypeName="equipodModel.activities">
+              <MappingFragment StoreEntitySet="activities">
+                <ScalarProperty Name="names" ColumnName="names" />
+                <ScalarProperty Name="val" ColumnName="val" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="administradores">
+            <EntityTypeMapping TypeName="equipodModel.administradores">
+              <MappingFragment StoreEntitySet="administradores">
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="equipodModel.clientes">
+              <MappingFragment StoreEntitySet="clientes">
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="monitores">
+            <EntityTypeMapping TypeName="equipodModel.monitores">
+              <MappingFragment StoreEntitySet="monitores">
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="equipodModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="names" ColumnName="names" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="phoneN" ColumnName="phoneN" />
+                <ScalarProperty Name="addres" ColumnName="addres" />
+                <ScalarProperty Name="ccc" ColumnName="ccc" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="monitor_activities" TypeName="equipodModel.monitor_activities" StoreEntitySet="monitor_activities">
+            <EndProperty Name="activities">
+              <ScalarProperty Name="names" ColumnName="activity_name" />
+            </EndProperty>
+            <EndProperty Name="users">
+              <ScalarProperty Name="dni" ColumnName="monitor_dni" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="user_activities" TypeName="equipodModel.user_activities" StoreEntitySet="user_activities">
+            <EndProperty Name="activities">
+              <ScalarProperty Name="names" ColumnName="activity_name" />
+            </EndProperty>
+            <EndProperty Name="users">
+              <ScalarProperty Name="dni" ColumnName="user_dni" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

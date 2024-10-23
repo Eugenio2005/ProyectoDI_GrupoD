@@ -31,7 +31,7 @@ namespace ProyectoDI_GrupoD
 
         private void btnIniciarSesionInSe_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void brnRegistrarInSe_Click(object sender, EventArgs e)
@@ -40,6 +40,18 @@ namespace ProyectoDI_GrupoD
             Registro registro = new Registro();
             registro.ShowDialog();  // Muestra la ventana de registro como diálogo modal
             this.Show();  // Vuelve a mostrar la ventana de inicio de sesión después de cerrar la ventana de registro
+        }
+
+        private void btnPrueba_Click(object sender, EventArgs e)
+        {
+            if (new Negocio.Management.PruebaDeConexion().GetPruebaDeConexion())
+            {
+                lblPrueba.Text = "Exito";
+            }
+            else
+            {
+                lblPrueba.Text = "Fallo";
+            }
         }
     }
 }
