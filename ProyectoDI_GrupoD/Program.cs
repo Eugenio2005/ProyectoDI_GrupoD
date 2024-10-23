@@ -17,7 +17,6 @@ namespace ProyectoDI_GrupoD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new InicioSesion());
-            Console.WriteLine("hola");
         }
     }
 }
