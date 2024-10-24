@@ -15,7 +15,7 @@ namespace Datos.Repositories
             {
                 using (var contexto = new equipodEntities())
                 {
-                    List<administradores> productos = contexto.administradores.ToList();
+                    List<Usuarios> productos = contexto.Usuarios.ToList();
                 }
                 return true;
             }

@@ -50,10 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\activities.cs">
-      <DependentUpon>BDequipoD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Infrastructure\administradores.cs">
+    <Compile Include="Infrastructure\Actividades.cs">
       <DependentUpon>BDequipoD.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\BDequipoD.Context.cs">
@@ -71,45 +68,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDequipoD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\clientes.cs">
+    <Compile Include="Infrastructure\Usuarios.cs">
       <DependentUpon>BDequipoD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\monitores.cs">
-      <DependentUpon>BDequipoD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Infrastructure\users.cs">
+    <Compile Include="Infrastructure\Valoraciones.cs">
       <DependentUpon>BDequipoD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\PruebaDeConexion.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Infrastructure\BDequipoD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BDequipoD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="Infrastructure\BDequipoD.edmx.diagram">
       <DependentUpon>BDequipoD.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Infrastructure\BDequipoD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BDequipoD.Context.cs</LastGenOutput>
       <DependentUpon>BDequipoD.edmx</DependentUpon>
+      <LastGenOutput>BDequipoD.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Infrastructure\BDequipoD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BDequipoD.edmx</DependentUpon>
       <LastGenOutput>BDequipoD.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

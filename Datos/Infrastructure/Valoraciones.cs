@@ -12,12 +12,14 @@ namespace Datos.Infrastructure
     using System;
     using System.Collections.Generic;
     
-    public partial class monitores
+    public partial class Valoraciones
     {
-        public string dni { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
+        public int id_valoracion { get; set; }
+        public int id_usuario { get; set; }
+        public int id_actividad { get; set; }
+        public int valoracion { get; set; }
     
-        public virtual users users { get; set; }
+        public virtual Actividades Actividades { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

@@ -12,21 +12,24 @@ namespace Datos.Infrastructure
     using System;
     using System.Collections.Generic;
     
-    public partial class activities
+    public partial class Actividades
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public activities()
+        public Actividades()
         {
-            this.users = new HashSet<users>();
-            this.users1 = new HashSet<users>();
+            this.Valoraciones = new HashSet<Valoraciones>();
+            this.Usuarios = new HashSet<Usuarios>();
+            this.Usuarios1 = new HashSet<Usuarios>();
         }
     
-        public string names { get; set; }
-        public Nullable<int> val { get; set; }
+        public int id_actividad { get; set; }
+        public string nombre_actividad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users> users { get; set; }
+        public virtual ICollection<Valoraciones> Valoraciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users> users1 { get; set; }
+        public virtual ICollection<Usuarios> Usuarios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Usuarios> Usuarios1 { get; set; }
     }
 }

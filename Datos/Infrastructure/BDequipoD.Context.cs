@@ -25,10 +25,8 @@ namespace Datos.Infrastructure
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<activities> activities { get; set; }
-        public virtual DbSet<administradores> administradores { get; set; }
-        public virtual DbSet<clientes> clientes { get; set; }
-        public virtual DbSet<monitores> monitores { get; set; }
-        public virtual DbSet<users> users { get; set; }
+        public virtual DbSet<Actividades> Actividades { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Valoraciones> Valoraciones { get; set; }
     }
 }
