@@ -42,21 +42,5 @@ namespace ProyectoDI_GrupoD
             registro.ShowDialog();  // Muestra la ventana de registro como diálogo modal
         }
 
-        private void btnPrueba_Click(object sender, EventArgs e)
-        {
-            if (new Negocio.Management.PruebaDeConexion().GetPruebaDeConexion())
-            {
-                lblPrueba.Text = "Exito";
-            }
-            else
-            {
-                lblPrueba.Text = "Fallo";
-            }
-        }
-
-        private void InicioSesion_Load(object sender, EventArgs e)
-        {
-            this.StartPosition = FormStartPosition.CenterScreen;
-        }
     }
 }

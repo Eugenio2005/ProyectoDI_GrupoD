@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Negocio.EntitiesDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,18 +32,40 @@ namespace ProyectoDI_GrupoD
 
         private void btnRegistrarRe_Click(object sender, EventArgs e)
         {
-            nombre = txtUsuarioRe.Text;
-            apellidos = txtApellidosRe.Text;
-            dni = txtDNI_Re.Text;
-            telefono = txtTelefonoRe.Text;
-            email = txtEmailRe.Text;
-            direccion = txtDireccionRe.Text;
-            cuentaCorriente = txtCuentaCorrienteRe.Text;
-            contraseña = txtContraseñaRe.Text;
+            UsuariosDTO usuarioDTO = new UsuariosDTO();
+            usuarioDTO.Nombre = txtUsuarioRe.Text;
+            usuarioDTO.Apellidos = txtApellidosRe.Text;
+            usuarioDTO.Dni = txtDNI_Re.Text;
+            usuarioDTO.Telefono = txtTelefonoRe.Text;
+            usuarioDTO.Email = txtEmailRe.Text;
+            usuarioDTO.Direccion = txtDireccionRe.Text;
+            usuarioDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
+            usuarioDTO.Contraseña = txtContraseñaRe.Text;
 
-            this.Hide();
-            PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-            pantallaPrincipal.ShowDialog();
+            if (AñadirUsuario(usuarioDTO))
+            {
+                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                pantallaPrincipal.ShowDialog();
+                this.Hide();
+            }
+            
+        }
+
+        private Boolean AñadirUsuario(UsuariosDTO usuarioDTO)
+        {
+            try
+            {
+                new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO);
+
+                MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al registrar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         private void btnBorrarRe_Click(object sender, EventArgs e)
