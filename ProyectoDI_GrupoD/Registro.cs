@@ -14,11 +14,15 @@ namespace ProyectoDI_GrupoD
 {
     public partial class Registro : Form
     {
+        private string placeholderTextCuentaCorriente = "XXXXXXXXXXXXXXXXXXX";
         private string nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña;
 
         public Registro()
         {
             InitializeComponent();
+
+            txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Texto predeterminado
+            txtCuentaCorrienteRe.ForeColor = Color.Gray; // Color del texto predeterminado
 
             btnRegistrarRe.Enabled = false;
 
@@ -28,6 +32,32 @@ namespace ProyectoDI_GrupoD
             txtUsuarioRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtCuentaCorrienteRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
+        }
+
+        private void txtCuentaCorrienteRe_Enter(object sender, EventArgs e)
+        {
+            if (txtCuentaCorrienteRe.Text == placeholderTextCuentaCorriente)
+            {
+                txtCuentaCorrienteRe.Text = ""; // Limpiar el texto
+                txtCuentaCorrienteRe.ForeColor = Color.Black; // Cambiar a color normal
+            }
+        }
+
+        private void txtCuentaCorrienteRe_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCuentaCorrienteRe.Text))
+            {
+                txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaurar texto predeterminado
+                txtCuentaCorrienteRe.ForeColor = Color.Gray; // Volver al color predeterminado
+            }
+        }
+
+        private void txtCuentaCorrienteRe_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCuentaCorrienteRe.Text) && txtCuentaCorrienteRe.Text != placeholderTextCuentaCorriente)
+            {
+                txtCuentaCorrienteRe.ForeColor = Color.FromArgb(202,224,212); // Cambiar a color normal
+            }
         }
 
         private void btnRegistrarRe_Click(object sender, EventArgs e)
@@ -44,11 +74,25 @@ namespace ProyectoDI_GrupoD
 
             if (AñadirUsuario(usuarioDTO))
             {
-                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                pantallaPrincipal.ShowDialog();
                 this.Hide();
+                InicioSesion inicioSesion = new InicioSesion();
+                inicioSesion.ShowDialog();
             }
             
+        }
+
+        private void btnojoCerradoRe_Click(object sender, EventArgs e)
+        {
+            txtContraseñaRe.UseSystemPasswordChar = true;
+            btnojo_abiertoRe.Visible = true;
+            btnojoCerradoRe.Visible = false;
+        }
+
+        private void ojo_abiertoRe_Click(object sender, EventArgs e)
+        {
+            txtContraseñaRe.UseSystemPasswordChar = false;
+            btnojo_abiertoRe.Visible = false;
+            btnojoCerradoRe.Visible = true;
         }
 
         private Boolean AñadirUsuario(UsuariosDTO usuarioDTO)
