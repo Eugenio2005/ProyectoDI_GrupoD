@@ -21,13 +21,15 @@ namespace Datos.Repositories
 
         }
 
-        //public users ConsultarCliente(users client)
-        //{
-        //    using (var contexto = new equipodEntities())
-        //    {
-        //        return contexto.users.FirstOrDefault(u => u.email == client.email);
-        //    }
-        //}
+        public Usuarios ConsultarCliente(string email)
+        {
+            using (var contexto = new equipodEntities())
+            {
+                return contexto.Usuarios.FirstOrDefault(u => u.email == email);
+            }
+        }
+
+
     }
 }
 

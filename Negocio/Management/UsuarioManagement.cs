@@ -40,5 +40,14 @@ namespace Negocio.Management
             for (int i = 0; i < 5; i++) sb.AppendFormat("{0:x2}", stream[i]);
             return sb.ToString();
         }
+
+        public Boolean validarUsuario(string email, string contrasena)
+        {
+            Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarCliente(email);
+
+            string contrasenaEncript = encriptarContrasena(contrasena);
+
+            return usuarioBD.email.Equals(email) && usuarioBD.password.Equals(contrasenaEncript);
+        }
     }
 }
