@@ -166,6 +166,7 @@
             this.txtCuentaCorrienteRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(59, 361);
             this.txtCuentaCorrienteRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtCuentaCorrienteRe.MaxLength = 22;
             this.txtCuentaCorrienteRe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
             this.txtCuentaCorrienteRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -173,7 +174,7 @@
             this.txtCuentaCorrienteRe.TabIndex = 12;
             this.txtCuentaCorrienteRe.TextChanged += new System.EventHandler(this.txtCuentaCorrienteRe_TextChanged);
             this.txtCuentaCorrienteRe.Enter += new System.EventHandler(this.txtCuentaCorrienteRe_Enter);
-            this.txtCuentaCorrienteRe.Leave += new System.EventHandler(this.txtCuentaCorrienteRe_Leave);    
+            this.txtCuentaCorrienteRe.Leave += new System.EventHandler(this.txtCuentaCorrienteRe_Leave);
             // 
             // txtDNI_Re
             // 
@@ -185,6 +186,7 @@
             this.txtDNI_Re.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtDNI_Re.Location = new System.Drawing.Point(59, 223);
             this.txtDNI_Re.Margin = new System.Windows.Forms.Padding(10);
+            this.txtDNI_Re.MaxLength = 9;
             this.txtDNI_Re.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtDNI_Re.Name = "txtDNI_Re";
             this.txtDNI_Re.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -288,6 +290,7 @@
             this.txtTelefonoRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtTelefonoRe.Location = new System.Drawing.Point(413, 223);
             this.txtTelefonoRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtTelefonoRe.MaxLength = 9;
             this.txtTelefonoRe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtTelefonoRe.Name = "txtTelefonoRe";
             this.txtTelefonoRe.RightToLeft = System.Windows.Forms.RightToLeft.No;

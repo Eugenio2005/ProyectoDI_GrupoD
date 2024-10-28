@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,6 +26,8 @@ namespace ProyectoDI_GrupoD
             txtCuentaCorrienteRe.ForeColor = Color.Gray; // Color del texto predeterminado
 
             btnRegistrarRe.Enabled = false;
+
+            txtTelefonoRe.KeyPress += TextBox_KeyPress;
 
             txtContraseñaRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtEmailRe.TextChanged += new EventHandler(ComprobarTextBox);
@@ -62,23 +65,102 @@ namespace ProyectoDI_GrupoD
 
         private void btnRegistrarRe_Click(object sender, EventArgs e)
         {
-            UsuariosDTO usuarioDTO = new UsuariosDTO();
-            usuarioDTO.Nombre = txtUsuarioRe.Text;
-            usuarioDTO.Apellidos = txtApellidosRe.Text;
-            usuarioDTO.Dni = txtDNI_Re.Text;
-            usuarioDTO.Telefono = txtTelefonoRe.Text;
-            usuarioDTO.Email = txtEmailRe.Text;
-            usuarioDTO.Direccion = txtDireccionRe.Text;
-            usuarioDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
-            usuarioDTO.Contraseña = txtContraseñaRe.Text;
-
-            if (AñadirUsuario(usuarioDTO))
+            UsuariosDTO usuarioDTO = new UsuariosDTO
             {
-                this.Hide();
-                InicioSesion inicioSesion = new InicioSesion();
-                inicioSesion.ShowDialog();
+                Nombre = txtUsuarioRe.Text,
+                Apellidos = txtApellidosRe.Text,
+                Dni = txtDNI_Re.Text,
+                Telefono = txtTelefonoRe.Text,
+                Email = txtEmailRe.Text,
+                Direccion = txtDireccionRe.Text,
+                CuentaCorriente = txtCuentaCorrienteRe.Text,
+                Contraseña = txtContraseñaRe.Text
+            };
+
+            string mensajeValidacion = validarDatos(usuarioDTO);
+
+            if ("Valido".Equals(mensajeValidacion))
+            {
+                if (AñadirUsuario(usuarioDTO))
+                {
+                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                    pantallaPrincipal.ShowDialog();
+                    this.Hide();
+                }
             }
-            
+            else
+            {
+                MessageBox.Show(mensajeValidacion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private string validarDatos(UsuariosDTO usuarioDTO)
+        {
+            StringBuilder mensajeValidacion = new StringBuilder();
+
+            if (!validarContrasena(usuarioDTO.Contraseña))
+            {
+                mensajeValidacion.Append("- La contraseña no es valida\n");
+            }
+            if (!validarTelefono(usuarioDTO.Telefono))
+            {
+                mensajeValidacion.Append("- El telefono no es valido\n");
+            }
+            if (!validarDNI(usuarioDTO.Dni))
+            {
+                mensajeValidacion.Append("- El DNI no es valido\n");
+            }
+            if (!validarEmail(usuarioDTO.Email))
+            {
+                mensajeValidacion.Append("- El email no es valido\n");
+            }
+            if (!validarCuentaCorriente(usuarioDTO.CuentaCorriente))
+            {
+                mensajeValidacion.Append("- La cuenta corriente no es valida\n");
+            }
+
+            return mensajeValidacion.ToString();
+        }
+
+        private bool validarTelefono(string telefono)
+        {
+            string pattern = @"^\d{9}$";
+            return Regex.IsMatch(cuentaCorriente, pattern);
+        }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada no es un dígito y no es la tecla de retroceso
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Cancela el evento si no es un número
+                e.Handled = true;
+            }
+        }
+
+        private bool validarCuentaCorriente(string cuentaCorriente)
+        {
+            string pattern = @"^\d{20}$";
+            return Regex.IsMatch(cuentaCorriente, pattern);
+        }
+
+        private bool validarEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
+            return Regex.IsMatch(email, pattern);
+        }
+
+        private bool validarDNI(string DNI)
+        {
+            string pattern = @"^\d{8}[A-Za-z]$";
+            return Regex.IsMatch(dni, pattern);
+        }
+
+        private bool validarContrasena(string password)
+        {
+            string pattern = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
+            return Regex.IsMatch(password, pattern);
         }
 
         private void btnojoCerradoRe_Click(object sender, EventArgs e)
@@ -140,7 +222,6 @@ namespace ProyectoDI_GrupoD
             apellidos = txtApellidosRe.Text;
             cuentaCorriente = txtCuentaCorrienteRe.Text;
 
-
             if (!string.IsNullOrWhiteSpace(contraseña) && !string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(dni) &&
                 !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente))
@@ -151,7 +232,8 @@ namespace ProyectoDI_GrupoD
             {
                 btnRegistrarRe.Enabled = false;
             }
-
         }
+
+
     }
 }
