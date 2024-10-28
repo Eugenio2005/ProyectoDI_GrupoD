@@ -43,11 +43,17 @@ namespace Negocio.Management
 
         public Boolean validarUsuario(string email, string contrasena)
         {
-            Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarCliente(email);
+            if (!email.Equals(""))
+            {
+                Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarCliente(email);
 
-            string contrasenaEncript = encriptarContrasena(contrasena);
+                string contrasenaEncript = encriptarContrasena(contrasena);
 
-            return usuarioBD.email.Equals(email) && usuarioBD.password.Equals(contrasenaEncript);
+                return usuarioBD.email.Equals(email) && usuarioBD.password.Equals(contrasenaEncript);
+            }
+
+            return false;
+            
         }
     }
 }

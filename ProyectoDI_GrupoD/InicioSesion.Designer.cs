@@ -212,12 +212,6 @@ namespace ProyectoDI_GrupoD
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUsuarioRe;
-        private System.Windows.Forms.TextBox txtContraseñaRe;
-        private System.Windows.Forms.Label label1Re;
-        private System.Windows.Forms.Button btnAceptarRe;
-        private System.Windows.Forms.Button brnRegistrarInSeRe;
-        private System.Windows.Forms.Label lblContraseñaInSeRe;
         private TextBox txtUsuarioInSe;
         private TextBox txtContraseñaInSe;
         private Label lblUsuarioInSe;

@@ -79,12 +79,12 @@ namespace ProyectoDI_GrupoD
 
             string mensajeValidacion = validarDatos(usuarioDTO);
 
-            if ("Valido".Equals(mensajeValidacion))
+            if (mensajeValidacion.Length == 0)
             {
                 if (AñadirUsuario(usuarioDTO))
                 {
-                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    pantallaPrincipal.ShowDialog();
+                    InicioSesion inicioSesion = new InicioSesion();
+                    inicioSesion.ShowDialog();
                     this.Hide();
                 }
             }
@@ -125,8 +125,8 @@ namespace ProyectoDI_GrupoD
 
         private bool validarTelefono(string telefono)
         {
-            string pattern = @"^\d{9}$";
-            return Regex.IsMatch(cuentaCorriente, pattern);
+            string patternTelefono = @"^\d{9}$";
+            return Regex.IsMatch(telefono, patternTelefono);
         }
 
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -141,26 +141,26 @@ namespace ProyectoDI_GrupoD
 
         private bool validarCuentaCorriente(string cuentaCorriente)
         {
-            string pattern = @"^\d{20}$";
-            return Regex.IsMatch(cuentaCorriente, pattern);
+            string patternCuentaCorriente = @"^\d{22}$";
+            return Regex.IsMatch(cuentaCorriente, patternCuentaCorriente);
         }
 
         private bool validarEmail(string email)
         {
-            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
-            return Regex.IsMatch(email, pattern);
+            string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
+            return Regex.IsMatch(email, patternEmail);
         }
 
         private bool validarDNI(string DNI)
         {
-            string pattern = @"^\d{8}[A-Za-z]$";
-            return Regex.IsMatch(dni, pattern);
+            string patternDNI = @"^\d{8}[A-Za-z]$";
+            return Regex.IsMatch(DNI, patternDNI);
         }
 
         private bool validarContrasena(string password)
         {
-            string pattern = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
-            return Regex.IsMatch(password, pattern);
+            string patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
+            return Regex.IsMatch(password, patternContrasena);
         }
 
         private void btnojoCerradoRe_Click(object sender, EventArgs e)
