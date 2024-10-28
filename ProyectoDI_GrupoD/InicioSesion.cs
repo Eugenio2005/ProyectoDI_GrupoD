@@ -43,6 +43,20 @@ namespace ProyectoDI_GrupoD
             }
         }
 
+        private void btnojoCerradoInSe_Click(object sender, EventArgs e)
+        {
+            txtContraseñaInSe.UseSystemPasswordChar = true;
+            btnojo_abiertoInSe.Visible = true;
+            btnojoCerradoInSe.Visible = false;
+        }
+
+        private void btnojoAbiertoInSe_Click(object sender, EventArgs e)
+        {
+            txtContraseñaInSe.UseSystemPasswordChar = false;
+            btnojo_abiertoInSe.Visible = false;
+            btnojoCerradoInSe.Visible = true;
+        }
+
         private void brnRegistrarInSe_Click(object sender, EventArgs e)
         {
             this.Hide();  // Oculta la ventana actual (inicio de sesión)
