@@ -112,6 +112,9 @@
             this.txtEmailRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtEmailRe.Size = new System.Drawing.Size(317, 24);
             this.txtEmailRe.TabIndex = 8;
+            this.txtEmailRe.TextChanged += new System.EventHandler(this.txtEmailRe_TextChanged);
+            this.txtEmailRe.Enter += new System.EventHandler(this.txtBoxEmailEliminarPlaceHolder);
+            this.txtEmailRe.Leave += new System.EventHandler(this.txtBoxEmailAplicarPlaceHolder);
             // 
             // txtUsuarioRe
             // 
