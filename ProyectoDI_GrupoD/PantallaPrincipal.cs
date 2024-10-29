@@ -16,5 +16,10 @@ namespace ProyectoDI_GrupoD
         {
             InitializeComponent();
         }
+
+        private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

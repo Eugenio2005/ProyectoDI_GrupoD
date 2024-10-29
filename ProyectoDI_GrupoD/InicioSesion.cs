@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,53 @@ namespace ProyectoDI_GrupoD
             txtContraseñaInSe.UseSystemPasswordChar = false; // Muestra la contraseña
             btnojo_abiertoInSe.Visible = false; 
             btnojoCerradoInSe.Visible = true; 
+        }
+
+        private void InicioSesion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnIniciarSesionInSe_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = sender as Button;
+            int borderRadius = 20; // Ajusta el radio del borde
+
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+            path.CloseFigure();
+
+            btn.Region = new Region(path);
+
+            using (Pen pen = new Pen(Color.Gray, 1))
+            {
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                e.Graphics.DrawPath(pen, path);
+            }
+        }
+
+        private void btnRegistrarInSe_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = sender as Button;
+            int borderRadius = 20; // Ajusta el radio del borde
+
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+            path.CloseFigure();
+
+            btn.Region = new Region(path);
+
+            using (Pen pen = new Pen(Color.Gray, 1))
+            {
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                e.Graphics.DrawPath(pen, path);
+            }
         }
 
         /// <summary>

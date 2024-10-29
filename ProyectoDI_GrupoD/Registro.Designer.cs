@@ -111,7 +111,7 @@
             this.txtEmailRe.Name = "txtEmailRe";
             this.txtEmailRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtEmailRe.Size = new System.Drawing.Size(317, 24);
-            this.txtEmailRe.TabIndex = 8;
+            this.txtEmailRe.TabIndex = 5;
             this.txtEmailRe.TextChanged += new System.EventHandler(this.txtEmailRe_TextChanged);
             this.txtEmailRe.Enter += new System.EventHandler(this.txtBoxEmailEliminarPlaceHolder);
             this.txtEmailRe.Leave += new System.EventHandler(this.txtBoxEmailAplicarPlaceHolder);
@@ -130,7 +130,7 @@
             this.txtUsuarioRe.Name = "txtUsuarioRe";
             this.txtUsuarioRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtUsuarioRe.Size = new System.Drawing.Size(317, 24);
-            this.txtUsuarioRe.TabIndex = 7;
+            this.txtUsuarioRe.TabIndex = 1;
             // 
             // lblCuentaCorrienteRe
             // 
@@ -174,7 +174,7 @@
             this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
             this.txtCuentaCorrienteRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(317, 24);
-            this.txtCuentaCorrienteRe.TabIndex = 12;
+            this.txtCuentaCorrienteRe.TabIndex = 7;
             this.txtCuentaCorrienteRe.TextChanged += new System.EventHandler(this.txtCuentaCorrienteRe_TextChanged);
             this.txtCuentaCorrienteRe.Enter += new System.EventHandler(this.txtBoxCuentaCorrienteEliminarPlaceHolder);
             this.txtCuentaCorrienteRe.Leave += new System.EventHandler(this.txtBoxCuentaCorrienteAplicarPlaceHolder);
@@ -194,7 +194,7 @@
             this.txtDNI_Re.Name = "txtDNI_Re";
             this.txtDNI_Re.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDNI_Re.Size = new System.Drawing.Size(317, 24);
-            this.txtDNI_Re.TabIndex = 11;
+            this.txtDNI_Re.TabIndex = 3;
             // 
             // label3
             // 
@@ -237,7 +237,7 @@
             this.txtContraseñaRe.Name = "txtContraseñaRe";
             this.txtContraseñaRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtContraseñaRe.Size = new System.Drawing.Size(313, 24);
-            this.txtContraseñaRe.TabIndex = 20;
+            this.txtContraseñaRe.TabIndex = 8;
             this.txtContraseñaRe.UseSystemPasswordChar = true;
             // 
             // txtDireccionRe
@@ -254,7 +254,7 @@
             this.txtDireccionRe.Name = "txtDireccionRe";
             this.txtDireccionRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDireccionRe.Size = new System.Drawing.Size(313, 24);
-            this.txtDireccionRe.TabIndex = 19;
+            this.txtDireccionRe.TabIndex = 6;
             // 
             // lblTelefonoRe
             // 
@@ -298,7 +298,7 @@
             this.txtTelefonoRe.Name = "txtTelefonoRe";
             this.txtTelefonoRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTelefonoRe.Size = new System.Drawing.Size(313, 24);
-            this.txtTelefonoRe.TabIndex = 16;
+            this.txtTelefonoRe.TabIndex = 4;
             // 
             // txtApellidosRe
             // 
@@ -314,7 +314,7 @@
             this.txtApellidosRe.Name = "txtApellidosRe";
             this.txtApellidosRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtApellidosRe.Size = new System.Drawing.Size(313, 24);
-            this.txtApellidosRe.TabIndex = 15;
+            this.txtApellidosRe.TabIndex = 2;
             // 
             // btnBorrarRe
             // 
@@ -330,10 +330,11 @@
             this.btnBorrarRe.Location = new System.Drawing.Point(402, 411);
             this.btnBorrarRe.Name = "btnBorrarRe";
             this.btnBorrarRe.Size = new System.Drawing.Size(91, 38);
-            this.btnBorrarRe.TabIndex = 24;
+            this.btnBorrarRe.TabIndex = 10;
             this.btnBorrarRe.Text = "Borrar";
             this.btnBorrarRe.UseVisualStyleBackColor = false;
             this.btnBorrarRe.Click += new System.EventHandler(this.btnBorrarRe_Click);
+            this.btnBorrarRe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnBorrarRe_Paint);
             // 
             // btnRegistrarRe
             // 
@@ -350,10 +351,11 @@
             this.btnRegistrarRe.Location = new System.Drawing.Point(281, 411);
             this.btnRegistrarRe.Name = "btnRegistrarRe";
             this.btnRegistrarRe.Size = new System.Drawing.Size(91, 38);
-            this.btnRegistrarRe.TabIndex = 23;
+            this.btnRegistrarRe.TabIndex = 9;
             this.btnRegistrarRe.Text = "Registrar";
             this.btnRegistrarRe.UseVisualStyleBackColor = false;
             this.btnRegistrarRe.Click += new System.EventHandler(this.btnRegistrarRe_Click);
+            this.btnRegistrarRe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnRegistrarRe_Paint);
             // 
             // imgAtras_Re
             // 
@@ -439,6 +441,7 @@
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registro_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
