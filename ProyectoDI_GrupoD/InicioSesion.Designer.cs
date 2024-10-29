@@ -72,7 +72,6 @@ namespace ProyectoDI_GrupoD
             this.txtUsuarioInSe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtUsuarioInSe.Size = new System.Drawing.Size(314, 24);
             this.txtUsuarioInSe.TabIndex = 1;
-            this.txtUsuarioInSe.TextChanged += new System.EventHandler(this.txtUsuarioInSe_TextChanged);
             // 
             // txtContraseñaInSe
             // 
@@ -90,7 +89,6 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe.Size = new System.Drawing.Size(314, 24);
             this.txtContraseñaInSe.TabIndex = 2;
             this.txtContraseñaInSe.UseSystemPasswordChar = true;
-            this.txtContraseñaInSe.TextChanged += new System.EventHandler(this.txtContraseñaInSe_TextChanged);
             // 
             // lblUsuarioInSe
             // 

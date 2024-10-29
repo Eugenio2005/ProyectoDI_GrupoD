@@ -173,8 +173,8 @@
             this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(317, 24);
             this.txtCuentaCorrienteRe.TabIndex = 12;
             this.txtCuentaCorrienteRe.TextChanged += new System.EventHandler(this.txtCuentaCorrienteRe_TextChanged);
-            this.txtCuentaCorrienteRe.Enter += new System.EventHandler(this.txtCuentaCorrienteRe_Enter);
-            this.txtCuentaCorrienteRe.Leave += new System.EventHandler(this.txtCuentaCorrienteRe_Leave);
+            this.txtCuentaCorrienteRe.Enter += new System.EventHandler(this.txtBoxCuentaCorrienteEliminarPlaceHolder);
+            this.txtCuentaCorrienteRe.Leave += new System.EventHandler(this.txtBoxCuentaCorrienteAplicarPlaceHolder);
             // 
             // txtDNI_Re
             // 
@@ -367,7 +367,7 @@
             this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgAtras_Re.TabIndex = 25;
             this.imgAtras_Re.TabStop = false;
-            this.imgAtras_Re.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.imgAtras_Re.Click += new System.EventHandler(this.volverAtras);
             // 
             // btnojo_abiertoRe
             // 
