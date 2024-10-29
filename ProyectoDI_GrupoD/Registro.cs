@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -184,13 +185,99 @@ namespace ProyectoDI_GrupoD
             usuarioDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
             usuarioDTO.Contraseña = txtContraseñaRe.Text;
 
-            // Intenta añadir el usuario y muestra la ventana de inicio de sesión si lo añade.
-            if (AñadirUsuario(usuarioDTO))
+            // Valida los datos que se hayan ingresado en el registro y devuelve un mensaje.
+            string mensajeValidacion = validarDatos(usuarioDTO);
+
+            // Si el mensaje no tiene caracteres significa que no hay ningun error con los campos, si no saltara un error.
+            if (mensajeValidacion.Length == 0)
             {
-                this.Hide();
-                InicioSesion inicioSesion = new InicioSesion();
-                inicioSesion.ShowDialog();
+                //Si consigue añadir el usuario accede a la pantalla principal.
+                if (AñadirUsuario(usuarioDTO))
+                {
+                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                    pantallaPrincipal.ShowDialog();
+                    InicioSesion inicioSesion = new InicioSesion();
+                    inicioSesion.ShowDialog();
+                    this.Hide();
+                }
             }
+            else
+            {
+            MessageBox.Show(mensajeValidacion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Metodo que sirve para validar los datos.
+        /// </summary>
+        /// <param name="usuarioDTO"></param>
+        /// <returns>Devuelve un string con el mensaje de validación</returns>
+        private string validarDatos(UsuariosDTO usuarioDTO)
+        {
+            StringBuilder mensajeValidacion = new StringBuilder();
+
+            if (!validarContrasena(usuarioDTO.Contraseña))
+            {
+                mensajeValidacion.Append("- La contraseña no es valida\n");
+            }
+            if (!validarTelefono(usuarioDTO.Telefono))
+            {
+                mensajeValidacion.Append("- El telefono no es valido\n");
+            }
+            if (!validarDNI(usuarioDTO.Dni))
+            {
+                mensajeValidacion.Append("- El DNI no es valido\n");
+            }
+            if (!validarEmail(usuarioDTO.Email))
+            {
+                mensajeValidacion.Append("- El email no es valido\n");
+            }
+            if (!validarCuentaCorriente(usuarioDTO.CuentaCorriente))
+            {
+                mensajeValidacion.Append("- La cuenta corriente no es valida\n");
+            }
+
+            return mensajeValidacion.ToString();
+        }
+
+        private bool validarTelefono(string telefono)
+        {
+            string patternTelefono = @"^\d{9}$";
+            return Regex.IsMatch(telefono, patternTelefono);
+        }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada no es un dígito y no es la tecla de retroceso
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Cancela el evento si no es un número
+                e.Handled = true;
+            }
+        }
+
+        private bool validarCuentaCorriente(string cuentaCorriente)
+        {
+            string patternCuentaCorriente = @"^\d{22}$";
+            return Regex.IsMatch(cuentaCorriente, patternCuentaCorriente);
+        }
+
+        private bool validarEmail(string email)
+        { 
+            string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
+            return Regex.IsMatch(email, patternEmail);
+        }
+
+        private bool validarDNI(string DNI)
+        {
+            string patternDNI = @"^\d{8}[A-Za-z]$";
+            return Regex.IsMatch(DNI, patternDNI);
+        }
+
+        private bool validarContrasena(string password)
+        {
+            string patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
+            return Regex.IsMatch(password, patternContrasena);
         }
 
         /// <summary>
