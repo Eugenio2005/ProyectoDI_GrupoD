@@ -216,6 +216,8 @@ namespace ProyectoDI_GrupoD
         {
             StringBuilder mensajeValidacion = new StringBuilder();
 
+            //Secuencia de if que van a comprobar la validación de los campos, si no es correcto
+            // añadira que no es valido por cada campo.
             if (!validarContrasena(usuarioDTO.Contraseña))
             {
                 mensajeValidacion.Append("- La contraseña no es valida\n");
@@ -240,12 +242,23 @@ namespace ProyectoDI_GrupoD
             return mensajeValidacion.ToString();
         }
 
+        /// <summary>
+        /// Metodos que validan la variable introducida por el usuario con un pattern personalizado
+        /// para cada validación
+        /// </summary>
+        /// <param name="telefono"></param>
+        /// <returns></returns>
         private bool validarTelefono(string telefono)
         {
             string patternTelefono = @"^\d{9}$";
             return Regex.IsMatch(telefono, patternTelefono);
         }
 
+        /// <summary>
+        /// Cancela pulsar teclas que no sean números y borrar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verifica si la tecla presionada no es un dígito y no es la tecla de retroceso
