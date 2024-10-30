@@ -9,7 +9,7 @@ namespace Datos.Repositories
 {
     public class PruebaDeConexion
     {
-        public bool ProbarConexion()
+        public Boolean ProbarConexion()
         {
             try
             {
