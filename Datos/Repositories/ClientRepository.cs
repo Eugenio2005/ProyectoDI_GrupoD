@@ -1,4 +1,4 @@
-﻿using Datos.Infrastructure; // Importa la infraestructura de datos
+﻿using Datos.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;

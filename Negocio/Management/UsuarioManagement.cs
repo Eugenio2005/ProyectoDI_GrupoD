@@ -1,9 +1,9 @@
-﻿using Datos.Infrastructure; // Importa la infraestructura de datos
-using Negocio.EntitiesDTO; // Importa las entidades de datos del negocio
+﻿using Datos.Infrastructure; 
+using Negocio.EntitiesDTO; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography; // Importa funciones de criptografía
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
