@@ -322,16 +322,29 @@ namespace ProyectoDI_GrupoD
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
         private Boolean AñadirUsuario(UsuariosDTO usuarioDTO)
         {
-            try
+            // El mensaje contendra si el email o dni ya estan en uso
+            string mensajeExisteUsuario = new Negocio.Management.UsuarioManagement().existeUsuario(usuarioDTO.Email, usuarioDTO.Dni);
+
+            // Si el mensaje no contiene nada se añadira porque no se usan el email o dni. Si no saltara un pop-up.
+            if (mensajeExisteUsuario.Length == 0)
             {
-                new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
-                MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return true; // Registro exitoso
+                try
+                {
+                    new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
+                    MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return true; // Registro exitoso
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al registrar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false; // Error al registrar
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error al registrar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false; // Error al registrar
+                
+                MessageBox.Show(mensajeExisteUsuario, "Registro cancelado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 
