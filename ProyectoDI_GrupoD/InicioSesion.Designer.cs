@@ -116,6 +116,7 @@ namespace ProyectoDI_GrupoD
             this.btnIniciarSesionInSe.Text = "Iniciar sesión";
             this.btnIniciarSesionInSe.UseVisualStyleBackColor = false;
             this.btnIniciarSesionInSe.Click += new System.EventHandler(this.btnIniciarSesionInSe_Click);
+            this.btnIniciarSesionInSe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnIniciarSesionInSe_Paint);
             // 
             // btnRegistrarInSe
             // 
@@ -131,6 +132,7 @@ namespace ProyectoDI_GrupoD
             this.btnRegistrarInSe.Text = "Registrar";
             this.btnRegistrarInSe.UseVisualStyleBackColor = false;
             this.btnRegistrarInSe.Click += new System.EventHandler(this.brnRegistrarInSe_Click);
+            this.btnRegistrarInSe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnRegistrarInSe_Paint);
             // 
             // lblContraseñaInSe
             // 
@@ -202,6 +204,7 @@ namespace ProyectoDI_GrupoD
             this.Name = "InicioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio Sesion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesion_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
