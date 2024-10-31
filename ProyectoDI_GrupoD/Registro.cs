@@ -116,50 +116,9 @@ namespace ProyectoDI_GrupoD
             Application.Exit();
         }
 
-        private void btnRegistrarRe_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = sender as Button;
-            int borderRadius = 20; // Ajusta el radio del borde
-
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseFigure();
-
-            btn.Region = new Region(path);
-
-            using (Pen pen = new Pen(Color.Gray, 1))
-            {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawPath(pen, path);
-            }
-        }
-
-        private void btnBorrarRe_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = sender as Button;
-            int borderRadius = 20; // Ajusta el radio del borde
-
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseFigure();
-
-            btn.Region = new Region(path);
-
-            using (Pen pen = new Pen(Color.Gray, 1))
-            {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawPath(pen, path);
-            }
-        }
-
         private void txtEmailRe_TextChanged(object sender, EventArgs e)
         {
+            EliminarBordeRojo(txtEmailRe);
             if (!string.IsNullOrEmpty(txtEmailRe.Text) && txtEmailRe.Text != placeholderTextEmail)
             {
                 txtEmailRe.ForeColor = Color.FromArgb(202, 224, 212); // Cambiar a color normal
@@ -194,8 +153,6 @@ namespace ProyectoDI_GrupoD
                 //Si consigue añadir el usuario accede a la pantalla principal.
                 if (AñadirUsuario(usuarioDTO))
                 {
-                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    pantallaPrincipal.ShowDialog();
                     InicioSesion inicioSesion = new InicioSesion();
                     inicioSesion.ShowDialog();
                     this.Hide();
@@ -203,7 +160,7 @@ namespace ProyectoDI_GrupoD
             }
             else
             {
-            MessageBox.Show(mensajeValidacion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(mensajeValidacion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -221,22 +178,27 @@ namespace ProyectoDI_GrupoD
             if (!validarContrasena(usuarioDTO.Contraseña))
             {
                 mensajeValidacion.Append("- La contraseña no es valida\n");
+                CrearBordeRojo(txtContraseñaRe);
             }
             if (!validarTelefono(usuarioDTO.Telefono))
             {
                 mensajeValidacion.Append("- El telefono no es valido\n");
+                CrearBordeRojo(txtTelefonoRe);
             }
             if (!validarDNI(usuarioDTO.Dni))
             {
                 mensajeValidacion.Append("- El DNI no es valido\n");
+                CrearBordeRojo(txtDNI_Re);
             }
             if (!validarEmail(usuarioDTO.Email))
             {
                 mensajeValidacion.Append("- El email no es valido\n");
+                CrearBordeRojo(txtEmailRe);
             }
             if (!validarCuentaCorriente(usuarioDTO.CuentaCorriente))
             {
                 mensajeValidacion.Append("- La cuenta corriente no es valida\n");
+                CrearBordeRojo(txtCuentaCorrienteRe);
             }
 
             return mensajeValidacion.ToString();
@@ -291,6 +253,11 @@ namespace ProyectoDI_GrupoD
         {
             string patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
             return Regex.IsMatch(password, patternContrasena);
+        }
+
+        private void txtDNI_Re_TextChanged(object sender, EventArgs e)
+        {
+            EliminarBordeRojo(txtDNI_Re);
         }
 
         /// <summary>
@@ -385,5 +352,47 @@ namespace ProyectoDI_GrupoD
                 btnRegistrarRe.Enabled = false; // Deshabilitar el botón de registro
             }
         }
+
+        private void CrearBordeRojo(TextBox textBox)
+        {
+            // Eliminar el borde rojo si ya existe
+            EliminarBordeRojo(textBox);
+
+            // Crear un panel para envolver el TextBox
+            Panel panel = new Panel();
+            panel.BorderStyle = BorderStyle.None;
+            panel.BackColor = Color.Red;  // Color del borde
+            panel.Size = new Size(textBox.Width + 2, textBox.Height + 2); // Ajusta el tamaño para que el borde se vea completo       
+            panel.Location = textBox.Location; // Ubica el panel en el mismo lugar que el TextBox
+
+            // Añadir el panel al mismo contenedor del TextBox
+            textBox.Parent.Controls.Add(panel);
+            panel.BringToFront(); // Traer el panel al frente
+            textBox.Parent.Controls.SetChildIndex(textBox, 0); // Asegura que el TextBox esté sobre el Panel
+
+            // Ajusta el TextBox dentro del Panel para que se vea centrado
+            textBox.Location = new Point(1, 1);
+            textBox.Size = new Size(panel.Width + 2, panel.Height + 2); // Ajusta el tamaño para el borde
+
+            // Agregar el TextBox dentro del panel
+            panel.Controls.Add(textBox);
+        }
+
+        private void EliminarBordeRojo(TextBox textBox)
+        {
+            // Busca el panel que envuelve al TextBox
+            foreach (Control control in textBox.Parent.Controls)
+            {
+                if (control is Panel && control.BackColor == Color.Red)
+                {
+                    // Eliminar el panel
+                    textBox.Parent.Controls.Remove(control);
+                    control.Dispose(); // Libera recursos
+                    break; // Sale del bucle después de eliminar el primer panel encontrado
+                }
+            }
+        }
+
+
     }
 }

@@ -33,7 +33,8 @@ namespace ProyectoDI_GrupoD
             if (new Negocio.Management.UsuarioManagement().validarUsuario(txtUsuarioInSe.Text, txtContraseñaInSe.Text))
             {
                 this.Hide();
-                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(); 
+                getDatosInSe();
+                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(usuario, contraseña); 
                 pantallaPrincipal.ShowDialog();  
             }
             else
@@ -70,48 +71,6 @@ namespace ProyectoDI_GrupoD
             Application.Exit();
         }
 
-        private void btnIniciarSesionInSe_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = sender as Button;
-            int borderRadius = 20; // Ajusta el radio del borde
-
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseFigure();
-
-            btn.Region = new Region(path);
-
-            using (Pen pen = new Pen(Color.Gray, 1))
-            {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawPath(pen, path);
-            }
-        }
-
-        private void btnRegistrarInSe_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = sender as Button;
-            int borderRadius = 20; // Ajusta el radio del borde
-
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseFigure();
-
-            btn.Region = new Region(path);
-
-            using (Pen pen = new Pen(Color.Gray, 1))
-            {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawPath(pen, path);
-            }
-        }
-
         /// <summary>
         /// Maneja el evento de clic en el botón de registrar.
         /// Oculta la ventana de inicio de sesión y muestra la ventana de registro.
@@ -122,6 +81,10 @@ namespace ProyectoDI_GrupoD
             Registro registro = new Registro(); 
             registro.ShowDialog();  
         }
-
+        private void getDatosInSe()
+        {
+            usuario = txtUsuarioInSe.Text;
+            contraseña = txtContraseñaInSe.Text;
+        }
     }
 }

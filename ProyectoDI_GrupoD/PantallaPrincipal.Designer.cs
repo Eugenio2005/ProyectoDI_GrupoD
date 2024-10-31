@@ -29,7 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
+            this.lblNombreUsuarioP1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblNombreUsuarioP1
+            // 
+            this.lblNombreUsuarioP1.AutoSize = true;
+            this.lblNombreUsuarioP1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNombreUsuarioP1.Location = new System.Drawing.Point(317, 200);
+            this.lblNombreUsuarioP1.Name = "lblNombreUsuarioP1";
+            this.lblNombreUsuarioP1.Size = new System.Drawing.Size(13, 13);
+            this.lblNombreUsuarioP1.TabIndex = 1;
+            this.lblNombreUsuarioP1.Text = "k";
             // 
             // PantallaPrincipal
             // 
@@ -37,6 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblNombreUsuarioP1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -44,9 +56,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaPrincipal_FormClosing);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblNombreUsuarioP1;
     }
 }

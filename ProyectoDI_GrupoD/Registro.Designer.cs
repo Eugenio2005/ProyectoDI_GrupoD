@@ -46,11 +46,11 @@
             this.lblApellidosRe = new System.Windows.Forms.Label();
             this.txtTelefonoRe = new System.Windows.Forms.TextBox();
             this.txtApellidosRe = new System.Windows.Forms.TextBox();
-            this.btnBorrarRe = new System.Windows.Forms.Button();
-            this.btnRegistrarRe = new System.Windows.Forms.Button();
             this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.btnojo_abiertoRe = new System.Windows.Forms.Button();
             this.btnojoCerradoRe = new System.Windows.Forms.Button();
+            this.btnRegistrarRe = new ProyectoDI_GrupoD.RoundedButton();
+            this.btnBorrarRe = new ProyectoDI_GrupoD.RoundedButton();
             imgKAE_Re = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
@@ -195,6 +195,7 @@
             this.txtDNI_Re.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDNI_Re.Size = new System.Drawing.Size(317, 24);
             this.txtDNI_Re.TabIndex = 3;
+            this.txtDNI_Re.TextChanged += new System.EventHandler(this.txtDNI_Re_TextChanged);
             // 
             // label3
             // 
@@ -316,47 +317,6 @@
             this.txtApellidosRe.Size = new System.Drawing.Size(313, 24);
             this.txtApellidosRe.TabIndex = 2;
             // 
-            // btnBorrarRe
-            // 
-            this.btnBorrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnBorrarRe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(132)))), ((int)(((byte)(124)))));
-            this.btnBorrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(132)))), ((int)(((byte)(124)))));
-            this.btnBorrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(132)))), ((int)(((byte)(124)))));
-            this.btnBorrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrarRe.Location = new System.Drawing.Point(402, 411);
-            this.btnBorrarRe.Name = "btnBorrarRe";
-            this.btnBorrarRe.Size = new System.Drawing.Size(91, 38);
-            this.btnBorrarRe.TabIndex = 10;
-            this.btnBorrarRe.Text = "Borrar";
-            this.btnBorrarRe.UseVisualStyleBackColor = false;
-            this.btnBorrarRe.Click += new System.EventHandler(this.btnBorrarRe_Click);
-            this.btnBorrarRe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnBorrarRe_Paint);
-            // 
-            // btnRegistrarRe
-            // 
-            this.btnRegistrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnRegistrarRe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(132)))), ((int)(((byte)(124)))));
-            this.btnRegistrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(132)))), ((int)(((byte)(124)))));
-            this.btnRegistrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(132)))), ((int)(((byte)(124)))));
-            this.btnRegistrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegistrarRe.Location = new System.Drawing.Point(281, 411);
-            this.btnRegistrarRe.Name = "btnRegistrarRe";
-            this.btnRegistrarRe.Size = new System.Drawing.Size(91, 38);
-            this.btnRegistrarRe.TabIndex = 9;
-            this.btnRegistrarRe.Text = "Registrar";
-            this.btnRegistrarRe.UseVisualStyleBackColor = false;
-            this.btnRegistrarRe.Click += new System.EventHandler(this.btnRegistrarRe_Click);
-            this.btnRegistrarRe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnRegistrarRe_Paint);
-            // 
             // imgAtras_Re
             // 
             this.imgAtras_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -407,17 +367,57 @@
             this.btnojoCerradoRe.Visible = false;
             this.btnojoCerradoRe.Click += new System.EventHandler(this.btnojoCerradoRe_Click);
             // 
+            // btnRegistrarRe
+            // 
+            this.btnRegistrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnRegistrarRe.BorderColor = System.Drawing.Color.Gray;
+            this.btnRegistrarRe.BorderRadius = 20;
+            this.btnRegistrarRe.FillColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnRegistrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegistrarRe.Location = new System.Drawing.Point(285, 410);
+            this.btnRegistrarRe.Name = "btnRegistrarRe";
+            this.btnRegistrarRe.Size = new System.Drawing.Size(91, 38);
+            this.btnRegistrarRe.TabIndex = 29;
+            this.btnRegistrarRe.Text = "Registrar";
+            this.btnRegistrarRe.UseVisualStyleBackColor = false;
+            this.btnRegistrarRe.Click += new System.EventHandler(this.btnRegistrarRe_Click);
+            // 
+            // btnBorrarRe
+            // 
+            this.btnBorrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrarRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnBorrarRe.BorderColor = System.Drawing.Color.Gray;
+            this.btnBorrarRe.BorderRadius = 20;
+            this.btnBorrarRe.FillColor = System.Drawing.Color.Transparent;
+            this.btnBorrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnBorrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBorrarRe.Location = new System.Drawing.Point(397, 410);
+            this.btnBorrarRe.Name = "btnBorrarRe";
+            this.btnBorrarRe.Size = new System.Drawing.Size(91, 38);
+            this.btnBorrarRe.TabIndex = 28;
+            this.btnBorrarRe.Text = "Borrar";
+            this.btnBorrarRe.UseVisualStyleBackColor = false;
+            this.btnBorrarRe.Click += new System.EventHandler(this.btnBorrarRe_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(784, 460);
+            this.Controls.Add(this.btnRegistrarRe);
+            this.Controls.Add(this.btnBorrarRe);
             this.Controls.Add(this.btnojoCerradoRe);
             this.Controls.Add(this.btnojo_abiertoRe);
             this.Controls.Add(this.imgAtras_Re);
-            this.Controls.Add(this.btnBorrarRe);
-            this.Controls.Add(this.btnRegistrarRe);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDirecciónRe);
             this.Controls.Add(this.txtContraseñaRe);
@@ -467,10 +467,10 @@
         private System.Windows.Forms.Label lblApellidosRe;
         private System.Windows.Forms.TextBox txtTelefonoRe;
         private System.Windows.Forms.TextBox txtApellidosRe;
-        private System.Windows.Forms.Button btnBorrarRe;
-        private System.Windows.Forms.Button btnRegistrarRe;
+        private RoundedButton btnBorrarRe;
         private System.Windows.Forms.PictureBox imgAtras_Re;
         private System.Windows.Forms.Button btnojo_abiertoRe;
         private System.Windows.Forms.Button btnojoCerradoRe;
+        private RoundedButton btnRegistrarRe;
     }
 }

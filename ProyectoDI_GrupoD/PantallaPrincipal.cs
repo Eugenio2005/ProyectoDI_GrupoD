@@ -12,6 +12,17 @@ namespace ProyectoDI_GrupoD
 {
     public partial class PantallaPrincipal : Form
     {
+        private string usuario, contraseña;
+
+        public PantallaPrincipal(string usuario, string contraseña)
+        {
+            InitializeComponent();
+            this.usuario = usuario;
+            this.contraseña = contraseña;
+
+            lblNombreUsuarioP1.Text = usuario;
+        }
+
         public PantallaPrincipal()
         {
             InitializeComponent();
