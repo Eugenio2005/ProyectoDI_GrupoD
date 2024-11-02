@@ -81,6 +81,20 @@ namespace ProyectoDI_GrupoD
             Registro registro = new Registro(); 
             registro.ShowDialog();  
         }
+
+        private void btnIniciarSesionInSe_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verifica si la tecla presionada es Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Evita el sonido de 'ding' al presionar Enter
+                //e.SuppressKeyPress = true;
+
+                // Llama al evento Click del botón
+                btnIniciarSesionInSe.PerformClick();
+            }
+        }
+
         private void getDatosInSe()
         {
             usuario = txtUsuarioInSe.Text;

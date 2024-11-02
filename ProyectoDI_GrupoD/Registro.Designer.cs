@@ -40,14 +40,14 @@ namespace ProyectoDI_GrupoD
             this.lblCuentaCorrienteRe = new System.Windows.Forms.Label();
             this.lblDNI_Re = new System.Windows.Forms.Label();
             this.txtCuentaCorrienteRe = new ColorBorderTextBox();
-            this.txtDNI_Re = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtDNI_Re = new ColorBorderTextBox();
+            this.lblContraseñaRe = new System.Windows.Forms.Label();
             this.lblDirecciónRe = new System.Windows.Forms.Label();
-            this.txtContraseñaRe = new System.Windows.Forms.TextBox();
-            this.txtDireccionRe = new System.Windows.Forms.TextBox();
+            this.txtContraseñaRe = new ColorBorderTextBox();
+            this.txtDireccionRe = new ColorBorderTextBox();
             this.lblTelefonoRe = new System.Windows.Forms.Label();
             this.lblApellidosRe = new System.Windows.Forms.Label();
-            this.txtTelefonoRe = new System.Windows.Forms.TextBox();
+            this.txtTelefonoRe = new ColorBorderTextBox();
             this.txtApellidosRe = new System.Windows.Forms.TextBox();
             this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.btnojo_abiertoRe = new System.Windows.Forms.Button();
@@ -111,6 +111,7 @@ namespace ProyectoDI_GrupoD
             this.txtEmailRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtEmailRe.Location = new System.Drawing.Point(59, 290);
             this.txtEmailRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtEmailRe.MaxLength = 32767;
             this.txtEmailRe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtEmailRe.Name = "txtEmailRe";
             this.txtEmailRe.Padding = new System.Windows.Forms.Padding(1);
@@ -175,6 +176,7 @@ namespace ProyectoDI_GrupoD
             this.txtCuentaCorrienteRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(59, 361);
             this.txtCuentaCorrienteRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtCuentaCorrienteRe.MaxLength = 22;
             this.txtCuentaCorrienteRe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
             this.txtCuentaCorrienteRe.Padding = new System.Windows.Forms.Padding(1);
@@ -184,9 +186,6 @@ namespace ProyectoDI_GrupoD
             this.txtCuentaCorrienteRe.TextChanged += new System.EventHandler(this.txtCuentaCorrienteRe_TextChanged);
             this.txtCuentaCorrienteRe.Enter += new System.EventHandler(this.txtBoxCuentaCorrienteEliminarPlaceHolder);
             this.txtCuentaCorrienteRe.Leave += new System.EventHandler(this.txtBoxCuentaCorrienteAplicarPlaceHolder);
-            // Establecer MaxLength directamente en el TextBox interno
-            ((ColorBorderTextBox)this.txtCuentaCorrienteRe).MaxLength = 22;
-
             // 
             // txtDNI_Re
             // 
@@ -194,6 +193,7 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDNI_Re.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDNI_Re.BorderColor = System.Drawing.Color.White;
             this.txtDNI_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDNI_Re.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtDNI_Re.Location = new System.Drawing.Point(59, 223);
@@ -201,24 +201,25 @@ namespace ProyectoDI_GrupoD
             this.txtDNI_Re.MaxLength = 9;
             this.txtDNI_Re.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtDNI_Re.Name = "txtDNI_Re";
+            this.txtDNI_Re.Padding = new System.Windows.Forms.Padding(1);
             this.txtDNI_Re.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDNI_Re.Size = new System.Drawing.Size(322, 24);
             this.txtDNI_Re.TabIndex = 3;
             // 
-            // label3
+            // lblContraseñaRe
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblContraseñaRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.label3.Location = new System.Drawing.Point(413, 331);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Contraseña";
+            this.lblContraseñaRe.AutoSize = true;
+            this.lblContraseñaRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.lblContraseñaRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseñaRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.lblContraseñaRe.Location = new System.Drawing.Point(413, 331);
+            this.lblContraseñaRe.Name = "lblContraseñaRe";
+            this.lblContraseñaRe.Size = new System.Drawing.Size(92, 20);
+            this.lblContraseñaRe.TabIndex = 22;
+            this.lblContraseñaRe.Text = "Contraseña";
             // 
             // lblDirecciónRe
             // 
@@ -238,12 +239,15 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContraseñaRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtContraseñaRe.BorderColor = System.Drawing.Color.White;
             this.txtContraseñaRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseñaRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtContraseñaRe.Location = new System.Drawing.Point(413, 361);
             this.txtContraseñaRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtContraseñaRe.MaxLength = 32767;
             this.txtContraseñaRe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtContraseñaRe.Name = "txtContraseñaRe";
+            this.txtContraseñaRe.Padding = new System.Windows.Forms.Padding(1);
             this.txtContraseñaRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtContraseñaRe.Size = new System.Drawing.Size(318, 24);
             this.txtContraseñaRe.TabIndex = 8;
@@ -255,12 +259,15 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDireccionRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDireccionRe.BorderColor = System.Drawing.Color.White;
             this.txtDireccionRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtDireccionRe.Location = new System.Drawing.Point(413, 290);
             this.txtDireccionRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtDireccionRe.MaxLength = 32767;
             this.txtDireccionRe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtDireccionRe.Name = "txtDireccionRe";
+            this.txtDireccionRe.Padding = new System.Windows.Forms.Padding(1);
             this.txtDireccionRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDireccionRe.Size = new System.Drawing.Size(318, 24);
             this.txtDireccionRe.TabIndex = 6;
@@ -298,6 +305,7 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefonoRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtTelefonoRe.BorderColor = System.Drawing.Color.White;
             this.txtTelefonoRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
             this.txtTelefonoRe.Location = new System.Drawing.Point(413, 223);
@@ -305,9 +313,11 @@ namespace ProyectoDI_GrupoD
             this.txtTelefonoRe.MaxLength = 9;
             this.txtTelefonoRe.MinimumSize = new System.Drawing.Size(10, 10);
             this.txtTelefonoRe.Name = "txtTelefonoRe";
+            this.txtTelefonoRe.Padding = new System.Windows.Forms.Padding(1);
             this.txtTelefonoRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTelefonoRe.Size = new System.Drawing.Size(318, 24);
             this.txtTelefonoRe.TabIndex = 4;
+            this.txtTelefonoRe.OnlyAllowNumbers = true;
             // 
             // txtApellidosRe
             // 
@@ -394,6 +404,7 @@ namespace ProyectoDI_GrupoD
             this.btnRegistrarRe.Text = "Registrar";
             this.btnRegistrarRe.UseVisualStyleBackColor = false;
             this.btnRegistrarRe.Click += new System.EventHandler(this.btnRegistrarRe_Click);
+            this.btnRegistrarRe.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnRegistrarRe_KeyDown);
             // 
             // btnBorrarRe
             // 
@@ -426,7 +437,7 @@ namespace ProyectoDI_GrupoD
             this.Controls.Add(this.btnojoCerradoRe);
             this.Controls.Add(this.btnojo_abiertoRe);
             this.Controls.Add(this.imgAtras_Re);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblContraseñaRe);
             this.Controls.Add(this.lblDirecciónRe);
             this.Controls.Add(this.txtContraseñaRe);
             this.Controls.Add(this.txtDireccionRe);
@@ -466,14 +477,14 @@ namespace ProyectoDI_GrupoD
         private System.Windows.Forms.Label lblCuentaCorrienteRe;
         private System.Windows.Forms.Label lblDNI_Re;
         private ColorBorderTextBox txtCuentaCorrienteRe;
-        private System.Windows.Forms.TextBox txtDNI_Re;
-        private System.Windows.Forms.Label label3;
+        private ColorBorderTextBox txtDNI_Re;
+        private System.Windows.Forms.Label lblContraseñaRe;
         private System.Windows.Forms.Label lblDirecciónRe;
-        private System.Windows.Forms.TextBox txtContraseñaRe;
-        private System.Windows.Forms.TextBox txtDireccionRe;
+        private ColorBorderTextBox txtContraseñaRe;
+        private ColorBorderTextBox txtDireccionRe;
         private System.Windows.Forms.Label lblTelefonoRe;
         private System.Windows.Forms.Label lblApellidosRe;
-        private System.Windows.Forms.TextBox txtTelefonoRe;
+        private ColorBorderTextBox txtTelefonoRe;
         private System.Windows.Forms.TextBox txtApellidosRe;
         private RoundedButton btnBorrarRe;
         private System.Windows.Forms.PictureBox imgAtras_Re;

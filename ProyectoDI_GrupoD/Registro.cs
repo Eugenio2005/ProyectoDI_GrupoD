@@ -178,16 +178,17 @@ namespace ProyectoDI_GrupoD
             if (!validarContrasena(usuarioDTO.Contraseña))
             {
                 mensajeValidacion.Append("- La contraseña no es valida\n");
+                txtContraseñaRe.BorderColor = Color.Red;
             }
             if (!validarTelefono(usuarioDTO.Telefono))
             {
                 mensajeValidacion.Append("- El telefono no es valido\n");
-              //  CrearBordeRojo(txtTelefonoRe);
+                txtTelefonoRe.BorderColor = Color.Red;
             }
             if (!validarDNI(usuarioDTO.Dni))
             {
                 mensajeValidacion.Append("- El DNI no es valido\n");
-              //  CrearBordeRojo(txtDNI_Re);
+                txtDNI_Re.BorderColor = Color.Red;
             }
             if (!validarEmail(usuarioDTO.Email))
             {
@@ -240,6 +241,19 @@ namespace ProyectoDI_GrupoD
         { 
             string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
             return Regex.IsMatch(email, patternEmail);
+        }
+
+        private void btnRegistrarRe_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verifica si la tecla presionada es Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Evita el sonido de 'ding' al presionar Enter
+                e.SuppressKeyPress = true;
+
+                // Llama al evento Click del botón
+                btnRegistrarRe.PerformClick();
+            }
         }
 
         private bool validarDNI(string DNI)
@@ -306,9 +320,12 @@ namespace ProyectoDI_GrupoD
             txtDNI_Re.Clear();
             txtTelefonoRe.Clear();
             txtEmailRe.Text = placeholderTextEmail; // Restaura el placeholder para email
+            txtEmailRe.BorderColor = Color.White;
             txtDireccionRe.Clear();
             txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaura placeholder para cuenta corriente
+            txtCuentaCorrienteRe.BorderColor = Color.White;
             txtContraseñaRe.Clear();
+            txtContraseñaRe.UseSystemPasswordChar = true;
         }
 
         /// <summary>

@@ -6,6 +6,7 @@ public class ColorBorderTextBox : Panel
 {
     private TextBox textBox;
     private string placeholderText; // Almacena el texto del placeholder
+    private bool useSystemPasswordChar; // Campo privado para gestionar el uso del enmascarado
 
     private Color borderColor = Color.Red;
     public Color BorderColor
@@ -22,6 +23,19 @@ public class ColorBorderTextBox : Panel
         get => textBox.MaxLength;
         set => textBox.MaxLength = value; // Establece el MaxLength del TextBox interno
     }
+
+    public bool UseSystemPasswordChar
+    {
+        get => useSystemPasswordChar;
+        set
+        {
+            useSystemPasswordChar = value;
+            UpdatePasswordChar(); // Actualiza el enmascarado del texto según la propiedad
+        }
+    }
+
+    // Propiedad para habilitar la validación de solo números
+    public bool OnlyAllowNumbers { get; set; } = false;
 
     public ColorBorderTextBox()
     {
@@ -41,6 +55,8 @@ public class ColorBorderTextBox : Panel
         textBox.Enter += (sender, e) => { OnTextBoxEnter(); };
         textBox.Leave += (sender, e) => { OnTextBoxLeave(); };
 
+        textBox.KeyPress += (sender, e) => { OnTextBoxKeyPressOnlyNumber(e); }; // Event for KeyPress validation
+
         this.Controls.Add(textBox);
 
         // Inicializa el placeholder
@@ -53,6 +69,7 @@ public class ColorBorderTextBox : Panel
         {
             textBox.Text = placeholderText;
             textBox.ForeColor = Color.FromArgb(202, 224, 212); // Color del texto para el placeholder
+            textBox.UseSystemPasswordChar = false; // Asegura que el placeholder no esté enmascarado
         }
     }
 
@@ -62,6 +79,7 @@ public class ColorBorderTextBox : Panel
         {
             textBox.Text = "";
             textBox.ForeColor = Color.FromArgb(202, 224, 212); // Color normal cuando el usuario escribe
+            UpdatePasswordChar(); // Activa el enmascarado si corresponde
         }
     }
 
@@ -71,6 +89,12 @@ public class ColorBorderTextBox : Panel
         {
             SetPlaceholder();
         }
+    }
+
+    private void UpdatePasswordChar()
+    {
+        // Solo enmascara el texto si no está mostrando el placeholder
+        textBox.UseSystemPasswordChar = useSystemPasswordChar && textBox.Text != placeholderText;
     }
 
     protected override void OnPaint(PaintEventArgs e)
@@ -101,7 +125,21 @@ public class ColorBorderTextBox : Panel
             else
             {
                 textBox.ForeColor = Color.Gray; // Color normal cuando se establece texto
+                UpdatePasswordChar();
             }
+        }
+    }
+    public void Clear()
+    {
+        textBox.Text = "";
+        SetPlaceholder();
+    }
+
+    private void OnTextBoxKeyPressOnlyNumber(KeyPressEventArgs e)
+    {
+        if (OnlyAllowNumbers && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+        {
+            e.Handled = true; // Cancelar el evento si no es un número ni una tecla de control
         }
     }
 }
