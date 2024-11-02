@@ -32,8 +32,8 @@ namespace ProyectoDI_GrupoD
         {
             System.Windows.Forms.PictureBox imgKAE_InSe;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
-            this.txtUsuarioInSe = new System.Windows.Forms.TextBox();
-            this.txtContraseñaInSe = new System.Windows.Forms.TextBox();
+            this.txtUsuarioInSe = new ColorBorderTextBox();
+            this.txtContraseñaInSe = new ColorBorderTextBox();
             this.lblUsuarioInSe = new System.Windows.Forms.Label();
             this.lblContraseñaInSe = new System.Windows.Forms.Label();
             this.btnojoCerradoInSe = new System.Windows.Forms.Button();
@@ -222,8 +222,8 @@ namespace ProyectoDI_GrupoD
 
         #endregion
 
-        private TextBox txtUsuarioInSe;
-        private TextBox txtContraseñaInSe;
+        private ColorBorderTextBox txtUsuarioInSe;
+        private ColorBorderTextBox txtContraseñaInSe;
         private Label lblUsuarioInSe;
         private RoundedButton btnIniciarSesionInSe;
         private RoundedButton btnRegistrarInSe;

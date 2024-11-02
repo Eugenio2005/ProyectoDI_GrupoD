@@ -41,6 +41,8 @@ namespace ProyectoDI_GrupoD
             {
                 // Muestra un mensaje de error si el usuario o la contraseña son incorrectos
                 MessageBox.Show($"El usuario no existe o la contraseña es incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsuarioInSe.BorderColor = Color.Red;
+                txtContraseñaInSe.BorderColor = Color.Red;
             }
         }
 

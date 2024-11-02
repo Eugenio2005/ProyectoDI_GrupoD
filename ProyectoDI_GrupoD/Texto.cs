@@ -8,7 +8,7 @@ public class ColorBorderTextBox : Panel
     private string placeholderText; // Almacena el texto del placeholder
     private bool useSystemPasswordChar; // Campo privado para gestionar el uso del enmascarado
 
-    private Color borderColor = Color.Red;
+    private Color borderColor = Color.White;
     public Color BorderColor
     {
         get => borderColor;
