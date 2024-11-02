@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace ProyectoDI_GrupoD
 {
-    using System;
-    using System.Drawing;
-    using System.Drawing.Drawing2D;
-    using System.Windows.Forms;
-
     public class RoundedButton : Button
     {
         private int borderRadius = 20;  // Radio del borde redondeado
         private Color borderColor = Color.Gray;  // Color del borde
-        private Color fillColor = Color.LightSkyBlue;  // Color de fondo
+        private Color fillColor = Color.Transparent;  // Fondo transparente
+
+        public RoundedButton()
+        {
+            this.ForeColor = SystemColors.ControlText;
+            this.BackColor = Color.FromArgb(202, 224, 212);
+        }
 
         public int BorderRadius
         {
@@ -63,7 +63,7 @@ namespace ProyectoDI_GrupoD
             using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))
             using (Pen penBorder = new Pen(borderColor, 1.75f))  // Borde sutil
             {
-                // Relleno del botón
+                // Relleno del botón con transparencia
                 this.Region = new Region(pathSurface);
                 pevent.Graphics.FillPath(new SolidBrush(fillColor), pathSurface);
 
@@ -88,5 +88,4 @@ namespace ProyectoDI_GrupoD
             return path;
         }
     }
-
 }

@@ -32,14 +32,14 @@ namespace ProyectoDI_GrupoD
         {
             System.Windows.Forms.PictureBox imgKAE_InSe;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
-            this.txtUsuarioInSe = new System.Windows.Forms.TextBox();
-            this.txtContraseñaInSe = new System.Windows.Forms.TextBox();
+            this.txtUsuarioInSe = new ColorBorderTextBox();
+            this.txtContraseñaInSe = new ColorBorderTextBox();
             this.lblUsuarioInSe = new System.Windows.Forms.Label();
-            this.btnIniciarSesionInSe = new System.Windows.Forms.Button();
-            this.btnRegistrarInSe = new System.Windows.Forms.Button();
             this.lblContraseñaInSe = new System.Windows.Forms.Label();
             this.btnojoCerradoInSe = new System.Windows.Forms.Button();
             this.btnojo_abiertoInSe = new System.Windows.Forms.Button();
+            this.btnRegistrarInSe = new ProyectoDI_GrupoD.RoundedButton();
+            this.btnIniciarSesionInSe = new ProyectoDI_GrupoD.RoundedButton();
             imgKAE_InSe = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).BeginInit();
             this.SuspendLayout();
@@ -102,38 +102,6 @@ namespace ProyectoDI_GrupoD
             this.lblUsuarioInSe.TabIndex = 3;
             this.lblUsuarioInSe.Text = "Usuario";
             // 
-            // btnIniciarSesionInSe
-            // 
-            this.btnIniciarSesionInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIniciarSesionInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnIniciarSesionInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesionInSe.Location = new System.Drawing.Point(85, 307);
-            this.btnIniciarSesionInSe.Name = "btnIniciarSesionInSe";
-            this.btnIniciarSesionInSe.Size = new System.Drawing.Size(92, 40);
-            this.btnIniciarSesionInSe.TabIndex = 4;
-            this.btnIniciarSesionInSe.Text = "Iniciar sesión";
-            this.btnIniciarSesionInSe.UseVisualStyleBackColor = false;
-            this.btnIniciarSesionInSe.Click += new System.EventHandler(this.btnIniciarSesionInSe_Click);
-            this.btnIniciarSesionInSe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnIniciarSesionInSe_Paint);
-            // 
-            // btnRegistrarInSe
-            // 
-            this.btnRegistrarInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrarInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnRegistrarInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarInSe.Location = new System.Drawing.Point(206, 307);
-            this.btnRegistrarInSe.Name = "btnRegistrarInSe";
-            this.btnRegistrarInSe.Size = new System.Drawing.Size(92, 40);
-            this.btnRegistrarInSe.TabIndex = 5;
-            this.btnRegistrarInSe.Text = "Registrar";
-            this.btnRegistrarInSe.UseVisualStyleBackColor = false;
-            this.btnRegistrarInSe.Click += new System.EventHandler(this.brnRegistrarInSe_Click);
-            this.btnRegistrarInSe.Paint += new System.Windows.Forms.PaintEventHandler(this.btnRegistrarInSe_Paint);
-            // 
             // lblContraseñaInSe
             // 
             this.lblContraseñaInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -182,6 +150,47 @@ namespace ProyectoDI_GrupoD
             this.btnojo_abiertoInSe.UseVisualStyleBackColor = false;
             this.btnojo_abiertoInSe.Click += new System.EventHandler(this.btnojoAbiertoInSe_Click);
             // 
+            // btnRegistrarInSe
+            // 
+            this.btnRegistrarInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrarInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnRegistrarInSe.BorderColor = System.Drawing.Color.Gray;
+            this.btnRegistrarInSe.BorderRadius = 20;
+            this.btnRegistrarInSe.FillColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarInSe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarInSe.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegistrarInSe.Location = new System.Drawing.Point(206, 307);
+            this.btnRegistrarInSe.Name = "btnRegistrarInSe";
+            this.btnRegistrarInSe.Size = new System.Drawing.Size(92, 40);
+            this.btnRegistrarInSe.TabIndex = 5;
+            this.btnRegistrarInSe.Text = "Registrar";
+            this.btnRegistrarInSe.UseVisualStyleBackColor = false;
+            this.btnRegistrarInSe.Click += new System.EventHandler(this.brnRegistrarInSe_Click);
+            // 
+            // btnIniciarSesionInSe
+            // 
+            this.btnIniciarSesionInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIniciarSesionInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnIniciarSesionInSe.BorderColor = System.Drawing.Color.Gray;
+            this.btnIniciarSesionInSe.BorderRadius = 20;
+            this.btnIniciarSesionInSe.FillColor = System.Drawing.Color.Transparent;
+            this.btnIniciarSesionInSe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciarSesionInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesionInSe.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnIniciarSesionInSe.Location = new System.Drawing.Point(85, 307);
+            this.btnIniciarSesionInSe.Name = "btnIniciarSesionInSe";
+            this.btnIniciarSesionInSe.Size = new System.Drawing.Size(92, 40);
+            this.btnIniciarSesionInSe.TabIndex = 4;
+            this.btnIniciarSesionInSe.Text = "Iniciar sesión";
+            this.btnIniciarSesionInSe.UseVisualStyleBackColor = false;
+            this.btnIniciarSesionInSe.Click += new System.EventHandler(this.btnIniciarSesionInSe_Click);
+            this.btnIniciarSesionInSe.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnIniciarSesionInSe_KeyDown);
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,11 +222,11 @@ namespace ProyectoDI_GrupoD
 
         #endregion
 
-        private TextBox txtUsuarioInSe;
-        private TextBox txtContraseñaInSe;
+        private ColorBorderTextBox txtUsuarioInSe;
+        private ColorBorderTextBox txtContraseñaInSe;
         private Label lblUsuarioInSe;
-        private Button btnIniciarSesionInSe;
-        private Button btnRegistrarInSe;
+        private RoundedButton btnIniciarSesionInSe;
+        private RoundedButton btnRegistrarInSe;
         private Label lblContraseñaInSe;
         private Button btnojoCerradoInSe;
         private Button btnojo_abiertoInSe;
