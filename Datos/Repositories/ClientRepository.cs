@@ -28,12 +28,26 @@ namespace Datos.Repositories
         /// </summary>
         /// <param name="email">El email del usuario que se desea consultar.</param>
         /// <returns>Devuelve el usuario con el que coincida el email introducido.</returns>
-        public Usuarios ConsultarCliente(string email)
+        public Usuarios ConsultarClienteEmail(string email)
         {
             using (var contexto = new equipodEntities())
             {
                 // Devuelve el primer usuario que encuentra con el mismo email.
                 return contexto.Usuarios.FirstOrDefault(u => u.email == email);
+            }
+        }
+
+        /// <summary>
+        /// Consulta un cliente en la base de datos a través de su email.
+        /// </summary>
+        /// <param name="email">El email del usuario que se desea consultar.</param>
+        /// <returns>Devuelve el usuario con el que coincida el email introducido.</returns>
+        public Usuarios ConsultarClienteDNI(string dni)
+        {
+            using (var contexto = new equipodEntities())
+            {
+                // Devuelve el primer usuario que encuentra con el mismo email.
+                return contexto.Usuarios.FirstOrDefault(u => u.dni == dni);
             }
         }
     }
