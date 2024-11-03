@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Windows.Forms; // Asegúrate de que tengas la referencia a Windows Forms
-using Negocio.Management; // Asegúrate de que la referencia a UsuarioManagement sea correcta
+using System.Windows.Forms;
+using Negocio.Management; 
 
 namespace ProyectoDI_GrupoD.Tests
 {
@@ -18,77 +18,59 @@ namespace ProyectoDI_GrupoD.Tests
         }
 
         [TestMethod]
-        public void CP1_1_1_UsuarioYContraseñaValidos_AccessLanding()
+        public void CP1_1_1_UsuarioYContraseñaValidos()
         {
             // Arrange
-            string usuario = "juan@example.com"; // Cambia a un usuario que existe en la base de datos
-            string contraseña = "Password@123"; // Cambia a la contraseña correspondiente
+            string usuario = "juan@example.com";
+            string contraseña = "Password@123"; 
 
             // Act
             bool resultado = new Negocio.Management.UsuarioManagement().validarUsuario(usuario, contraseña); // Simula el clic
 
             // Assert
-            // Verifica que la pantalla principal se ha mostrado
-            // Esto puede depender de cómo manejes las pantallas, aquí un ejemplo
-            // Puedes verificar el estado de la ventana o que se haya creado el objeto
             Assert.IsTrue(resultado, "El usuario es correcto");
         }
 
         [TestMethod]
-        public void CP1_1_2_UsuarioValidoYContraseñaNoValida_NoAccessLanding()
+        public void CP1_1_2_UsuarioValidoYContraseñaNoValida()
         {
             // Arrange
-            inicioSesion.txtUsuarioInSe.Text = "usuarioValido"; // Cambia a un usuario que existe
-            inicioSesion.txtContraseñaInSe.Text = "contraseñaInvalida"; // Cambia a una contraseña incorrecta
+            string usuario = "juan@example.com";
+            string contraseña = "Password@12";
 
             // Act
-            inicioSesion.btnIniciarSesionInSe_Click(null, null); // Simula el clic
+            bool resultado = new Negocio.Management.UsuarioManagement().validarUsuario(usuario, contraseña); // Simula el clic
 
             // Assert
-            // Verifica que se muestre el mensaje de error
-            Assert.AreEqual("El usuario no existe o la contraseña es incorrecta", MessageBox.Show(
-                "El usuario no existe o la contraseña es incorrecta",
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error).Text);
+            Assert.IsFalse(resultado, "El usuario es incorrecto");
         }
 
         [TestMethod]
-        public void CP1_1_3_UsuarioNoValido_NoAccessLanding()
+        public void CP1_1_3_UsuarioNoValido()
         {
             // Arrange
-            inicioSesion.txtUsuarioInSe.Text = "usuarioInvalido"; // Un usuario que no existe
-            inicioSesion.txtContraseñaInSe.Text = "contraseñaCualquiera"; // Cualquier contraseña
+            string usuario = "juan1@example.com";
+            string contraseña = "Password@12";
 
             // Act
-            inicioSesion.btnIniciarSesionInSe_Click(null, null); // Simula el clic
+            bool resultado = new Negocio.Management.UsuarioManagement().validarUsuario(usuario, contraseña); // Simula el clic
 
             // Assert
-            // Verifica que se muestre el mensaje de error
-            Assert.AreEqual("El usuario no existe o la contraseña es incorrecta", MessageBox.Show(
-                "El usuario no existe o la contraseña es incorrecta",
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error).Text);
+            Assert.IsFalse(resultado, "El usuario es incorrecto");
         }
 
         [TestMethod]
-        public void CP1_1_4_CamposVacios_NoAccessLanding()
+        public void CP1_1_4_CamposVacios()
         {
             // Arrange
-            inicioSesion.txtUsuarioInSe.Text = ""; // Campo de usuario vacío
-            inicioSesion.txtContraseñaInSe.Text = ""; // Campo de contraseña vacío
+            string usuario = "";
+            string contraseña = "";
 
             // Act
-            inicioSesion.btnIniciarSesionInSe_Click(null, null); // Simula el clic
+            bool resultado = new Negocio.Management.UsuarioManagement().validarUsuario(usuario, contraseña); // Simula el clic
 
             // Assert
-            // Verifica que se muestre el mensaje de error
-            Assert.AreEqual("El usuario no existe o la contraseña es incorrecta", MessageBox.Show(
-                "El usuario no existe o la contraseña es incorrecta",
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error).Text);
+            Assert.IsFalse(resultado, "El usuario es incorrecto");
         }
     }
 }
