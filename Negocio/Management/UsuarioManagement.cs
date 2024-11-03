@@ -103,7 +103,7 @@ namespace Negocio.Management
         /// <param name="email">El email del usuario.</param>
         /// <param name="contrasena">La contraseña del usuario.</param>
         /// <returns>True si el usuario existe y las credenciales son válidas, false en caso contrario.</returns>
-        public Boolean validarUsuario(string email, string contrasena)
+        public bool validarUsuario(string email, string contrasena)
         {
             // Verifica que los campos no estén vacíos
             if (!email.Equals("") && !contrasena.Equals(""))
@@ -127,5 +127,33 @@ namespace Negocio.Management
 
             return false; // Retorna false si alguno de los campos está vacío
         }
+
+        /// <summary>
+        /// Metodo que comprueba si un usuario contiene el mismo email o un usuario con el mismo dni que el que se quiere registrar.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="dni"></param>
+        /// <returns>Devuelve un string indicando los campos en conflicto, o una cadena vacía si no existen conflictos.</returns>
+        public string existeUsuario(string email, string dni)
+        {
+            StringBuilder campos = new StringBuilder("");
+            Usuarios usuarioBDEmail = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
+            Usuarios usuarioBDDNI = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(dni);
+
+            // Verifica si el usuario con el email existe y añade el mensaje correspondiente
+            if (usuarioBDEmail != null && usuarioBDEmail.email.Equals(email))
+            {
+                campos.Append("- El email ya está en uso\n");
+            }
+
+            // Verifica si el usuario con el dni existe y añade el mensaje correspondiente
+            if (usuarioBDDNI != null && usuarioBDDNI.dni.Equals(dni))
+            {
+                campos.Append("- El DNI ya está en uso");
+            }
+
+            return campos.ToString();
+        }
+
     }
 }
