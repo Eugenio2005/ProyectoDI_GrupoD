@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using Negocio.EntitiesDTO;
+using Negocio.Management;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,50 +117,9 @@ namespace ProyectoDI_GrupoD
             Application.Exit();
         }
 
-        private void btnRegistrarRe_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = sender as Button;
-            int borderRadius = 20; // Ajusta el radio del borde
-
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseFigure();
-
-            btn.Region = new Region(path);
-
-            using (Pen pen = new Pen(Color.Gray, 1))
-            {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawPath(pen, path);
-            }
-        }
-
-        private void btnBorrarRe_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = sender as Button;
-            int borderRadius = 20; // Ajusta el radio del borde
-
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(btn.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(btn.Width - borderRadius, btn.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, btn.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseFigure();
-
-            btn.Region = new Region(path);
-
-            using (Pen pen = new Pen(Color.Gray, 1))
-            {
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawPath(pen, path);
-            }
-        }
-
         private void txtEmailRe_TextChanged(object sender, EventArgs e)
         {
+            
             if (!string.IsNullOrEmpty(txtEmailRe.Text) && txtEmailRe.Text != placeholderTextEmail)
             {
                 txtEmailRe.ForeColor = Color.FromArgb(202, 224, 212); // Cambiar a color normal
@@ -194,8 +154,6 @@ namespace ProyectoDI_GrupoD
                 //Si consigue añadir el usuario accede a la pantalla principal.
                 if (AñadirUsuario(usuarioDTO))
                 {
-                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    pantallaPrincipal.ShowDialog();
                     InicioSesion inicioSesion = new InicioSesion();
                     inicioSesion.ShowDialog();
                     this.Hide();
@@ -203,7 +161,7 @@ namespace ProyectoDI_GrupoD
             }
             else
             {
-            MessageBox.Show(mensajeValidacion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(mensajeValidacion, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -221,22 +179,27 @@ namespace ProyectoDI_GrupoD
             if (!validarContrasena(usuarioDTO.Contraseña))
             {
                 mensajeValidacion.Append("- La contraseña no es valida\n");
+                txtContraseñaRe.BorderColor = Color.Red;
             }
             if (!validarTelefono(usuarioDTO.Telefono))
             {
                 mensajeValidacion.Append("- El telefono no es valido\n");
+                txtTelefonoRe.BorderColor = Color.Red;
             }
             if (!validarDNI(usuarioDTO.Dni))
             {
                 mensajeValidacion.Append("- El DNI no es valido\n");
+                txtDNI_Re.BorderColor = Color.Red;
             }
             if (!validarEmail(usuarioDTO.Email))
             {
                 mensajeValidacion.Append("- El email no es valido\n");
+                txtEmailRe.BorderColor = Color.Red;
             }
             if (!validarCuentaCorriente(usuarioDTO.CuentaCorriente))
             {
                 mensajeValidacion.Append("- La cuenta corriente no es valida\n");
+                txtCuentaCorrienteRe.BorderColor = Color.Red;
             }
 
             return mensajeValidacion.ToString();
@@ -281,6 +244,19 @@ namespace ProyectoDI_GrupoD
             return Regex.IsMatch(email, patternEmail);
         }
 
+        private void btnRegistrarRe_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verifica si la tecla presionada es Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Evita el sonido de 'ding' al presionar Enter
+                e.SuppressKeyPress = true;
+
+                // Llama al evento Click del botón
+                btnRegistrarRe.PerformClick();
+            }
+        }
+
         private bool validarDNI(string DNI)
         {
             string patternDNI = @"^\d{8}[A-Za-z]$";
@@ -320,7 +296,7 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         /// <param name="usuarioDTO">El objeto con la información del nuevo usuario.</param>
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
-        private Boolean AñadirUsuario(UsuariosDTO usuarioDTO)
+        public bool AñadirUsuario(UsuariosDTO usuarioDTO)
         {
             // El mensaje contendra si el email o dni ya estan en uso
             string mensajeExisteUsuario = new Negocio.Management.UsuarioManagement().existeUsuario(usuarioDTO.Email, usuarioDTO.Dni);
@@ -358,9 +334,12 @@ namespace ProyectoDI_GrupoD
             txtDNI_Re.Clear();
             txtTelefonoRe.Clear();
             txtEmailRe.Text = placeholderTextEmail; // Restaura el placeholder para email
+            txtEmailRe.BorderColor = Color.White;
             txtDireccionRe.Clear();
             txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaura placeholder para cuenta corriente
+            txtCuentaCorrienteRe.BorderColor = Color.White;
             txtContraseñaRe.Clear();
+            txtContraseñaRe.UseSystemPasswordChar = true;
         }
 
         /// <summary>

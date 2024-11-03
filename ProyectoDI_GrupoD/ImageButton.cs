@@ -10,16 +10,12 @@ using System.Windows.Forms;
 
 namespace ProyectoDI_GrupoD
 {
-    public partial class PantallaPrincipal : Form
+    public partial class ImageButton : UserControl
     {
-        public PantallaPrincipal()
+        public ImageButton()
         {
             InitializeComponent();
         }
 
-        private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }
