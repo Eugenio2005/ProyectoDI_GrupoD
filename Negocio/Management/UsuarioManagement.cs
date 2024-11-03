@@ -16,7 +16,7 @@ namespace Negocio.Management
         /// Crea un Usuario a partir de un DTO y lo guarda en la base de datos.
         /// </summary>
         /// <param name="usuarioDTO">El objeto que contiene la información del usuario a registrar.</param>
-        public void AltaCliente(UsuariosDTO usuarioDTO)
+        public virtual void AltaCliente(UsuariosDTO usuarioDTO)
         {
             // Crea un usuario con los datos enviados del registro.
             Usuarios usuario = new Usuarios

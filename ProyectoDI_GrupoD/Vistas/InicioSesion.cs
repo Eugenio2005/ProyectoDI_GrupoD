@@ -14,7 +14,7 @@ namespace ProyectoDI_GrupoD
 {
     public partial class InicioSesion : Form
     {
-        private string usuario, contraseña;
+        private string email, contraseña;
 
         public InicioSesion()
         {
@@ -33,8 +33,7 @@ namespace ProyectoDI_GrupoD
             if (new Negocio.Management.UsuarioManagement().validarUsuario(txtUsuarioInSe.Text, txtContraseñaInSe.Text))
             {
                 this.Hide();
-                getDatosInSe();
-                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(usuario, contraseña); 
+                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(txtUsuarioInSe.Text); 
                 pantallaPrincipal.ShowDialog();  
             }
             else
@@ -95,12 +94,6 @@ namespace ProyectoDI_GrupoD
                 // Llama al evento Click del botón
                 btnIniciarSesionInSe.PerformClick();
             }
-        }
-
-        private void getDatosInSe()
-        {
-            usuario = txtUsuarioInSe.Text;
-            contraseña = txtContraseñaInSe.Text;
         }
     }
 }

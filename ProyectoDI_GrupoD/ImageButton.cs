@@ -16,5 +16,6 @@ namespace ProyectoDI_GrupoD
         {
             InitializeComponent();
         }
+
     }
 }

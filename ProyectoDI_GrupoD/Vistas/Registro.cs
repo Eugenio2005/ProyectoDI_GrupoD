@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using Negocio.EntitiesDTO;
+using Negocio.Management;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -295,7 +296,7 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         /// <param name="usuarioDTO">El objeto con la información del nuevo usuario.</param>
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
-        private Boolean AñadirUsuario(UsuariosDTO usuarioDTO)
+        public bool AñadirUsuario(UsuariosDTO usuarioDTO)
         {
             try
             {

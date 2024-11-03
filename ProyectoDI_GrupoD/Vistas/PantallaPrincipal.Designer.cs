@@ -39,9 +39,10 @@
             this.lblNombreUsuarioP1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNombreUsuarioP1.Image = ((System.Drawing.Image)(resources.GetObject("lblNombreUsuarioP1.Image")));
             this.lblNombreUsuarioP1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblNombreUsuarioP1.Location = new System.Drawing.Point(317, 200);
+            this.lblNombreUsuarioP1.Location = new System.Drawing.Point(76, 48);
+            this.lblNombreUsuarioP1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreUsuarioP1.Name = "lblNombreUsuarioP1";
-            this.lblNombreUsuarioP1.Size = new System.Drawing.Size(13, 13);
+            this.lblNombreUsuarioP1.Size = new System.Drawing.Size(14, 16);
             this.lblNombreUsuarioP1.TabIndex = 1;
             this.lblNombreUsuarioP1.Text = "k";
             // 
@@ -50,25 +51,27 @@
             this.NombreUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NombreUsuario.BackColor = System.Drawing.Color.Navy;
+            this.NombreUsuario.BackColor = System.Drawing.Color.Sienna;
             this.NombreUsuario.ButtonImage = ((System.Drawing.Image)(resources.GetObject("NombreUsuario.ButtonImage")));
             this.NombreUsuario.ButtonText = "Nombre de usuario";
             this.NombreUsuario.ForeColor = System.Drawing.Color.White;
             this.NombreUsuario.HoverBackColor = System.Drawing.Color.LightGray;
             this.NombreUsuario.Location = new System.Drawing.Point(0, 0);
+            this.NombreUsuario.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.Size = new System.Drawing.Size(229, 35);
+            this.NombreUsuario.Size = new System.Drawing.Size(305, 43);
             this.NombreUsuario.TabIndex = 2;
             // 
             // PantallaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(1684, 661);
+            this.ClientSize = new System.Drawing.Size(1924, 814);
             this.Controls.Add(this.NombreUsuario);
             this.Controls.Add(this.lblNombreUsuarioP1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "K A E GYM";
