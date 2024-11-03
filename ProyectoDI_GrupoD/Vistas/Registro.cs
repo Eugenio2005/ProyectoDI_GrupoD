@@ -211,7 +211,7 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         /// <param name="telefono"></param>
         /// <returns></returns>
-        private bool validarTelefono(string telefono)
+        public bool validarTelefono(string telefono)
         {
             string patternTelefono = @"^\d{9}$";
             return Regex.IsMatch(telefono, patternTelefono);
@@ -232,13 +232,13 @@ namespace ProyectoDI_GrupoD
             }
         }
 
-        private bool validarCuentaCorriente(string cuentaCorriente)
+        public bool validarCuentaCorriente(string cuentaCorriente)
         {
             string patternCuentaCorriente = @"^\d{22}$";
             return Regex.IsMatch(cuentaCorriente, patternCuentaCorriente);
         }
 
-        private bool validarEmail(string email)
+        public bool validarEmail(string email)
         { 
             string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
             return Regex.IsMatch(email, patternEmail);
@@ -257,13 +257,13 @@ namespace ProyectoDI_GrupoD
             }
         }
 
-        private bool validarDNI(string DNI)
+        public bool validarDNI(string DNI)
         {
             string patternDNI = @"^\d{8}[A-Za-z]$";
             return Regex.IsMatch(DNI, patternDNI);
         }
 
-        private bool validarContrasena(string password)
+        public bool validarContrasena(string password)
         {
             string patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
             return Regex.IsMatch(password, patternContrasena);
@@ -300,9 +300,17 @@ namespace ProyectoDI_GrupoD
         {
             try
             {
-                new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
-                MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return true; // Registro exitoso
+                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
+                if (registroExitoso)
+                {
+                    MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return true; // Registro exitoso
+                }
+                else
+                {
+                    MessageBox.Show("Los datos ya esta en uso.", "Registro fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
             catch (Exception ex)
             {

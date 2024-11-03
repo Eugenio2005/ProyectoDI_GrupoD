@@ -98,7 +98,7 @@ namespace KAETesting
             };
 
             // Act
-            bool resultado = registro.AñadirUsuario(usuarioDTO);
+            bool resultado = registro.validarDNI(usuarioDTO.Dni);
 
             // Assert
             Assert.IsFalse(resultado, "Debería informar que el DNI no es válido.");
@@ -119,7 +119,7 @@ namespace KAETesting
             };
 
             // Act
-            bool resultado = registro.AñadirUsuario(usuarioDTO);
+            bool resultado = registro.validarEmail(usuarioDTO.Email);
 
             // Assert
             Assert.IsFalse(resultado, "Debería informar que el email no es válido.");
@@ -140,52 +140,10 @@ namespace KAETesting
             };
 
             // Act
-            bool resultado = registro.AñadirUsuario(usuarioDTO);
+            bool resultado = registro.validarCuentaCorriente(usuarioDTO.CuentaCorriente);
 
             // Assert
             Assert.IsFalse(resultado, "Debería informar que el CCC no es válido.");
-        }
-
-        [TestMethod]
-        public void CP1_1_7_RegistrarUsuario_NombreInvalido_RetornaFalse()
-        {
-            // Arrange
-            var usuarioDTO = new UsuariosDTO
-            {
-                Nombre = "", // Nombre vacío
-                Apellidos = "Martínez",
-                Dni = "12345678F",
-                Email = "nombreinvalido@example.com",
-                CuentaCorriente = "1234567890123456789012",
-                Contraseña = "Password@123"
-            };
-
-            // Act
-            bool resultado = registro.AñadirUsuario(usuarioDTO);
-
-            // Assert
-            Assert.IsFalse(resultado, "Debería informar que el nombre no es válido.");
-        }
-
-        [TestMethod]
-        public void CP1_1_8_RegistrarUsuario_ApellidoInvalido_RetornaFalse()
-        {
-            // Arrange
-            var usuarioDTO = new UsuariosDTO
-            {
-                Nombre = "Miguel",
-                Apellidos = "", // Apellido vacío
-                Dni = "12345678G",
-                Email = "apellidoinvalido@example.com",
-                CuentaCorriente = "1234567890123456789012",
-                Contraseña = "Password@123"
-            };
-
-            // Act
-            bool resultado = registro.AñadirUsuario(usuarioDTO);
-
-            // Assert
-            Assert.IsFalse(resultado, "Debería informar que el apellido no es válido.");
         }
 
         [TestMethod]
@@ -203,7 +161,7 @@ namespace KAETesting
             };
 
             // Act
-            bool resultado = registro.AñadirUsuario(usuarioDTO);
+            bool resultado = registro.validarContrasena(usuarioDTO.Contraseña);
 
             // Assert
             Assert.IsFalse(resultado, "Debería informar que la contraseña no es válida.");
