@@ -17,18 +17,18 @@ namespace ProyectoDI_GrupoD.Vistas
             InitializeComponent();
         }
 
-        private void btnRegistro_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Registro registro = new Registro();
-            registro.ShowDialog();
-        }
-
         private void btnInicioSesion_Click(object sender, EventArgs e)
         {
             this.Hide();
             InicioSesion inicioSesion = new InicioSesion();
             inicioSesion.ShowDialog();
+        }
+
+        private void linklblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Registro registro = new Registro();
+            registro.ShowDialog();
         }
     }
 }
