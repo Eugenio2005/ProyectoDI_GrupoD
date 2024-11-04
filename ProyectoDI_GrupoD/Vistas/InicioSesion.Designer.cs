@@ -30,33 +30,20 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.PictureBox imgKAE_InSe;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
+            System.Windows.Forms.PictureBox imgKAE_InSe;
             this.lblUsuarioInSe = new System.Windows.Forms.Label();
             this.lblContraseñaInSe = new System.Windows.Forms.Label();
             this.btnojoCerradoInSe = new System.Windows.Forms.Button();
             this.btnojo_abiertoInSe = new System.Windows.Forms.Button();
-            this.btnRegistrarInSe = new ProyectoDI_GrupoD.RoundedButton();
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.btnIniciarSesionInSe = new ProyectoDI_GrupoD.RoundedButton();
             this.txtContraseñaInSe = new ColorBorderTextBox();
             this.txtUsuarioInSe = new ColorBorderTextBox();
             imgKAE_InSe = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgKAE_InSe
-            // 
-            imgKAE_InSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            imgKAE_InSe.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            imgKAE_InSe.Location = new System.Drawing.Point(113, 27);
-            imgKAE_InSe.Margin = new System.Windows.Forms.Padding(4);
-            imgKAE_InSe.Name = "imgKAE_InSe";
-            imgKAE_InSe.Size = new System.Drawing.Size(284, 130);
-            imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            imgKAE_InSe.TabIndex = 0;
-            imgKAE_InSe.TabStop = false;
             // 
             // lblUsuarioInSe
             // 
@@ -122,26 +109,36 @@ namespace ProyectoDI_GrupoD
             this.btnojo_abiertoInSe.UseVisualStyleBackColor = false;
             this.btnojo_abiertoInSe.Click += new System.EventHandler(this.btnojoAbiertoInSe_Click);
             // 
-            // btnRegistrarInSe
+            // imgKAE_InSe
             // 
-            this.btnRegistrarInSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            imgKAE_InSe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistrarInSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnRegistrarInSe.BorderColor = System.Drawing.Color.Gray;
-            this.btnRegistrarInSe.BorderRadius = 20;
-            this.btnRegistrarInSe.FillColor = System.Drawing.Color.Transparent;
-            this.btnRegistrarInSe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarInSe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegistrarInSe.Location = new System.Drawing.Point(275, 378);
-            this.btnRegistrarInSe.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRegistrarInSe.Name = "btnRegistrarInSe";
-            this.btnRegistrarInSe.Size = new System.Drawing.Size(123, 49);
-            this.btnRegistrarInSe.TabIndex = 5;
-            this.btnRegistrarInSe.Text = "Registrar";
-            this.btnRegistrarInSe.UseVisualStyleBackColor = false;
-            this.btnRegistrarInSe.Click += new System.EventHandler(this.brnRegistrarInSe_Click);
+            imgKAE_InSe.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgKAE_InSe.Location = new System.Drawing.Point(113, 27);
+            imgKAE_InSe.Margin = new System.Windows.Forms.Padding(4);
+            imgKAE_InSe.Name = "imgKAE_InSe";
+            imgKAE_InSe.Size = new System.Drawing.Size(284, 130);
+            imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            imgKAE_InSe.TabIndex = 0;
+            imgKAE_InSe.TabStop = false;
+            // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgAtras_Re.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgAtras_Re.ErrorImage")));
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = ((System.Drawing.Image)(resources.GetObject("imgAtras_Re.InitialImage")));
+            this.imgAtras_Re.Location = new System.Drawing.Point(9, 9);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(93, 69);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 30;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
             // 
             // btnIniciarSesionInSe
             // 
@@ -155,7 +152,7 @@ namespace ProyectoDI_GrupoD
             this.btnIniciarSesionInSe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesionInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesionInSe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnIniciarSesionInSe.Location = new System.Drawing.Point(113, 378);
+            this.btnIniciarSesionInSe.Location = new System.Drawing.Point(196, 365);
             this.btnIniciarSesionInSe.Margin = new System.Windows.Forms.Padding(4);
             this.btnIniciarSesionInSe.Name = "btnIniciarSesionInSe";
             this.btnIniciarSesionInSe.Size = new System.Drawing.Size(123, 49);
@@ -213,10 +210,10 @@ namespace ProyectoDI_GrupoD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(508, 457);
+            this.Controls.Add(this.imgAtras_Re);
             this.Controls.Add(this.btnojoCerradoInSe);
             this.Controls.Add(this.btnojo_abiertoInSe);
             this.Controls.Add(this.lblContraseñaInSe);
-            this.Controls.Add(this.btnRegistrarInSe);
             this.Controls.Add(this.btnIniciarSesionInSe);
             this.Controls.Add(this.lblUsuarioInSe);
             this.Controls.Add(this.txtContraseñaInSe);
@@ -232,6 +229,7 @@ namespace ProyectoDI_GrupoD
             this.Text = "Inicio Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesion_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,10 +241,10 @@ namespace ProyectoDI_GrupoD
         private ColorBorderTextBox txtContraseñaInSe;
         private Label lblUsuarioInSe;
         private RoundedButton btnIniciarSesionInSe;
-        private RoundedButton btnRegistrarInSe;
         private Label lblContraseñaInSe;
         private Button btnojoCerradoInSe;
         private Button btnojo_abiertoInSe;
+        private PictureBox imgAtras_Re;
     }
 }
 

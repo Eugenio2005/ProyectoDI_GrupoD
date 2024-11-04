@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using Negocio.EntitiesDTO;
 using Negocio.Management;
+using ProyectoDI_GrupoD.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -155,8 +156,9 @@ namespace ProyectoDI_GrupoD
                 if (AñadirUsuario(usuarioDTO))
                 {
                     InicioSesion inicioSesion = new InicioSesion();
-                    inicioSesion.ShowDialog();
                     this.Hide();
+                    inicioSesion.ShowDialog();
+                    
                 }
             }
             else
@@ -343,8 +345,8 @@ namespace ProyectoDI_GrupoD
         private void volverAtras(object sender, EventArgs e)
         {
             this.Hide();
-            InicioSesion inicioSesion = new InicioSesion();
-            inicioSesion.ShowDialog(); // Muestra la ventana de inicio de sesión
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.ShowDialog(); // Muestra la ventana de menu de inicio
         }
 
         /// <summary>

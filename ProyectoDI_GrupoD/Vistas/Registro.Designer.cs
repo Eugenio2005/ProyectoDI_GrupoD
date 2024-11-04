@@ -64,6 +64,7 @@ namespace ProyectoDI_GrupoD
             imgKAE_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            imgKAE_Re.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             imgKAE_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
             imgKAE_Re.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM;
             imgKAE_Re.Location = new System.Drawing.Point(113, 15);
