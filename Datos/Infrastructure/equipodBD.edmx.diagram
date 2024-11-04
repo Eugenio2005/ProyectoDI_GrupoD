@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0c700838ed334c2785a80f0ca67dcf61" Name="Diagram1">
+        <EntityTypeShape EntityType="equipodModel.Actividades" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Usuarios" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Valoraciones" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="equipodModel.FK__Valoracio__id_ac__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.FK__Valoracio__id_us__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.Monitores_Actividades" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.Usuarios_Actividades" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
