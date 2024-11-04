@@ -31,7 +31,7 @@
             System.Windows.Forms.PictureBox imgKAE_Re;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicio));
             this.btnInicioSesion = new ProyectoDI_GrupoD.RoundedButton();
-            this.btnRegistro = new ProyectoDI_GrupoD.RoundedButton();
+            this.linklblRegistro = new System.Windows.Forms.LinkLabel();
             imgKAE_Re = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             this.btnInicioSesion.BorderRadius = 20;
             this.btnInicioSesion.FillColor = System.Drawing.Color.Transparent;
             this.btnInicioSesion.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnInicioSesion.Location = new System.Drawing.Point(301, 51);
+            this.btnInicioSesion.Location = new System.Drawing.Point(310, 100);
             this.btnInicioSesion.Name = "btnInicioSesion";
             this.btnInicioSesion.Size = new System.Drawing.Size(144, 51);
             this.btnInicioSesion.TabIndex = 3;
@@ -66,20 +66,19 @@
             this.btnInicioSesion.UseVisualStyleBackColor = false;
             this.btnInicioSesion.Click += new System.EventHandler(this.btnInicioSesion_Click);
             // 
-            // btnRegistro
+            // linklblRegistro
             // 
-            this.btnRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnRegistro.BorderColor = System.Drawing.Color.Gray;
-            this.btnRegistro.BorderRadius = 20;
-            this.btnRegistro.FillColor = System.Drawing.Color.Transparent;
-            this.btnRegistro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegistro.Location = new System.Drawing.Point(301, 162);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(144, 53);
-            this.btnRegistro.TabIndex = 4;
-            this.btnRegistro.Text = "Registrarse";
-            this.btnRegistro.UseVisualStyleBackColor = false;
-            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
+            this.linklblRegistro.AutoSize = true;
+            this.linklblRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.linklblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.linklblRegistro.Location = new System.Drawing.Point(303, 163);
+            this.linklblRegistro.Name = "linklblRegistro";
+            this.linklblRegistro.Size = new System.Drawing.Size(146, 32);
+            this.linklblRegistro.TabIndex = 4;
+            this.linklblRegistro.TabStop = true;
+            this.linklblRegistro.Text = "¿No tienes una cuenta?\r\nRegistrate aquí";
+            this.linklblRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linklblRegistro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRegistro_LinkClicked);
             // 
             // MenuInicio
             // 
@@ -87,7 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(496, 270);
-            this.Controls.Add(this.btnRegistro);
+            this.Controls.Add(this.linklblRegistro);
             this.Controls.Add(this.btnInicioSesion);
             this.Controls.Add(imgKAE_Re);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -99,12 +98,13 @@
             this.Text = "Menu de inicio";
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private RoundedButton btnInicioSesion;
-        private RoundedButton btnRegistro;
+        private System.Windows.Forms.LinkLabel linklblRegistro;
     }
 }
