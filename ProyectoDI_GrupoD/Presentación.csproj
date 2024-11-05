@@ -73,6 +73,12 @@
     <Compile Include="Vistas\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\PantallaPrincipalAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\PantallaPrincipalAdmin.Designer.cs">
+      <DependentUpon>PantallaPrincipalAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\PantallaPrincipalAdmin.resx">
+      <DependentUpon>PantallaPrincipalAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
