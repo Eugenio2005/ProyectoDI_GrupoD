@@ -10,16 +10,40 @@ CREATE TABLE Usuarios (
     telefono VARCHAR(15),
     dni VARCHAR(9) NOT NULL,
     direccion VARCHAR(255),
-    ccc VARCHAR(24) NOT NULL,
+    ccc VARCHAR(24) NOT NULL, 
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    tipo_usuario VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Monitores (
+    id_monitor INT IDENTITY(1,1) PRIMARY KEY, --IDENTITY(1,1) funciona igual que el AUTO_INCREMENT
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15),
+    dni VARCHAR(9) NOT NULL,
+    direccion VARCHAR(255),
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE Administradores (
+    id_administrador INT IDENTITY(1,1) PRIMARY KEY, --IDENTITY(1,1) funciona igual que el AUTO_INCREMENT
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15),
+    dni VARCHAR(9) NOT NULL,
+    direccion VARCHAR(255),
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
 );
 
 -- Tabla Actividades
 CREATE TABLE Actividades (
     id_actividad INT IDENTITY(1,1) PRIMARY KEY,
-    nombre_actividad VARCHAR(100) NOT NULL UNIQUE
+    nombre_actividad VARCHAR(100) NOT NULL UNIQUE,
+    descripcion VARCHAR(100) NOT NULL,
+    id_monitor INT NOT NULL,
+    FOREIGN KEY (id_monitor) REFERENCES Monitores(id_monitor)
 );
 
 -- Tabla Valoraciones
@@ -32,14 +56,6 @@ CREATE TABLE Valoraciones (
     FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad)
 );
 
--- Tabla Monitores_Actividades
-CREATE TABLE Monitores_Actividades (
-    id_monitor INT NOT NULL,
-    id_actividad INT NOT NULL,
-    PRIMARY KEY (id_monitor, id_actividad),
-    FOREIGN KEY (id_monitor) REFERENCES Usuarios(id_usuario),
-    FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad)
-);
 
 -- Tabla Usuarios_Actividades
 CREATE TABLE Usuarios_Actividades (
