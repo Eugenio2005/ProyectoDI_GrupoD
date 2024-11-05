@@ -1,9 +1,9 @@
-﻿using System;
+﻿using ProyectoDI_GrupoD.Vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoDI_GrupoD.Vistas;
 
 namespace ProyectoDI_GrupoD
 {
@@ -17,7 +17,7 @@ namespace ProyectoDI_GrupoD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            Application.Run(new MenuInicio());
         }
     }
 }

@@ -61,11 +61,11 @@
     <Compile Include="ImageButton.Designer.cs">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Inicio.cs">
+    <Compile Include="Vistas\MenuInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="Vistas\MenuInicio.Designer.cs">
+      <DependentUpon>MenuInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\PantallaPrincipal.cs">
       <SubType>Form</SubType>
@@ -93,8 +93,8 @@
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\MenuInicio.resx">
+      <DependentUpon>MenuInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using Negocio.EntitiesDTO;
 using Negocio.Management;
+using ProyectoDI_GrupoD.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,7 +120,7 @@ namespace ProyectoDI_GrupoD
 
         private void txtEmailRe_TextChanged(object sender, EventArgs e)
         {
-
+            
             if (!string.IsNullOrEmpty(txtEmailRe.Text) && txtEmailRe.Text != placeholderTextEmail)
             {
                 txtEmailRe.ForeColor = Color.FromArgb(202, 224, 212); // Cambiar a color normal
@@ -155,8 +156,9 @@ namespace ProyectoDI_GrupoD
                 if (AñadirUsuario(usuarioDTO))
                 {
                     InicioSesion inicioSesion = new InicioSesion();
-                    inicioSesion.ShowDialog();
                     this.Hide();
+                    inicioSesion.ShowDialog();
+                    
                 }
             }
             else
@@ -239,7 +241,7 @@ namespace ProyectoDI_GrupoD
         }
 
         public bool validarEmail(string email)
-        {
+        { 
             string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
             return Regex.IsMatch(email, patternEmail);
         }
@@ -343,8 +345,8 @@ namespace ProyectoDI_GrupoD
         private void volverAtras(object sender, EventArgs e)
         {
             this.Hide();
-            InicioSesion inicioSesion = new InicioSesion();
-            inicioSesion.ShowDialog(); // Muestra la ventana de inicio de sesión
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.ShowDialog(); // Muestra la ventana de menu de inicio
         }
 
         /// <summary>

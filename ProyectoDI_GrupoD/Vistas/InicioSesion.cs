@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoDI_GrupoD.Vistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,15 +72,11 @@ namespace ProyectoDI_GrupoD
             Application.Exit();
         }
 
-        /// <summary>
-        /// Maneja el evento de clic en el botón de registrar.
-        /// Oculta la ventana de inicio de sesión y muestra la ventana de registro.
-        /// </summary>
-        private void brnRegistrarInSe_Click(object sender, EventArgs e)
+        private void imgAtras_Re_Click(object sender, EventArgs e)
         {
-            this.Hide();  
-            Registro registro = new Registro(); 
-            registro.ShowDialog();  
+            this.Hide();
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.ShowDialog(); // Muestra la ventana de menu de inicio
         }
 
         private void btnIniciarSesionInSe_KeyDown(object sender, KeyEventArgs e)
