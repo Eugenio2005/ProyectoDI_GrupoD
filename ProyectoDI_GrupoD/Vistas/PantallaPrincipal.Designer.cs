@@ -43,7 +43,7 @@
             this.NombreUsuario.Location = new System.Drawing.Point(0, 0);
             this.NombreUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.Size = new System.Drawing.Size(267, 41);
+            this.NombreUsuario.Size = new System.Drawing.Size(300, 50);
             this.NombreUsuario.TabIndex = 2;
             // 
             // PantallaPrincipal
@@ -51,7 +51,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(842, 466);
+            this.ClientSize = new System.Drawing.Size(1305, 633);
             this.Controls.Add(this.NombreUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaPrincipal";
