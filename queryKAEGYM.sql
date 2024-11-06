@@ -15,21 +15,21 @@ CREATE TABLE Usuarios (
 
 -- Tabla Clientes 
 CREATE TABLE Clientes (
-    id_usuario INT PRIMARY KEY,
+    email VARCHAR(100) PRIMARY KEY,
     ccc VARCHAR(24) NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+    FOREIGN KEY (email) REFERENCES Usuarios(email) ON DELETE CASCADE
 );
 
 -- Tabla Monitores 
 CREATE TABLE Monitores (
-    id_usuario INT PRIMARY KEY,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+    email VARCHAR(100) PRIMARY KEY,
+    FOREIGN KEY (email) REFERENCES Usuarios(email) ON DELETE CASCADE
 );
 
 -- Tabla Administradores
 CREATE TABLE Administradores (
-    id_usuario INT PRIMARY KEY,
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+    email VARCHAR(100) PRIMARY KEY,
+    FOREIGN KEY (email) REFERENCES Usuarios(email) ON DELETE CASCADE
 );
 
 -- Tabla Actividades 
@@ -37,8 +37,8 @@ CREATE TABLE Actividades (
     id_actividad INT IDENTITY(1,1) PRIMARY KEY,
     nombre_actividad VARCHAR(100) NOT NULL UNIQUE,
     descripcion VARCHAR(100) NOT NULL,
-    id_monitor INT NULL,
-    FOREIGN KEY (id_monitor) REFERENCES Monitores(id_usuario) ON DELETE SET NULL
+    email_monitor VARCHAR(100) NOT NULL UNIQUE,
+    FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
 -- Tabla Valoraciones
