@@ -13,13 +13,33 @@ namespace Datos.Repositories
         /// Agrega un nuevo cliente a la base de datos.
         /// </summary>
         /// <param name="cliente">El objeto que representa al usuario a registrar.</param>
-        public void AltaCliente(Usuarios cliente)
+        public void AltaCliente(Clientes cliente)
         {
-            // Utiliza el contexto de la base de datos para realizar operaciones
+            Usuarios usuario = new Usuarios();
+            Clientes cliente2 = new Clientes();
+
+            cliente2.CuentaCorriente = cliente.CuentaCorriente;
+            cliente2.email = cliente.email;
+
+            usuario.nombre = cliente.nombre;
+            usuario.apellidos = cliente.apellidos;
+            usuario.dni = cliente.dni;
+            usuario.telefono = cliente.telefono;
+            usuario.email = cliente.email;
+            usuario.direccion = cliente.direccion;
+            usuario.password =cliente.password;
+            usuario.tipo_usuario = cliente.tipo_usuario;
+
+            //Utiliza el contexto de la base de datos para realizar operaciones
             using (var contexto = new equipodEntities())
             {
-                contexto.Usuarios.Add(cliente); 
-                contexto.SaveChanges(); 
+                contexto.Usuarios.Add(usuario);
+                contexto.SaveChanges();
+            }
+            using (var contexto2 = new equipodEntities())
+            {
+                contexto2.Clientes.Add(cliente2);
+                contexto2.SaveChanges();
             }
         }
 
@@ -33,7 +53,7 @@ namespace Datos.Repositories
             using (var contexto = new equipodEntities())
             {
                 // Devuelve el primer usuario que encuentra con el mismo email.
-                return contexto.Usuarios.FirstOrDefault(u => u.email == email);
+                return contexto.Usuarios.FirstOrDefault(u => u.email == email && u.tipo_usuario == "Cliente");
             }
         }
 
@@ -42,8 +62,10 @@ namespace Datos.Repositories
             using (var contexto = new equipodEntities())
             {
                 // Devuelve el primer usuario que encuentra con el mismo email.
-                return contexto.Usuarios.FirstOrDefault(u => u.dni == dni);
+                return contexto.Usuarios.FirstOrDefault(u => u.dni == dni && u.tipo_usuario == "Cliente");
             }
         }
+
+
     }
 }

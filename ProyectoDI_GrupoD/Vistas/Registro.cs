@@ -129,31 +129,32 @@ namespace ProyectoDI_GrupoD
 
         /// <summary>
         /// Maneja el evento de clic en el botón de registrar.
-        /// Crea un objeto UsuariosDTO y asigna los valores de los campos de entrada,
+        /// Crea un objeto ClientesDTO y asigna los valores de los campos de entrada,
         /// luego intenta añadir el usuario.
         /// </summary>
         private void btnRegistrarRe_Click(object sender, EventArgs e)
         {
-            UsuariosDTO usuarioDTO = new UsuariosDTO();
+            ClientesDTO clientesDTO = new ClientesDTO();
+
 
             // Recoge los valores de los textBox y los aplica al usuario.
-            usuarioDTO.Nombre = txtUsuarioRe.Text;
-            usuarioDTO.Apellidos = txtApellidosRe.Text;
-            usuarioDTO.Dni = txtDNI_Re.Text;
-            usuarioDTO.Telefono = txtTelefonoRe.Text;
-            usuarioDTO.Email = txtEmailRe.Text;
-            usuarioDTO.Direccion = txtDireccionRe.Text;
-            usuarioDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
-            usuarioDTO.Contraseña = txtContraseñaRe.Text;
+            clientesDTO.Nombre = txtUsuarioRe.Text;
+            clientesDTO.Apellidos = txtApellidosRe.Text;
+            clientesDTO.Dni = txtDNI_Re.Text;
+            clientesDTO.Telefono = txtTelefonoRe.Text;
+            clientesDTO.Email = txtEmailRe.Text;
+            clientesDTO.Direccion = txtDireccionRe.Text;
+            clientesDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
+            clientesDTO.Contraseña = txtContraseñaRe.Text;
 
             // Valida los datos que se hayan ingresado en el registro y devuelve un mensaje.
-            string mensajeValidacion = validarDatos(usuarioDTO);
+            string mensajeValidacion = validarDatos(clientesDTO);
 
             // Si el mensaje no tiene caracteres significa que no hay ningun error con los campos, si no saltara un error.
             if (mensajeValidacion.Length == 0)
             {
                 //Si consigue añadir el usuario accede a la pantalla principal.
-                if (AñadirUsuario(usuarioDTO))
+                if (AñadirUsuario(clientesDTO))
                 {
                     InicioSesion inicioSesion = new InicioSesion();
                     this.Hide();
@@ -170,35 +171,35 @@ namespace ProyectoDI_GrupoD
         /// <summary>
         /// Metodo que sirve para validar los datos.
         /// </summary>
-        /// <param name="usuarioDTO"></param>
+        /// <param name="clienteDTO"></param>
         /// <returns>Devuelve un string con el mensaje de validación</returns>
-        private string validarDatos(UsuariosDTO usuarioDTO)
+        private string validarDatos(ClientesDTO clienteDTO)
         {
             StringBuilder mensajeValidacion = new StringBuilder();
 
             //Secuencia de if que van a comprobar la validación de los campos, si no es correcto
             // añadira que no es valido por cada campo.
-            if (!validarContrasena(usuarioDTO.Contraseña))
+            if (!validarContrasena(clienteDTO.Contraseña))
             {
                 mensajeValidacion.Append("- La contraseña no es valida\n");
                 txtContraseñaRe.BorderColor = Color.Red;
             }
-            if (!validarTelefono(usuarioDTO.Telefono))
+            if (!validarTelefono(clienteDTO.Telefono))
             {
                 mensajeValidacion.Append("- El telefono no es valido\n");
                 txtTelefonoRe.BorderColor = Color.Red;
             }
-            if (!validarDNI(usuarioDTO.Dni))
+            if (!validarDNI(clienteDTO.Dni))
             {
                 mensajeValidacion.Append("- El DNI no es valido\n");
                 txtDNI_Re.BorderColor = Color.Red;
             }
-            if (!validarEmail(usuarioDTO.Email))
+            if (!validarEmail(clienteDTO.Email))
             {
                 mensajeValidacion.Append("- El email no es valido\n");
                 txtEmailRe.BorderColor = Color.Red;
             }
-            if (!validarCuentaCorriente(usuarioDTO.CuentaCorriente))
+            if (!validarCuentaCorriente(clienteDTO.CuentaCorriente))
             {
                 mensajeValidacion.Append("- La cuenta corriente no es valida\n");
                 txtCuentaCorrienteRe.BorderColor = Color.Red;
@@ -293,16 +294,16 @@ namespace ProyectoDI_GrupoD
         }
 
         /// <summary>
-        /// Intenta añadir un nuevo usuario utilizando el objeto UsuariosDTO 
+        /// Intenta añadir un nuevo usuario utilizando el objeto ClientesDTO 
         /// y muestra un mensaje de éxito o error.
         /// </summary>
-        /// <param name="usuarioDTO">El objeto con la información del nuevo usuario.</param>
+        /// <param name="clienteDTO">El objeto con la información del nuevo usuario.</param>
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
-        public bool AñadirUsuario(UsuariosDTO usuarioDTO)
+        public bool AñadirUsuario(ClientesDTO clienteDTO)
         {
             try
             {
-                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
+                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(clienteDTO); // Llama a la lógica de negocio para añadir el usuario
                 if (registroExitoso)
                 {
                     MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
