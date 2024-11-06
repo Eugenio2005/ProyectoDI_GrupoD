@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace ProyectoDI_GrupoD
 {
-    public partial class PantallaPrincipal : Form
+    public partial class ImageButton : UserControl
     {
-        public PantallaPrincipal()
+        public ImageButton()
         {
             InitializeComponent();
         }
+
     }
 }

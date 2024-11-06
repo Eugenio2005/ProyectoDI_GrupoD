@@ -52,7 +52,7 @@
           <Property Name="id_actividad" Type="int" Nullable="false" />
           <Property Name="valoracion" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Monitores__id_ac__7A3223E8">
+        <Association Name="FK__Monitores__id_ac__412EB0B6">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
           <End Role="Monitores_Actividades" Type="Self.Monitores_Actividades" Multiplicity="*" />
           <ReferentialConstraint>
@@ -64,7 +64,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Monitores__id_mo__793DFFAF">
+        <Association Name="FK__Monitores__id_mo__403A8C7D">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Monitores_Actividades" Type="Self.Monitores_Actividades" Multiplicity="*" />
           <ReferentialConstraint>
@@ -76,7 +76,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios___id_ac__7E02B4CC">
+        <Association Name="FK__Usuarios___id_ac__44FF419A">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
           <End Role="Usuarios_Actividades" Type="Self.Usuarios_Actividades" Multiplicity="*" />
           <ReferentialConstraint>
@@ -88,7 +88,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios___id_us__7D0E9093">
+        <Association Name="FK__Usuarios___id_us__440B1D61">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Usuarios_Actividades" Type="Self.Usuarios_Actividades" Multiplicity="*" />
           <ReferentialConstraint>
@@ -100,7 +100,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_ac__76619304">
+        <Association Name="FK__Valoracio__id_ac__3D5E1FD2">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -112,7 +112,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_us__756D6ECB">
+        <Association Name="FK__Valoracio__id_us__3C69FB99">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -130,27 +130,27 @@
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios_Actividades" EntityType="Self.Usuarios_Actividades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoraciones" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Monitores__id_ac__7A3223E8" Association="Self.FK__Monitores__id_ac__7A3223E8">
+          <AssociationSet Name="FK__Monitores__id_ac__412EB0B6" Association="Self.FK__Monitores__id_ac__412EB0B6">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Monitores_Actividades" EntitySet="Monitores_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Monitores__id_mo__793DFFAF" Association="Self.FK__Monitores__id_mo__793DFFAF">
+          <AssociationSet Name="FK__Monitores__id_mo__403A8C7D" Association="Self.FK__Monitores__id_mo__403A8C7D">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Monitores_Actividades" EntitySet="Monitores_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_ac__7E02B4CC" Association="Self.FK__Usuarios___id_ac__7E02B4CC">
+          <AssociationSet Name="FK__Usuarios___id_ac__44FF419A" Association="Self.FK__Usuarios___id_ac__44FF419A">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_us__7D0E9093" Association="Self.FK__Usuarios___id_us__7D0E9093">
+          <AssociationSet Name="FK__Usuarios___id_us__440B1D61" Association="Self.FK__Usuarios___id_us__440B1D61">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_ac__76619304" Association="Self.FK__Valoracio__id_ac__76619304">
+          <AssociationSet Name="FK__Valoracio__id_ac__3D5E1FD2" Association="Self.FK__Valoracio__id_ac__3D5E1FD2">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_us__756D6ECB" Association="Self.FK__Valoracio__id_us__756D6ECB">
+          <AssociationSet Name="FK__Valoracio__id_us__3C69FB99" Association="Self.FK__Valoracio__id_us__3C69FB99">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
@@ -166,7 +166,7 @@
           </Key>
           <Property Name="id_actividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_actividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_ac__76619304" FromRole="Actividades" ToRole="Valoraciones" />
+          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_ac__3D5E1FD2" FromRole="Actividades" ToRole="Valoraciones" />
           <NavigationProperty Name="Usuarios" Relationship="Self.Monitores_Actividades" FromRole="Actividades" ToRole="Usuarios" />
           <NavigationProperty Name="Usuarios1" Relationship="Self.Usuarios_Actividades" FromRole="Actividades" ToRole="Usuarios" />
         </EntityType>
@@ -184,7 +184,7 @@
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_us__756D6ECB" FromRole="Usuarios" ToRole="Valoraciones" />
+          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_us__3C69FB99" FromRole="Usuarios" ToRole="Valoraciones" />
           <NavigationProperty Name="Actividades" Relationship="Self.Monitores_Actividades" FromRole="Usuarios" ToRole="Actividades" />
           <NavigationProperty Name="Actividades1" Relationship="Self.Usuarios_Actividades" FromRole="Usuarios" ToRole="Actividades" />
         </EntityType>
@@ -196,10 +196,10 @@
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_actividad" Type="Int32" Nullable="false" />
           <Property Name="valoracion" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__76619304" FromRole="Valoraciones" ToRole="Actividades" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__756D6ECB" FromRole="Valoraciones" ToRole="Usuarios" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__3D5E1FD2" FromRole="Valoraciones" ToRole="Actividades" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__3C69FB99" FromRole="Valoraciones" ToRole="Usuarios" />
         </EntityType>
-        <Association Name="FK__Valoracio__id_ac__76619304">
+        <Association Name="FK__Valoracio__id_ac__3D5E1FD2">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -211,7 +211,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_us__756D6ECB">
+        <Association Name="FK__Valoracio__id_us__3C69FB99">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -235,11 +235,11 @@
           <EntitySet Name="Actividades" EntityType="Self.Actividades" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoraciones" />
-          <AssociationSet Name="FK__Valoracio__id_ac__76619304" Association="Self.FK__Valoracio__id_ac__76619304">
+          <AssociationSet Name="FK__Valoracio__id_ac__3D5E1FD2" Association="Self.FK__Valoracio__id_ac__3D5E1FD2">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_us__756D6ECB" Association="Self.FK__Valoracio__id_us__756D6ECB">
+          <AssociationSet Name="FK__Valoracio__id_us__3C69FB99" Association="Self.FK__Valoracio__id_us__3C69FB99">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>

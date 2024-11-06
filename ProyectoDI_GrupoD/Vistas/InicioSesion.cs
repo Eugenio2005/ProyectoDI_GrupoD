@@ -1,9 +1,10 @@
-﻿using Negocio.EntitiesDTO; 
+﻿using ProyectoDI_GrupoD.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace ProyectoDI_GrupoD
 {
     public partial class InicioSesion : Form
     {
-        private string usuario, contraseña;
+        private string email, contraseña;
 
         public InicioSesion()
         {
@@ -32,13 +33,15 @@ namespace ProyectoDI_GrupoD
             if (new Negocio.Management.UsuarioManagement().validarUsuario(txtUsuarioInSe.Text, txtContraseñaInSe.Text))
             {
                 this.Hide();
-                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(); 
+                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(txtUsuarioInSe.Text); 
                 pantallaPrincipal.ShowDialog();  
             }
             else
             {
                 // Muestra un mensaje de error si el usuario o la contraseña son incorrectos
                 MessageBox.Show($"El usuario no existe o la contraseña es incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsuarioInSe.BorderColor = Color.Red;
+                txtContraseñaInSe.BorderColor = Color.Red;
             }
         }
 
@@ -64,16 +67,29 @@ namespace ProyectoDI_GrupoD
             btnojoCerradoInSe.Visible = true; 
         }
 
-        /// <summary>
-        /// Maneja el evento de clic en el botón de registrar.
-        /// Oculta la ventana de inicio de sesión y muestra la ventana de registro.
-        /// </summary>
-        private void brnRegistrarInSe_Click(object sender, EventArgs e)
+        private void InicioSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();  
-            Registro registro = new Registro(); 
-            registro.ShowDialog();  
+            Application.Exit();
         }
 
+        private void imgAtras_Re_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.ShowDialog(); // Muestra la ventana de menu de inicio
+        }
+
+        private void btnIniciarSesionInSe_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verifica si la tecla presionada es Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Evita el sonido de 'ding' al presionar Enter
+                //e.SuppressKeyPress = true;
+
+                // Llama al evento Click del botón
+                btnIniciarSesionInSe.PerformClick();
+            }
+        }
     }
 }
