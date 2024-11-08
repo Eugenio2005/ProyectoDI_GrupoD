@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Negocio.EntitiesDTO
 {
-    public class ClientesDTO: UsuariosDTO
+    public class ClientesDTO
     {
-        private string cuentaCorriente;
+        private string cuentaCorriente, email;
         public string CuentaCorriente { get; set; }
+
+        public string Email { get; set; }
     }
 }

@@ -13,22 +13,9 @@ namespace Datos.Repositories
         /// Agrega un nuevo cliente a la base de datos.
         /// </summary>
         /// <param name="cliente">El objeto que representa al usuario a registrar.</param>
-        public void AltaCliente(Clientes cliente)
+        public void AltaCliente( Usuarios usuario ,Clientes cliente)
         {
-            Usuarios usuario = new Usuarios();
-            Clientes cliente2 = new Clientes();
-
-            cliente2.CuentaCorriente = cliente.CuentaCorriente;
-            cliente2.email = cliente.email;
-
-            usuario.nombre = cliente.nombre;
-            usuario.apellidos = cliente.apellidos;
-            usuario.dni = cliente.dni;
-            usuario.telefono = cliente.telefono;
-            usuario.email = cliente.email;
-            usuario.direccion = cliente.direccion;
-            usuario.password =cliente.password;
-            usuario.tipo_usuario = cliente.tipo_usuario;
+         
 
             //Utiliza el contexto de la base de datos para realizar operaciones
             using (var contexto = new equipodEntities())
@@ -38,7 +25,7 @@ namespace Datos.Repositories
             }
             using (var contexto2 = new equipodEntities())
             {
-                contexto2.Clientes.Add(cliente2);
+                contexto2.Clientes.Add(cliente);
                 contexto2.SaveChanges();
             }
         }

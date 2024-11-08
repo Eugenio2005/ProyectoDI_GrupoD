@@ -18,24 +18,26 @@ namespace Negocio.Management
         /// Crea un Usuario a partir de un DTO y lo guarda en la base de datos.
         /// </summary>
         /// <param name="usuarioDTO">El objeto que contiene la información del usuario a registrar.</param>
-        public bool AltaCliente(ClientesDTO clientesDTO)
+        public bool AltaCliente(ClientesDTO clientesDTO, UsuariosDTO usuarioDTO)
         {
             // Crea un usuario con los datos enviados del registro.
+            Usuarios usuario = new Usuarios();
+            
+            usuario.nombre = usuarioDTO.Nombre;
+            usuario.apellidos = usuarioDTO.Apellidos;
+            usuario.dni = usuarioDTO.Dni;
+            usuario.password = encriptarContrasena(usuarioDTO.Contraseña);
+            usuario.direccion = usuarioDTO.Direccion;
+            usuario.telefono = usuarioDTO.Telefono;
+            usuario.tipo_usuario = "Cliente"; // Por defecto hasta que nos digan lo contrario.
+            usuario.email = usuarioDTO.Email; 
+            
             Clientes cliente = new Clientes();
-            {
-                cliente.nombre = clientesDTO.Nombre;
-                cliente.apellidos = clientesDTO.Apellidos;
-                cliente.dni = clientesDTO.Dni;
-                cliente.CuentaCorriente = clientesDTO.CuentaCorriente; 
-                cliente.password = encriptarContrasena(clientesDTO.Contraseña); 
-               cliente.direccion = clientesDTO.Direccion;
-                cliente.telefono = clientesDTO.Telefono;
-                cliente.tipo_usuario = "Cliente"; // Por defecto hasta que nos digan lo contrario.
-                cliente.email = clientesDTO.Email; 
-            };
+            cliente.ccc = clientesDTO.CuentaCorriente;
+            cliente.email = clientesDTO.Email;
 
-            bool existeDNI = comprobarDNIExistente(clientesDTO.Dni);
-            bool existeEmail = comprobarEmailExistente(clientesDTO.Email);
+            bool existeDNI = comprobarDNIExistente(usuario.dni);
+            bool existeEmail = comprobarEmailExistente(usuario.email);
 
             // Añade al usuario a la base de datos si no existe ningun campo anterior.
             if (existeDNI || existeEmail)
@@ -44,7 +46,7 @@ namespace Negocio.Management
             }
             else
             {
-                new Datos.Repositories.ClientRepository().AltaCliente(cliente);
+                new Datos.Repositories.ClientRepository().AltaCliente(usuario, cliente);
                 return true;
             }
             

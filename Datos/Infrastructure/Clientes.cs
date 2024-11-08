@@ -12,9 +12,9 @@ namespace Datos.Infrastructure
     using System;
     using System.Collections.Generic;
     
-    public partial class Clientes : Usuarios
+    public partial class Clientes
     {
-        public string CuentaCorriente { get; set; }
         public string email { get; set; }
+        public string ccc { get; set; }
     }
 }
