@@ -84,6 +84,7 @@
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
     <Compile Include="Repositories\PruebaDeConexion.cs" />
   </ItemGroup>
