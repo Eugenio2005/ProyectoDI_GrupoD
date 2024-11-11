@@ -96,6 +96,12 @@
     <Compile Include="Texto.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Vistas\RegistroAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RegistroAdmin.Designer.cs">
+      <DependentUpon>RegistroAdmin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +130,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\RegistroAdmin.resx">
+      <DependentUpon>RegistroAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,6 +154,22 @@
       <Project>{b636aa61-04ae-428b-9a2d-b53bec5b5ca7}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\AltaUnaActividadBlanco.png" />
+    <None Include="Recursos\ListarActividadesBlanco.png" />
+    <None Include="Recursos\AltaMonitorBlanco.png" />
+    <None Include="Recursos\AltaMonitor.png" />
+    <None Include="Recursos\ListarActividades.png" />
+    <None Include="Recursos\AltaUnaActividad.png" />
+    <Content Include="Recursos\atras.png" />
+    <Content Include="Recursos\atrasSinFondo.png" />
+    <None Include="Recursos\usuario.png" />
+    <None Include="Recursos\return.png" />
+    <None Include="Recursos\ojo_cerrado.png" />
+    <None Include="Recursos\ojo.png" />
+    <None Include="Recursos\KAEGYM_Ampliado.png" />
+    <None Include="Recursos\inicioFondo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

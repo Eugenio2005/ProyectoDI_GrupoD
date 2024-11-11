@@ -37,6 +37,16 @@ namespace ProyectoDI_GrupoD
         {
             this.BackColor = Color.Transparent;
         }
+
+        private void MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+        }
+
+        private void MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+        }
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
