@@ -122,6 +122,7 @@
             this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar Actividad";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtDescripActividad
             // 
@@ -164,8 +165,10 @@
             this.Controls.Add(this.txtDescripActividad);
             this.Controls.Add(this.txtNombreActividad);
             this.Controls.Add(this.lblAltaActividad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaActividad";
             this.Text = "AltaActividad";
+            this.Load += new System.EventHandler(this.AltaActividad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

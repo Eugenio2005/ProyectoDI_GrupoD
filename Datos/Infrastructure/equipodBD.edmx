@@ -11,14 +11,27 @@
           </Key>
           <Property Name="id_actividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_actividad" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="email_monitor" Type="varchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="Monitores_Actividades">
+        <EntityType Name="Administradores">
           <Key>
-            <PropertyRef Name="id_monitor" />
-            <PropertyRef Name="id_actividad" />
+            <PropertyRef Name="email" />
           </Key>
-          <Property Name="id_monitor" Type="int" Nullable="false" />
-          <Property Name="id_actividad" Type="int" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ccc" Type="varchar" MaxLength="24" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Monitores">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -30,10 +43,9 @@
           <Property Name="telefono" Type="varchar" MaxLength="15" />
           <Property Name="dni" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="direccion" Type="varchar" MaxLength="255" />
-          <Property Name="ccc" Type="varchar" MaxLength="24" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="tipo_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipo_usuario" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuarios_Actividades">
           <Key>
@@ -52,32 +64,31 @@
           <Property Name="id_actividad" Type="int" Nullable="false" />
           <Property Name="valoracion" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Monitores__id_ac__412EB0B6">
-          <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
-          <End Role="Monitores_Actividades" Type="Self.Monitores_Actividades" Multiplicity="*" />
+        <Association Name="FK__Actividad__email__32E0915F">
+          <End Role="Monitores" Type="Self.Monitores" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Actividades">
-              <PropertyRef Name="id_actividad" />
+            <Principal Role="Monitores">
+              <PropertyRef Name="email" />
             </Principal>
-            <Dependent Role="Monitores_Actividades">
-              <PropertyRef Name="id_actividad" />
+            <Dependent Role="Actividades">
+              <PropertyRef Name="email_monitor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Monitores__id_mo__403A8C7D">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
-          <End Role="Monitores_Actividades" Type="Self.Monitores_Actividades" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="Monitores_Actividades">
-              <PropertyRef Name="id_monitor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Usuarios___id_ac__44FF419A">
-          <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Administr__email__2F10007B' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Administr__email__2F10007B" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Clientes__email__29572725' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Clientes__email__29572725" />-->
+        <!--Errores durante la generación:
+advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Monitores__email__2C3393D0" />-->
+        <Association Name="FK__Usuarios___id_ac__3B75D760">
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Usuarios_Actividades" Type="Self.Usuarios_Actividades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actividades">
@@ -88,8 +99,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios___id_us__440B1D61">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+        <Association Name="FK__Usuarios___id_us__3A81B327">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Usuarios_Actividades" Type="Self.Usuarios_Actividades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
@@ -100,8 +113,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_ac__3D5E1FD2">
-          <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
+        <Association Name="FK__Valoracio__id_ac__37A5467C">
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actividades">
@@ -112,8 +127,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_us__3C69FB99">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+        <Association Name="FK__Valoracio__id_us__36B12243">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
@@ -126,31 +143,29 @@
         </Association>
         <EntityContainer Name="equipodModelStoreContainer">
           <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Monitores_Actividades" EntityType="Self.Monitores_Actividades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Administradores" EntityType="Self.Administradores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Monitores" EntityType="Self.Monitores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios_Actividades" EntityType="Self.Usuarios_Actividades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoraciones" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Monitores__id_ac__412EB0B6" Association="Self.FK__Monitores__id_ac__412EB0B6">
+          <AssociationSet Name="FK__Actividad__email__32E0915F" Association="Self.FK__Actividad__email__32E0915F">
+            <End Role="Monitores" EntitySet="Monitores" />
             <End Role="Actividades" EntitySet="Actividades" />
-            <End Role="Monitores_Actividades" EntitySet="Monitores_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Monitores__id_mo__403A8C7D" Association="Self.FK__Monitores__id_mo__403A8C7D">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Monitores_Actividades" EntitySet="Monitores_Actividades" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_ac__44FF419A" Association="Self.FK__Usuarios___id_ac__44FF419A">
+          <AssociationSet Name="FK__Usuarios___id_ac__3B75D760" Association="Self.FK__Usuarios___id_ac__3B75D760">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_us__440B1D61" Association="Self.FK__Usuarios___id_us__440B1D61">
+          <AssociationSet Name="FK__Usuarios___id_us__3A81B327" Association="Self.FK__Usuarios___id_us__3A81B327">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_ac__3D5E1FD2" Association="Self.FK__Valoracio__id_ac__3D5E1FD2">
+          <AssociationSet Name="FK__Valoracio__id_ac__37A5467C" Association="Self.FK__Valoracio__id_ac__37A5467C">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_us__3C69FB99" Association="Self.FK__Valoracio__id_us__3C69FB99">
+          <AssociationSet Name="FK__Valoracio__id_us__36B12243" Association="Self.FK__Valoracio__id_us__36B12243">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
@@ -166,9 +181,31 @@
           </Key>
           <Property Name="id_actividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_actividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_ac__3D5E1FD2" FromRole="Actividades" ToRole="Valoraciones" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.Monitores_Actividades" FromRole="Actividades" ToRole="Usuarios" />
-          <NavigationProperty Name="Usuarios1" Relationship="Self.Usuarios_Actividades" FromRole="Actividades" ToRole="Usuarios" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email_monitor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Monitores" Relationship="Self.FK__Actividad__email__32E0915F" FromRole="Actividades" ToRole="Monitores" />
+          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_ac__37A5467C" FromRole="Actividades" ToRole="Valoraciones" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.Usuarios_Actividades" FromRole="Actividades" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Administradores">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ccc" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Monitores">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Actividad__email__32E0915F" FromRole="Monitores" ToRole="Actividades" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -180,13 +217,11 @@
           <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="dni" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ccc" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tipo_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_us__3C69FB99" FromRole="Usuarios" ToRole="Valoraciones" />
-          <NavigationProperty Name="Actividades" Relationship="Self.Monitores_Actividades" FromRole="Usuarios" ToRole="Actividades" />
-          <NavigationProperty Name="Actividades1" Relationship="Self.Usuarios_Actividades" FromRole="Usuarios" ToRole="Actividades" />
+          <Property Name="tipo_usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_us__36B12243" FromRole="Usuarios" ToRole="Valoraciones" />
+          <NavigationProperty Name="Actividades" Relationship="Self.Usuarios_Actividades" FromRole="Usuarios" ToRole="Actividades" />
         </EntityType>
         <EntityType Name="Valoraciones">
           <Key>
@@ -196,11 +231,25 @@
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_actividad" Type="Int32" Nullable="false" />
           <Property Name="valoracion" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__3D5E1FD2" FromRole="Valoraciones" ToRole="Actividades" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__3C69FB99" FromRole="Valoraciones" ToRole="Usuarios" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__37A5467C" FromRole="Valoraciones" ToRole="Actividades" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__36B12243" FromRole="Valoraciones" ToRole="Usuarios" />
         </EntityType>
-        <Association Name="FK__Valoracio__id_ac__3D5E1FD2">
-          <End Role="Actividades" Type="Self.Actividades" Multiplicity="1" />
+        <Association Name="FK__Actividad__email__32E0915F">
+          <End Role="Monitores" Type="Self.Monitores" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monitores">
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="Actividades">
+              <PropertyRef Name="email_monitor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Valoracio__id_ac__37A5467C">
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Actividades">
@@ -211,8 +260,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_us__3C69FB99">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+        <Association Name="FK__Valoracio__id_us__36B12243">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Valoraciones" Type="Self.Valoraciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
@@ -223,29 +274,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Monitores_Actividades">
-          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
-        </Association>
         <Association Name="Usuarios_Actividades">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
         </Association>
         <EntityContainer Name="equipodEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Actividades" EntityType="Self.Actividades" />
+          <EntitySet Name="Administradores" EntityType="Self.Administradores" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+          <EntitySet Name="Monitores" EntityType="Self.Monitores" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoraciones" />
-          <AssociationSet Name="FK__Valoracio__id_ac__3D5E1FD2" Association="Self.FK__Valoracio__id_ac__3D5E1FD2">
+          <AssociationSet Name="FK__Actividad__email__32E0915F" Association="Self.FK__Actividad__email__32E0915F">
+            <End Role="Monitores" EntitySet="Monitores" />
+            <End Role="Actividades" EntitySet="Actividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Valoracio__id_ac__37A5467C" Association="Self.FK__Valoracio__id_ac__37A5467C">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_us__3C69FB99" Association="Self.FK__Valoracio__id_us__3C69FB99">
+          <AssociationSet Name="FK__Valoracio__id_us__36B12243" Association="Self.FK__Valoracio__id_us__36B12243">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
-          </AssociationSet>
-          <AssociationSet Name="Monitores_Actividades" Association="Self.Monitores_Actividades">
-            <End Role="Actividades" EntitySet="Actividades" />
-            <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
           <AssociationSet Name="Usuarios_Actividades" Association="Self.Usuarios_Actividades">
             <End Role="Actividades" EntitySet="Actividades" />
@@ -263,6 +313,30 @@
               <MappingFragment StoreEntitySet="Actividades">
                 <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
                 <ScalarProperty Name="nombre_actividad" ColumnName="nombre_actividad" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="email_monitor" ColumnName="email_monitor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Administradores">
+            <EntityTypeMapping TypeName="equipodModel.Administradores">
+              <MappingFragment StoreEntitySet="Administradores">
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="equipodModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="ccc" ColumnName="ccc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monitores">
+            <EntityTypeMapping TypeName="equipodModel.Monitores">
+              <MappingFragment StoreEntitySet="Monitores">
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -275,7 +349,6 @@
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="dni" ColumnName="dni" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="ccc" ColumnName="ccc" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="tipo_usuario" ColumnName="tipo_usuario" />
@@ -292,14 +365,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Monitores_Actividades" TypeName="equipodModel.Monitores_Actividades" StoreEntitySet="Monitores_Actividades">
-            <EndProperty Name="Actividades">
-              <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
-            </EndProperty>
-            <EndProperty Name="Usuarios">
-              <ScalarProperty Name="id_usuario" ColumnName="id_monitor" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="Usuarios_Actividades" TypeName="equipodModel.Usuarios_Actividades" StoreEntitySet="Usuarios_Actividades">
             <EndProperty Name="Actividades">
               <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />

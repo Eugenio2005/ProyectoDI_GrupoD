@@ -26,7 +26,7 @@ namespace Negocio.Management
                 nombre = usuarioDTO.Nombre, 
                 apellidos = usuarioDTO.Apellidos,
                 dni = usuarioDTO.Dni, 
-                ccc = usuarioDTO.CuentaCorriente, 
+                //ccc = usuarioDTO.CuentaCorriente, 
                 password = encriptarContrasena(usuarioDTO.Contraseña), 
                 direccion = usuarioDTO.Direccion, 
                 telefono = usuarioDTO.Telefono,

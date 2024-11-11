@@ -4,13 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0c700838ed334c2785a80f0ca67dcf61" Name="Diagram1">
-        <EntityTypeShape EntityType="equipodModel.Actividades" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Usuarios" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Valoraciones" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
-        <AssociationConnector Association="equipodModel.FK__Valoracio__id_ac__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="equipodModel.FK__Valoracio__id_us__3C69FB99" ManuallyRouted="false" />
-        <AssociationConnector Association="equipodModel.Monitores_Actividades" ManuallyRouted="false" />
+      <Diagram DiagramId="15b2cbbbaec54d1d949168aec23a6c4b" Name="Diagram1">
+        <EntityTypeShape EntityType="equipodModel.Actividades" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Administradores" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Clientes" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Monitores" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Usuarios" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Valoraciones" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="equipodModel.FK__Actividad__email__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.FK__Valoracio__id_ac__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.FK__Valoracio__id_us__36B12243" ManuallyRouted="false" />
         <AssociationConnector Association="equipodModel.Usuarios_Actividades" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
