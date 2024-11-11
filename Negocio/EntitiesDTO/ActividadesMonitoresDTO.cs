@@ -10,6 +10,7 @@ namespace Negocio.EntitiesDTO
     {
         public string NombreActividad { get; set; }
         public string NombreMonitor { get; set; }
+        public string ApellidoMonitor { get; set; }
 
     }
 }
