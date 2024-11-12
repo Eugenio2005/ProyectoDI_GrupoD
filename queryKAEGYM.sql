@@ -37,7 +37,7 @@ CREATE TABLE Actividades (
     id_actividad INT IDENTITY(1,1) PRIMARY KEY,
     nombre_actividad VARCHAR(100) NOT NULL UNIQUE,
     descripcion VARCHAR(100) NOT NULL,
-    email_monitor VARCHAR(100),
+    email_monitor VARCHAR(100) NOT NULL UNIQUE,
     FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
