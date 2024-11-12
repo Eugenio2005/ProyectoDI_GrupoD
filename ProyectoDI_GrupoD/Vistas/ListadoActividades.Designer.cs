@@ -62,7 +62,7 @@ namespace ProyectoDI_GrupoD.Vistas
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnConsultar.Location = new System.Drawing.Point(57, 131);
+            this.btnConsultar.Location = new System.Drawing.Point(37, 131);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(108, 41);
             this.btnConsultar.TabIndex = 1;
