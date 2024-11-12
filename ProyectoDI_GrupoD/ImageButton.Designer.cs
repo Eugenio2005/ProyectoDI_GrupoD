@@ -30,23 +30,16 @@ namespace ProyectoDI_GrupoD
 
         private void ImageButton_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = HoverBackColor;
+            // Cambia el fondo al color que tenías antes en MouseEnter
+            this.BackColor = Color.FromArgb(102, 108, 124);  // Color cuando el mouse entra
         }
 
         private void ImageButton_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.Transparent;
+            // Vuelve al color que tenías antes en MouseLeave
+            this.BackColor = Color.FromArgb(136, 49, 50);  // Color cuando el mouse sale
         }
 
-        private void MouseEnter(object sender, EventArgs e)
-        {
-            BackColor = Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-        }
-
-        private void MouseLeave(object sender, EventArgs e)
-        {
-            BackColor = Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
-        }
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -66,8 +59,8 @@ namespace ProyectoDI_GrupoD
             // 
             // label
             // 
-            this.label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label.AutoSize = true;
             this.label.BackColor = System.Drawing.Color.Transparent;
@@ -88,6 +81,8 @@ namespace ProyectoDI_GrupoD
             this.Controls.Add(this.pictureBox);
             this.Name = "ImageButton";
             this.Size = new System.Drawing.Size(300, 50);
+            this.MouseEnter += new System.EventHandler(this.ImageButton_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.ImageButton_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,3 +93,4 @@ namespace ProyectoDI_GrupoD
         private Label label;
     }
 }
+
