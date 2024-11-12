@@ -19,17 +19,17 @@ namespace Datos.Infrastructure
         {
             this.Valoraciones = new HashSet<Valoraciones>();
             this.Usuarios = new HashSet<Usuarios>();
-            this.Usuarios1 = new HashSet<Usuarios>();
         }
     
         public int id_actividad { get; set; }
         public string nombre_actividad { get; set; }
+        public string descripcion { get; set; }
+        public string email_monitor { get; set; }
     
+        public virtual Monitores Monitores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Valoraciones> Valoraciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuarios> Usuarios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios> Usuarios1 { get; set; }
     }
 }

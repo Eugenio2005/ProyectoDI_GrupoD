@@ -129,12 +129,14 @@ namespace ProyectoDI_GrupoD
 
         /// <summary>
         /// Maneja el evento de clic en el botón de registrar.
-        /// Crea un objeto UsuariosDTO y asigna los valores de los campos de entrada,
+        /// Crea un objeto ClientesDTO y asigna los valores de los campos de entrada,
         /// luego intenta añadir el usuario.
         /// </summary>
         private void btnRegistrarRe_Click(object sender, EventArgs e)
         {
             UsuariosDTO usuarioDTO = new UsuariosDTO();
+            ClientesDTO clienteDTO = new ClientesDTO();
+
 
             // Recoge los valores de los textBox y los aplica al usuario.
             usuarioDTO.Nombre = txtUsuarioRe.Text;
@@ -143,17 +145,19 @@ namespace ProyectoDI_GrupoD
             usuarioDTO.Telefono = txtTelefonoRe.Text;
             usuarioDTO.Email = txtEmailRe.Text;
             usuarioDTO.Direccion = txtDireccionRe.Text;
-            usuarioDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
             usuarioDTO.Contraseña = txtContraseñaRe.Text;
 
+            clienteDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
+            clienteDTO.Email = txtEmailRe.Text;
+
             // Valida los datos que se hayan ingresado en el registro y devuelve un mensaje.
-            string mensajeValidacion = validarDatos(usuarioDTO);
+            string mensajeValidacion = validarDatos(usuarioDTO, clienteDTO);
 
             // Si el mensaje no tiene caracteres significa que no hay ningun error con los campos, si no saltara un error.
             if (mensajeValidacion.Length == 0)
             {
                 //Si consigue añadir el usuario accede a la pantalla principal.
-                if (AñadirUsuario(usuarioDTO))
+                if (AñadirUsuario(clienteDTO, usuarioDTO))
                 {
                     InicioSesion inicioSesion = new InicioSesion();
                     this.Hide();
@@ -170,9 +174,9 @@ namespace ProyectoDI_GrupoD
         /// <summary>
         /// Metodo que sirve para validar los datos.
         /// </summary>
-        /// <param name="usuarioDTO"></param>
+        /// <param name="clienteDTO"></param>
         /// <returns>Devuelve un string con el mensaje de validación</returns>
-        private string validarDatos(UsuariosDTO usuarioDTO)
+        private string validarDatos(UsuariosDTO usuarioDTO, ClientesDTO clienteDTO)
         {
             StringBuilder mensajeValidacion = new StringBuilder();
 
@@ -198,7 +202,7 @@ namespace ProyectoDI_GrupoD
                 mensajeValidacion.Append("- El email no es valido\n");
                 txtEmailRe.BorderColor = Color.Red;
             }
-            if (!validarCuentaCorriente(usuarioDTO.CuentaCorriente))
+            if (!validarCuentaCorriente(clienteDTO.CuentaCorriente))
             {
                 mensajeValidacion.Append("- La cuenta corriente no es valida\n");
                 txtCuentaCorrienteRe.BorderColor = Color.Red;
@@ -293,16 +297,16 @@ namespace ProyectoDI_GrupoD
         }
 
         /// <summary>
-        /// Intenta añadir un nuevo usuario utilizando el objeto UsuariosDTO 
+        /// Intenta añadir un nuevo usuario utilizando el objeto ClientesDTO 
         /// y muestra un mensaje de éxito o error.
         /// </summary>
-        /// <param name="usuarioDTO">El objeto con la información del nuevo usuario.</param>
+        /// <param name="clienteDTO">El objeto con la información del nuevo usuario.</param>
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
-        public bool AñadirUsuario(UsuariosDTO usuarioDTO)
+        public bool AñadirUsuario(ClientesDTO clienteDTO, UsuariosDTO usuarioDTO)
         {
             try
             {
-                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
+                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(clienteDTO, usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
                 if (registroExitoso)
                 {
                     MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
