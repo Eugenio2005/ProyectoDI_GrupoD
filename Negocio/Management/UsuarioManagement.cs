@@ -115,9 +115,22 @@ namespace Negocio.Management
                 string contrasenaEncript = encriptarContrasena(contrasena);
 
                 // Verifica si el usuario existe y si las credenciales son correctas
-                if (usuarioBD != null)
+                if (usuarioBD != null && usuarioBD.password.Equals(contrasenaEncript))
                 {
-                    return usuarioBD.email.Equals(email) && usuarioBD.password.Equals(contrasenaEncript);
+                    // Cargar los datos del usuario en DatosUsuario
+                    UsuariosDTO usuarioDTO = new UsuariosDTO
+                    {
+                        Dni = usuarioBD.dni,
+                        Nombre = usuarioBD.nombre,
+                        Apellidos = usuarioBD.apellidos,
+                        Email = usuarioBD.email,
+                        Telefono = usuarioBD.telefono,
+                        Direccion = usuarioBD.direccion,
+                        CuentaCorriente = usuarioBD.ccc,
+                        Contraseña = usuarioBD.password
+                    };
+                    DatosUsuario.SetDatosUsuario(usuarioDTO);
+                    return true;
                 }
                 else
                 {

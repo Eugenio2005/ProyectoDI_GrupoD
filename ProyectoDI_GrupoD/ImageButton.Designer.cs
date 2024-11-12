@@ -37,6 +37,16 @@ namespace ProyectoDI_GrupoD
         {
             this.BackColor = Color.Transparent;
         }
+
+        private void MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+        }
+
+        private void MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+        }
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -48,9 +58,8 @@ namespace ProyectoDI_GrupoD
             // 
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(72, 43);
+            this.pictureBox.Size = new System.Drawing.Size(54, 50);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
@@ -61,26 +70,24 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label.AutoSize = true;
-            this.label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.ForeColor = System.Drawing.Color.White;
-            this.label.Location = new System.Drawing.Point(80, 15);
-            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label.Location = new System.Drawing.Point(60, 19);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(44, 16);
+            this.label.Size = new System.Drawing.Size(35, 13);
             this.label.TabIndex = 1;
             this.label.Text = "label1";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImageButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.Sienna;
             this.Controls.Add(this.label);
             this.Controls.Add(this.pictureBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ImageButton";
-            this.Size = new System.Drawing.Size(305, 43);
+            this.Size = new System.Drawing.Size(300, 50);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

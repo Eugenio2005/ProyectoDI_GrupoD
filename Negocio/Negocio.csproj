@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntitiesDTO\UsuariosDTO.cs" />
+    <Compile Include="Management\DatosUsuario.cs" />
     <Compile Include="Management\UsuarioManagement.cs" />
     <Compile Include="Management\PruebaDeConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
