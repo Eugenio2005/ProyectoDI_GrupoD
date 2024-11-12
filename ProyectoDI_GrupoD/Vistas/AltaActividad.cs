@@ -16,7 +16,7 @@ namespace ProyectoDI_GrupoD.Vistas
     public partial class AltaActividad : Form
     {
         private string nombreActividad, descripActividad;
-
+        private ActividadDTO actividadDTO = new ActividadDTO();
         public AltaActividad()
         {
             InitializeComponent();
@@ -38,11 +38,11 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            ActividadDTO actividadDTO = new ActividadDTO();
+            
 
             actividadDTO.NombreActividad = txtNombreActividad.Text;
             actividadDTO.DescripActividad = txtDescripActividad.Text;
-            actividadDTO.MonitorAsociado = comBoxMonitores.Text as String;
+            actividadDTO.MonitorAsociado = comBoxMonitores.Text;
 
             añadirActividad(actividadDTO);
         }
@@ -73,7 +73,7 @@ namespace ProyectoDI_GrupoD.Vistas
         private void AltaActividad_Load(object sender, EventArgs e)
         {
             var monitores = new Negocio.Management.MonitorManagement()
-                .ObtenerCategorias()
+                .ObtenerMonitores()
                 .Select(x => new { NombreCompleto = $"{x.Nombre} {x.Apellidos}", x.Email })
                 .ToList();
 

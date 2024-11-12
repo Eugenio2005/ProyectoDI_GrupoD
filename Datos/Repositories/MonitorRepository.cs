@@ -9,6 +9,7 @@ namespace Datos.Repositories
 {
     public class MonitorRepository
     {
+
         public bool comprobarMonitorEmail(string emailMonitor)
         {
             using (var contexto = new equipodEntities())

@@ -10,18 +10,19 @@ namespace Negocio.Management
 {
     public class MonitorManagement
     {
-        public List<UsuariosDTO> ObtenerCategorias() { 
+        public List<UsuariosDTO> ObtenerMonitores() { 
             List<Usuarios> monitores = new Datos.Repositories.MonitorRepository().ObtenerMonitores();
-            List<UsuariosDTO> monotiresDTO = new List<UsuariosDTO>();
+            List<UsuariosDTO> monitoresDTO = new List<UsuariosDTO>();
             //Hacemos el Cast
             foreach (var item in monitores)
             {
                 var dto = new UsuariosDTO();
                 dto.Nombre = item.nombre;
                 dto.Apellidos = item.apellidos;
-                monotiresDTO.Add(dto);
+                dto.Email = item.email;
+                monitoresDTO.Add(dto);
             }
-            return monotiresDTO;
+            return monitoresDTO;
         }
     }
 }

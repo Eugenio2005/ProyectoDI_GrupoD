@@ -21,20 +21,17 @@ namespace Negocio.Management
                 email_monitor = string.IsNullOrWhiteSpace(actividadDTO.MonitorAsociado) ? null : actividadDTO.MonitorAsociado
             };
 
-            // Verificar si se ha proporcionado un monitor
+            //Verificar si se ha proporcionado un monitor
             if (actividad.email_monitor != null)
             {
-                string emailMonitor = encontrarEmailMonitor();
 
-                if (emailMonitor != null)
+                //Comprobar si el monitor existe en la tabla Monitores
+                bool monitorExistente = comprobarMonitor(actividad.email_monitor);
+                if (!monitorExistente)
                 {
-                    // Comprobar si el monitor existe en la tabla Monitores
-                    bool monitorExistente = comprobarMonitor(actividad.email_monitor);
-                    if (!monitorExistente)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
+
             }
 
             try
@@ -47,13 +44,6 @@ namespace Negocio.Management
             {
                 return false;
             }
-        }
-
-        private string encontrarEmailMonitor(string nombreMonitor)
-        {
-            string emailMonitor = new Datos.Repositories.MonitorRepository().buscarEmailMonitor(nombreMonitor);
-
-            return emailMonitor;
         }
 
         private bool comprobarMonitor(string email_monitor)
