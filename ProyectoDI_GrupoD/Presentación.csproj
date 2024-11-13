@@ -61,6 +61,12 @@
     <Compile Include="ImageButton.Designer.cs">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\AltaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AltaActividad.Designer.cs">
+      <DependentUpon>AltaActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\MenuInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\AltaActividad.resx">
+      <DependentUpon>AltaActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MenuInicio.resx">
       <DependentUpon>MenuInicio.cs</DependentUpon>

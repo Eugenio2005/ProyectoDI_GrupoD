@@ -53,6 +53,12 @@
     <Compile Include="Infrastructure\Actividades.cs">
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Administradores.cs">
+      <DependentUpon>equipodBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Clientes.cs">
+      <DependentUpon>equipodBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\equipodBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,15 +74,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>equipodBD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ClientRepository.cs" />
-    <Compile Include="Repositories\PruebaDeConexion.cs" />
+    <Compile Include="Infrastructure\Monitores.cs">
+      <DependentUpon>equipodBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\Usuarios.cs">
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Valoraciones.cs">
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ActividadesRepository.cs" />
+    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\MonitorRepository.cs" />
+    <Compile Include="Repositories\PruebaDeConexion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -104,6 +115,5 @@
       <LastGenOutput>equipodBD.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

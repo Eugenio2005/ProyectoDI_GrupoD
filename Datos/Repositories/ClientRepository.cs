@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +44,18 @@ namespace Datos.Repositories
             {
                 // Devuelve el primer usuario que encuentra con el mismo email.
                 return contexto.Usuarios.FirstOrDefault(u => u.dni == dni);
+            }
+        }
+
+        public Usuarios consultarMonitorEmail(string nombreApellidoMonitor)
+        {
+            string nombreMonitor = nombreApellidoMonitor.Split(' ')[0];
+            string apellidoMonitor = nombreApellidoMonitor.Split(' ')[1];
+
+            using (var contexto = new equipodEntities())
+            {
+                // Devuelve el primer usuario que encuentra con el mismo email.
+                return contexto.Usuarios.FirstOrDefault(u => u.nombre == nombreMonitor && u.apellidos == apellidoMonitor && u.tipo_usuario == "Monitor");
             }
         }
     }
