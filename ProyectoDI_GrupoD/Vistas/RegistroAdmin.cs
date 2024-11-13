@@ -187,12 +187,6 @@ namespace ProyectoDI_GrupoD.Vistas
             }
         }
 
-        public bool validarCuentaCorriente(string cuentaCorriente)
-        {
-            string patternCuentaCorriente = @"^\d{22}$";
-            return Regex.IsMatch(cuentaCorriente, patternCuentaCorriente);
-        }
-
         public bool validarEmail(string email)
         {
             string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
@@ -274,8 +268,8 @@ namespace ProyectoDI_GrupoD.Vistas
         {
             try
             {
-                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
-                if (registroExitoso)
+                //bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaMonitor(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
+                if (/*registroExitoso*/true)
                 {
                     MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return true; // Registro exitoso

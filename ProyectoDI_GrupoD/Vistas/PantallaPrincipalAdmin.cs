@@ -93,6 +93,16 @@ namespace ProyectoDI_GrupoD
             panelDestino.Controls.Clear();
         }
 
+        private void imageButton1_Click(object sender, EventArgs e)
+        {
+            pnlSuperiorDarDeAltaMonitor.Visible = true;
+            lblTextoSuperior.Text = "--- LISTADO ACTIVIDADES ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
+
+            ListadoActividades listadoActividades = new ListadoActividades();
+            AbrirPanel(listadoActividades, pnlPrincipal);
+        }
+
         private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

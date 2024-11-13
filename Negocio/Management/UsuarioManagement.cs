@@ -52,6 +52,39 @@ namespace Negocio.Management
             
         }
 
+        public bool AltaMonitor(MonitorDTO monitorDTO, UsuariosDTO usuarioDTO)
+        {
+            // Crea un usuario con los datos enviados del registro.
+            Usuarios usuario = new Usuarios();
+
+            usuario.nombre = usuarioDTO.Nombre;
+            usuario.apellidos = usuarioDTO.Apellidos;
+            usuario.dni = usuarioDTO.Dni;
+            usuario.password = encriptarContrasena(usuarioDTO.Contraseña);
+            usuario.direccion = usuarioDTO.Direccion;
+            usuario.telefono = usuarioDTO.Telefono;
+            usuario.tipo_usuario = "Monitor"; // Por defecto hasta que nos digan lo contrario.
+            usuario.email = usuarioDTO.Email;
+
+            Monitores monitores = new Monitores();
+            monitores.email = monitorDTO.Email;
+
+            bool existeDNI = comprobarDNIExistente(usuario.dni);
+            bool existeEmail = comprobarEmailExistente(usuario.email);
+
+            // Añade al usuario a la base de datos si no existe ningun campo anterior.
+            if (existeDNI || existeEmail)
+            {
+                return false;
+            }
+            else
+            {
+                new Datos.Repositories.MonitorRepository().AltaMonitor(usuario, monitores);
+                return true;
+            }
+
+        }
+
         private bool comprobarDNIExistente(string dni)
         {
             Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(dni);
@@ -117,22 +150,9 @@ namespace Negocio.Management
                 string contrasenaEncript = encriptarContrasena(contrasena);
 
                 // Verifica si el usuario existe y si las credenciales son correctas
-                if (usuarioBD != null && usuarioBD.password.Equals(contrasenaEncript))
+                if (usuarioBD != null)
                 {
-                    // Cargar los datos del usuario en DatosUsuario
-                    UsuariosDTO usuarioDTO = new UsuariosDTO
-                    {
-                        Dni = usuarioBD.dni,
-                        Nombre = usuarioBD.nombre,
-                        Apellidos = usuarioBD.apellidos,
-                        Email = usuarioBD.email,
-                        Telefono = usuarioBD.telefono,
-                        Direccion = usuarioBD.direccion,
-                        CuentaCorriente = usuarioBD.ccc,
-                        Contraseña = usuarioBD.password
-                    };
-                    DatosUsuario.SetDatosUsuario(usuarioDTO);
-                    return true;
+                    return usuarioBD.email.Equals(email) && usuarioBD.password.Equals(contrasenaEncript);
                 }
                 else
                 {
