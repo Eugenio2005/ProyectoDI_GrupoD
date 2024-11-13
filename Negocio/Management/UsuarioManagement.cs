@@ -26,7 +26,7 @@ namespace Negocio.Management
                 nombre = usuarioDTO.Nombre, 
                 apellidos = usuarioDTO.Apellidos,
                 dni = usuarioDTO.Dni, 
-                ccc = usuarioDTO.CuentaCorriente, 
+                //ccc = usuarioDTO.CuentaCorriente, 
                 password = encriptarContrasena(usuarioDTO.Contraseña), 
                 direccion = usuarioDTO.Direccion, 
                 telefono = usuarioDTO.Telefono,
@@ -155,5 +155,16 @@ namespace Negocio.Management
             return campos.ToString();
         }
 
+        public string encontrarEmailMonitor(string nombreApellidoMonitor)
+        {
+            Usuarios emailMonitor = new Datos.Repositories.ClientRepository().consultarMonitorEmail(nombreApellidoMonitor);
+
+            if (emailMonitor == null)
+            {
+                return "Sin Monitor";
+            }
+
+            return emailMonitor.email;
+        }
     }
 }
