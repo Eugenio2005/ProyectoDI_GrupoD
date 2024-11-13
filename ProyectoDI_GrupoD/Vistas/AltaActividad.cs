@@ -52,6 +52,7 @@ namespace ProyectoDI_GrupoD.Vistas
             try
             {
                 bool activRegistradaExitoso = new Negocio.Management.ActividadManagement().AltaActividad(actividadDTO); // Llama a la lógica de negocio para añadir el usuario
+
                 if (activRegistradaExitoso)
                 {
                     MessageBox.Show("Actividad registrada correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
