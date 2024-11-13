@@ -13,20 +13,13 @@ namespace Datos.Repositories
         /// Agrega un nuevo cliente a la base de datos.
         /// </summary>
         /// <param name="cliente">El objeto que representa al usuario a registrar.</param>
-        public void AltaCliente( Usuarios usuario ,Clientes cliente)
+        public void AltaCliente(Usuarios cliente)
         {
-         
-
-            //Utiliza el contexto de la base de datos para realizar operaciones
+            // Utiliza el contexto de la base de datos para realizar operaciones
             using (var contexto = new equipodEntities())
             {
-                contexto.Usuarios.Add(usuario);
+                contexto.Usuarios.Add(cliente);
                 contexto.SaveChanges();
-            }
-            using (var contexto2 = new equipodEntities())
-            {
-                contexto2.Clientes.Add(cliente);
-                contexto2.SaveChanges();
             }
         }
 
@@ -40,7 +33,7 @@ namespace Datos.Repositories
             using (var contexto = new equipodEntities())
             {
                 // Devuelve el primer usuario que encuentra con el mismo email.
-                return contexto.Usuarios.FirstOrDefault(u => u.email == email && u.tipo_usuario == "Cliente");
+                return contexto.Usuarios.FirstOrDefault(u => u.email == email);
             }
         }
 
@@ -49,10 +42,8 @@ namespace Datos.Repositories
             using (var contexto = new equipodEntities())
             {
                 // Devuelve el primer usuario que encuentra con el mismo email.
-                return contexto.Usuarios.FirstOrDefault(u => u.dni == dni && u.tipo_usuario == "Cliente");
+                return contexto.Usuarios.FirstOrDefault(u => u.dni == dni);
             }
         }
-
-
     }
 }

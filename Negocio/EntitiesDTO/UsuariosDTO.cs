@@ -9,7 +9,7 @@ namespace Negocio.EntitiesDTO
    
     public class UsuariosDTO
     {
-        private string nombre, apellidos, dni, email, direccion, contraseña, telefono;
+        private string nombre, apellidos, dni, email, direccion, cuentaCorriente, contraseña, telefono;
 
         public string Nombre { get; set; }
         public string Apellidos { get;  set; }
@@ -17,6 +17,7 @@ namespace Negocio.EntitiesDTO
         public string Telefono { get; set; }
         public string Email { get; set; }
         public string Direccion { get; set; }
+        public string CuentaCorriente { get; set; }
         public string Contraseña { get; set; }
 
     }
