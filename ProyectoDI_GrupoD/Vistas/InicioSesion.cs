@@ -33,7 +33,7 @@ namespace ProyectoDI_GrupoD
             if (new Negocio.Management.UsuarioManagement().validarUsuario(txtUsuarioInSe.Text, txtContraseñaInSe.Text))
             {
                 this.Hide();
-                PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(txtUsuarioInSe.Text); 
+                PantallaPrincipalAdmin pantallaPrincipal = new PantallaPrincipalAdmin(txtUsuarioInSe.Text); 
                 pantallaPrincipal.ShowDialog();  
             }
             else

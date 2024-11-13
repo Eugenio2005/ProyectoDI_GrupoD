@@ -19,8 +19,8 @@ namespace Datos.Repositories
             // Utiliza el contexto de la base de datos para realizar operaciones
             using (var contexto = new equipodEntities())
             {
-                contexto.Usuarios.Add(cliente); 
-                contexto.SaveChanges(); 
+                contexto.Usuarios.Add(cliente);
+                contexto.SaveChanges();
             }
         }
 

@@ -15,9 +15,10 @@ namespace ProyectoDI_GrupoD
         [STAThread]
         static void Main()
         {
+            Negocio.Management.DatosUsuario.LimpiarDatos();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AltaActividad());
-        }
+            Application.Run(new MenuInicio());
+       }
     }
 }
