@@ -58,5 +58,7 @@ BD KEVIN:
 
 BD EUGENIO:
 
-
+<connectionStrings>
+	<add name="equipodEntities" connectionString="metadata=res://*/Infrastructure.equipodBD.csdl|res://*/Infrastructure.equipodBD.ssdl|res://*/Infrastructure.equipodBD.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=C02PC04\SQLEXPRESS;initial catalog=equipod;integrated security=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+</connectionStrings>
 
