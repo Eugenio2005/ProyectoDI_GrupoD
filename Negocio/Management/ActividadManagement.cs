@@ -18,7 +18,7 @@ namespace Negocio.Management
             {
                 nombre_actividad = actividadDTO.NombreActividad,
                 descripcion = actividadDTO.DescripActividad,
-                email_monitor = string.IsNullOrWhiteSpace(actividadDTO.MonitorAsociado) ? null : actividadDTO.MonitorAsociado
+                email_monitor = string.IsNullOrWhiteSpace(actividadDTO.MonitorAsociado) ? "Sin monitor" : actividadDTO.MonitorAsociado
             };
 
             //Verificar si se ha proporcionado un monitor

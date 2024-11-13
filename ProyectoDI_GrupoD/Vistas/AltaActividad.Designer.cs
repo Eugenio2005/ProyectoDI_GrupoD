@@ -35,8 +35,8 @@
             this.lblMonitor = new System.Windows.Forms.Label();
             this.btnBorrar = new ProyectoDI_GrupoD.RoundedButton();
             this.btnRegistrar = new ProyectoDI_GrupoD.RoundedButton();
-            this.txtDescripActividad = new ColorBorderTextBox();
-            this.txtNombreActividad = new ColorBorderTextBox();
+            this.txtNombreActividad = new System.Windows.Forms.TextBox();
+            this.txtDescripActividad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblAltaActividad
@@ -124,31 +124,21 @@
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // txtDescripActividad
-            // 
-            this.txtDescripActividad.BorderColor = System.Drawing.Color.White;
-            this.txtDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripActividad.Location = new System.Drawing.Point(168, 198);
-            this.txtDescripActividad.MaxLength = 32767;
-            this.txtDescripActividad.Name = "txtDescripActividad";
-            this.txtDescripActividad.OnlyAllowNumbers = false;
-            this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(1);
-            this.txtDescripActividad.Size = new System.Drawing.Size(254, 31);
-            this.txtDescripActividad.TabIndex = 2;
-            this.txtDescripActividad.UseSystemPasswordChar = false;
-            // 
             // txtNombreActividad
             // 
-            this.txtNombreActividad.BorderColor = System.Drawing.Color.White;
             this.txtNombreActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreActividad.Location = new System.Drawing.Point(168, 118);
-            this.txtNombreActividad.MaxLength = 32767;
+            this.txtNombreActividad.Location = new System.Drawing.Point(168, 120);
             this.txtNombreActividad.Name = "txtNombreActividad";
-            this.txtNombreActividad.OnlyAllowNumbers = false;
-            this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(1);
-            this.txtNombreActividad.Size = new System.Drawing.Size(254, 31);
-            this.txtNombreActividad.TabIndex = 1;
-            this.txtNombreActividad.UseSystemPasswordChar = false;
+            this.txtNombreActividad.Size = new System.Drawing.Size(254, 24);
+            this.txtNombreActividad.TabIndex = 9;
+            // 
+            // txtDescripActividad
+            // 
+            this.txtDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripActividad.Location = new System.Drawing.Point(168, 206);
+            this.txtDescripActividad.Name = "txtDescripActividad";
+            this.txtDescripActividad.Size = new System.Drawing.Size(254, 24);
+            this.txtDescripActividad.TabIndex = 10;
             // 
             // AltaActividad
             // 
@@ -156,14 +146,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(579, 450);
+            this.Controls.Add(this.txtDescripActividad);
+            this.Controls.Add(this.txtNombreActividad);
             this.Controls.Add(this.lblMonitor);
             this.Controls.Add(this.lblDescripActividad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.comBoxMonitores);
-            this.Controls.Add(this.txtDescripActividad);
-            this.Controls.Add(this.txtNombreActividad);
             this.Controls.Add(this.lblAltaActividad);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaActividad";
@@ -177,13 +167,13 @@
         #endregion
 
         private System.Windows.Forms.Label lblAltaActividad;
-        private ColorBorderTextBox txtNombreActividad;
-        private ColorBorderTextBox txtDescripActividad;
         private System.Windows.Forms.ComboBox comBoxMonitores;
         private RoundedButton btnRegistrar;
         private RoundedButton btnBorrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDescripActividad;
         private System.Windows.Forms.Label lblMonitor;
+        private System.Windows.Forms.TextBox txtNombreActividad;
+        private System.Windows.Forms.TextBox txtDescripActividad;
     }
 }

@@ -20,8 +20,6 @@ namespace ProyectoDI_GrupoD.Vistas
         public AltaActividad()
         {
             InitializeComponent();
-            btnRegistrar.Enabled = true; 
-            aplicarEventoComprobarTextBox();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -30,28 +28,27 @@ namespace ProyectoDI_GrupoD.Vistas
             txtDescripActividad.Clear();
         }
 
-        private void aplicarEventoComprobarTextBox()
-        {
-            txtNombreActividad.TextChanged += new EventHandler(ComprobarTextBox);
-            txtDescripActividad.TextChanged += new EventHandler(ComprobarTextBox);
-        }
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            
-
             actividadDTO.NombreActividad = txtNombreActividad.Text;
             actividadDTO.DescripActividad = txtDescripActividad.Text;
-            actividadDTO.MonitorAsociado = comBoxMonitores.Text;
+            string nombreApellidoMonitor = comBoxMonitores.Text;
+
+            actividadDTO.MonitorAsociado = encontrarEmailMonitor(nombreApellidoMonitor);
 
             añadirActividad(actividadDTO);
+        }
+
+        private string encontrarEmailMonitor(string nombreApellidoMonitor)
+        {
+            return new Negocio.Management.UsuarioManagement().encontrarEmailMonitor(nombreApellidoMonitor);
         }
 
         private bool añadirActividad(ActividadDTO actividadDTO)
         {
             try
             {
-                bool activRegistradaExitoso = new Negocio.Management.ActividadManagement().AltaActividad(actividadDTO); // Llama a la lógica de negocio para añadir el usuario
+                bool activRegistradaExitoso = new Negocio.Management.ActividadManagement().AltaActividad(actividadDTO); 
 
                 if (activRegistradaExitoso)
                 {
@@ -73,6 +70,15 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void AltaActividad_Load(object sender, EventArgs e)
         {
+            // Deshabilitar el botón de registrar al inicio
+            btnRegistrar.Enabled = false;
+
+            // Aplicar el evento para comprobar los TextBox
+            aplicarEventoComprobarTextBox();
+
+            // Forzar la comprobación de los campos al cargar
+            ComprobarTextBox(null, EventArgs.Empty);
+
             var monitores = new Negocio.Management.MonitorManagement()
                 .ObtenerMonitores()
                 .Select(x => new { NombreCompleto = $"{x.Nombre} {x.Apellidos}", x.Email })
@@ -86,9 +92,16 @@ namespace ProyectoDI_GrupoD.Vistas
             comBoxMonitores.DataSource = monitores;
         }
 
+        private void aplicarEventoComprobarTextBox()
+        {
+            txtNombreActividad.TextChanged += ComprobarTextBox;
+            txtDescripActividad.TextChanged += ComprobarTextBox;
+        }
+
         private void ComprobarTextBox(object sender, EventArgs e)
         {
-
+            btnRegistrar.Enabled = !string.IsNullOrWhiteSpace(txtNombreActividad.Text) &&
+                           !string.IsNullOrWhiteSpace(txtDescripActividad.Text);
         }
     }
 }

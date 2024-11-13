@@ -155,5 +155,16 @@ namespace Negocio.Management
             return campos.ToString();
         }
 
+        public string encontrarEmailMonitor(string nombreApellidoMonitor)
+        {
+            Usuarios emailMonitor = new Datos.Repositories.ClientRepository().consultarMonitorEmail(nombreApellidoMonitor);
+
+            if (emailMonitor == null)
+            {
+                return "Sin Monitor";
+            }
+
+            return emailMonitor.email;
+        }
     }
 }
