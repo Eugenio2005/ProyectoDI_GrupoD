@@ -154,6 +154,7 @@ namespace ProyectoDI_GrupoD.Vistas
             }
             if (!validarContrasena(txtValidarContraseñaRe.Text))
             {
+                mensajeValidacion.Append("- Las contraseñas no coinciden\n");
                 txtValidarContraseñaRe.BorderColor = Color.Red;
             }
 
@@ -269,7 +270,7 @@ namespace ProyectoDI_GrupoD.Vistas
             try
             {
                 bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaMonitor(monitorDTO, usuariosDTO); // Llama a la lógica de negocio para añadir el usuario
-                if (/*registroExitoso*/true)
+                if (registroExitoso)
                 {
                     MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return true; // Registro exitoso

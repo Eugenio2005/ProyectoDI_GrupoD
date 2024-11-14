@@ -100,6 +100,7 @@
             this.imageButton2.Name = "imageButton2";
             this.imageButton2.Size = new System.Drawing.Size(300, 50);
             this.imageButton2.TabIndex = 4;
+            this.imageButton2.Click += new System.EventHandler(this.imageButton2_Click);
             // 
             // imgBtnDarAltaMonitor
             // 

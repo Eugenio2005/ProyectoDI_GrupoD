@@ -41,13 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitiesDTO\ActividadDTO.cs" />
     <Compile Include="EntitiesDTO\ActividadesDTO.cs" />
     <Compile Include="EntitiesDTO\ActividadesMonitoresDTO.cs" />
     <Compile Include="EntitiesDTO\ClientesDTO.cs" />
     <Compile Include="EntitiesDTO\MonitorDTO.cs" />
     <Compile Include="EntitiesDTO\UsuariosDTO.cs" />
     <Compile Include="Management\ActividadesManagement.cs" />
+    <Compile Include="Management\ActividadManagement.cs" />
     <Compile Include="Management\DatosUsuario.cs" />
+    <Compile Include="Management\MonitorManagement.cs" />
     <Compile Include="Management\UsuarioManagement.cs" />
     <Compile Include="Management\PruebaDeConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -103,6 +103,16 @@ namespace ProyectoDI_GrupoD
             AbrirPanel(listadoActividades, pnlPrincipal);
         }
 
+        private void imageButton2_Click(object sender, EventArgs e)
+        {
+            pnlSuperiorDarDeAltaMonitor.Visible = true;
+            lblTextoSuperior.Text = "--- ALTA ACTIVIDAD ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
+
+            AltaActividad altaActividad = new AltaActividad();
+            AbrirPanel(altaActividad, pnlPrincipal);
+        }
+
         private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

@@ -54,5 +54,16 @@ namespace Datos.Repositories
         }
 
 
+        public Usuarios consultarMonitorEmail(string nombreApellidoMonitor)
+        {
+            string nombreMonitor = nombreApellidoMonitor.Split(' ')[0];
+            string apellidoMonitor = nombreApellidoMonitor.Split(' ')[1];
+
+            using (var contexto = new equipodEntities())
+            {
+                // Devuelve el primer usuario que encuentra con el mismo email.
+                return contexto.Usuarios.FirstOrDefault(u => u.nombre == nombreMonitor && u.apellidos == apellidoMonitor && u.tipo_usuario == "Monitor");
+            }
+        }
     }
 }
