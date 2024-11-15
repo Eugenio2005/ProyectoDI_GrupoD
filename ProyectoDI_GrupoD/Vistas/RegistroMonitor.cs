@@ -32,12 +32,12 @@ namespace ProyectoDI_GrupoD.Vistas
         /// </summary>
         private void aplicarEventoComprobarTextBox()
         {
+            txtUsuarioRe.TextChanged += new EventHandler(ComprobarTextBox);
+            txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtContraseñaRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtEmailRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtDNI_Re.TextChanged += new EventHandler(ComprobarTextBox);
-            txtUsuarioRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtValidarContraseñaRe.TextChanged += new EventHandler(ComprobarTextBox);
-            txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
         }
 
         /// <summary>
@@ -112,10 +112,7 @@ namespace ProyectoDI_GrupoD.Vistas
                 //Si consigue añadir el usuario accede a la pantalla principal.
                 if (AñadirMonitor(usuarioDTO, monitorDTO))
                 {
-                    InicioSesion inicioSesion = new InicioSesion();
-                    this.Hide();
-                    inicioSesion.ShowDialog();
-
+                    btnBorrarRe_Click(sender, e);
                 }
             }
             else
@@ -140,6 +137,11 @@ namespace ProyectoDI_GrupoD.Vistas
                 mensajeValidacion.Append("- La contraseña no es valida\n");
                 txtContraseñaRe.BorderColor = Color.Red;
             }
+            if (!comprobarIgualdadContrasena(txtValidarContraseñaRe.Text))
+            {
+                mensajeValidacion.Append("- Las contraseñas no coinciden\n");
+                txtValidarContraseñaRe.BorderColor = Color.Red;
+            }
             if (!validarTelefono(usuarioDTO.Telefono))
             {
                 mensajeValidacion.Append("- El telefono no es valido\n");
@@ -155,10 +157,7 @@ namespace ProyectoDI_GrupoD.Vistas
                 mensajeValidacion.Append("- El email no es valido\n");
                 txtEmailRe.BorderColor = Color.Red;
             }
-            if (!validarContrasena(txtValidarContraseñaRe.Text))
-            {
-                txtValidarContraseñaRe.BorderColor = Color.Red;
-            }
+            
 
             return mensajeValidacion.ToString();
         }
@@ -172,7 +171,7 @@ namespace ProyectoDI_GrupoD.Vistas
         public bool validarTelefono(string telefono)
         {
             string patternTelefono = @"^\d{9}$";
-            return Regex.IsMatch(telefono, patternTelefono);
+            return Regex.IsMatch(telefono, patternTelefono) || telefono.Equals("");
         }
 
         /// <summary>
@@ -228,7 +227,7 @@ namespace ProyectoDI_GrupoD.Vistas
             return Regex.IsMatch(password, patternContrasena);
         }
 
-        public bool validarContrasena2(string password)
+        public bool comprobarIgualdadContrasena(string password)
         {
             string contraseña1 = txtContraseñaRe.Text, contraseña2 = txtValidarContraseñaRe.Text, patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
             return Regex.IsMatch(password, patternContrasena) && contraseña1.Equals(contraseña2);
@@ -328,9 +327,9 @@ namespace ProyectoDI_GrupoD.Vistas
             contraseñaValidada = txtValidarContraseñaRe.Text;
 
             // Habilitar el botón de registro solo si todos los campos están completos
-            if (!string.IsNullOrWhiteSpace(contraseña) && !string.IsNullOrWhiteSpace(nombre) &&
-                !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(dni) &&
-                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(contraseñaValidada))
+            if (!string.IsNullOrWhiteSpace(txtUsuarioRe.Text) && !string.IsNullOrWhiteSpace(txtApellidosRe.Text) &&
+                !string.IsNullOrWhiteSpace(contraseña) &&
+                !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(dni) && !string.IsNullOrWhiteSpace(contraseñaValidada))
             {
                 btnRegistrarRe.Cursor = Cursors.Hand;
                 btnRegistrarRe.Enabled = true; // Habilitar el botón de registro

@@ -51,37 +51,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\Actividades.cs">
-      <DependentUpon>equipodBD.tt</DependentUpon>
+      <DependentUpon>equipod.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Administradores.cs">
-      <DependentUpon>equipodBD.tt</DependentUpon>
+      <DependentUpon>equipod.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Clientes.cs">
-      <DependentUpon>equipodBD.tt</DependentUpon>
+      <DependentUpon>equipod.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\equipodBD.Context.cs">
+    <Compile Include="Infrastructure\equipod.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>equipodBD.Context.tt</DependentUpon>
+      <DependentUpon>equipod.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\equipodBD.cs">
+    <Compile Include="Infrastructure\equipod.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>equipodBD.tt</DependentUpon>
+      <DependentUpon>equipod.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\equipodBD.Designer.cs">
+    <Compile Include="Infrastructure\equipod.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>equipodBD.edmx</DependentUpon>
+      <DependentUpon>equipod.edmx</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Monitores.cs">
-      <DependentUpon>equipodBD.tt</DependentUpon>
+      <DependentUpon>equipod.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Usuarios.cs">
-      <DependentUpon>equipodBD.tt</DependentUpon>
+      <DependentUpon>equipod.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Valoraciones.cs">
-      <DependentUpon>equipodBD.tt</DependentUpon>
+      <DependentUpon>equipod.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActividadRepository.cs" />
@@ -91,28 +91,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Infrastructure\equipodBD.edmx">
+    <EntityDeploy Include="Infrastructure\equipod.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>equipodBD.Designer.cs</LastGenOutput>
+      <LastGenOutput>equipod.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Infrastructure\equipodBD.edmx.diagram">
-      <DependentUpon>equipodBD.edmx</DependentUpon>
+    <None Include="Infrastructure\equipod.edmx.diagram">
+      <DependentUpon>equipod.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Infrastructure\equipodBD.Context.tt">
+    <Content Include="Infrastructure\equipod.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>equipodBD.edmx</DependentUpon>
-      <LastGenOutput>equipodBD.Context.cs</LastGenOutput>
+      <DependentUpon>equipod.edmx</DependentUpon>
+      <LastGenOutput>equipod.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Infrastructure\equipodBD.tt">
+    <Content Include="Infrastructure\equipod.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>equipodBD.edmx</DependentUpon>
-      <LastGenOutput>equipodBD.cs</LastGenOutput>
+      <DependentUpon>equipod.edmx</DependentUpon>
+      <LastGenOutput>equipod.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

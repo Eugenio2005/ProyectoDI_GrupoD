@@ -15,6 +15,7 @@ namespace ProyectoDI_GrupoD
     public partial class InicioSesion : Form
     {
         private string email, contraseña;
+        private string[] emailAdmin = {"kevinAD@gmail.com","andoniAD@gmail.com","eugenioAD@gmail.com"};
 
         public InicioSesion()
         {
@@ -33,8 +34,17 @@ namespace ProyectoDI_GrupoD
             if (new Negocio.Management.UsuarioManagement().validarUsuario(txtUsuarioInSe.Text, txtContraseñaInSe.Text))
             {
                 this.Hide();
-                PantallaPrincipalAdmin pantallaPrincipal = new PantallaPrincipalAdmin(txtUsuarioInSe.Text); 
-                pantallaPrincipal.ShowDialog();  
+                if (emailAdmin.Contains(txtUsuarioInSe.Text))
+                {
+                    PantallaPrincipalAdmin pantallaPrincipalAD = new PantallaPrincipalAdmin();
+                    pantallaPrincipalAD.ShowDialog();
+                }
+                else
+                {
+                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                    pantallaPrincipal.ShowDialog();
+                }
+                
             }
             else
             {

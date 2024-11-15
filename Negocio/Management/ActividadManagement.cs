@@ -3,6 +3,7 @@ using Datos.Repositories;
 using Negocio.EntitiesDTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -47,11 +48,11 @@ namespace Negocio.Management
             }
         }
 
-        public object ObtenerActividades()
+        public BindingList<ActividadesMonitoresDTO> ObtenerActividades()
         {
-            List<MonitorActivityViewModel> actividades = new
+            BindingList<MonitorActivityViewModel> actividades = new
             Datos.Repositories.ActividadRepository().ObtenerActividadesConMonitores();
-            List<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new List<ActividadesMonitoresDTO>();
+            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
             //Hacemos el Cast
             foreach (var item in actividades)
             {

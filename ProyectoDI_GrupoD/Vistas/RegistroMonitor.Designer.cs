@@ -34,16 +34,16 @@
             this.lblDirecciónRe = new System.Windows.Forms.Label();
             this.lblTelefonoRe = new System.Windows.Forms.Label();
             this.lblApellidosRe = new System.Windows.Forms.Label();
-            this.txtApellidosRe = new System.Windows.Forms.TextBox();
             this.lblDNI_Re = new System.Windows.Forms.Label();
             this.lblEmailRe = new System.Windows.Forms.Label();
             this.lblNombreRe = new System.Windows.Forms.Label();
-            this.txtUsuarioRe = new System.Windows.Forms.TextBox();
             this.btnojoCerradoValidarRe = new System.Windows.Forms.Button();
             this.btnojoAbiertoValidarRe = new System.Windows.Forms.Button();
             this.btnojoCerradoRe = new System.Windows.Forms.Button();
             this.btnojo_abiertoRe = new System.Windows.Forms.Button();
             this.imgKAE_Re = new System.Windows.Forms.PictureBox();
+            this.txtApellidosRe = new System.Windows.Forms.TextBox();
+            this.txtUsuarioRe = new System.Windows.Forms.TextBox();
             this.btnRegistrarRe = new ProyectoDI_GrupoD.RoundedButton();
             this.btnBorrarRe = new ProyectoDI_GrupoD.RoundedButton();
             this.txtValidarContraseñaRe = new ColorBorderTextBox();
@@ -130,22 +130,6 @@
             this.lblApellidosRe.TabIndex = 64;
             this.lblApellidosRe.Text = "Apellidos";
             // 
-            // txtApellidosRe
-            // 
-            this.txtApellidosRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtApellidosRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtApellidosRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidosRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.txtApellidosRe.Location = new System.Drawing.Point(476, 195);
-            this.txtApellidosRe.Margin = new System.Windows.Forms.Padding(10);
-            this.txtApellidosRe.MinimumSize = new System.Drawing.Size(10, 10);
-            this.txtApellidosRe.Name = "txtApellidosRe";
-            this.txtApellidosRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtApellidosRe.Size = new System.Drawing.Size(318, 24);
-            this.txtApellidosRe.TabIndex = 55;
-            // 
             // lblDNI_Re
             // 
             this.lblDNI_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -190,22 +174,6 @@
             this.lblNombreRe.Size = new System.Drawing.Size(65, 20);
             this.lblNombreRe.TabIndex = 61;
             this.lblNombreRe.Text = "Nombre";
-            // 
-            // txtUsuarioRe
-            // 
-            this.txtUsuarioRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsuarioRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtUsuarioRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.txtUsuarioRe.Location = new System.Drawing.Point(110, 195);
-            this.txtUsuarioRe.Margin = new System.Windows.Forms.Padding(10);
-            this.txtUsuarioRe.MinimumSize = new System.Drawing.Size(10, 10);
-            this.txtUsuarioRe.Name = "txtUsuarioRe";
-            this.txtUsuarioRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUsuarioRe.Size = new System.Drawing.Size(322, 24);
-            this.txtUsuarioRe.TabIndex = 54;
             // 
             // btnojoCerradoValidarRe
             // 
@@ -288,6 +256,40 @@
             this.imgKAE_Re.TabIndex = 53;
             this.imgKAE_Re.TabStop = false;
             // 
+            // txtApellidosRe
+            // 
+            this.txtApellidosRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtApellidosRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtApellidosRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidosRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtApellidosRe.Location = new System.Drawing.Point(476, 195);
+            this.txtApellidosRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtApellidosRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtApellidosRe.Name = "txtApellidosRe";
+            this.txtApellidosRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtApellidosRe.Size = new System.Drawing.Size(318, 24);
+            this.txtApellidosRe.TabIndex = 55;
+            this.txtApellidosRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
+            // 
+            // txtUsuarioRe
+            // 
+            this.txtUsuarioRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUsuarioRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtUsuarioRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuarioRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.txtUsuarioRe.Location = new System.Drawing.Point(110, 195);
+            this.txtUsuarioRe.Margin = new System.Windows.Forms.Padding(10);
+            this.txtUsuarioRe.MinimumSize = new System.Drawing.Size(10, 10);
+            this.txtUsuarioRe.Name = "txtUsuarioRe";
+            this.txtUsuarioRe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtUsuarioRe.Size = new System.Drawing.Size(322, 24);
+            this.txtUsuarioRe.TabIndex = 54;
+            this.txtUsuarioRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
+            // 
             // btnRegistrarRe
             // 
             this.btnRegistrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -351,6 +353,8 @@
             this.txtValidarContraseñaRe.Size = new System.Drawing.Size(318, 24);
             this.txtValidarContraseñaRe.TabIndex = 70;
             this.txtValidarContraseñaRe.UseSystemPasswordChar = true;
+            this.txtValidarContraseñaRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
+            this.txtValidarContraseñaRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
             // txtDireccionRe
             // 
@@ -414,6 +418,8 @@
             this.txtDNI_Re.Size = new System.Drawing.Size(322, 24);
             this.txtDNI_Re.TabIndex = 56;
             this.txtDNI_Re.UseSystemPasswordChar = false;
+            this.txtDNI_Re.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
+            this.txtDNI_Re.TextChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
             // txtEmailRe
             // 
@@ -435,8 +441,10 @@
             this.txtEmailRe.Size = new System.Drawing.Size(322, 24);
             this.txtEmailRe.TabIndex = 58;
             this.txtEmailRe.UseSystemPasswordChar = false;
+            this.txtEmailRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             this.txtEmailRe.Enter += new System.EventHandler(this.txtBoxEmailEliminarPlaceHolder);
             this.txtEmailRe.Leave += new System.EventHandler(this.txtBoxEmailAplicarPlaceHolder);
+            this.txtEmailRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
             // txtContraseñaRe
             // 
@@ -458,8 +466,10 @@
             this.txtContraseñaRe.Size = new System.Drawing.Size(318, 24);
             this.txtContraseñaRe.TabIndex = 60;
             this.txtContraseñaRe.UseSystemPasswordChar = true;
+            this.txtContraseñaRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
+            this.txtContraseñaRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
-            // RegistroAdmin
+            // RegistroMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -489,7 +499,7 @@
             this.Controls.Add(this.imgKAE_Re);
             this.Controls.Add(this.txtContraseñaRe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RegistroAdmin";
+            this.Name = "RegistroMonitor";
             this.Text = "RegistroAdmin";
             ((System.ComponentModel.ISupportInitialize)(this.imgKAE_Re)).EndInit();
             this.ResumeLayout(false);
@@ -513,14 +523,14 @@
         private System.Windows.Forms.Label lblTelefonoRe;
         private System.Windows.Forms.Label lblApellidosRe;
         private ColorBorderTextBox txtTelefonoRe;
-        private System.Windows.Forms.TextBox txtApellidosRe;
         private System.Windows.Forms.Label lblDNI_Re;
         private ColorBorderTextBox txtDNI_Re;
         private System.Windows.Forms.Label lblEmailRe;
         private System.Windows.Forms.Label lblNombreRe;
         private ColorBorderTextBox txtEmailRe;
-        private System.Windows.Forms.TextBox txtUsuarioRe;
         private System.Windows.Forms.PictureBox imgKAE_Re;
         private ColorBorderTextBox txtContraseñaRe;
+        private System.Windows.Forms.TextBox txtApellidosRe;
+        private System.Windows.Forms.TextBox txtUsuarioRe;
     }
 }

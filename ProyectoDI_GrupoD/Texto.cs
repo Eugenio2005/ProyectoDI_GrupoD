@@ -9,6 +9,9 @@ public class ColorBorderTextBox : Panel
     private bool useSystemPasswordChar; // Campo privado para gestionar el uso del enmascarado
 
     private Color borderColor = Color.White;
+
+    public event EventHandler TextChanged;
+
     public Color BorderColor
     {
         get => borderColor;
@@ -56,6 +59,7 @@ public class ColorBorderTextBox : Panel
         textBox.Leave += (sender, e) => { OnTextBoxLeave(); };
 
         textBox.KeyPress += (sender, e) => { OnTextBoxKeyPressOnlyNumber(e); }; // Event for KeyPress validation
+        textBox.TextChanged += (sender, e) => { OnTextChanged(e); };
 
         this.Controls.Add(textBox);
 
@@ -134,7 +138,10 @@ public class ColorBorderTextBox : Panel
         textBox.Text = "";
         SetPlaceholder();
     }
-
+    private void OnTextChanged (EventArgs e)
+    {
+        TextChanged?.Invoke(this, e);
+    }
     private void OnTextBoxKeyPressOnlyNumber(KeyPressEventArgs e)
     {
         if (OnlyAllowNumbers && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

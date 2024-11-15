@@ -13,16 +13,6 @@ namespace ProyectoDI_GrupoD
     {
         private string nombre,emailAdmin;
 
-        public PantallaPrincipalAdmin(string email)
-        {
-            InitializeComponent();
-
-            this.emailAdmin = email;
-
-            NombreUsuario.ButtonText = emailAdmin;
-            NombreUsuario.ButtonText = $"Bienvenido, {Negocio.Management.DatosUsuario.Nombre}";
-        }
-
         public PantallaPrincipalAdmin()
         {
             InitializeComponent();
@@ -44,7 +34,7 @@ namespace ProyectoDI_GrupoD
 
         }
 
-        private void imgButtonDarAltaActividad_Load(object sender, EventArgs e)
+        private void imgButtonDarAltaActividad_Click(object sender, EventArgs e)
         {
             pnlSuperiorDarDeAltaMonitor.Visible = true;
             lblTextoSuperior.Text = "--- Alta Actividad ---";
@@ -112,8 +102,6 @@ namespace ProyectoDI_GrupoD
         {
             panelDestino.Controls.Clear();
         }
-
-        
 
         private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
