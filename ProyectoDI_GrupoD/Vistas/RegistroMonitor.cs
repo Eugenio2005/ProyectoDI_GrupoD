@@ -15,11 +15,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace ProyectoDI_GrupoD.Vistas
 {
-    public partial class RegistroAdmin : Form
+    public partial class RegistroMonitor : Form
     {
         private string nombre, apellidos, dni, telefono, email, emailAdmin, direccion, contraseñaValidada, contraseña;
         private const string placeholderTextEmail = "ejemplo@ejemplo.com";
-        public RegistroAdmin()
+        public RegistroMonitor()
         {
             InitializeComponent(); 
             inicializarPlaceHolder();
@@ -90,6 +90,7 @@ namespace ProyectoDI_GrupoD.Vistas
         private void btnRegistrarRe_Click(object sender, EventArgs e)
         {
             UsuariosDTO usuarioDTO = new UsuariosDTO();
+            MonitorDTO monitorDTO = new MonitorDTO();
 
             // Recoge los valores de los textBox y los aplica al usuario.
             usuarioDTO.Nombre = txtUsuarioRe.Text;
@@ -100,6 +101,8 @@ namespace ProyectoDI_GrupoD.Vistas
             usuarioDTO.Direccion = txtDireccionRe.Text;
             usuarioDTO.Contraseña = txtContraseñaRe.Text;
 
+            monitorDTO.Email = txtEmailRe.Text;
+
             // Valida los datos que se hayan ingresado en el registro y devuelve un mensaje.
             string mensajeValidacion = validarDatos(usuarioDTO);
 
@@ -107,7 +110,7 @@ namespace ProyectoDI_GrupoD.Vistas
             if (mensajeValidacion.Length == 0)
             {
                 //Si consigue añadir el usuario accede a la pantalla principal.
-                if (AñadirUsuario(usuarioDTO))
+                if (AñadirMonitor(usuarioDTO, monitorDTO))
                 {
                     InicioSesion inicioSesion = new InicioSesion();
                     this.Hide();
@@ -270,11 +273,11 @@ namespace ProyectoDI_GrupoD.Vistas
         /// </summary>
         /// <param name="usuarioDTO">El objeto con la información del nuevo usuario.</param>
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
-        public bool AñadirUsuario(UsuariosDTO usuarioDTO)
+        public bool AñadirMonitor(UsuariosDTO usuarioDTO, MonitorDTO monitorDTO)
         {
             try
             {
-                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
+                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaMonitor(usuarioDTO, monitorDTO); // Llama a la lógica de negocio para añadir el usuario
                 if (registroExitoso)
                 {
                     MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

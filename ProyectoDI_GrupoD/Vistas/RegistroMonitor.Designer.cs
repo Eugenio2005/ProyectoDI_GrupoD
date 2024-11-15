@@ -1,6 +1,6 @@
 ﻿namespace ProyectoDI_GrupoD.Vistas
 {
-    partial class RegistroAdmin
+    partial class RegistroMonitor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroMonitor));
             this.lblValidarContraseñaRe = new System.Windows.Forms.Label();
             this.lblContraseñaRe = new System.Windows.Forms.Label();
             this.lblDirecciónRe = new System.Windows.Forms.Label();

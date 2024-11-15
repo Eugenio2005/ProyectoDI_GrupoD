@@ -67,6 +67,12 @@
     <Compile Include="Vistas\AltaActividad.Designer.cs">
       <DependentUpon>AltaActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ListadoActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ListadoActividades.Designer.cs">
+      <DependentUpon>ListadoActividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\MenuInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +108,11 @@
     <Compile Include="Texto.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Vistas\RegistroAdmin.cs">
+    <Compile Include="Vistas\RegistroMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\RegistroAdmin.Designer.cs">
-      <DependentUpon>RegistroAdmin.cs</DependentUpon>
+    <Compile Include="Vistas\RegistroMonitor.Designer.cs">
+      <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
@@ -139,8 +145,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Vistas\RegistroAdmin.resx">
-      <DependentUpon>RegistroAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\RegistroMonitor.resx">
+      <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
