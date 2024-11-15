@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\EntityFramework.dll</HintPath>
+      <HintPath>..\Datos\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\Datos\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -108,20 +108,17 @@
     <Compile Include="Texto.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Vistas\RegistroAdmin.cs">
+    <Compile Include="Vistas\RegistroMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\RegistroAdmin.Designer.cs">
-      <DependentUpon>RegistroAdmin.cs</DependentUpon>
+    <Compile Include="Vistas\RegistroMonitor.Designer.cs">
+      <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AltaActividad.resx">
       <DependentUpon>AltaActividad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\ListadoActividades.resx">
-      <DependentUpon>ListadoActividades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MenuInicio.resx">
       <DependentUpon>MenuInicio.cs</DependentUpon>
@@ -148,8 +145,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Vistas\RegistroAdmin.resx">
-      <DependentUpon>RegistroAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\RegistroMonitor.resx">
+      <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

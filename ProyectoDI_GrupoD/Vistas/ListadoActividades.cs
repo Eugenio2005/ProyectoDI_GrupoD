@@ -19,7 +19,7 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource =  new Negocio.Management.ActividadesManagement().ObtenerProductos();
+            dataGridView1.DataSource =  new Negocio.Management.ActividadManagement().ObtenerActividades();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -51,7 +51,7 @@ namespace ProyectoDI_GrupoD.Vistas
                     try
                     {
                         // Llamar al método para eliminar la  actividad en la capa de negocio
-                        new Negocio.Management.ActividadesManagement().EliminarActividad(actividadSeleccionada);
+                        new Negocio.Management.ActividadManagement().EliminarActividad(actividadSeleccionada);
 
                         // Eliminar la fila del DataGridView
                         dataGridView1.Rows.RemoveAt(rowIndex);

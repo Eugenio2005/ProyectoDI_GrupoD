@@ -22,7 +22,7 @@ namespace Negocio.Management
         {
             // Crea un usuario con los datos enviados del registro.
             Usuarios usuario = new Usuarios();
-            
+
             usuario.nombre = usuarioDTO.Nombre;
             usuario.apellidos = usuarioDTO.Apellidos;
             usuario.dni = usuarioDTO.Dni;
@@ -30,8 +30,8 @@ namespace Negocio.Management
             usuario.direccion = usuarioDTO.Direccion;
             usuario.telefono = usuarioDTO.Telefono;
             usuario.tipo_usuario = "Cliente"; // Por defecto hasta que nos digan lo contrario.
-            usuario.email = usuarioDTO.Email; 
-            
+            usuario.email = usuarioDTO.Email;
+
             Clientes cliente = new Clientes();
             cliente.ccc = clientesDTO.CuentaCorriente;
             cliente.email = clientesDTO.Email;
@@ -49,10 +49,10 @@ namespace Negocio.Management
                 new Datos.Repositories.ClientRepository().AltaCliente(usuario, cliente);
                 return true;
             }
-            
+
         }
 
-        public bool AltaMonitor(MonitorDTO monitorDTO, UsuariosDTO usuarioDTO)
+        public bool AltaMonitor(UsuariosDTO usuarioDTO, MonitorDTO monitorDTO)
         {
             // Crea un usuario con los datos enviados del registro.
             Usuarios usuario = new Usuarios();
@@ -63,11 +63,11 @@ namespace Negocio.Management
             usuario.password = encriptarContrasena(usuarioDTO.Contraseña);
             usuario.direccion = usuarioDTO.Direccion;
             usuario.telefono = usuarioDTO.Telefono;
-            usuario.tipo_usuario = "Monitor"; // Por defecto hasta que nos digan lo contrario.
+            usuario.tipo_usuario = "Monitor"; 
             usuario.email = usuarioDTO.Email;
 
-            Monitores monitores = new Monitores();
-            monitores.email = monitorDTO.Email;
+            Monitores monitor = new Monitores();
+            monitor.email = monitorDTO.Email;
 
             bool existeDNI = comprobarDNIExistente(usuario.dni);
             bool existeEmail = comprobarEmailExistente(usuario.email);
@@ -79,7 +79,7 @@ namespace Negocio.Management
             }
             else
             {
-                new Datos.Repositories.MonitorRepository().AltaMonitor(usuario, monitores);
+                new Datos.Repositories.ClientRepository().AltaMonitor(usuario, monitor);
                 return true;
             }
 
@@ -150,9 +150,21 @@ namespace Negocio.Management
                 string contrasenaEncript = encriptarContrasena(contrasena);
 
                 // Verifica si el usuario existe y si las credenciales son correctas
-                if (usuarioBD != null)
+                if (usuarioBD != null && usuarioBD.password.Equals(contrasenaEncript))
                 {
-                    return usuarioBD.email.Equals(email) && usuarioBD.password.Equals(contrasenaEncript);
+                    // Cargar los datos del usuario en DatosUsuario
+                    UsuariosDTO usuarioDTO = new UsuariosDTO
+                    {
+                        Dni = usuarioBD.dni,
+                        Nombre = usuarioBD.nombre,
+                        Apellidos = usuarioBD.apellidos,
+                        Email = usuarioBD.email,
+                        Telefono = usuarioBD.telefono,
+                        Direccion = usuarioBD.direccion,
+                        Contraseña = usuarioBD.password
+                    };
+                    DatosUsuario.SetDatosUsuario(usuarioDTO);
+                    return true;
                 }
                 else
                 {
@@ -201,6 +213,5 @@ namespace Negocio.Management
 
             return emailMonitor.email;
         }
-
     }
 }

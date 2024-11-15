@@ -1,34 +1,27 @@
-﻿using Microsoft.Win32;
-using Negocio.EntitiesDTO;
-using Negocio.Management;
-using ProyectoDI_GrupoD.Vistas;
+﻿using Negocio.EntitiesDTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace ProyectoDI_GrupoD
+namespace ProyectoDI_GrupoD.Vistas
 {
-    public partial class Registro : Form
+    public partial class RegistroMonitor : Form
     {
-        private string nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña;
-        private const string placeholderTextCuentaCorriente = "Ingrese 22 dígitos",
-            placeholderTextEmail = "ejemplo@ejemplo.com";
-
-        /// <summary>
-        /// Constructor de la clase Registro.
-        /// Inicializa los componentes del formulario, configura los placeholders y eventos necesarios.
-        /// </summary>
-        public Registro()
+        private string nombre, apellidos, dni, telefono, email, emailAdmin, direccion, contraseñaValidada, contraseña;
+        private const string placeholderTextEmail = "ejemplo@ejemplo.com";
+        public RegistroMonitor()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             inicializarPlaceHolder();
             btnRegistrarRe.Enabled = false;
             aplicarEventoComprobarTextBox();
@@ -43,7 +36,7 @@ namespace ProyectoDI_GrupoD
             txtEmailRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtDNI_Re.TextChanged += new EventHandler(ComprobarTextBox);
             txtUsuarioRe.TextChanged += new EventHandler(ComprobarTextBox);
-            txtCuentaCorrienteRe.TextChanged += new EventHandler(ComprobarTextBox);
+            txtValidarContraseñaRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
         }
 
@@ -53,46 +46,8 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         private void inicializarPlaceHolder()
         {
-            txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Texto de guía al usuario
-            txtCuentaCorrienteRe.ForeColor = Color.Gray; // Color del texto para el placeholder
-
             txtEmailRe.Text = placeholderTextEmail; // Establece el placeholder para el email
             txtEmailRe.ForeColor = Color.Gray; // Color del texto para el placeholder
-        }
-
-        /// <summary>
-        /// Elimina el placeholder cuando el campo de cuenta corriente se ha seleccionado.
-        /// </summary>
-        private void txtBoxCuentaCorrienteEliminarPlaceHolder(object sender, EventArgs e)
-        {
-            if (txtCuentaCorrienteRe.Text == placeholderTextCuentaCorriente)
-            {
-                txtCuentaCorrienteRe.Text = ""; // Limpiar el texto
-                txtCuentaCorrienteRe.ForeColor = Color.Black; // Cambiar a color normal
-            }
-        }
-
-        /// <summary>
-        /// Restaura el placeholder si el campo de cuenta corriente está vacío.
-        /// </summary>
-        private void txtBoxCuentaCorrienteAplicarPlaceHolder(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtCuentaCorrienteRe.Text))
-            {
-                txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaurar texto predeterminado
-                txtCuentaCorrienteRe.ForeColor = Color.Gray; // Volver al color predeterminado
-            }
-        }
-
-        /// <summary>
-        /// Cambia el color del texto de la cuenta corriente si hay contenido válido.
-        /// </summary>
-        private void txtCuentaCorrienteRe_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtCuentaCorrienteRe.Text) && txtCuentaCorrienteRe.Text != placeholderTextCuentaCorriente)
-            {
-                txtCuentaCorrienteRe.ForeColor = Color.FromArgb(202, 224, 212); // Cambiar a color normal
-            }
         }
 
         private void txtBoxEmailEliminarPlaceHolder(object sender, EventArgs e)
@@ -120,7 +75,7 @@ namespace ProyectoDI_GrupoD
 
         private void txtEmailRe_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (!string.IsNullOrEmpty(txtEmailRe.Text) && txtEmailRe.Text != placeholderTextEmail)
             {
                 txtEmailRe.ForeColor = Color.FromArgb(202, 224, 212); // Cambiar a color normal
@@ -135,8 +90,7 @@ namespace ProyectoDI_GrupoD
         private void btnRegistrarRe_Click(object sender, EventArgs e)
         {
             UsuariosDTO usuarioDTO = new UsuariosDTO();
-            ClientesDTO clienteDTO = new ClientesDTO();
-
+            MonitorDTO monitorDTO = new MonitorDTO();
 
             // Recoge los valores de los textBox y los aplica al usuario.
             usuarioDTO.Nombre = txtUsuarioRe.Text;
@@ -147,17 +101,16 @@ namespace ProyectoDI_GrupoD
             usuarioDTO.Direccion = txtDireccionRe.Text;
             usuarioDTO.Contraseña = txtContraseñaRe.Text;
 
-            clienteDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
-            clienteDTO.Email = txtEmailRe.Text;
+            monitorDTO.Email = txtEmailRe.Text;
 
             // Valida los datos que se hayan ingresado en el registro y devuelve un mensaje.
-            string mensajeValidacion = validarDatos(usuarioDTO, clienteDTO);
+            string mensajeValidacion = validarDatos(usuarioDTO);
 
             // Si el mensaje no tiene caracteres significa que no hay ningun error con los campos, si no saltara un error.
             if (mensajeValidacion.Length == 0)
             {
                 //Si consigue añadir el usuario accede a la pantalla principal.
-                if (AñadirUsuario(clienteDTO, usuarioDTO))
+                if (AñadirMonitor(usuarioDTO, monitorDTO))
                 {
                     InicioSesion inicioSesion = new InicioSesion();
                     this.Hide();
@@ -176,7 +129,7 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         /// <param name="usuarioDTO"></param>
         /// <returns>Devuelve un string con el mensaje de validación</returns>
-        private string validarDatos(UsuariosDTO usuarioDTO, ClientesDTO clienteDTO)
+        private string validarDatos(UsuariosDTO usuarioDTO)
         {
             StringBuilder mensajeValidacion = new StringBuilder();
 
@@ -202,10 +155,9 @@ namespace ProyectoDI_GrupoD
                 mensajeValidacion.Append("- El email no es valido\n");
                 txtEmailRe.BorderColor = Color.Red;
             }
-            if (!validarCuentaCorriente(clienteDTO.CuentaCorriente))
+            if (!validarContrasena(txtValidarContraseñaRe.Text))
             {
-                mensajeValidacion.Append("- La cuenta corriente no es valida\n");
-                txtCuentaCorrienteRe.BorderColor = Color.Red;
+                txtValidarContraseñaRe.BorderColor = Color.Red;
             }
 
             return mensajeValidacion.ToString();
@@ -245,7 +197,7 @@ namespace ProyectoDI_GrupoD
         }
 
         public bool validarEmail(string email)
-        { 
+        {
             string patternEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$";
             return Regex.IsMatch(email, patternEmail);
         }
@@ -269,10 +221,17 @@ namespace ProyectoDI_GrupoD
             return Regex.IsMatch(DNI, patternDNI);
         }
 
+
         public bool validarContrasena(string password)
         {
             string patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
             return Regex.IsMatch(password, patternContrasena);
+        }
+
+        public bool validarContrasena2(string password)
+        {
+            string contraseña1 = txtContraseñaRe.Text, contraseña2 = txtValidarContraseñaRe.Text, patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
+            return Regex.IsMatch(password, patternContrasena) && contraseña1.Equals(contraseña2);
         }
 
         /// <summary>
@@ -283,6 +242,12 @@ namespace ProyectoDI_GrupoD
             txtContraseñaRe.UseSystemPasswordChar = true; // Ocultar la contraseña
             btnojo_abiertoRe.Visible = true; // Muestra el icono de ojo abierto
             btnojoCerradoRe.Visible = false; // Esconde el icono de ojo cerrado
+        }
+        private void btnojoCerradoValidarRe_Click(object sender, EventArgs e)
+        {
+            txtValidarContraseñaRe.UseSystemPasswordChar = true; // Mostrar la contraseña
+            btnojoAbiertoValidarRe.Visible = true;
+            btnojoCerradoValidarRe.Visible = false;
         }
 
         /// <summary>
@@ -295,6 +260,12 @@ namespace ProyectoDI_GrupoD
             btnojo_abiertoRe.Visible = false;
             btnojoCerradoRe.Visible = true;
         }
+        private void btnojoAbiertoValidarRe_Click(object sender, EventArgs e)
+        {
+            txtValidarContraseñaRe.UseSystemPasswordChar = false; // Mostrar la contraseña
+            btnojoAbiertoValidarRe.Visible = false;
+            btnojoCerradoValidarRe.Visible = true;
+        }
 
         /// <summary>
         /// Intenta añadir un nuevo usuario utilizando el objeto UsuariosDTO 
@@ -302,11 +273,11 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         /// <param name="usuarioDTO">El objeto con la información del nuevo usuario.</param>
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
-        public bool AñadirUsuario(ClientesDTO clienteDTO, UsuariosDTO usuarioDTO)
+        public bool AñadirMonitor(UsuariosDTO usuarioDTO, MonitorDTO monitorDTO)
         {
             try
             {
-                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaCliente(clienteDTO, usuarioDTO); // Llama a la lógica de negocio para añadir el usuario
+                bool registroExitoso = new Negocio.Management.UsuarioManagement().AltaMonitor(usuarioDTO, monitorDTO); // Llama a la lógica de negocio para añadir el usuario
                 if (registroExitoso)
                 {
                     MessageBox.Show("Usuario registrado correctamente", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -337,20 +308,10 @@ namespace ProyectoDI_GrupoD
             txtEmailRe.Text = placeholderTextEmail; // Restaura el placeholder para email
             txtEmailRe.BorderColor = Color.White;
             txtDireccionRe.Clear();
-            txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaura placeholder para cuenta corriente
-            txtCuentaCorrienteRe.BorderColor = Color.White;
             txtContraseñaRe.Clear();
             txtContraseñaRe.UseSystemPasswordChar = true;
-        }
-
-        /// <summary>
-        /// Maneja el evento de volver a la ventana de inicio de sesión.
-        /// </summary>
-        private void volverAtras(object sender, EventArgs e)
-        {
-            this.Hide();
-            MenuInicio menuInicio = new MenuInicio();
-            menuInicio.ShowDialog(); // Muestra la ventana de menu de inicio
+            txtValidarContraseñaRe.Clear();
+            txtValidarContraseñaRe.UseSystemPasswordChar = true;
         }
 
         /// <summary>
@@ -364,17 +325,19 @@ namespace ProyectoDI_GrupoD
             email = txtEmailRe.Text;
             dni = txtDNI_Re.Text;
             apellidos = txtApellidosRe.Text;
-            cuentaCorriente = txtCuentaCorrienteRe.Text;
+            contraseñaValidada = txtValidarContraseñaRe.Text;
 
             // Habilitar el botón de registro solo si todos los campos están completos
             if (!string.IsNullOrWhiteSpace(contraseña) && !string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(dni) &&
-                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente))
+                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(contraseñaValidada))
             {
+                btnRegistrarRe.Cursor = Cursors.Hand;
                 btnRegistrarRe.Enabled = true; // Habilitar el botón de registro
             }
             else
             {
+                btnRegistrarRe.Cursor = Cursors.No;
                 btnRegistrarRe.Enabled = false; // Deshabilitar el botón de registro
             }
         }

@@ -39,9 +39,29 @@ namespace ProyectoDI_GrupoD
             lblTextoSuperior.Text = "--- Alta Monitor ---";
             CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
 
-            RegistroAdmin registroAdmin = new RegistroAdmin();
+            RegistroMonitor registroAdmin = new RegistroMonitor();
             AbrirPanel(registroAdmin, pnlPrincipal);
 
+        }
+
+        private void imgButtonDarAltaActividad_Load(object sender, EventArgs e)
+        {
+            pnlSuperiorDarDeAltaMonitor.Visible = true;
+            lblTextoSuperior.Text = "--- Alta Actividad ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
+
+            AltaActividad altaActividad = new AltaActividad();
+            AbrirPanel(altaActividad, pnlPrincipal);
+        }
+
+        private void imgButtonListarActividad_Click(object sender, EventArgs e)
+        {
+            pnlSuperiorDarDeAltaMonitor.Visible = true;
+            lblTextoSuperior.Text = "--- Listar Actividades ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
+
+            ListadoActividades listadoActividades = new ListadoActividades();
+            AbrirPanel(listadoActividades, pnlPrincipal);
         }
 
         private void imgAtras_Re_Click(object sender, EventArgs e)
@@ -93,25 +113,7 @@ namespace ProyectoDI_GrupoD
             panelDestino.Controls.Clear();
         }
 
-        private void imageButton1_Click(object sender, EventArgs e)
-        {
-            pnlSuperiorDarDeAltaMonitor.Visible = true;
-            lblTextoSuperior.Text = "--- LISTADO ACTIVIDADES ---";
-            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
-
-            ListadoActividades listadoActividades = new ListadoActividades();
-            AbrirPanel(listadoActividades, pnlPrincipal);
-        }
-
-        private void imageButton2_Click(object sender, EventArgs e)
-        {
-            pnlSuperiorDarDeAltaMonitor.Visible = true;
-            lblTextoSuperior.Text = "--- ALTA ACTIVIDAD ---";
-            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
-
-            AltaActividad altaActividad = new AltaActividad();
-            AbrirPanel(altaActividad, pnlPrincipal);
-        }
+        
 
         private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {

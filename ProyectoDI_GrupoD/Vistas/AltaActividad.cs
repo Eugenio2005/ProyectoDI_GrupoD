@@ -34,7 +34,14 @@ namespace ProyectoDI_GrupoD.Vistas
             actividadDTO.DescripActividad = txtDescripActividad.Text;
             string nombreApellidoMonitor = comBoxMonitores.Text;
 
-            actividadDTO.MonitorAsociado = encontrarEmailMonitor(nombreApellidoMonitor);
+            if (nombreApellidoMonitor.Equals("Sin Monitor ")){
+                actividadDTO.MonitorAsociado= "SinMonitor@sinmonitor.com";
+            }
+            else
+            {
+                actividadDTO.MonitorAsociado = encontrarEmailMonitor(nombreApellidoMonitor);
+            }
+                
 
             añadirActividad(actividadDTO);
         }
@@ -83,9 +90,6 @@ namespace ProyectoDI_GrupoD.Vistas
                 .ObtenerMonitores()
                 .Select(x => new { NombreCompleto = $"{x.Nombre} {x.Apellidos}", x.Email })
                 .ToList();
-
-            // Añadir la opción "Sin monitor"
-            monitores.Insert(0, new { NombreCompleto = "Sin monitor", Email = (string)null });
 
             comBoxMonitores.DisplayMember = "NombreCompleto";
             comBoxMonitores.ValueMember = "Email";

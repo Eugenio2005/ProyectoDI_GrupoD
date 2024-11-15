@@ -62,7 +62,7 @@ namespace ProyectoDI_GrupoD.Vistas
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnConsultar.Location = new System.Drawing.Point(57, 131);
+            this.btnConsultar.Location = new System.Drawing.Point(37, 131);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(108, 41);
             this.btnConsultar.TabIndex = 1;
@@ -91,7 +91,6 @@ namespace ProyectoDI_GrupoD.Vistas
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dataGridView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListadoActividades";
             this.Text = "ListadoActividades";
