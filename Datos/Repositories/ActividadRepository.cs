@@ -1,14 +1,22 @@
 ﻿using Datos.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 
 namespace Datos.Repositories
 {
+    /// <summary>
+    /// Clase que gestiona las operaciones relacionadas con las actividades en la base de datos.
+    /// Permite dar de alta, eliminar actividades y obtener una lista de actividades con sus monitores asociados.
+    /// </summary>
     public class ActividadRepository
     {
-
+        /// <summary>
+        /// Registra una nueva actividad en la base de datos.
+        /// </summary>
+        /// <param name="actividad">El objeto Actividades que contiene los datos de la actividad a registrar.</param>
         public void AltaActividad(Actividades actividad)
         {
             // Utiliza el contexto de la base de datos para realizar operaciones
@@ -19,6 +27,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Elimina una actividad de la base de datos por su nombre.
+        /// Si la actividad no existe, muestra un mensaje indicando que no se encontró.
+        /// </summary>
+        /// <param name="nombreActividad">El nombre de la actividad a eliminar.</param>
         public void EliminarActividad(string nombreActividad)
         {
             using (var contexto = new equipodEntities())
@@ -38,38 +51,46 @@ namespace Datos.Repositories
                 }
             }
         }
-        public List<MonitorActivityViewModel> ObtenerActividadesConMonitores()
+
+        /// <summary>
+        /// Obtiene todas las actividades junto con el nombre y apellido de los monitores asociados.
+        /// </summary>
+        /// <returns>
+        /// Una lista de objetos MonitorActivityViewModel que contiene la actividad y los datos del monitor.
+        /// </returns>
+        public BindingList<MonitorActivityViewModel> ObtenerActividadesConMonitores()
         {
-            List<MonitorActivityViewModel> actividadesConMonitores = new List<MonitorActivityViewModel>();
             try
             {
                 using (var contexto = new equipodEntities())
                 {
-                    actividadesConMonitores = (from a in contexto.Actividades
-                                               join u in contexto.Usuarios on a.email_monitor equals u.email
-                                               where u.tipo_usuario == "monitor"
-                                               select new MonitorActivityViewModel
-                                               {
-                                                   NombreActividad = a.nombre_actividad,
-                                                   NombreMonitor = u.nombre,
-                                                   ApellidoMonitor = u.apellidos
-                                               }).ToList();
+                    var listaActividades = (from a in contexto.Actividades
+                                            join u in contexto.Usuarios on a.email_monitor equals u.email
+                                            where u.tipo_usuario == "monitor"
+                                            select new MonitorActivityViewModel
+                                            {
+                                                NombreActividad = a.nombre_actividad,
+                                                NombreMonitor = u.nombre,
+                                                ApellidoMonitor = u.apellidos
+                                            }).ToList();
+
+                    return new BindingList<MonitorActivityViewModel>(listaActividades);
                 }
-                return actividadesConMonitores;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Manejar la excepción de manera adecuada
-                return actividadesConMonitores;
+                return new BindingList<MonitorActivityViewModel>();
             }
         }
     }
 
+    /// <summary>
+    /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
+    /// </summary>
     public class MonitorActivityViewModel
     {
         public string NombreActividad { get; set; }
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
     }
-
 }

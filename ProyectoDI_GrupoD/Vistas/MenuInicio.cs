@@ -12,23 +12,34 @@ namespace ProyectoDI_GrupoD.Vistas
 {
     public partial class MenuInicio : Form
     {
+        /// <summary>
+        /// Constructor de la clase MenuInicio. Inicializa los componentes del formulario.
+        /// </summary>
         public MenuInicio()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón de inicio de sesión.
+        /// Oculta el formulario actual y abre el formulario de inicio de sesión.
+        /// </summary>
         private void btnInicioSesion_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            InicioSesion inicioSesion = new InicioSesion();
-            inicioSesion.ShowDialog();
+            this.Hide(); // Oculta el formulario de inicio
+            InicioSesion inicioSesion = new InicioSesion(); 
+            inicioSesion.ShowDialog(); 
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el enlace de registro.
+        /// Oculta el formulario actual y abre el formulario de registro.
+        /// </summary>
         private void linklblRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            Registro registro = new Registro();
-            registro.ShowDialog();
+            this.Hide(); 
+            Registro registro = new Registro(); 
+            registro.ShowDialog(); 
         }
     }
 }

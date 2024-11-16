@@ -3,6 +3,7 @@ using Datos.Repositories;
 using Negocio.EntitiesDTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -10,8 +11,21 @@ using System.Threading.Tasks;
 
 namespace Negocio.Management
 {
+    /// <summary>
+    /// Clase que gestiona las actividades del gimnasio.
+    /// Permite dar de alta, obtener y eliminar actividades, y verificar la existencia de monitores.
+    /// </summary>
     public class ActividadManagement
     {
+        /// <summary>
+        /// Registra una nueva actividad en el sistema.
+        /// Si se proporciona un monitor, se verifica si este existe en la base de datos.
+        /// </summary>
+        /// <param name="actividadDTO">Objeto que contiene los datos de la actividad.</param>
+        /// <returns>
+        /// true si la actividad se registra correctamente, 
+        /// false si ocurre un error o el monitor no existe.
+        /// </returns>
         public bool AltaActividad(ActividadDTO actividadDTO)
         {
             // Crear la actividad con los datos proporcionados
@@ -22,17 +36,15 @@ namespace Negocio.Management
                 email_monitor = string.IsNullOrWhiteSpace(actividadDTO.MonitorAsociado) ? "Sin monitor" : actividadDTO.MonitorAsociado
             };
 
-            //Verificar si se ha proporcionado un monitor
+            // Verificar si se ha proporcionado un monitor
             if (actividad.email_monitor != null)
             {
-
-                //Comprobar si el monitor existe en la tabla Monitores
+                // Comprobar si el monitor existe en la tabla Monitores
                 bool monitorExistente = comprobarMonitor(actividad.email_monitor);
                 if (!monitorExistente)
                 {
                     return false;
                 }
-
             }
 
             try
@@ -47,12 +59,19 @@ namespace Negocio.Management
             }
         }
 
-        public object ObtenerActividades()
+        /// <summary>
+        /// Obtiene todas las actividades junto con la información del monitor asociado.
+        /// </summary>
+        /// <returns>
+        /// Una lista de objetos ActividadesMonitoresDTO que contiene el nombre y apellido del monitor y el nombre de la actividad.
+        /// </returns>
+        public BindingList<ActividadesMonitoresDTO> ObtenerActividades()
         {
-            List<MonitorActivityViewModel> actividades = new
+            BindingList<MonitorActivityViewModel> actividades = new
             Datos.Repositories.ActividadRepository().ObtenerActividadesConMonitores();
-            List<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new List<ActividadesMonitoresDTO>();
-            //Hacemos el Cast
+            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
+
+            // Hacemos el Cast
             foreach (var item in actividades)
             {
                 var dto = new ActividadesMonitoresDTO();
@@ -64,12 +83,23 @@ namespace Negocio.Management
             return ActividadesMonitoresDTO;
         }
 
+        /// <summary>
+        /// Elimina una actividad del sistema a partir de su nombre.
+        /// </summary>
+        /// <param name="actividad">Objeto que contiene la actividad a eliminar.</param>
         public void EliminarActividad(ActividadesMonitoresDTO actividad)
         {
             string nombre = actividad.NombreActividad;
             new Datos.Repositories.ActividadRepository().EliminarActividad(nombre);
         }
 
+        /// <summary>
+        /// Verifica si un monitor con el correo electrónico proporcionado existe en la base de datos.
+        /// </summary>
+        /// <param name="email_monitor">El correo electrónico del monitor.</param>
+        /// <returns>
+        /// true si el monitor existe, false si no.
+        /// </returns>
         private bool comprobarMonitor(string email_monitor)
         {
             bool monitorExiste = new Datos.Repositories.MonitorRepository().comprobarMonitorEmail(email_monitor);

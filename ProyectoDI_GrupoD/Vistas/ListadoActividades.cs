@@ -1,81 +1,90 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoDI_GrupoD.Vistas
 {
     public partial class ListadoActividades : Form
     {
+        private BindingList<Negocio.EntitiesDTO.ActividadesMonitoresDTO> actividadesList;
+        private Negocio.Management.ActividadManagement actividadManagement;
+
+        /// <summary>
+        /// Constructor de la clase ListadoActividades.
+        /// Inicializa el formulario y crea una instancia de ActividadManagement.
+        /// </summary>
         public ListadoActividades()
         {
             InitializeComponent();
+            actividadManagement = new Negocio.Management.ActividadManagement();
         }
 
+        /// <summary>
+        /// Maneja el evento de carga del formulario.
+        /// Carga las actividades en el DataGridView usando una BindingList.
+        /// </summary>
+        /// <param name="sender">El objeto que genera el evento (el formulario).</param>
+        /// <param name="e">Los argumentos del evento.</param>
+        private void ListadoActividades_Load(object sender, EventArgs e)
+        {
+            // Cargar las actividades al DataGridView usando BindingList
+            actividadesList = new Negocio.Management.ActividadManagement().ObtenerActividades();
+            VistaActividades.DataSource = actividadesList;
+        }
+
+        /// <summary>
+        /// Maneja el evento de clic en el botón "Consultar".
+        /// Actualiza la lista de actividades en el DataGridView.
+        /// </summary>
+        /// <param name="sender">El objeto que genera el evento (el botón de consultar).</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource =  new Negocio.Management.ActividadManagement().ObtenerActividades();
+            // Actualizar la lista de actividades
+            actividadesList = actividadManagement.ObtenerActividades();
+            VistaActividades.DataSource = actividadesList;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        /// <summary>
+        /// Maneja el evento de clic en una celda del DataGridView.
+        /// Si se hace clic en el botón "Eliminar", muestra una confirmación y elimina la actividad seleccionada.
+        /// </summary>
+        /// <param name="sender">El objeto que genera el evento (el DataGridView).</param>
+        /// <param name="e">Los argumentos del evento (información sobre la celda clickeada).</param>
+        private void vistaActividades_ClicContenidoEliminarActividad(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-        private void DataGridViewButtonColumn(object sender, DataGridViewCellEventArgs e)
-        {
-       
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            // Verificar si se hizo clic en el botón "Eliminar"
-            if (e.ColumnIndex == dataGridView1.Columns["btnEliminar"].Index)
+            // Verifica si la celda clickeada corresponde al botón "Eliminar"
+            if (e.ColumnIndex == VistaActividades.Columns["btnEliminar"].Index && e.RowIndex >= 0)
             {
-                // Obtener el índice de la fila seleccionada
-                int rowIndex = e.RowIndex;
+                // Obtener la actividad seleccionada
+                var actividadSeleccionada = VistaActividades.Rows[e.RowIndex].DataBoundItem as Negocio.EntitiesDTO.ActividadesMonitoresDTO;
 
-                // Obtener el objeto de la actividad seleccionada
-                Negocio.EntitiesDTO.ActividadesMonitoresDTO actividadSeleccionada = dataGridView1.Rows[rowIndex].DataBoundItem as Negocio.EntitiesDTO.ActividadesMonitoresDTO;
-
-                // Confirmar la eliminación
-                DialogResult resultado = MessageBox.Show($"¿Está seguro de eliminar la actividad '{actividadSeleccionada.NombreActividad}'?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
- 
-
-                if (resultado == DialogResult.Yes)
+                if (actividadSeleccionada != null)
                 {
-                    try
-                    {
-                        // Llamar al método para eliminar la  actividad en la capa de negocio
-                        new Negocio.Management.ActividadManagement().EliminarActividad(actividadSeleccionada);
+                    // Confirmar la eliminación de la actividad
+                    DialogResult resultado = MessageBox.Show($"¿Está seguro de eliminar la actividad '{actividadSeleccionada.NombreActividad}'?",
+                                                             "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                        // Eliminar la fila del DataGridView
-                        dataGridView1.Rows.RemoveAt(rowIndex);
-
-                        // Mostrar mensaje de éxito
-                        MessageBox.Show("Actividad eliminada correctamente.");
-                    }
-                    catch (Exception ex)
+                    if (resultado == DialogResult.Yes)
                     {
-                        // Manejar la excepción
-                        MessageBox.Show($"Error al eliminar la actividad: {ex.Message}");
+                        try
+                        {
+                            // Eliminar la actividad de la base de datos
+                            actividadManagement.EliminarActividad(actividadSeleccionada);
+
+                            // Eliminar la actividad de la BindingList (se reflejará automáticamente en el DataGridView)
+                            actividadesList.Remove(actividadSeleccionada);
+
+                            MessageBox.Show("Actividad eliminada correctamente.");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar la actividad: {ex.Message}");
+                        }
                     }
                 }
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListadoActividades_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

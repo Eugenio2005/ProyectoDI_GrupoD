@@ -120,6 +120,9 @@
     <EmbeddedResource Include="Vistas\AltaActividad.resx">
       <DependentUpon>AltaActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ListadoActividades.resx">
+      <DependentUpon>ListadoActividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MenuInicio.resx">
       <DependentUpon>MenuInicio.cs</DependentUpon>
     </EmbeddedResource>
