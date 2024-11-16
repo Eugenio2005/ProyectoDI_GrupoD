@@ -7,9 +7,16 @@ using System.Linq;
 
 namespace Datos.Repositories
 {
+    /// <summary>
+    /// Clase que gestiona las operaciones relacionadas con las actividades en la base de datos.
+    /// Permite dar de alta, eliminar actividades y obtener una lista de actividades con sus monitores asociados.
+    /// </summary>
     public class ActividadRepository
     {
-
+        /// <summary>
+        /// Registra una nueva actividad en la base de datos.
+        /// </summary>
+        /// <param name="actividad">El objeto Actividades que contiene los datos de la actividad a registrar.</param>
         public void AltaActividad(Actividades actividad)
         {
             // Utiliza el contexto de la base de datos para realizar operaciones
@@ -20,6 +27,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Elimina una actividad de la base de datos por su nombre.
+        /// Si la actividad no existe, muestra un mensaje indicando que no se encontró.
+        /// </summary>
+        /// <param name="nombreActividad">El nombre de la actividad a eliminar.</param>
         public void EliminarActividad(string nombreActividad)
         {
             using (var contexto = new equipodEntities())
@@ -39,6 +51,13 @@ namespace Datos.Repositories
                 }
             }
         }
+
+        /// <summary>
+        /// Obtiene todas las actividades junto con el nombre y apellido de los monitores asociados.
+        /// </summary>
+        /// <returns>
+        /// Una lista de objetos MonitorActivityViewModel que contiene la actividad y los datos del monitor.
+        /// </returns>
         public BindingList<MonitorActivityViewModel> ObtenerActividadesConMonitores()
         {
             try
@@ -65,11 +84,13 @@ namespace Datos.Repositories
         }
     }
 
+    /// <summary>
+    /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
+    /// </summary>
     public class MonitorActivityViewModel
     {
         public string NombreActividad { get; set; }
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
     }
-
 }

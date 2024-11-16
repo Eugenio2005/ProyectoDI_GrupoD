@@ -55,11 +55,6 @@
     <Compile Include="Botones.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="equipodDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>equipodDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ImageButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,17 +151,6 @@
     <EmbeddedResource Include="Vistas\RegistroMonitor.resx">
       <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="equipodDataSet.xsc">
-      <DependentUpon>equipodDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="equipodDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>equipodDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="equipodDataSet.xss">
-      <DependentUpon>equipodDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
