@@ -13,6 +13,10 @@ CREATE TABLE Usuarios (
     tipo_usuario VARCHAR(20) NOT NULL CHECK (tipo_usuario IN ('Cliente', 'Monitor', 'Administrador'))
 );
 
+INSERT INTO Usuarios VALUES ('Andoni','Pastrana','','11111111R','','andoniAD@gmail.com','45b17ecb20','Administrador');
+INSERT INTO Usuarios VALUES ('Kevin','Villarreal','','22222222R','','kevinAD@gmail.com','45b17ecb20','Administrador');
+INSERT INTO Usuarios VALUES ('Eugenio','Lorente','','33333333R','','eugenioAD@gmail.com','45b17ecb20','Administrador');
+
 -- Tabla Clientes 
 CREATE TABLE Clientes (
     email VARCHAR(100) PRIMARY KEY,
@@ -32,14 +36,18 @@ CREATE TABLE Administradores (
     FOREIGN KEY (email) REFERENCES Usuarios(email) ON DELETE CASCADE
 );
 
+INSERT INTO Administradores VALUES ('andoniAD@gmail.com');
+INSERT INTO Administradores VALUES ('kevinAD@gmail.com');
+INSERT INTO Administradores VALUES ('eugenioAD@gmail.com');
+
+
+
 -- Tabla Actividades 
 CREATE TABLE Actividades (
     id_actividad INT IDENTITY(1,1) PRIMARY KEY,
     nombre_actividad VARCHAR(100) NOT NULL UNIQUE,
     descripcion VARCHAR(100) NOT NULL,
-
     email_monitor VARCHAR(100),
-
     FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
@@ -61,3 +69,6 @@ CREATE TABLE Usuarios_Actividades (
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad) ON DELETE CASCADE
 );
+
+INSERT INTO Usuarios VALUES ('Sin Monitor', '','','','','SinMonitor@sinmonitor.com','Sin Monitor','Monitor');
+INSERT INTO Monitores VALUES ('SinMonitor@sinmonitor.com');
