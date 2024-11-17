@@ -140,6 +140,14 @@ namespace ProyectoDI_GrupoD
             panelDestino.Controls.Clear();
         }
 
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.ShowDialog();
+            Negocio.Management.DatosUsuario.LimpiarDatos();
+        }
+
         /// <summary>
         /// Maneja el evento de cierre del formulario principal.
         /// Cierra la aplicación cuando se intenta cerrar el formulario.

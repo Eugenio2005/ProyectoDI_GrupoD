@@ -39,7 +39,9 @@ public class ColorBorderTextBox : Panel
 
     // Propiedad para habilitar la validación de solo números
     public bool OnlyAllowNumbers { get; set; } = false;
-
+    /// <summary>
+    /// Creamos el boton y sus caracteristicas que va a tener y hemos implementado 
+    /// </summary>
     public ColorBorderTextBox()
     {
         this.Padding = new Padding(1);
@@ -115,7 +117,9 @@ public class ColorBorderTextBox : Panel
         base.OnResize(e);
         this.Invalidate();
     }
-
+    /// <summary>
+    /// Simulamos un textbox que va dentro de nuestro panel
+    /// </summary>
     public string Text
     {
         get => textBox.Text == placeholderText ? "" : textBox.Text; // Devuelve el texto real
