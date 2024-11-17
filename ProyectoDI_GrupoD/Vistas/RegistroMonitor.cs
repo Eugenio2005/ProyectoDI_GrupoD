@@ -137,7 +137,7 @@ namespace ProyectoDI_GrupoD.Vistas
                 mensajeValidacion.Append("- La contraseña no es valida\n");
                 txtContraseñaRe.BorderColor = Color.Red;
             }
-            if (!comprobarIgualdadContrasena(txtValidarContraseñaRe.Text))
+            if (!comprobarIgualdadContrasena(txtContraseñaRe.Text,txtValidarContraseñaRe.Text))
             {
                 mensajeValidacion.Append("- Las contraseñas no coinciden\n");
                 txtValidarContraseñaRe.BorderColor = Color.Red;
@@ -227,10 +227,10 @@ namespace ProyectoDI_GrupoD.Vistas
             return Regex.IsMatch(password, patternContrasena);
         }
 
-        public bool comprobarIgualdadContrasena(string password)
+        public bool comprobarIgualdadContrasena(string contraseña1, string contraseña2) 
         {
-            string contraseña1 = txtContraseñaRe.Text, contraseña2 = txtValidarContraseñaRe.Text, patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
-            return Regex.IsMatch(password, patternContrasena) && contraseña1.Equals(contraseña2);
+            string patternContrasena = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[%&$/\*]).{8,}$";
+            return Regex.IsMatch(contraseña1, patternContrasena) && contraseña1.Equals(contraseña2);
         }
 
         /// <summary>

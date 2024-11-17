@@ -79,7 +79,7 @@ namespace Negocio.Management
             }
             else
             {
-                new Datos.Repositories.ClientRepository().AltaMonitor(usuario, monitor);
+                new Datos.Repositories.MonitorRepository().AltaMonitor(usuario, monitor);
                 return true;
             }
 
