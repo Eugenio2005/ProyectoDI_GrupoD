@@ -7,69 +7,44 @@ using System.Threading.Tasks;
 
 namespace Datos.Repositories
 {
+    /// <summary>
+    /// Repositorio que gestiona las operaciones relacionadas con los monitores en la base de datos.
+    /// Incluye métodos para comprobar la existencia de un monitor por email y obtener la lista de monitores.
+    /// </summary>
     public class MonitorRepository
     {
         /// <summary>
-        /// Agrega un nuevo cliente a la base de datos.
+        /// Comprueba si un monitor existe en la base de datos a través de su email.
         /// </summary>
-        /// <param name="cliente">El objeto que representa al usuario a registrar.</param>
-        public void AltaMonitor(Usuarios usuario, Monitores monitor)
-        {
-
-
-            //Utiliza el contexto de la base de datos para realizar operaciones
-            using (var contexto = new equipodEntities())
-            {
-                contexto.Usuarios.Add(usuario);
-                contexto.SaveChanges();
-            }
-            using (var contexto2 = new equipodEntities())
-            {
-                contexto2.Monitores.Add(monitor);
-                contexto2.SaveChanges();
-            }
-        }
-
-        /// <summary>
-        /// Consulta un cliente en la base de datos a través de su email.
-        /// </summary>
-        /// <param name="email">El email del usuario que se desea consultar.</param>
-        /// <returns>Devuelve el usuario con el que coincida el email introducido.</returns>
-        public Usuarios ConsultarClienteEmail(string email)
-        {
-            using (var contexto = new equipodEntities())
-            {
-                // Devuelve el primer usuario que encuentra con el mismo email.
-                return contexto.Usuarios.FirstOrDefault(u => u.email == email && u.tipo_usuario == "Monitor");
-            }
-        }
-
-        public Usuarios ConsultarClienteDNI(string dni)
-        {
-            using (var contexto = new equipodEntities())
-            {
-                // Devuelve el primer usuario que encuentra con el mismo email.
-                return contexto.Usuarios.FirstOrDefault(u => u.dni == dni && u.tipo_usuario == "Monitor");
-            }
-        }
-
+        /// <param name="emailMonitor">El email del monitor que se desea comprobar.</param>
+        /// <returns>
+        /// Devuelve true si el monitor existe con el email proporcionado, false en caso contrario.
+        /// </returns>
         public bool comprobarMonitorEmail(string emailMonitor)
         {
             using (var contexto = new equipodEntities())
             {
+                // Verifica si existe algún monitor con el email proporcionado
                 return contexto.Monitores.Any(m => m.email == emailMonitor);
             }
         }
 
+        /// <summary>
+        /// Obtiene una lista de todos los monitores registrados en la base de datos.
+        /// </summary>
+        /// <returns>
+        /// Devuelve una lista de objetos de tipo Usuarios que son monitores.
+        /// Si ocurre un error, devuelve una lista vacía.
+        /// </returns>
         public List<Usuarios> ObtenerMonitores()
         {
             List<Usuarios> monitores = new List<Usuarios>();
             try
             {
-                // Abrir la BD
+                // Abrir la base de datos y consultar los monitores
                 using (var contexto = new equipodEntities())
                 {
-                    // Filtrar solo los usuarios que sean monitores
+                    // Filtra los usuarios que tienen tipo de usuario "Monitor"
                     monitores = contexto.Usuarios
                                         .Where(u => u.tipo_usuario == "Monitor")
                                         .ToList();
@@ -78,8 +53,9 @@ namespace Datos.Repositories
             }
             catch (Exception)
             {
+                // En caso de error, devuelve una lista vacía
                 return monitores;
             }
         }
-        }
     }
+}

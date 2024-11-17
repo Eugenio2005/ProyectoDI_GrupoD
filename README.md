@@ -43,3 +43,22 @@ Esta paleta está diseñada para complementar el color base `RGB(41, 34, 36)`, u
 ---
 
 Esta paleta proporciona una combinación armónica de tonos oscuros y claros, ideales para interfaces elegantes y de bajo contraste, además de colores de acento que ayudan a resaltar elementos específicos.
+
+BD ANDONI:
+
+<connectionStrings>
+	<add name="equipodEntities" connectionString="metadata=res://*/Infrastructure.equipodBD.csdl|res://*/Infrastructure.equipodBD.ssdl|res://*/Infrastructure.equipodBD.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=C02PC03\SQLEXPRESS;initial catalog=equipod;integrated security=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+</connectionStrings>
+
+BD KEVIN:
+
+	<connectionStrings>
+		<add name="equipodEntities" connectionString="metadata=res://*/Infrastructure.equipodBD.csdl|res://*/Infrastructure.equipodBD.ssdl|res://*/Infrastructure.equipodBD.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=C02PC02\SQLEXPRESS;initial catalog=equipod;integrated security=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+	</connectionStrings>
+
+BD EUGENIO:
+
+<connectionStrings>
+	<add name="equipodEntities" connectionString="metadata=res://*/Infrastructure.equipodBD.csdl|res://*/Infrastructure.equipodBD.ssdl|res://*/Infrastructure.equipodBD.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=C02PC04\SQLEXPRESS;initial catalog=equipod;integrated security=True;trustservercertificate=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+</connectionStrings>
+

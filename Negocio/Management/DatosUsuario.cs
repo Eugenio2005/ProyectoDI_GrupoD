@@ -27,7 +27,7 @@ namespace Negocio.Management
             Email = usuarioDTO.Email;
             Telefono = usuarioDTO.Telefono;
             Direccion = usuarioDTO.Direccion;
-            //CuentaCorriente = usuarioDTO.CuentaCorriente;
+            CuentaCorriente = usuarioDTO.CuentaCorriente;
             Contraseña = usuarioDTO.Contraseña;
         }
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9d8525b5761d4ea1a6c0d4e2e935a154" Name="Diagram1">
+        <EntityTypeShape EntityType="equipodModel.Actividades" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Administradores" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Clientes" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Monitores" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Usuarios" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Valoraciones" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="equipodModel.FK__Actividad__email__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.FK__Valoracio__id_ac__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.FK__Valoracio__id_us__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="equipodModel.Usuarios_Actividades" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -129,7 +129,7 @@ namespace ProyectoDI_GrupoD
 
         /// <summary>
         /// Maneja el evento de clic en el botón de registrar.
-        /// Crea un objeto ClientesDTO y asigna los valores de los campos de entrada,
+        /// Crea un objeto UsuariosDTO y asigna los valores de los campos de entrada,
         /// luego intenta añadir el usuario.
         /// </summary>
         private void btnRegistrarRe_Click(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace ProyectoDI_GrupoD
                     InicioSesion inicioSesion = new InicioSesion();
                     this.Hide();
                     inicioSesion.ShowDialog();
-                    
+
                 }
             }
             else
@@ -174,7 +174,7 @@ namespace ProyectoDI_GrupoD
         /// <summary>
         /// Metodo que sirve para validar los datos.
         /// </summary>
-        /// <param name="clienteDTO"></param>
+        /// <param name="usuarioDTO"></param>
         /// <returns>Devuelve un string con el mensaje de validación</returns>
         private string validarDatos(UsuariosDTO usuarioDTO, ClientesDTO clienteDTO)
         {
@@ -297,10 +297,10 @@ namespace ProyectoDI_GrupoD
         }
 
         /// <summary>
-        /// Intenta añadir un nuevo usuario utilizando el objeto ClientesDTO 
+        /// Intenta añadir un nuevo usuario utilizando el objeto UsuariosDTO 
         /// y muestra un mensaje de éxito o error.
         /// </summary>
-        /// <param name="clienteDTO">El objeto con la información del nuevo usuario.</param>
+        /// <param name="usuarioDTO">El objeto con la información del nuevo usuario.</param>
         /// <returns>Devuelve true si el usuario se registra correctamente, false en caso contrario.</returns>
         public bool AñadirUsuario(ClientesDTO clienteDTO, UsuariosDTO usuarioDTO)
         {

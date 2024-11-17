@@ -9,20 +9,17 @@ using System.Reflection.Emit;
 
 namespace ProyectoDI_GrupoD
 {
+    /// <summary>
+    /// Representa la pantalla principal de administración, donde se gestionan las actividades y monitores.
+    /// </summary>
     public partial class PantallaPrincipalAdmin : Form
     {
-        private string nombre,emailAdmin;
+        private string nombre, emailAdmin;
 
-        public PantallaPrincipalAdmin(string email)
-        {
-            InitializeComponent();
-
-            this.emailAdmin = email;
-
-            NombreUsuario.ButtonText = emailAdmin;
-            NombreUsuario.ButtonText = $"Bienvenido, {Negocio.Management.DatosUsuario.Nombre}";
-        }
-
+        /// <summary>
+        /// Constructor de la clase PantallaPrincipalAdmin. Inicializa los componentes del formulario.
+        /// Configura el nombre del usuario mostrado en la interfaz.
+        /// </summary>
         public PantallaPrincipalAdmin()
         {
             InitializeComponent();
@@ -32,18 +29,52 @@ namespace ProyectoDI_GrupoD
             pnlSuperiorDarDeAltaMonitor.Visible = false;
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón de dar de alta a un monitor.
+        /// Muestra el panel de alta de monitor y abre el formulario de registro de monitor.
+        /// </summary>
         private void imgBtnDarAltaMonitor_Click(object sender, EventArgs e)
         {
-
             pnlSuperiorDarDeAltaMonitor.Visible = true;
             lblTextoSuperior.Text = "--- Alta Monitor ---";
             CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
 
-            RegistroAdmin registroAdmin = new RegistroAdmin();
+            RegistroMonitor registroAdmin = new RegistroMonitor();
             AbrirPanel(registroAdmin, pnlPrincipal);
-
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón de dar de alta a una actividad.
+        /// Muestra el panel de alta de actividad y abre el formulario de alta de actividad.
+        /// </summary>
+        private void imgButtonDarAltaActividad_Click(object sender, EventArgs e)
+        {
+            pnlSuperiorDarDeAltaMonitor.Visible = true;
+            lblTextoSuperior.Text = "--- Alta Actividad ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
+
+            AltaActividad altaActividad = new AltaActividad();
+            AbrirPanel(altaActividad, pnlPrincipal);
+        }
+
+        /// <summary>
+        /// Maneja el evento de clic en el botón de listar actividades.
+        /// Muestra el panel de listado de actividades y abre el formulario de listado de actividades.
+        /// </summary>
+        private void imgButtonListarActividad_Click(object sender, EventArgs e)
+        {
+            pnlSuperiorDarDeAltaMonitor.Visible = true;
+            lblTextoSuperior.Text = "--- Listar Actividades ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
+
+            ListadoActividades listadoActividades = new ListadoActividades();
+            AbrirPanel(listadoActividades, pnlPrincipal);
+        }
+
+        /// <summary>
+        /// Maneja el evento de clic en el botón de retroceder.
+        /// Oculta el panel de alta de monitor y limpia el panel principal.
+        /// </summary>
         private void imgAtras_Re_Click(object sender, EventArgs e)
         {
             pnlSuperiorDarDeAltaMonitor.Visible = false;
@@ -52,6 +83,12 @@ namespace ProyectoDI_GrupoD
             LimpiarPanel(pnlPrincipal);
         }
 
+        /// <summary>
+        /// Abre un formulario hijo dentro de un panel destino, cerrando cualquier formulario previamente abierto.
+        /// Configura el formulario hijo para que se ajuste al panel y lo muestra al frente.
+        /// </summary>
+        /// <param name="formularioHijo">El formulario hijo que se desea abrir.</param>
+        /// <param name="panelDestino">El panel en el que se abrirá el formulario hijo.</param>
         private void AbrirPanel(Form formularioHijo, Panel panelDestino)
         {
             // Cerrar cualquier formulario ya abierto dentro del panel
@@ -79,6 +116,12 @@ namespace ProyectoDI_GrupoD
             formularioHijo.BringToFront();
             formularioHijo.Show();
         }
+
+        /// <summary>
+        /// Centra un label dentro de un panel.
+        /// </summary>
+        /// <param name="label">El label que se desea centrar.</param>
+        /// <param name="panel">El panel dentro del cual se centrará el label.</param>
         private void CentrarLabel(System.Windows.Forms.Label label, Panel panel)
         {
             // Calcula la posición para centrar el Label
@@ -88,35 +131,24 @@ namespace ProyectoDI_GrupoD
             );
         }
 
+        /// <summary>
+        /// Limpia todos los controles dentro de un panel destino.
+        /// </summary>
+        /// <param name="panelDestino">El panel que será limpiado.</param>
         private void LimpiarPanel(Panel panelDestino)
         {
             panelDestino.Controls.Clear();
         }
 
-        private void imageButton1_Click(object sender, EventArgs e)
-        {
-            pnlSuperiorDarDeAltaMonitor.Visible = true;
-            lblTextoSuperior.Text = "--- LISTADO ACTIVIDADES ---";
-            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
-
-            ListadoActividades listadoActividades = new ListadoActividades();
-            AbrirPanel(listadoActividades, pnlPrincipal);
-        }
-
-        private void imageButton2_Click(object sender, EventArgs e)
-        {
-            pnlSuperiorDarDeAltaMonitor.Visible = true;
-            lblTextoSuperior.Text = "--- ALTA ACTIVIDAD ---";
-            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
-
-            AltaActividad altaActividad = new AltaActividad();
-            AbrirPanel(altaActividad, pnlPrincipal);
-        }
-
+        /// <summary>
+        /// Maneja el evento de cierre del formulario principal.
+        /// Cierra la aplicación cuando se intenta cerrar el formulario.
+        /// </summary>
+        /// <param name="sender">El objeto que genera el evento (el formulario de cierre).</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void PantallaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
     }
 }
