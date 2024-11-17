@@ -41,5 +41,10 @@ namespace ProyectoDI_GrupoD.Vistas
             Registro registro = new Registro(); 
             registro.ShowDialog(); 
         }
+
+        private void MenuInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
