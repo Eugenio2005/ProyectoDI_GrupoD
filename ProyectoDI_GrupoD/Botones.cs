@@ -46,7 +46,10 @@ namespace ProyectoDI_GrupoD
                 this.Invalidate();
             }
         }
-
+        /// <summary>
+        /// Creamos el boton y sus caracteristicas que va a tener y hemos implementado 
+        /// </summary>
+        /// <param name="pevent"></param>
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
@@ -72,7 +75,12 @@ namespace ProyectoDI_GrupoD
                 pevent.Graphics.DrawPath(penBorder, pathBorder);
             }
         }
-
+        /// <summary>
+        /// hacemos que el boton se haga redondeado
+        /// </summary>
+        /// <param name="rect"></param>
+        /// <param name="radius"></param>
+        /// <returns></returns>
         private GraphicsPath GetRoundedPath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();

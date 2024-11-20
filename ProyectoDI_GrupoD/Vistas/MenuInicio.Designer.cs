@@ -96,6 +96,7 @@
             this.Name = "MenuInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu de inicio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuInicio_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
