@@ -213,5 +213,43 @@ namespace Negocio.Management
 
             return emailMonitor.email;
         }
+
+        public bool comprobarUsuarioApuntado(string emailUsuario, string nombreActividad)
+        {
+            int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(emailUsuario);
+
+            if (idUsuario == 0)
+            {
+                throw new Exception("Usuario no encontrada.");
+            }
+
+            int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+
+            if (idActividad == 0)
+            {
+                throw new Exception("Actividad no encontrada.");
+            }
+
+            return new Datos.Repositories.ActividadUsuarioRepository().ComprobarUsuarioApuntado(idUsuario, idActividad);
+        }
+
+        public bool apuntarUsuarioActividad(string email, string nombreActividad)
+        {
+            int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+
+            if (idUsuario == 0)
+            {
+                throw new Exception("Usuario no encontrada.");
+            }
+
+            int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+
+            if (idActividad == 0)
+            {
+                throw new Exception("Actividad no encontrada.");
+            }
+
+            return new Datos.Repositories.ActividadUsuarioRepository().apuntarUsuario(idUsuario, idActividad);
+        }
     }
 }

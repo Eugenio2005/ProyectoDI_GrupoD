@@ -67,6 +67,12 @@
     <Compile Include="Vistas\AltaActividad.Designer.cs">
       <DependentUpon>AltaActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\InformacionActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\InformacionActividad.Designer.cs">
+      <DependentUpon>InformacionActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\ListadoActividades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AltaActividad.resx">
       <DependentUpon>AltaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\InformacionActividad.resx">
+      <DependentUpon>InformacionActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ListadoActividades.resx">
       <DependentUpon>ListadoActividades.cs</DependentUpon>

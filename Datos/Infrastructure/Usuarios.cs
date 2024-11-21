@@ -30,7 +30,9 @@ namespace Datos.Infrastructure
         public string email { get; set; }
         public string password { get; set; }
         public string tipo_usuario { get; set; }
-    
+
+        public virtual ICollection<Usuarios_Actividades> Usuarios_Actividades { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Valoraciones> Valoraciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

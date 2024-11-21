@@ -82,6 +82,18 @@ namespace Datos.Repositories
                 return new BindingList<MonitorActivityViewModel>();
             }
         }
+
+        public int ObtenerIDActividad(string nombreActividad)
+        {
+            using (var contexto = new equipodEntities())
+            {
+                // Busca el usuario con el email proporcionado y devuelve solo el ID.
+                return contexto.Actividades
+                               .Where(u => u.nombre_actividad == nombreActividad)
+                               .Select(u => u.id_actividad) // Selecciona solo el ID.
+                               .FirstOrDefault(); // Obtén el primer resultado o un valor predeterminado (null si no encuentra).
+            }
+        }
     }
 
     /// <summary>

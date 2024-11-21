@@ -25,7 +25,9 @@ namespace Datos.Infrastructure
         public string nombre_actividad { get; set; }
         public string descripcion { get; set; }
         public string email_monitor { get; set; }
-    
+
+        public virtual ICollection<Usuarios_Actividades> Usuarios_Actividades { get; set; }
+
         public virtual Monitores Monitores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Valoraciones> Valoraciones { get; set; }
