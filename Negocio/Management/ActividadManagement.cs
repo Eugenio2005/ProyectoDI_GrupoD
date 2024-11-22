@@ -83,6 +83,27 @@ namespace Negocio.Management
             return ActividadesMonitoresDTO;
         }
 
+        public BindingList<ActividadesMonitoresDTO> ObtenerActividadesMonitor()
+        {
+            BindingList<MonitorActivityViewModel> actividades = new
+            Datos.Repositories.ActividadRepository().ObtenerActividadesConMonitores();
+            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
+
+            // Hacemos el Cast
+            foreach (var item in actividades)
+            {
+                var dto = new ActividadesMonitoresDTO();
+                dto.NombreMonitor = item.NombreMonitor;
+                dto.NombreActividad = item.NombreActividad;
+                dto.ApellidoMonitor = item.ApellidoMonitor;
+                if(!dto.NombreMonitor.Equals("Sin Monitor")){
+                    ActividadesMonitoresDTO.Add(dto);
+                }
+                
+            }
+            return ActividadesMonitoresDTO;
+        }
+
         /// <summary>
         /// Elimina una actividad del sistema a partir de su nombre.
         /// </summary>
