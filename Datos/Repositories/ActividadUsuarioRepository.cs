@@ -28,14 +28,13 @@ namespace Datos.Repositories
             }
         }
 
-
-
         public bool ComprobarUsuarioApuntado(int idUsuario, int idActividad)
         {
             using (var contexto = new equipodEntities())
             {
-                // Comprueba si el usuario está asociado con la actividad.
-                return contexto.Usuarios.Any(u => u.id_usuario == idUsuario && u.Actividades.Any(a => a.id_actividad == idActividad));
+                // Verificar si el usuario está apuntado a la actividad directamente en el return
+                return contexto.Usuarios_Actividades
+                    .Any(ua => ua.id_usuario == idUsuario && ua.id_actividad == idActividad);
             }
         }
     }

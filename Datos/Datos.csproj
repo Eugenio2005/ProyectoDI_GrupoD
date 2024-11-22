@@ -80,7 +80,9 @@
     <Compile Include="Infrastructure\Usuarios.cs">
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Usuarios_Actividades.cs" />
+    <Compile Include="Infrastructure\Usuarios_Actividades.cs">
+      <DependentUpon>equipodBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\Valoraciones.cs">
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
@@ -104,7 +106,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Infrastructure\equipodBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

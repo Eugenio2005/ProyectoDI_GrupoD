@@ -15,7 +15,6 @@ namespace Datos.Infrastructure
     
     public partial class equipodEntities : DbContext
     {
-
         public equipodEntities()
             : base("name=equipodEntities")
         {
@@ -23,23 +22,7 @@ namespace Datos.Infrastructure
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-            // Configurar relaciones explícitas (si es necesario)
-            modelBuilder.Entity<Usuarios_Actividades>()
-                .HasKey(ua => new { ua.id_usuario, ua.id_actividad });
-
-            modelBuilder.Entity<Usuarios_Actividades>()
-                .HasRequired(ua => ua.Usuario)
-                .WithMany(u => u.Usuarios_Actividades)
-                .HasForeignKey(ua => ua.id_usuario)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Usuarios_Actividades>()
-                .HasRequired(ua => ua.Actividad)
-                .WithMany(a => a.Usuarios_Actividades)
-                .HasForeignKey(ua => ua.id_actividad)
-                .WillCascadeOnDelete(false);
+            throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<Actividades> Actividades { get; set; }
@@ -47,8 +30,7 @@ namespace Datos.Infrastructure
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Monitores> Monitores { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
-
-        public DbSet<Usuarios_Actividades> Usuarios_Actividades { get; set; }
+        public virtual DbSet<Usuarios_Actividades> Usuarios_Actividades { get; set; }
         public virtual DbSet<Valoraciones> Valoraciones { get; set; }
     }
 }

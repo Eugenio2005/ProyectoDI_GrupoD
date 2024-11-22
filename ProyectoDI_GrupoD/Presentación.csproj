@@ -61,6 +61,12 @@
     <Compile Include="ImageButton.Designer.cs">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ActividadesCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ActividadesCliente.Designer.cs">
+      <DependentUpon>ActividadesCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\AltaActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,7 @@
     <Compile Include="Vistas\PantallaPrincipal.Designer.cs">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Program.cs" />
     <Compile Include="Vistas\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +116,6 @@
     <Compile Include="Vistas\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Texto.cs">
       <SubType>Component</SubType>
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ActividadesCliente.resx">
+      <DependentUpon>ActividadesCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AltaActividad.resx">
       <DependentUpon>AltaActividad.cs</DependentUpon>
@@ -160,6 +169,7 @@
     <EmbeddedResource Include="Vistas\RegistroMonitor.resx">
       <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Negocio.EntitiesDTO.ActividadesMonitoresDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

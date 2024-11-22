@@ -38,7 +38,7 @@ namespace ProyectoDI_GrupoD.Vistas
             aplicarTextoCampos();
             deshabilitarCampos();
             
-            if (UsuarioApuntado(DatosUsuario.Email, "Yoga"))
+            if (UsuarioApuntado(DatosUsuario.Email, "zumba"))
             {
                 btnApuntar.Enabled = false;
             }
@@ -68,7 +68,7 @@ namespace ProyectoDI_GrupoD.Vistas
         {
             try
             {
-                bool registroExitoso = new Negocio.Management.UsuarioManagement().apuntarUsuarioActividad(DatosUsuario.Email, "Yoga"); // Llama a la lógica de negocio para añadir el usuario
+                bool registroExitoso = new Negocio.Management.UsuarioManagement().apuntarUsuarioActividad(DatosUsuario.Email, "zumba"); // Llama a la lógica de negocio para añadir el usuario
                 if (registroExitoso)
                 {
                     return true; // Registro exitoso
