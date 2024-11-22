@@ -63,9 +63,10 @@ CREATE TABLE Valoraciones (
 
 -- Tabla Usuarios_Actividades
 CREATE TABLE Usuarios_Actividades (
+    id_ActividadUsuario INT NOT NULL
     id_usuario INT NOT NULL,
     id_actividad INT NOT NULL,
-    PRIMARY KEY (id_usuario, id_actividad),
+    PRIMARY KEY (id_ActividadUsuario),
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad) ON DELETE CASCADE
 );

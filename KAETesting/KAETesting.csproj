@@ -70,8 +70,8 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InicioSesionTest.cs" />
-    <Compile Include="RegistroTest.cs" />
+    <Compile Include="RegistroActividadTest.cs" />
+    <Compile Include="RegistroMonitorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +79,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{A5F4E333-EEE8-49D5-B73E-A5BF6CB1F52F}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{B636AA61-04AE-428B-9A2D-B53BEC5B5CA7}</Project>
       <Name>Negocio</Name>

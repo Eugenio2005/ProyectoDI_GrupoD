@@ -88,24 +88,6 @@ namespace Datos.Repositories
             }
         }
 
-        /// <summary>
-        /// Agrega un nuevo monitor y su correspondiente usuario a la base de datos.
-        /// </summary>
-        /// <param name="usuario">El objeto que representa al usuario (monitor) a registrar.</param>
-        /// <param name="monitor">El objeto que representa al monitor a registrar.</param>
-        public void AltaMonitor(Usuarios usuario, Monitores monitor)
-        {
-            // Utiliza el contexto de la base de datos para realizar operaciones
-            using (var contexto = new equipodEntities())
-            {
-                contexto.Usuarios.Add(usuario);
-                contexto.SaveChanges();
-            }
-            using (var contexto2 = new equipodEntities())
-            {
-                contexto2.Monitores.Add(monitor);
-                contexto2.SaveChanges();
-            }
-        }
+        
     }
 }
