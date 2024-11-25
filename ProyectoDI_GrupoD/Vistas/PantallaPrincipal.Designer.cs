@@ -29,39 +29,142 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
-            this.imgBtnUsuario = new ProyectoDI_GrupoD.ImageButton();
+            this.pnlBotones = new System.Windows.Forms.Panel();
+            this.MisActividades = new ProyectoDI_GrupoD.ImageButton();
+            this.ActividadDisponible = new ProyectoDI_GrupoD.ImageButton();
+            this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
+            this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
+            this.lblTextoSuperior = new System.Windows.Forms.Label();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.pnlBotones.SuspendLayout();
+            this.pnlSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
             // 
-            // imgBtnUsuario
+            // pnlBotones
             // 
-            this.imgBtnUsuario.BackColor = System.Drawing.Color.Sienna;
-            this.imgBtnUsuario.ButtonImage = ((System.Drawing.Image)(resources.GetObject("imgBtnUsuario.ButtonImage")));
-            this.imgBtnUsuario.ButtonText = "Nombre Usuario";
-            this.imgBtnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imgBtnUsuario.HoverBackColor = System.Drawing.Color.LightGray;
-            this.imgBtnUsuario.Location = new System.Drawing.Point(0, 0);
-            this.imgBtnUsuario.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.imgBtnUsuario.Name = "imgBtnUsuario";
-            this.imgBtnUsuario.Size = new System.Drawing.Size(300, 50);
-            this.imgBtnUsuario.TabIndex = 0;
+            this.pnlBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            this.pnlBotones.Controls.Add(this.MisActividades);
+            this.pnlBotones.Controls.Add(this.ActividadDisponible);
+            this.pnlBotones.Controls.Add(this.NombreUsuario);
+            this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlBotones.Location = new System.Drawing.Point(0, 0);
+            this.pnlBotones.Name = "pnlBotones";
+            this.pnlBotones.Size = new System.Drawing.Size(301, 594);
+            this.pnlBotones.TabIndex = 1;
             // 
-            // PantallaPrincipalAdmin
+            // MisActividades
+            // 
+            this.MisActividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.MisActividades.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.ListarActividadesBlanco;
+            this.MisActividades.ButtonText = "MIS ACTIVIDADES";
+            this.MisActividades.HoverBackColor = System.Drawing.Color.LightGray;
+            this.MisActividades.Location = new System.Drawing.Point(0, 144);
+            this.MisActividades.Name = "MisActividades";
+            this.MisActividades.Size = new System.Drawing.Size(300, 50);
+            this.MisActividades.TabIndex = 2;
+            this.MisActividades.Click += new System.EventHandler(this.MisActividades_Click);
+            // 
+            // ActividadDisponible
+            // 
+            this.ActividadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.ActividadDisponible.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.AltaUnaActividadBlanco;
+            this.ActividadDisponible.ButtonText = "ACTIVIDADES DISPONIBLES";
+            this.ActividadDisponible.HoverBackColor = System.Drawing.Color.LightGray;
+            this.ActividadDisponible.Location = new System.Drawing.Point(0, 78);
+            this.ActividadDisponible.Name = "ActividadDisponible";
+            this.ActividadDisponible.Size = new System.Drawing.Size(300, 50);
+            this.ActividadDisponible.TabIndex = 1;
+            this.ActividadDisponible.Click += new System.EventHandler(this.ActividadDisponible_Click);
+            // 
+            // NombreUsuario
+            // 
+            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.NombreUsuario.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.usuario;
+            this.NombreUsuario.ButtonText = "NOMBRE";
+            this.NombreUsuario.HoverBackColor = System.Drawing.Color.LightGray;
+            this.NombreUsuario.Location = new System.Drawing.Point(0, 12);
+            this.NombreUsuario.Name = "NombreUsuario";
+            this.NombreUsuario.Size = new System.Drawing.Size(300, 50);
+            this.NombreUsuario.TabIndex = 0;
+            // 
+            // pnlSuperior
+            // 
+            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.pnlSuperior.Controls.Add(this.imgAtras_Re);
+            this.pnlSuperior.Controls.Add(this.lblTextoSuperior);
+            this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperior.Location = new System.Drawing.Point(301, 0);
+            this.pnlSuperior.Name = "pnlSuperior";
+            this.pnlSuperior.Size = new System.Drawing.Size(970, 100);
+            this.pnlSuperior.TabIndex = 2;
+            // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = null;
+            this.imgAtras_Re.Location = new System.Drawing.Point(162, 22);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 28;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
+            // 
+            // lblTextoSuperior
+            // 
+            this.lblTextoSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTextoSuperior.AutoSize = true;
+            this.lblTextoSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextoSuperior.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTextoSuperior.Location = new System.Drawing.Point(400, 29);
+            this.lblTextoSuperior.Name = "lblTextoSuperior";
+            this.lblTextoSuperior.Size = new System.Drawing.Size(118, 42);
+            this.lblTextoSuperior.TabIndex = 27;
+            this.lblTextoSuperior.Text = "---  ---";
+            this.lblTextoSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.Location = new System.Drawing.Point(301, 100);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(970, 494);
+            this.pnlPrincipal.TabIndex = 3;
+            // 
+            // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(1271, 594);
-            this.Controls.Add(this.imgBtnUsuario);
+            this.Controls.Add(this.pnlPrincipal);
+            this.Controls.Add(this.pnlSuperior);
+            this.Controls.Add(this.pnlBotones);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "PantallaPrincipalAdmin";
-            this.Text = "K A E GYM ADMIN";
+            this.Name = "PantallaPrincipal";
+            this.Text = "K A E GYM ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaPrincipal_FormClosing);
+            this.pnlBotones.ResumeLayout(false);
+            this.pnlSuperior.ResumeLayout(false);
+            this.pnlSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private ImageButton imgBtnUsuario;
+        private System.Windows.Forms.Panel pnlBotones;
+        private System.Windows.Forms.Panel pnlSuperior;
+        private System.Windows.Forms.PictureBox imgAtras_Re;
+        private System.Windows.Forms.Label lblTextoSuperior;
+        private ImageButton MisActividades;
+        private ImageButton ActividadDisponible;
+        private ImageButton NombreUsuario;
+        private System.Windows.Forms.Panel pnlPrincipal;
     }
 }
