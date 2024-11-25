@@ -18,7 +18,7 @@ namespace ProyectoDI_GrupoD
             Negocio.Management.DatosUsuario.LimpiarDatos();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ActividadesCliente());
+            Application.Run(new MenuInicio());
         }
     }
 }

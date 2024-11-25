@@ -20,29 +20,15 @@ namespace ProyectoDI_GrupoD.Vistas
         public InformacionActividad()
         {
             InitializeComponent();
-            
-            configuracionTooltip();
         }
 
-        private void configuracionTooltip()
+        public InformacionActividad(ActividadesClientesDTO actividadSeleccionada)
         {
-            // Configurar propiedades del ToolTip
-            toolTip.AutoPopDelay = 5000; // Tiempo que se muestra el mensaje
-            toolTip.InitialDelay = 500; // Retardo antes de aparecer
-            toolTip.ReshowDelay = 200;  // Retardo entre ToolTips
-            toolTip.ShowAlways = true;  // Mostrar siempre, incluso si el botón está deshabilitado
-        }
+            InitializeComponent();
 
-        private void InformacionActividad_Load(object sender, EventArgs e)
-        {
-            aplicarTextoCampos();
+            aplicarTextoCampos(actividadSeleccionada);
+
             deshabilitarCampos();
-            
-            if (UsuarioApuntado(DatosUsuario.Email, "zumba"))
-            {
-                btnApuntar.Enabled = false;
-            }
-
         }
 
         private bool UsuarioApuntado(String emailUsuario, String nombreActividad)
@@ -50,25 +36,25 @@ namespace ProyectoDI_GrupoD.Vistas
             return new Negocio.Management.UsuarioManagement().comprobarUsuarioApuntado(emailUsuario, nombreActividad);
         }
 
-        private void aplicarTextoCampos()
+        private void aplicarTextoCampos(ActividadesClientesDTO actividad)
         {
-            txtNombreActividad.Text = "Actividad";
-            txtDescripActividad.Text = "Descripcion";
-            comBoxMonitores.SelectedIndex = 0;
+            txtNombreActividad.Text = actividad.NombreActividad;
+            txtDescripActividad.Text = actividad.DescripActividad;
+            txtMonitorAsociado.Text = actividad.NombreMonitor;
         }
 
         private void deshabilitarCampos()
         {
             txtNombreActividad.Enabled = false;
             txtDescripActividad.Enabled = false;
-            comBoxMonitores.Enabled = false;
+            txtMonitorAsociado.Enabled = false;
         }
 
         private bool apuntarUsuarioActividad()
         {
             try
             {
-                bool registroExitoso = new Negocio.Management.UsuarioManagement().apuntarUsuarioActividad(DatosUsuario.Email, "zumba"); // Llama a la lógica de negocio para añadir el usuario
+                bool registroExitoso = new Negocio.Management.UsuarioManagement().apuntarUsuarioActividad(DatosUsuario.Email, txtNombreActividad.Text); // Llama a la lógica de negocio para añadir el usuario
                 if (registroExitoso)
                 {
                     return true; // Registro exitoso
@@ -91,6 +77,12 @@ namespace ProyectoDI_GrupoD.Vistas
             {
                 MessageBox.Show("El usuario ha sido apuntado a la actividad.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void imgAtras_Re_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

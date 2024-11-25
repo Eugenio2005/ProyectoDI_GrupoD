@@ -52,14 +52,40 @@ namespace Datos.Repositories
             }
         }
 
-        /// <summary>
-        /// Obtiene todas las actividades junto con el nombre y apellido de los monitores asociados.
-        /// </summary>
-        /// <returns>
-        /// Una lista de objetos MonitorActivityViewModel que contiene la actividad y los datos del monitor.
-        /// </returns>
-        public BindingList<MonitorActivityViewModel> ObtenerActividadesConMonitores()
+        public BindingList<ClientActivityViewModel> ObtenerActividadesClientes()
         {
+            try
+            {
+                using (var contexto = new equipodEntities())
+                {
+                    var listaActividades = (from a in contexto.Actividades
+                                            join u in contexto.Usuarios on a.email_monitor equals u.email
+                                            where u.tipo_usuario == "Monitor"
+                                            select new ClientActivityViewModel
+                                            {
+                                                NombreActividad = a.nombre_actividad,
+                                                DescripActividad = a.descripcion,
+                                                NombreMonitor = u.nombre,
+                                                ApellidoMonitor = u.apellidos
+                                            }).ToList();
+
+                    return new BindingList<ClientActivityViewModel>(listaActividades);
+                }
+            }
+            catch (Exception)
+            {
+                return new BindingList<ClientActivityViewModel>();
+            }
+        }
+
+
+            /// <summary>
+            /// Obtiene todas las actividades junto con el nombre y apellido de los monitores asociados.
+            /// </summary>
+            /// <returns>
+            /// Una lista de objetos MonitorActivityViewModel que contiene la actividad y los datos del monitor.
+            /// </returns>
+            public BindingList<MonitorActivityViewModel> ObtenerActividadesConMonitores(){
             try
             {
                 using (var contexto = new equipodEntities())
@@ -96,12 +122,23 @@ namespace Datos.Repositories
         }
     }
 
+        /// <summary>
+        /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
+        /// </summary>
+        public class MonitorActivityViewModel
+    {
+        public string NombreActividad { get; set; }
+        public string NombreMonitor { get; set; }
+        public string ApellidoMonitor { get; set; }
+    }
+
     /// <summary>
     /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
     /// </summary>
-    public class MonitorActivityViewModel
+    public class ClientActivityViewModel
     {
         public string NombreActividad { get; set; }
+        public string DescripActividad { get; set; }
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
     }

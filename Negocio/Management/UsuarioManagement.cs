@@ -220,7 +220,7 @@ namespace Negocio.Management
 
             if (idUsuario == 0)
             {
-                throw new Exception("Usuario no encontrada.");
+                throw new Exception("Usuario no encontrado.");
             }
 
             int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);

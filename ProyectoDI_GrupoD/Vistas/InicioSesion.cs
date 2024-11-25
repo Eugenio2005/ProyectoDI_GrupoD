@@ -46,8 +46,8 @@ namespace ProyectoDI_GrupoD
                 {
                     //PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
                     //pantallaPrincipal.ShowDialog();
-                    InformacionActividad informacionActividad = new InformacionActividad();
-                    informacionActividad.ShowDialog();
+                    ActividadesCliente actividadesCliente = new ActividadesCliente();
+                    actividadesCliente.ShowDialog();
                 }
 
             }
