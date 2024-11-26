@@ -350,8 +350,9 @@ namespace ProyectoDI_GrupoD
             this.imgAtras_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgAtras_Re.Enabled = false;
             this.imgAtras_Re.ErrorImage = null;
-            this.imgAtras_Re.Image = ((System.Drawing.Image)(resources.GetObject("imgAtras_Re.Image")));
+            this.imgAtras_Re.Image = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
             this.imgAtras_Re.ImageLocation = "0;0";
             this.imgAtras_Re.InitialImage = null;
             this.imgAtras_Re.Location = new System.Drawing.Point(12, 12);

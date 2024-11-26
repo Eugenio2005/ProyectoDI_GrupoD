@@ -46,6 +46,7 @@ namespace ProyectoDI_GrupoD
                 this.Invalidate();
             }
         }
+
         /// <summary>
         /// Creamos el boton y sus caracteristicas que va a tener y hemos implementado 
         /// </summary>

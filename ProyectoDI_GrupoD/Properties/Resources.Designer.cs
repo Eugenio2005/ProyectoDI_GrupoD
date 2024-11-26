@@ -73,6 +73,26 @@ namespace ProyectoDI_GrupoD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("agregar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap agregar_usuario_1_ {
+            get {
+                object obj = ResourceManager.GetObject("agregar-usuario(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AltaMonitor {
             get {
                 object obj = ResourceManager.GetObject("AltaMonitor", resourceCulture);
@@ -126,6 +146,26 @@ namespace ProyectoDI_GrupoD.Properties {
         internal static System.Drawing.Bitmap atrasSinFondo {
             get {
                 object obj = ResourceManager.GetObject("atrasSinFondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap borrar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("borrar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap borrar_usuario_1_ {
+            get {
+                object obj = ResourceManager.GetObject("borrar-usuario(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
