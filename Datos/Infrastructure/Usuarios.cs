@@ -17,8 +17,8 @@ namespace Datos.Infrastructure
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuarios()
         {
+            this.Usuarios_Actividades = new HashSet<Usuarios_Actividades>();
             this.Valoraciones = new HashSet<Valoraciones>();
-            this.Actividades = new HashSet<Actividades>();
         }
     
         public int id_usuario { get; set; }
@@ -32,8 +32,8 @@ namespace Datos.Infrastructure
         public string tipo_usuario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Valoraciones> Valoraciones { get; set; }
+        public virtual ICollection<Usuarios_Actividades> Usuarios_Actividades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Actividades> Actividades { get; set; }
+        public virtual ICollection<Valoraciones> Valoraciones { get; set; }
     }
 }

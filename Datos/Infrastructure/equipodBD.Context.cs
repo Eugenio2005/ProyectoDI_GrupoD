@@ -30,6 +30,7 @@ namespace Datos.Infrastructure
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Monitores> Monitores { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Usuarios_Actividades> Usuarios_Actividades { get; set; }
         public virtual DbSet<Valoraciones> Valoraciones { get; set; }
     }
 }

@@ -47,7 +47,9 @@ CREATE TABLE Actividades (
     id_actividad INT IDENTITY(1,1) PRIMARY KEY,
     nombre_actividad VARCHAR(100) NOT NULL UNIQUE,
     descripcion VARCHAR(100) NOT NULL,
+
     email_monitor VARCHAR(100),
+
     FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
@@ -63,10 +65,9 @@ CREATE TABLE Valoraciones (
 
 -- Tabla Usuarios_Actividades
 CREATE TABLE Usuarios_Actividades (
-    id_ActividadUsuario INT NOT NULL
+    id_ActividadUsuario INT IDENTITY(1,1) PRIMARY KEY,
     id_usuario INT NOT NULL,
     id_actividad INT NOT NULL,
-    PRIMARY KEY (id_ActividadUsuario),
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad) ON DELETE CASCADE
 );

@@ -134,5 +134,25 @@ namespace Negocio.Management
                 return false;
             }
         }
+
+        public BindingList<ActividadesClientesDTO> ObtenerActividadesClientes()
+        {
+            BindingList<ClientActivityViewModel> actividades = new
+            Datos.Repositories.ActividadRepository().ObtenerActividadesClientes();
+            BindingList<ActividadesClientesDTO> ActividadesClientesDTO = new BindingList<ActividadesClientesDTO>();
+
+            // Hacemos el Cast
+            foreach (var item in actividades)
+            {
+                var dto = new ActividadesClientesDTO();
+                dto.NombreMonitor = item.NombreMonitor;
+                dto.ApellidoMonitor = item.ApellidoMonitor;
+                dto.DescripActividad = item.DescripActividad;
+                dto.NombreActividad = item.NombreActividad;
+
+                ActividadesClientesDTO.Add(dto);
+            }
+            return ActividadesClientesDTO;
+        }
     }
 }

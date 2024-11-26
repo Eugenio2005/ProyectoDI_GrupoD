@@ -88,6 +88,16 @@ namespace Datos.Repositories
             }
         }
 
-        
+        public int ObtenerIDUsuario(string email)
+        {
+            using (var contexto = new equipodEntities())
+            {
+                // Busca el usuario con el email proporcionado y devuelve solo el ID.
+                return contexto.Usuarios
+                               .Where(u => u.email == email)
+                               .Select(u => u.id_usuario) // Selecciona solo el ID.
+                               .FirstOrDefault(); // Obtén el primer resultado o un valor predeterminado (null si no encuentra).
+            }
+        }
     }
 }

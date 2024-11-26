@@ -44,8 +44,10 @@ namespace ProyectoDI_GrupoD
                 }
                 else
                 {
-                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    pantallaPrincipal.ShowDialog();
+                    //PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                    //pantallaPrincipal.ShowDialog();
+                    ActividadesCliente actividadesCliente = new ActividadesCliente();
+                    actividadesCliente.ShowDialog();
                 }
 
             }
