@@ -42,8 +42,8 @@ namespace ProyectoDI_GrupoD.Vistas
             lblTextoSuperior.Text = "--- MIS ACTIVIDADES ---";
             CentrarLabel(lblTextoSuperior, pnlSuperior);
 
-            //ActividadesCliente actividadesCliente = new ActividadesCliente();
-            //AbrirPanel(actividadesCliente, pnlPrincipal);
+            ActividadesCliente actividadesCliente = new ActividadesCliente();
+            AbrirPanel(actividadesCliente, pnlPrincipal);
         }
 
         /// <summary>
