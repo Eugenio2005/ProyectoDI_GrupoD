@@ -81,6 +81,8 @@ namespace ProyectoDI_GrupoD.Vistas
                 // Si el usuario ya está apuntado, muestra un mensaje de error
                 MessageBox.Show($"El usuario ya está apuntado a esta actividad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
 
         private ActividadesClientesDTO obtenerActividad(DataGridViewRow selectedRow)

@@ -77,6 +77,8 @@ namespace ProyectoDI_GrupoD.Vistas
             {
                 MessageBox.Show("El usuario ha sido apuntado a la actividad.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+            this.Hide();
+            this.Close();
         }
 
         private void imgAtras_Re_Click(object sender, EventArgs e)
