@@ -203,7 +203,7 @@ namespace ProyectoDI_GrupoD
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(398, 417);
+            this.ClientSize = new System.Drawing.Size(382, 378);
             this.Controls.Add(this.imgAtras_Re);
             this.Controls.Add(this.btnojoCerradoInSe);
             this.Controls.Add(this.btnojo_abiertoInSe);
@@ -221,6 +221,7 @@ namespace ProyectoDI_GrupoD
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesion_FormClosing);
+            this.Load += new System.EventHandler(this.InicioSesion_Load);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
