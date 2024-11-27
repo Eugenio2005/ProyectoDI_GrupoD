@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio.Management;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -29,7 +30,7 @@ namespace ProyectoDI_GrupoD.Vistas
         private void ListadoActividades_Load(object sender, EventArgs e)
         {
             // Cargar las actividades al DataGridView usando BindingList
-            actividadesList = new Negocio.Management.ActividadManagement().ObtenerActividades();
+            actividadesList = new Negocio.Management.ActividadManagement().ObtenerActividadesClienteApuntado(DatosUsuario.Email);
             VistaActividades.DataSource = actividadesList;
         }
 
@@ -42,7 +43,7 @@ namespace ProyectoDI_GrupoD.Vistas
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             // Actualizar la lista de actividades
-            actividadesList = actividadManagement.ObtenerActividades();
+            actividadesList = actividadManagement.ObtenerActividadesClienteApuntado(DatosUsuario.Email);
             VistaActividades.DataSource = actividadesList;
         }
 

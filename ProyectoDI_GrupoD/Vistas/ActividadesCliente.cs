@@ -89,13 +89,13 @@ namespace ProyectoDI_GrupoD.Vistas
         {
             // Obtener los valores de las celdas correspondientes a la fila seleccionada
             string nombreActividad = selectedRow.Cells["nombreActividad"].Value.ToString();
-            string descripActividad = selectedRow.Cells["DescripActividad"].Value.ToString();
             string nombreMonitor = selectedRow.Cells["NombreMonitor"].Value.ToString();
+            string descripActividad = selectedRow.Cells["DescripActividad"].Value.ToString();
 
             // Asignar los valores al objeto actividadesClientesDTO
             actividadesClientesDTO.NombreActividad = nombreActividad;
-            actividadesClientesDTO.DescripActividad = descripActividad;
             actividadesClientesDTO.NombreMonitor = nombreMonitor;
+            actividadesClientesDTO.DescripActividad = descripActividad;
 
             return actividadesClientesDTO;
         }

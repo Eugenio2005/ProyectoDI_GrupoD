@@ -144,6 +144,8 @@ namespace ProyectoDI_GrupoD
             this.btnIniciarSesionInSe.BorderColor = System.Drawing.Color.Gray;
             this.btnIniciarSesionInSe.BorderRadius = 20;
             this.btnIniciarSesionInSe.FillColor = System.Drawing.Color.Transparent;
+            this.btnIniciarSesionInSe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnIniciarSesionInSe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
             this.btnIniciarSesionInSe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesionInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesionInSe.ForeColor = System.Drawing.SystemColors.ControlText;

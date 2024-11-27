@@ -220,7 +220,7 @@ namespace ProyectoDI_GrupoD
         public bool validarTelefono(string telefono)
         {
             string patternTelefono = @"^\d{9}$";
-            return Regex.IsMatch(telefono, patternTelefono);
+            return Regex.IsMatch(telefono, patternTelefono) || telefono.Equals("");
         }
 
         /// <summary>

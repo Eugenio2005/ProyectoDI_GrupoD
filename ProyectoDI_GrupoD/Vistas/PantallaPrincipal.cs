@@ -32,8 +32,8 @@ namespace ProyectoDI_GrupoD.Vistas
             lblTextoSuperior.Text = "--- ACTIVIDADES DISPONIBLES ---";
             CentrarLabel(lblTextoSuperior, pnlSuperior);
 
-            ListadoActUsuario listadoActUsuario = new ListadoActUsuario();
-            AbrirPanel(listadoActUsuario, pnlPrincipal);
+            ActividadesCliente actividadesCliente = new ActividadesCliente();
+            AbrirPanel(actividadesCliente, pnlPrincipal);
         }
 
         private void MisActividades_Click(object sender, EventArgs e)
@@ -42,8 +42,8 @@ namespace ProyectoDI_GrupoD.Vistas
             lblTextoSuperior.Text = "--- MIS ACTIVIDADES ---";
             CentrarLabel(lblTextoSuperior, pnlSuperior);
 
-            ActividadesCliente actividadesCliente = new ActividadesCliente();
-            AbrirPanel(actividadesCliente, pnlPrincipal);
+            ListadoActUsuario listadoActUsuario = new ListadoActUsuario();
+            AbrirPanel(listadoActUsuario, pnlPrincipal);
         }
 
         /// <summary>
@@ -113,6 +113,19 @@ namespace ProyectoDI_GrupoD.Vistas
         private void LimpiarPanel(Panel panelDestino)
         {
             panelDestino.Controls.Clear();
+        }
+
+        private void ActividadDisponible_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                this.Hide();
+                MenuInicio menuInicio = new MenuInicio();
+                menuInicio.ShowDialog();
+                Negocio.Management.DatosUsuario.LimpiarDatos();
         }
     }
 }

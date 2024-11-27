@@ -65,10 +65,10 @@ namespace Negocio.Management
         /// <returns>
         /// Una lista de objetos ActividadesMonitoresDTO que contiene el nombre y apellido del monitor y el nombre de la actividad.
         /// </returns>
-        public BindingList<ActividadesMonitoresDTO> ObtenerActividades()
+        public BindingList<ActividadesMonitoresDTO> ObtenerActividades(String email)
         {
             BindingList<MonitorActivityViewModel> actividades = new
-            Datos.Repositories.ActividadRepository().ObtenerActividadesConMonitores();
+            Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
             BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
 
             // Hacemos el Cast
@@ -83,10 +83,10 @@ namespace Negocio.Management
             return ActividadesMonitoresDTO;
         }
 
-        public BindingList<ActividadesMonitoresDTO> ObtenerActividadesMonitor()
+        public BindingList<ActividadesMonitoresDTO> ObtenerActividadesClienteApuntado(String email)
         {
             BindingList<MonitorActivityViewModel> actividades = new
-            Datos.Repositories.ActividadRepository().ObtenerActividadesConMonitores();
+            Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
             BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
 
             // Hacemos el Cast
@@ -96,9 +96,8 @@ namespace Negocio.Management
                 dto.NombreMonitor = item.NombreMonitor;
                 dto.NombreActividad = item.NombreActividad;
                 dto.ApellidoMonitor = item.ApellidoMonitor;
-                if(!dto.NombreMonitor.Equals("Sin Monitor")){
-                    ActividadesMonitoresDTO.Add(dto);
-                }
+
+                ActividadesMonitoresDTO.Add(dto);
                 
             }
             return ActividadesMonitoresDTO;

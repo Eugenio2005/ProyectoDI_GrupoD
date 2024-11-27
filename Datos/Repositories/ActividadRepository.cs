@@ -85,19 +85,21 @@ namespace Datos.Repositories
             /// <returns>
             /// Una lista de objetos MonitorActivityViewModel que contiene la actividad y los datos del monitor.
             /// </returns>
-            public BindingList<MonitorActivityViewModel> ObtenerActividadesConMonitores(){
+            public BindingList<MonitorActivityViewModel> ObtenerActividadesClienteApuntado(String email){
             try
             {
                 using (var contexto = new equipodEntities())
                 {
-                    var listaActividades = (from a in contexto.Actividades
-                                            join u in contexto.Usuarios on a.email_monitor equals u.email
-                                            where u.tipo_usuario == "monitor"
+                    var listaActividades = (from a in contexto.Usuarios_Actividades
+                                            join ac in contexto.Actividades on a.id_actividad equals ac.id_actividad
+                                            join u in contexto.Usuarios on a.id_usuario equals u.id_usuario
+                                            join m in contexto.Usuarios on ac.email_monitor equals m.email // Unir con la tabla Usuarios para obtener los datos del monitor
+                                            where u.email == email // Filtrar por el email del usuario
                                             select new MonitorActivityViewModel
                                             {
-                                                NombreActividad = a.nombre_actividad,
-                                                NombreMonitor = u.nombre,
-                                                ApellidoMonitor = u.apellidos
+                                                NombreActividad = ac.nombre_actividad,
+                                                NombreMonitor = m.nombre,  // Obtener el nombre del monitor desde la tabla Usuarios
+                                                ApellidoMonitor = m.apellidos // Obtener el apellido del monitor desde la tabla Usuarios
                                             }).ToList();
 
                     return new BindingList<MonitorActivityViewModel>(listaActividades);

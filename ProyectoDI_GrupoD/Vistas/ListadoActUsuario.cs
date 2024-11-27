@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio.Management;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,13 +23,8 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void ListadoActUsuario_Load(object sender, EventArgs e)
         {
-            actividadesList = new Negocio.Management.ActividadManagement().ObtenerActividadesMonitor();
+            actividadesList = new Negocio.Management.ActividadManagement().ObtenerActividadesClienteApuntado(DatosUsuario.Email);
             VistaActividades.DataSource = actividadesList;
-        }
-
-        private void VistaActividades_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
