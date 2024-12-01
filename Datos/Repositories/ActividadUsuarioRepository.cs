@@ -37,5 +37,33 @@ namespace Datos.Repositories
                     .Any(ua => ua.id_usuario == idUsuario && ua.id_actividad == idActividad);
             }
         }
+
+        public bool desapuntarUsuario(int idUsuario, int idActividad)
+        {
+            try
+            {
+                using (var contexto = new equipodEntities())
+                {
+                    // Buscar el registro que asocia al usuario con la actividad
+                    var usuarioActividad = contexto.Usuarios_Actividades
+                        .FirstOrDefault(ua => ua.id_usuario == idUsuario && ua.id_actividad == idActividad);
+
+                    if (usuarioActividad != null)
+                    {
+                        // Eliminar el registro de la relación
+                        contexto.Usuarios_Actividades.Remove(usuarioActividad);
+                        contexto.SaveChanges();
+                        return true;
+                    }
+
+                    return false; // No se encontró el registro
+                }
+            }
+            catch
+            {
+                return false; // Hubo un error
+            }
+        }
+
     }
 }

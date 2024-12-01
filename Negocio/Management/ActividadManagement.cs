@@ -67,7 +67,7 @@ namespace Negocio.Management
         /// </returns>
         public BindingList<ActividadesMonitoresDTO> ObtenerActividades(String email)
         {
-            BindingList<MonitorActivityViewModel> actividades = new
+            BindingList<ClientActivityViewModel> actividades = new
             Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
             BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
 
@@ -83,31 +83,32 @@ namespace Negocio.Management
             return ActividadesMonitoresDTO;
         }
 
-        public BindingList<ActividadesMonitoresDTO> ObtenerActividadesClienteApuntado(String email)
+        public BindingList<ActividadesClientesDTO> ObtenerActividadesClienteApuntado(String email)
         {
-            BindingList<MonitorActivityViewModel> actividades = new
+            BindingList<ClientActivityViewModel> actividades = new
             Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
-            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
+            BindingList<ActividadesClientesDTO> actividadesClientesDTO = new BindingList<ActividadesClientesDTO>();
 
             // Hacemos el Cast
             foreach (var item in actividades)
             {
-                var dto = new ActividadesMonitoresDTO();
+                var dto = new ActividadesClientesDTO();
                 dto.NombreMonitor = item.NombreMonitor;
                 dto.NombreActividad = item.NombreActividad;
                 dto.ApellidoMonitor = item.ApellidoMonitor;
+                dto.DescripActividad = item.DescripActividad;
 
-                ActividadesMonitoresDTO.Add(dto);
+                actividadesClientesDTO.Add(dto);
                 
             }
-            return ActividadesMonitoresDTO;
+            return actividadesClientesDTO;
         }
 
         /// <summary>
         /// Elimina una actividad del sistema a partir de su nombre.
         /// </summary>
         /// <param name="actividad">Objeto que contiene la actividad a eliminar.</param>
-        public void EliminarActividad(ActividadesMonitoresDTO actividad)
+        public void EliminarActividad(ActividadesClientesDTO actividad)
         {
             string nombre = actividad.NombreActividad;
             new Datos.Repositories.ActividadRepository().EliminarActividad(nombre);

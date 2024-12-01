@@ -48,12 +48,10 @@ namespace ProyectoDI_GrupoD.Vistas
                 if (usuarioApuntado)
                 {
                     btnApuntar.Enabled = false;
-                    btnDesapuntar.Enabled = true;
                 }
                 else
                 {
                     btnApuntar.Enabled = true;
-                    btnDesapuntar.Enabled = false;
                 }
             }
         }
@@ -99,5 +97,8 @@ namespace ProyectoDI_GrupoD.Vistas
 
             return actividadesClientesDTO;
         }
+
+        
+
     }
 }

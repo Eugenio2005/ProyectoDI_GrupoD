@@ -8,7 +8,7 @@ namespace ProyectoDI_GrupoD.Vistas
 {
     public partial class ListadoActividades : Form
     {
-        private BindingList<Negocio.EntitiesDTO.ActividadesMonitoresDTO> actividadesList;
+        private BindingList<Negocio.EntitiesDTO.ActividadesClientesDTO> actividadesList;
         private Negocio.Management.ActividadManagement actividadManagement;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace ProyectoDI_GrupoD.Vistas
             if (e.ColumnIndex == VistaActividades.Columns["btnEliminar"].Index && e.RowIndex >= 0)
             {
                 // Obtener la actividad seleccionada
-                var actividadSeleccionada = VistaActividades.Rows[e.RowIndex].DataBoundItem as Negocio.EntitiesDTO.ActividadesMonitoresDTO;
+                var actividadSeleccionada = VistaActividades.Rows[e.RowIndex].DataBoundItem as Negocio.EntitiesDTO.ActividadesClientesDTO;
 
                 if (actividadSeleccionada != null)
                 {
