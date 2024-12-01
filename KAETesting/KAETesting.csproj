@@ -70,7 +70,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RegistroActividadTest.cs" />
+    <Compile Include="ApuntarDesapuntarActividades.cs" />
     <Compile Include="RegistroMonitorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
