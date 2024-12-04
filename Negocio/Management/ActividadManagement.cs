@@ -108,7 +108,7 @@ namespace Negocio.Management
         /// Elimina una actividad del sistema a partir de su nombre.
         /// </summary>
         /// <param name="actividad">Objeto que contiene la actividad a eliminar.</param>
-        public void EliminarActividad(ActividadesClientesDTO actividad)
+        public void EliminarActividad(ActividadesMonitoresDTO actividad)
         {
             string nombre = actividad.NombreActividad;
             new Datos.Repositories.ActividadRepository().EliminarActividad(nombre);
@@ -153,6 +153,24 @@ namespace Negocio.Management
                 ActividadesClientesDTO.Add(dto);
             }
             return ActividadesClientesDTO;
+        }
+
+        public BindingList<ActividadesMonitoresDTO> ObtenerTodasActividades()
+        {
+            BindingList<MonitorActivityViewModel> actividades = new
+            Datos.Repositories.ActividadRepository().ObtenerTodasActividades();
+            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
+
+            // Hacemos el Cast
+            foreach (var item in actividades)
+            {
+                var dto = new ActividadesMonitoresDTO();
+                dto.NombreMonitor = item.NombreMonitor;
+                dto.NombreActividad = item.NombreActividad;
+                dto.ApellidoMonitor = item.ApellidoMonitor;
+                ActividadesMonitoresDTO.Add(dto);
+            }
+            return ActividadesMonitoresDTO;
         }
     }
 }
