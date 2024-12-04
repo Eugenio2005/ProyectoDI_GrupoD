@@ -300,6 +300,8 @@
             this.btnRegistrarRe.BorderRadius = 20;
             this.btnRegistrarRe.Cursor = System.Windows.Forms.Cursors.No;
             this.btnRegistrarRe.FillColor = System.Drawing.Color.Transparent;
+            this.btnRegistrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnRegistrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
             this.btnRegistrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnRegistrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -322,6 +324,8 @@
             this.btnBorrarRe.BorderRadius = 20;
             this.btnBorrarRe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBorrarRe.FillColor = System.Drawing.Color.Transparent;
+            this.btnBorrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnBorrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
             this.btnBorrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnBorrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -353,8 +357,8 @@
             this.txtValidarContraseñaRe.Size = new System.Drawing.Size(318, 24);
             this.txtValidarContraseñaRe.TabIndex = 70;
             this.txtValidarContraseñaRe.UseSystemPasswordChar = true;
-            this.txtValidarContraseñaRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             this.txtValidarContraseñaRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
+            this.txtValidarContraseñaRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
             // txtDireccionRe
             // 
@@ -418,8 +422,8 @@
             this.txtDNI_Re.Size = new System.Drawing.Size(322, 24);
             this.txtDNI_Re.TabIndex = 56;
             this.txtDNI_Re.UseSystemPasswordChar = false;
-            this.txtDNI_Re.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             this.txtDNI_Re.TextChanged += new System.EventHandler(this.ComprobarTextBox);
+            this.txtDNI_Re.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
             // txtEmailRe
             // 
@@ -441,10 +445,10 @@
             this.txtEmailRe.Size = new System.Drawing.Size(322, 24);
             this.txtEmailRe.TabIndex = 58;
             this.txtEmailRe.UseSystemPasswordChar = false;
+            this.txtEmailRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
             this.txtEmailRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             this.txtEmailRe.Enter += new System.EventHandler(this.txtBoxEmailEliminarPlaceHolder);
             this.txtEmailRe.Leave += new System.EventHandler(this.txtBoxEmailAplicarPlaceHolder);
-            this.txtEmailRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
             // txtContraseñaRe
             // 
@@ -466,8 +470,8 @@
             this.txtContraseñaRe.Size = new System.Drawing.Size(318, 24);
             this.txtContraseñaRe.TabIndex = 60;
             this.txtContraseñaRe.UseSystemPasswordChar = true;
-            this.txtContraseñaRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             this.txtContraseñaRe.TextChanged += new System.EventHandler(this.ComprobarTextBox);
+            this.txtContraseñaRe.TabIndexChanged += new System.EventHandler(this.ComprobarTextBox);
             // 
             // RegistroMonitor
             // 

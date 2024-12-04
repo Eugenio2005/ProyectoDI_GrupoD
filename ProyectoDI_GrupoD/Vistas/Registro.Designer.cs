@@ -49,11 +49,11 @@ namespace ProyectoDI_GrupoD
             this.lblApellidosRe = new System.Windows.Forms.Label();
             this.txtTelefonoRe = new ColorBorderTextBox();
             this.txtApellidosRe = new System.Windows.Forms.TextBox();
-            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.btnojo_abiertoRe = new System.Windows.Forms.Button();
             this.btnojoCerradoRe = new System.Windows.Forms.Button();
             this.btnRegistrarRe = new ProyectoDI_GrupoD.RoundedButton();
             this.btnBorrarRe = new ProyectoDI_GrupoD.RoundedButton();
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgKAE_Re)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
@@ -345,25 +345,6 @@ namespace ProyectoDI_GrupoD
             this.txtApellidosRe.Size = new System.Drawing.Size(318, 24);
             this.txtApellidosRe.TabIndex = 2;
             // 
-            // imgAtras_Re
-            // 
-            this.imgAtras_Re.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.imgAtras_Re.Enabled = false;
-            this.imgAtras_Re.ErrorImage = null;
-            this.imgAtras_Re.Image = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
-            this.imgAtras_Re.ImageLocation = "0;0";
-            this.imgAtras_Re.InitialImage = null;
-            this.imgAtras_Re.Location = new System.Drawing.Point(12, 12);
-            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
-            this.imgAtras_Re.Name = "imgAtras_Re";
-            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
-            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.imgAtras_Re.TabIndex = 25;
-            this.imgAtras_Re.TabStop = false;
-            this.imgAtras_Re.Click += new System.EventHandler(this.volverAtras);
-            // 
             // btnojo_abiertoRe
             // 
             this.btnojo_abiertoRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -438,17 +419,32 @@ namespace ProyectoDI_GrupoD
             this.btnBorrarRe.UseVisualStyleBackColor = false;
             this.btnBorrarRe.Click += new System.EventHandler(this.btnBorrarRe_Click);
             // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = null;
+            this.imgAtras_Re.Location = new System.Drawing.Point(9, 12);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 30;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.volverAtras);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(784, 460);
+            this.Controls.Add(this.imgAtras_Re);
             this.Controls.Add(this.btnRegistrarRe);
             this.Controls.Add(this.btnBorrarRe);
             this.Controls.Add(this.btnojoCerradoRe);
             this.Controls.Add(this.btnojo_abiertoRe);
-            this.Controls.Add(this.imgAtras_Re);
             this.Controls.Add(this.lblContraseñaRe);
             this.Controls.Add(this.lblDirecciónRe);
             this.Controls.Add(this.txtContraseñaRe);
@@ -499,10 +495,10 @@ namespace ProyectoDI_GrupoD
         private ColorBorderTextBox txtTelefonoRe;
         private System.Windows.Forms.TextBox txtApellidosRe;
         private RoundedButton btnBorrarRe;
-        private System.Windows.Forms.PictureBox imgAtras_Re;
         private System.Windows.Forms.Button btnojo_abiertoRe;
         private System.Windows.Forms.Button btnojoCerradoRe;
         private RoundedButton btnRegistrarRe;
         private System.Windows.Forms.PictureBox imgKAE_Re;
+        private System.Windows.Forms.PictureBox imgAtras_Re;
     }
 }

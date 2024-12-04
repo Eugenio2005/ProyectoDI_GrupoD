@@ -65,10 +65,10 @@ namespace Negocio.Management
         /// <returns>
         /// Una lista de objetos ActividadesMonitoresDTO que contiene el nombre y apellido del monitor y el nombre de la actividad.
         /// </returns>
-        public BindingList<ActividadesMonitoresDTO> ObtenerActividades()
+        public BindingList<ActividadesMonitoresDTO> ObtenerActividades(String email)
         {
-            BindingList<MonitorActivityViewModel> actividades = new
-            Datos.Repositories.ActividadRepository().ObtenerActividadesConMonitores();
+            BindingList<ClientActivityViewModel> actividades = new
+            Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
             BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
 
             // Hacemos el Cast
@@ -83,32 +83,32 @@ namespace Negocio.Management
             return ActividadesMonitoresDTO;
         }
 
-        public BindingList<ActividadesMonitoresDTO> ObtenerActividadesMonitor()
+        public BindingList<ActividadesClientesDTO> ObtenerActividadesClienteApuntado(String email)
         {
-            BindingList<MonitorActivityViewModel> actividades = new
-            Datos.Repositories.ActividadRepository().ObtenerActividadesConMonitores();
-            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
+            BindingList<ClientActivityViewModel> actividades = new
+            Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
+            BindingList<ActividadesClientesDTO> actividadesClientesDTO = new BindingList<ActividadesClientesDTO>();
 
             // Hacemos el Cast
             foreach (var item in actividades)
             {
-                var dto = new ActividadesMonitoresDTO();
+                var dto = new ActividadesClientesDTO();
                 dto.NombreMonitor = item.NombreMonitor;
                 dto.NombreActividad = item.NombreActividad;
                 dto.ApellidoMonitor = item.ApellidoMonitor;
-                if(!dto.NombreMonitor.Equals("Sin Monitor")){
-                    ActividadesMonitoresDTO.Add(dto);
-                }
+                dto.DescripActividad = item.DescripActividad;
+
+                actividadesClientesDTO.Add(dto);
                 
             }
-            return ActividadesMonitoresDTO;
+            return actividadesClientesDTO;
         }
 
         /// <summary>
         /// Elimina una actividad del sistema a partir de su nombre.
         /// </summary>
         /// <param name="actividad">Objeto que contiene la actividad a eliminar.</param>
-        public void EliminarActividad(ActividadesMonitoresDTO actividad)
+        public void EliminarActividad(ActividadesClientesDTO actividad)
         {
             string nombre = actividad.NombreActividad;
             new Datos.Repositories.ActividadRepository().EliminarActividad(nombre);

@@ -113,6 +113,8 @@
             this.btnApuntar.BorderColor = System.Drawing.Color.Gray;
             this.btnApuntar.BorderRadius = 20;
             this.btnApuntar.FillColor = System.Drawing.Color.Transparent;
+            this.btnApuntar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnApuntar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
             this.btnApuntar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApuntar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApuntar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -147,7 +149,7 @@
             this.Controls.Add(this.lblDescripActividad);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InformacionActividad";
             this.Text = "InformacionActividad";
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();

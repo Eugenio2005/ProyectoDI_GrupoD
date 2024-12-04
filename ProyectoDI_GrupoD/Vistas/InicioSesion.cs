@@ -44,10 +44,10 @@ namespace ProyectoDI_GrupoD
                 }
                 else
                 {
-                    //PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
-                    //pantallaPrincipal.ShowDialog();
-                    ActividadesCliente actividadesCliente = new ActividadesCliente();
-                    actividadesCliente.ShowDialog();
+                    PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
+                    pantallaPrincipal.ShowDialog();
+                    //ActividadesCliente actividadesCliente = new ActividadesCliente();
+                    //actividadesCliente.ShowDialog();
                 }
 
             }
@@ -108,6 +108,11 @@ namespace ProyectoDI_GrupoD
             this.Hide();
             MenuInicio menuInicio = new MenuInicio();
             menuInicio.ShowDialog(); // Muestra la ventana de menú de inicio
+        }
+
+        private void InicioSesion_Load(object sender, EventArgs e)
+        {
+
         }
 
         /// <summary>
