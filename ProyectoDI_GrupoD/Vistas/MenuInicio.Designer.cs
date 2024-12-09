@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.PictureBox imgKAE_Re;
-            System.Windows.Forms.PictureBox pictureBox1;
-            System.Windows.Forms.PictureBox pictureBox2;
+            System.Windows.Forms.PictureBox imgCerrar;
+            System.Windows.Forms.PictureBox imgMinimizar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicio));
             this.btnInicioSesion = new ProyectoDI_GrupoD.RoundedButton();
             this.linklblRegistro = new System.Windows.Forms.LinkLabel();
             imgKAE_Re = new System.Windows.Forms.PictureBox();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            pictureBox2 = new System.Windows.Forms.PictureBox();
+            imgCerrar = new System.Windows.Forms.PictureBox();
+            imgMinimizar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(imgCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(imgMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // imgKAE_Re
@@ -56,35 +56,35 @@
             imgKAE_Re.TabIndex = 2;
             imgKAE_Re.TabStop = false;
             // 
-            // pictureBox1
+            // imgCerrar
             // 
-            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            imgCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            pictureBox1.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            pictureBox1.Image = global::ProyectoDI_GrupoD.Properties.Resources.Cerrar;
-            pictureBox1.Location = new System.Drawing.Point(335, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(27, 26);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            imgCerrar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgCerrar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Cerrar;
+            imgCerrar.Location = new System.Drawing.Point(335, 12);
+            imgCerrar.Name = "imgCerrar";
+            imgCerrar.Size = new System.Drawing.Size(27, 26);
+            imgCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            imgCerrar.TabIndex = 5;
+            imgCerrar.TabStop = false;
+            imgCerrar.Click += new System.EventHandler(this.imgCerrar_Click);
             // 
-            // pictureBox2
+            // imgMinimizar
             // 
-            pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            imgMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            pictureBox2.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            pictureBox2.Image = global::ProyectoDI_GrupoD.Properties.Resources.Minimizar;
-            pictureBox2.Location = new System.Drawing.Point(291, 12);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(27, 26);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            imgMinimizar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgMinimizar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Minimizar;
+            imgMinimizar.Location = new System.Drawing.Point(291, 12);
+            imgMinimizar.Name = "imgMinimizar";
+            imgMinimizar.Size = new System.Drawing.Size(27, 26);
+            imgMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            imgMinimizar.TabIndex = 6;
+            imgMinimizar.TabStop = false;
+            imgMinimizar.Click += new System.EventHandler(this.imgMinimizar_Click);
             // 
             // btnInicioSesion
             // 
@@ -127,8 +127,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(374, 328);
-            this.Controls.Add(pictureBox2);
-            this.Controls.Add(pictureBox1);
+            this.Controls.Add(imgMinimizar);
+            this.Controls.Add(imgCerrar);
             this.Controls.Add(this.linklblRegistro);
             this.Controls.Add(this.btnInicioSesion);
             this.Controls.Add(imgKAE_Re);
@@ -141,8 +141,8 @@
             this.Text = "Menu de inicio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuInicio_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_Re)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(imgCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(imgMinimizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
