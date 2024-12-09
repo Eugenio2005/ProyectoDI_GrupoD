@@ -10,8 +10,8 @@ namespace ProyectoDI_GrupoD
     public partial class TextBoxRedondeado : UserControl
     {
         // Fields
-        private Color borderColor = Color.MediumSlateBlue;
-        private Color borderFocusColor = Color.HotPink;
+        private Color borderColor = Color.FromArgb(202, 224, 212);
+        private Color borderFocusColor = Color.FromArgb(44, 36, 36);
         private int borderSize = 2;
         private int borderRadius = 15;
         private bool isFocused = false;
@@ -24,17 +24,39 @@ namespace ProyectoDI_GrupoD
         {
             textBox1 = new System.Windows.Forms.TextBox();
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.TextChanged += TextBox1_TextChanged;
-            textBox1.Enter += TextBox1_Enter;
-            textBox1.Leave += TextBox1_Leave;
             textBox1.MouseEnter += TextBox1_MouseEnter;
             textBox1.MouseLeave += TextBox1_MouseLeave;
-            textBox1.KeyPress += TextBox1_KeyPress;
+
+            textBox1.Enter += (sender, e) => { OnTextBoxEnter(); };
+            textBox1.Leave += (sender, e) => { OnTextBoxLeave(); };
+
+            textBox1.KeyPress += (sender, e) => { OnTextBoxKeyPressOnlyNumber(e); }; // Event for KeyPress validation
+            textBox1.TextChanged += (sender, e) => { OnTextChanged(e); };
 
             Controls.Add(textBox1);
             this.Padding = new Padding(10);
             this.Size = new Size(150, 40);
             UpdateControlHeight();
+
+            SetPlaceholder();
+        }
+
+        private void OnTextBoxLeave()
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                SetPlaceholder();
+            }
+        }
+
+        private void OnTextBoxEnter()
+        {
+            if (textBox1.Text == placeholderText)
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.FromArgb(0, 0, 0); // Color normal cuando el usuario escribe
+                UpdatePasswordChar(); // Activa el enmascarado si corresponde
+            }
         }
 
         // Properties
@@ -44,6 +66,9 @@ namespace ProyectoDI_GrupoD
             get { return borderColor; }
             set { borderColor = value; this.Invalidate(); }
         }
+
+        [Category("Custom Properties")]
+        public bool OnlyAllowNumbers { get; set; } = false;
 
         [Category("Custom Properties")]
         public Color BorderFocusColor
@@ -169,18 +194,6 @@ namespace ProyectoDI_GrupoD
             this.OnTextChanged(e);
         }
 
-        private void TextBox1_Enter(object sender, EventArgs e)
-        {
-            isFocused = true;
-            this.Invalidate();
-        }
-
-        private void TextBox1_Leave(object sender, EventArgs e)
-        {
-            isFocused = false;
-            this.Invalidate();
-        }
-
         private void TextBox1_MouseEnter(object sender, EventArgs e)
         {
             this.OnMouseEnter(e);
@@ -191,14 +204,28 @@ namespace ProyectoDI_GrupoD
             this.OnMouseLeave(e);
         }
 
-        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        public void Clear()
         {
-            this.OnKeyPress(e);
+            textBox1.Text = "";
+            SetPlaceholder();
         }
 
-        internal void Clear()
+        private void SetPlaceholder()
         {
-            textBox1.Text=String.Empty;
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                textBox1.Text = placeholderText;
+                textBox1.ForeColor = Color.FromArgb(203, 156, 99); // Color del texto para el placeholder
+                textBox1.UseSystemPasswordChar = false; // Asegura que el placeholder no esté enmascarado
+            }
+        }
+
+        private void OnTextBoxKeyPressOnlyNumber(KeyPressEventArgs e)
+        {
+            if (OnlyAllowNumbers && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Cancelar el evento si no es un número ni una tecla de control
+            }
         }
     }
 }

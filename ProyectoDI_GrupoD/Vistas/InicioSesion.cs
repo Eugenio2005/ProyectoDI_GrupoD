@@ -120,6 +120,16 @@ namespace ProyectoDI_GrupoD
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void imgCerrar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void imgMinimizar_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         /// <summary>
         /// Maneja el evento de presionar una tecla mientras el botón de iniciar sesión tiene el foco.
         /// Si la tecla presionada es Enter, simula un clic en el botón de iniciar sesión.

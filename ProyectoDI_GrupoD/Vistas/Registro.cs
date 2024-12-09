@@ -263,6 +263,30 @@ namespace ProyectoDI_GrupoD
             }
         }
 
+        private void btnVerValidar_Click(object sender, EventArgs e)
+        {
+            txtValidarContraseña.UseSystemPasswordChar = false; // Mostrar la contraseña
+            btnVerValidar.Visible = false;
+            btnOcultarValidar.Visible = true;
+        }
+
+        private void btnOcultarValidar_Click(object sender, EventArgs e)
+        {
+            txtValidarContraseña.UseSystemPasswordChar = true; // Ocultar la contraseña
+            btnVerValidar.Visible = true; // Muestra el icono de ojo abierto
+            btnOcultarValidar.Visible = false; // Esconde el icono de ojo cerrado
+        }
+
+        private void imgCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void imgMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         public bool validarDNI(string DNI)
         {
             string patternDNI = @"^\d{8}[A-Za-z]$";
