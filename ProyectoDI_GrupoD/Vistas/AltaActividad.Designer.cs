@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblDescripActividad = new System.Windows.Forms.Label();
             this.lblMonitor = new System.Windows.Forms.Label();
-            this.btnBorrar = new ProyectoDI_GrupoD.RoundedButton();
             this.btnRegistrar = new ProyectoDI_GrupoD.RoundedButton();
-            this.txtNombreActividad = new System.Windows.Forms.TextBox();
-            this.txtDescripActividad = new System.Windows.Forms.TextBox();
+            this.txtNombreActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtDescripActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.btnBorrar = new ProyectoDI_GrupoD.RoundedButton();
             this.SuspendLayout();
             // 
             // comBoxMonitores
@@ -52,64 +52,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.label1.Location = new System.Drawing.Point(165, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 18);
+            this.label1.Size = new System.Drawing.Size(157, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nombre actividad";
             // 
             // lblDescripActividad
             // 
             this.lblDescripActividad.AutoSize = true;
-            this.lblDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripActividad.ForeColor = System.Drawing.Color.White;
+            this.lblDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripActividad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.lblDescripActividad.Location = new System.Drawing.Point(165, 168);
             this.lblDescripActividad.Name = "lblDescripActividad";
-            this.lblDescripActividad.Size = new System.Drawing.Size(148, 18);
+            this.lblDescripActividad.Size = new System.Drawing.Size(188, 24);
             this.lblDescripActividad.TabIndex = 7;
             this.lblDescripActividad.Text = "Descripción actividad";
             // 
             // lblMonitor
             // 
             this.lblMonitor.AutoSize = true;
-            this.lblMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonitor.ForeColor = System.Drawing.Color.White;
+            this.lblMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.lblMonitor.Location = new System.Drawing.Point(165, 252);
             this.lblMonitor.Name = "lblMonitor";
-            this.lblMonitor.Size = new System.Drawing.Size(124, 18);
+            this.lblMonitor.Size = new System.Drawing.Size(154, 24);
             this.lblMonitor.TabIndex = 8;
             this.lblMonitor.Text = "Monitor asociado";
             // 
-            // btnBorrar
-            // 
-            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnBorrar.BorderColor = System.Drawing.Color.Gray;
-            this.btnBorrar.BorderRadius = 20;
-            this.btnBorrar.FillColor = System.Drawing.Color.Transparent;
-            this.btnBorrar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBorrar.Location = new System.Drawing.Point(348, 364);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(122, 43);
-            this.btnBorrar.TabIndex = 5;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = false;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
             // btnRegistrar
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnRegistrar.BorderColor = System.Drawing.Color.Gray;
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnRegistrar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.btnRegistrar.BorderRadius = 20;
             this.btnRegistrar.FillColor = System.Drawing.Color.Transparent;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegistrar.Location = new System.Drawing.Point(119, 364);
+            this.btnRegistrar.Location = new System.Drawing.Point(100, 364);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(122, 43);
+            this.btnRegistrar.Size = new System.Drawing.Size(145, 43);
             this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar Actividad";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -117,32 +103,64 @@
             // 
             // txtNombreActividad
             // 
-            this.txtNombreActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreActividad.Location = new System.Drawing.Point(168, 120);
+            this.txtNombreActividad.BackColor = System.Drawing.Color.White;
+            this.txtNombreActividad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtNombreActividad.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtNombreActividad.BorderRadius = 15;
+            this.txtNombreActividad.BorderSize = 2;
+            this.txtNombreActividad.Location = new System.Drawing.Point(168, 121);
             this.txtNombreActividad.Name = "txtNombreActividad";
-            this.txtNombreActividad.Size = new System.Drawing.Size(254, 24);
+            this.txtNombreActividad.OnlyAllowNumbers = false;
+            this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(10);
+            this.txtNombreActividad.Size = new System.Drawing.Size(254, 33);
             this.txtNombreActividad.TabIndex = 9;
+            this.txtNombreActividad.UseSystemPasswordChar = false;
             // 
             // txtDescripActividad
             // 
-            this.txtDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripActividad.Location = new System.Drawing.Point(168, 206);
+            this.txtDescripActividad.BackColor = System.Drawing.Color.White;
+            this.txtDescripActividad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtDescripActividad.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDescripActividad.BorderRadius = 15;
+            this.txtDescripActividad.BorderSize = 2;
+            this.txtDescripActividad.Location = new System.Drawing.Point(168, 205);
             this.txtDescripActividad.Name = "txtDescripActividad";
-            this.txtDescripActividad.Size = new System.Drawing.Size(254, 24);
+            this.txtDescripActividad.OnlyAllowNumbers = false;
+            this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(10);
+            this.txtDescripActividad.Size = new System.Drawing.Size(254, 33);
             this.txtDescripActividad.TabIndex = 10;
+            this.txtDescripActividad.UseSystemPasswordChar = false;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnBorrar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnBorrar.BorderRadius = 20;
+            this.btnBorrar.FillColor = System.Drawing.Color.Transparent;
+            this.btnBorrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBorrar.Location = new System.Drawing.Point(352, 364);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(122, 43);
+            this.btnBorrar.TabIndex = 11;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = false;
             // 
             // AltaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(579, 450);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.txtDescripActividad);
             this.Controls.Add(this.txtNombreActividad);
             this.Controls.Add(this.lblMonitor);
             this.Controls.Add(this.lblDescripActividad);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.comBoxMonitores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -157,11 +175,11 @@
         #endregion
         private System.Windows.Forms.ComboBox comBoxMonitores;
         private RoundedButton btnRegistrar;
-        private RoundedButton btnBorrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDescripActividad;
         private System.Windows.Forms.Label lblMonitor;
-        private System.Windows.Forms.TextBox txtNombreActividad;
-        private System.Windows.Forms.TextBox txtDescripActividad;
+        private TextBoxRedondeado txtNombreActividad;
+        private TextBoxRedondeado txtDescripActividad;
+        private RoundedButton btnBorrar;
     }
 }

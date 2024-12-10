@@ -51,15 +51,15 @@ namespace ProyectoDI_GrupoD
             this.btnOcultarValidar = new System.Windows.Forms.Button();
             this.txtValidarContraseña = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtContraseñaRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtCuentaCorrienteRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtDireccionRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtEmailRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtTelefonoRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtDNI_Re = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtApellidosRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtUsuarioRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.btnRegistrarRe = new ProyectoDI_GrupoD.RoundedButton();
             this.btnBorrarRe = new ProyectoDI_GrupoD.RoundedButton();
+            this.txtEmailRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtCuentaCorrienteRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             imgMinimizar = new System.Windows.Forms.PictureBox();
             imgCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgMinimizar)).BeginInit();
@@ -341,22 +341,6 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaRe.TabIndex = 38;
             this.txtContraseñaRe.UseSystemPasswordChar = true;
             // 
-            // txtCuentaCorrienteRe
-            // 
-            this.txtCuentaCorrienteRe.BackColor = System.Drawing.Color.White;
-            this.txtCuentaCorrienteRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtCuentaCorrienteRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtCuentaCorrienteRe.BorderRadius = 15;
-            this.txtCuentaCorrienteRe.BorderSize = 2;
-            this.txtCuentaCorrienteRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(33, 332);
-            this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
-            this.txtCuentaCorrienteRe.OnlyAllowNumbers = false;
-            this.txtCuentaCorrienteRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(322, 33);
-            this.txtCuentaCorrienteRe.TabIndex = 37;
-            this.txtCuentaCorrienteRe.UseSystemPasswordChar = false;
-            // 
             // txtDireccionRe
             // 
             this.txtDireccionRe.BackColor = System.Drawing.Color.White;
@@ -372,22 +356,6 @@ namespace ProyectoDI_GrupoD
             this.txtDireccionRe.Size = new System.Drawing.Size(322, 33);
             this.txtDireccionRe.TabIndex = 36;
             this.txtDireccionRe.UseSystemPasswordChar = false;
-            // 
-            // txtEmailRe
-            // 
-            this.txtEmailRe.BackColor = System.Drawing.Color.White;
-            this.txtEmailRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtEmailRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtEmailRe.BorderRadius = 15;
-            this.txtEmailRe.BorderSize = 2;
-            this.txtEmailRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailRe.Location = new System.Drawing.Point(33, 257);
-            this.txtEmailRe.Name = "txtEmailRe";
-            this.txtEmailRe.OnlyAllowNumbers = false;
-            this.txtEmailRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtEmailRe.Size = new System.Drawing.Size(322, 33);
-            this.txtEmailRe.TabIndex = 35;
-            this.txtEmailRe.UseSystemPasswordChar = false;
             // 
             // txtTelefonoRe
             // 
@@ -494,12 +462,46 @@ namespace ProyectoDI_GrupoD
             this.btnBorrarRe.UseVisualStyleBackColor = false;
             this.btnBorrarRe.Click += new System.EventHandler(this.btnBorrarRe_Click);
             // 
+            // txtEmailRe
+            // 
+            this.txtEmailRe.BackColor = System.Drawing.Color.White;
+            this.txtEmailRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtEmailRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtEmailRe.BorderRadius = 15;
+            this.txtEmailRe.BorderSize = 2;
+            this.txtEmailRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailRe.Location = new System.Drawing.Point(33, 257);
+            this.txtEmailRe.Name = "txtEmailRe";
+            this.txtEmailRe.OnlyAllowNumbers = false;
+            this.txtEmailRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtEmailRe.Size = new System.Drawing.Size(322, 33);
+            this.txtEmailRe.TabIndex = 46;
+            this.txtEmailRe.UseSystemPasswordChar = false;
+            // 
+            // txtCuentaCorrienteRe
+            // 
+            this.txtCuentaCorrienteRe.BackColor = System.Drawing.Color.White;
+            this.txtCuentaCorrienteRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtCuentaCorrienteRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtCuentaCorrienteRe.BorderRadius = 15;
+            this.txtCuentaCorrienteRe.BorderSize = 2;
+            this.txtCuentaCorrienteRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(33, 332);
+            this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
+            this.txtCuentaCorrienteRe.OnlyAllowNumbers = false;
+            this.txtCuentaCorrienteRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(322, 33);
+            this.txtCuentaCorrienteRe.TabIndex = 47;
+            this.txtCuentaCorrienteRe.UseSystemPasswordChar = false;
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1121, 460);
+            this.Controls.Add(this.txtCuentaCorrienteRe);
+            this.Controls.Add(this.txtEmailRe);
             this.Controls.Add(imgMinimizar);
             this.Controls.Add(imgCerrar);
             this.Controls.Add(this.btnVerValidar);
@@ -509,9 +511,7 @@ namespace ProyectoDI_GrupoD
             this.Controls.Add(this.btnojoCerradoRe);
             this.Controls.Add(this.lblVolverContraseña);
             this.Controls.Add(this.txtContraseñaRe);
-            this.Controls.Add(this.txtCuentaCorrienteRe);
             this.Controls.Add(this.txtDireccionRe);
-            this.Controls.Add(this.txtEmailRe);
             this.Controls.Add(this.txtTelefonoRe);
             this.Controls.Add(this.txtDNI_Re);
             this.Controls.Add(this.txtApellidosRe);
@@ -563,13 +563,13 @@ namespace ProyectoDI_GrupoD
         private TextBoxRedondeado txtApellidosRe;
         private TextBoxRedondeado txtDNI_Re;
         private TextBoxRedondeado txtTelefonoRe;
-        private TextBoxRedondeado txtEmailRe;
         private TextBoxRedondeado txtDireccionRe;
-        private TextBoxRedondeado txtCuentaCorrienteRe;
         private TextBoxRedondeado txtContraseñaRe;
         private System.Windows.Forms.Label lblVolverContraseña;
         private System.Windows.Forms.Button btnVerValidar;
         private System.Windows.Forms.Button btnOcultarValidar;
         private TextBoxRedondeado txtValidarContraseña;
+        private TextBoxRedondeado txtEmailRe;
+        private TextBoxRedondeado txtCuentaCorrienteRe;
     }
 }

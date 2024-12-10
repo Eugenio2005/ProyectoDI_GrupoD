@@ -147,7 +147,7 @@
             this.pnlSuperiorDarDeAltaMonitor.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperiorDarDeAltaMonitor.Location = new System.Drawing.Point(300, 0);
             this.pnlSuperiorDarDeAltaMonitor.Name = "pnlSuperiorDarDeAltaMonitor";
-            this.pnlSuperiorDarDeAltaMonitor.Size = new System.Drawing.Size(662, 100);
+            this.pnlSuperiorDarDeAltaMonitor.Size = new System.Drawing.Size(666, 100);
             this.pnlSuperiorDarDeAltaMonitor.TabIndex = 8;
             // 
             // imgAtras_Re
@@ -172,17 +172,18 @@
             this.lblTextoSuperior.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblTextoSuperior.Location = new System.Drawing.Point(298, 29);
             this.lblTextoSuperior.Name = "lblTextoSuperior";
-            this.lblTextoSuperior.Size = new System.Drawing.Size(409, 42);
+            this.lblTextoSuperior.Size = new System.Drawing.Size(118, 42);
             this.lblTextoSuperior.TabIndex = 1;
-            this.lblTextoSuperior.Text = "--- ALTA MONITOR ---";
+            this.lblTextoSuperior.Text = "---  ---";
             this.lblTextoSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(300, 100);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(662, 448);
+            this.pnlPrincipal.Size = new System.Drawing.Size(666, 448);
             this.pnlPrincipal.TabIndex = 9;
             // 
             // PantallaPrincipalAdmin

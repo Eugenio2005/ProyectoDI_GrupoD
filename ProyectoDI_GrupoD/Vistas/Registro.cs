@@ -29,7 +29,7 @@ namespace ProyectoDI_GrupoD
         public Registro()
         {
             InitializeComponent();
-            inicializarPlaceHolder();
+            //inicializarPlaceHolder();
             btnRegistrarRe.Enabled = false;
             aplicarEventoComprobarTextBox();
         }
@@ -47,18 +47,16 @@ namespace ProyectoDI_GrupoD
             txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
         }
 
-        /// <summary>
-        /// Inicializa los placeholders para los textBox correspondientes 
-        /// con su respectivo color de texto.
-        /// </summary>
-        private void inicializarPlaceHolder()
-        {
-            txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Texto de guía al usuario
-            txtCuentaCorrienteRe.ForeColor = Color.Gray; // Color del texto para el placeholder
+        ///// <summary>
+        ///// Inicializa los placeholders para los textBox correspondientes 
+        ///// con su respectivo color de texto.
+        ///// </summary>
+        //private void inicializarPlaceHolder()
+        //{
+        //    txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Texto de guía al usuario
 
-            txtEmailRe.Text = placeholderTextEmail; // Establece el placeholder para el email
-            txtEmailRe.ForeColor = Color.Gray; // Color del texto para el placeholder
-        }
+        //    txtEmailRe.Text = placeholderTextEmail; // Establece el placeholder para el email
+        //}
 
         /// <summary>
         /// Elimina el placeholder cuando el campo de cuenta corriente se ha seleccionado.
@@ -359,10 +357,8 @@ namespace ProyectoDI_GrupoD
             txtDNI_Re.Clear();
             txtTelefonoRe.Clear();
             txtEmailRe.Text = placeholderTextEmail; // Restaura el placeholder para email
-            txtEmailRe.BorderColor = Color.White;
             txtDireccionRe.Clear();
             txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaura placeholder para cuenta corriente
-            txtCuentaCorrienteRe.BorderColor = Color.White;
             txtContraseñaRe.Clear();
             txtContraseñaRe.UseSystemPasswordChar = true;
         }

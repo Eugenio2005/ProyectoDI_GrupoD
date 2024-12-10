@@ -10,7 +10,7 @@ namespace ProyectoDI_GrupoD
     public partial class TextBoxRedondeado : UserControl
     {
         // Fields
-        private Color borderColor = Color.FromArgb(202, 224, 212);
+        private Color borderColor = Color.FromArgb(203, 156, 99);
         private Color borderFocusColor = Color.FromArgb(44, 36, 36);
         private int borderSize = 2;
         private int borderRadius = 15;

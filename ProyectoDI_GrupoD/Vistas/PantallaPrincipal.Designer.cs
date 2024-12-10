@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
             this.pnlBotones = new System.Windows.Forms.Panel();
-            this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
-            this.lblTextoSuperior = new System.Windows.Forms.Label();
-            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.MisActividades = new ProyectoDI_GrupoD.ImageButton();
             this.ActividadDisponible = new ProyectoDI_GrupoD.ImageButton();
             this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
             this.ctxtmsCerrarSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
+            this.lblTextoSuperior = new System.Windows.Forms.Label();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlBotones.SuspendLayout();
+            this.ctxtmsCerrarSesion.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
-            this.ctxtmsCerrarSesion.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBotones
@@ -57,53 +57,6 @@
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(301, 594);
             this.pnlBotones.TabIndex = 1;
-            // 
-            // pnlSuperior
-            // 
-            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.pnlSuperior.Controls.Add(this.imgAtras_Re);
-            this.pnlSuperior.Controls.Add(this.lblTextoSuperior);
-            this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuperior.Location = new System.Drawing.Point(301, 0);
-            this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(970, 100);
-            this.pnlSuperior.TabIndex = 2;
-            // 
-            // imgAtras_Re
-            // 
-            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
-            this.imgAtras_Re.ImageLocation = "0;0";
-            this.imgAtras_Re.InitialImage = null;
-            this.imgAtras_Re.Location = new System.Drawing.Point(21, 15);
-            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
-            this.imgAtras_Re.Name = "imgAtras_Re";
-            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
-            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.imgAtras_Re.TabIndex = 28;
-            this.imgAtras_Re.TabStop = false;
-            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
-            // 
-            // lblTextoSuperior
-            // 
-            this.lblTextoSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTextoSuperior.AutoSize = true;
-            this.lblTextoSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextoSuperior.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTextoSuperior.Location = new System.Drawing.Point(400, 29);
-            this.lblTextoSuperior.Name = "lblTextoSuperior";
-            this.lblTextoSuperior.Size = new System.Drawing.Size(118, 42);
-            this.lblTextoSuperior.TabIndex = 27;
-            this.lblTextoSuperior.Text = "---  ---";
-            this.lblTextoSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnlPrincipal
-            // 
-            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipal.Location = new System.Drawing.Point(301, 100);
-            this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(970, 494);
-            this.pnlPrincipal.TabIndex = 3;
             // 
             // MisActividades
             // 
@@ -159,6 +112,54 @@
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
+            // pnlSuperior
+            // 
+            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.pnlSuperior.Controls.Add(this.imgAtras_Re);
+            this.pnlSuperior.Controls.Add(this.lblTextoSuperior);
+            this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperior.Location = new System.Drawing.Point(301, 0);
+            this.pnlSuperior.Name = "pnlSuperior";
+            this.pnlSuperior.Size = new System.Drawing.Size(970, 100);
+            this.pnlSuperior.TabIndex = 2;
+            // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = null;
+            this.imgAtras_Re.Location = new System.Drawing.Point(21, 15);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 28;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
+            // 
+            // lblTextoSuperior
+            // 
+            this.lblTextoSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTextoSuperior.AutoSize = true;
+            this.lblTextoSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextoSuperior.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTextoSuperior.Location = new System.Drawing.Point(400, 29);
+            this.lblTextoSuperior.Name = "lblTextoSuperior";
+            this.lblTextoSuperior.Size = new System.Drawing.Size(118, 42);
+            this.lblTextoSuperior.TabIndex = 27;
+            this.lblTextoSuperior.Text = "---  ---";
+            this.lblTextoSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.Location = new System.Drawing.Point(301, 100);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(970, 494);
+            this.pnlPrincipal.TabIndex = 3;
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,10 +175,10 @@
             this.Text = "K A E GYM ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaPrincipal_FormClosing);
             this.pnlBotones.ResumeLayout(false);
+            this.ctxtmsCerrarSesion.ResumeLayout(false);
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
-            this.ctxtmsCerrarSesion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -31,9 +31,9 @@ namespace ProyectoDI_GrupoD
         private void InitializeComponent()
         {
             System.Windows.Forms.PictureBox imgKAE_InSe;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             System.Windows.Forms.PictureBox imgMinimizar;
             System.Windows.Forms.PictureBox imgCerrar;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             this.lblUsuarioInSe = new System.Windows.Forms.Label();
             this.lblContraseñaInSe = new System.Windows.Forms.Label();
             this.btnojoCerradoInSe = new System.Windows.Forms.Button();
@@ -46,9 +46,9 @@ namespace ProyectoDI_GrupoD
             imgMinimizar = new System.Windows.Forms.PictureBox();
             imgCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(imgMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(imgCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
             // 
             // imgKAE_InSe
@@ -63,6 +63,36 @@ namespace ProyectoDI_GrupoD
             imgKAE_InSe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             imgKAE_InSe.TabIndex = 0;
             imgKAE_InSe.TabStop = false;
+            // 
+            // imgMinimizar
+            // 
+            imgMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            imgMinimizar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgMinimizar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Minimizar;
+            imgMinimizar.Location = new System.Drawing.Point(315, 12);
+            imgMinimizar.Name = "imgMinimizar";
+            imgMinimizar.Size = new System.Drawing.Size(27, 26);
+            imgMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            imgMinimizar.TabIndex = 35;
+            imgMinimizar.TabStop = false;
+            imgMinimizar.Click += new System.EventHandler(this.imgMinimizar_Click_1);
+            // 
+            // imgCerrar
+            // 
+            imgCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            imgCerrar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
+            imgCerrar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Cerrar;
+            imgCerrar.Location = new System.Drawing.Point(359, 12);
+            imgCerrar.Name = "imgCerrar";
+            imgCerrar.Size = new System.Drawing.Size(27, 26);
+            imgCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            imgCerrar.TabIndex = 34;
+            imgCerrar.TabStop = false;
+            imgCerrar.Click += new System.EventHandler(this.imgCerrar_Click_1);
             // 
             // lblUsuarioInSe
             // 
@@ -173,6 +203,7 @@ namespace ProyectoDI_GrupoD
             this.txtUsuarioInSe.ForeColor = System.Drawing.Color.Black;
             this.txtUsuarioInSe.Location = new System.Drawing.Point(54, 242);
             this.txtUsuarioInSe.Name = "txtUsuarioInSe";
+            this.txtUsuarioInSe.OnlyAllowNumbers = false;
             this.txtUsuarioInSe.Padding = new System.Windows.Forms.Padding(10);
             this.txtUsuarioInSe.Size = new System.Drawing.Size(279, 33);
             this.txtUsuarioInSe.TabIndex = 32;
@@ -188,40 +219,11 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseñaInSe.Location = new System.Drawing.Point(54, 304);
             this.txtContraseñaInSe.Name = "txtContraseñaInSe";
+            this.txtContraseñaInSe.OnlyAllowNumbers = false;
             this.txtContraseñaInSe.Padding = new System.Windows.Forms.Padding(10);
             this.txtContraseñaInSe.Size = new System.Drawing.Size(279, 33);
             this.txtContraseñaInSe.TabIndex = 33;
             this.txtContraseñaInSe.UseSystemPasswordChar = false;
-            // 
-            // imgMinimizar
-            // 
-            imgMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            imgMinimizar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            imgMinimizar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Minimizar;
-            imgMinimizar.Location = new System.Drawing.Point(315, 12);
-            imgMinimizar.Name = "imgMinimizar";
-            imgMinimizar.Size = new System.Drawing.Size(27, 26);
-            imgMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            imgMinimizar.TabIndex = 35;
-            imgMinimizar.TabStop = false;
-            imgMinimizar.Click += new System.EventHandler(this.imgMinimizar_Click_1);
-            // 
-            // imgCerrar
-            // 
-            imgCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            imgCerrar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
-            imgCerrar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Cerrar;
-            imgCerrar.Location = new System.Drawing.Point(359, 12);
-            imgCerrar.Name = "imgCerrar";
-            imgCerrar.Size = new System.Drawing.Size(27, 26);
-            imgCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            imgCerrar.TabIndex = 34;
-            imgCerrar.TabStop = false;
-            imgCerrar.Click += new System.EventHandler(this.imgCerrar_Click_1);
             // 
             // InicioSesion
             // 
@@ -229,13 +231,13 @@ namespace ProyectoDI_GrupoD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(398, 417);
+            this.Controls.Add(this.btnojo_abiertoInSe);
             this.Controls.Add(imgMinimizar);
             this.Controls.Add(imgCerrar);
             this.Controls.Add(this.txtContraseñaInSe);
             this.Controls.Add(this.txtUsuarioInSe);
             this.Controls.Add(this.imgAtras_Re);
             this.Controls.Add(this.btnojoCerradoInSe);
-            this.Controls.Add(this.btnojo_abiertoInSe);
             this.Controls.Add(this.lblContraseñaInSe);
             this.Controls.Add(this.btnIniciarSesionInSe);
             this.Controls.Add(this.lblUsuarioInSe);
@@ -250,9 +252,9 @@ namespace ProyectoDI_GrupoD
             this.Text = "Inicio Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesion_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(imgKAE_InSe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(imgMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(imgCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
