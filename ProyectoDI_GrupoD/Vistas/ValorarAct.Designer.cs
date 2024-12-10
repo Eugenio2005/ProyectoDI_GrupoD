@@ -1,6 +1,6 @@
 ﻿namespace ProyectoDI_GrupoD.Vistas
 {
-    partial class InformacionActividad
+    partial class ValorarAct
     {
         /// <summary>
         /// Required designer variable.
@@ -36,8 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.toolTipApuntarse = new System.Windows.Forms.ToolTip(this.components);
-            this.btnApuntar = new ProyectoDI_GrupoD.RoundedButton();
             this.txtMonitorAsociado = new System.Windows.Forms.TextBox();
+            this.btnValorar = new ProyectoDI_GrupoD.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,28 +104,6 @@
             this.imgAtras_Re.TabStop = false;
             this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
             // 
-            // btnApuntar
-            // 
-            this.btnApuntar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
-            this.btnApuntar.BorderColor = System.Drawing.Color.Gray;
-            this.btnApuntar.BorderRadius = 20;
-            this.btnApuntar.FillColor = System.Drawing.Color.Transparent;
-            this.btnApuntar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnApuntar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnApuntar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApuntar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApuntar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnApuntar.Location = new System.Drawing.Point(148, 359);
-            this.btnApuntar.Name = "btnApuntar";
-            this.btnApuntar.Size = new System.Drawing.Size(110, 44);
-            this.btnApuntar.TabIndex = 28;
-            this.btnApuntar.Text = "Apuntarse";
-            this.btnApuntar.UseVisualStyleBackColor = false;
-            this.btnApuntar.Click += new System.EventHandler(this.btnApuntar_Click);
-            // 
             // txtMonitorAsociado
             // 
             this.txtMonitorAsociado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,14 +112,36 @@
             this.txtMonitorAsociado.Size = new System.Drawing.Size(254, 24);
             this.txtMonitorAsociado.TabIndex = 29;
             // 
-            // InformacionActividad
+            // btnValorar
+            // 
+            this.btnValorar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnValorar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(224)))), ((int)(((byte)(212)))));
+            this.btnValorar.BorderColor = System.Drawing.Color.Gray;
+            this.btnValorar.BorderRadius = 20;
+            this.btnValorar.FillColor = System.Drawing.Color.Transparent;
+            this.btnValorar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnValorar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnValorar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValorar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnValorar.Location = new System.Drawing.Point(153, 376);
+            this.btnValorar.Name = "btnValorar";
+            this.btnValorar.Size = new System.Drawing.Size(110, 44);
+            this.btnValorar.TabIndex = 28;
+            this.btnValorar.Text = "Valorar";
+            this.btnValorar.UseVisualStyleBackColor = false;
+            this.btnValorar.Click += new System.EventHandler(this.btnValorar_Click);
+            // 
+            // ValorarAct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(422, 448);
             this.Controls.Add(this.txtMonitorAsociado);
-            this.Controls.Add(this.btnApuntar);
+            this.Controls.Add(this.btnValorar);
             this.Controls.Add(this.imgAtras_Re);
             this.Controls.Add(this.txtDescripActividad);
             this.Controls.Add(this.txtNombreActividad);
@@ -150,9 +150,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "InformacionActividad";
+            this.Name = "ValorarAct";
             this.Text = "InformacionActividad";
-            this.Load += new System.EventHandler(this.InformacionActividad_Load);
+            this.Load += new System.EventHandler(this.ValorarAct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imgAtras_Re;
         private System.Windows.Forms.ToolTip toolTipApuntarse;
-        private RoundedButton btnApuntar;
+        private RoundedButton btnValorar;
         private System.Windows.Forms.TextBox txtMonitorAsociado;
     }
 }

@@ -154,5 +154,18 @@ namespace Negocio.Management
             }
             return ActividadesClientesDTO;
         }
+
+        public void valorarActividad(string email, string nombreActividad, int valoracion)
+        {
+            int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+            int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+            Valoraciones valoracionDTO = new Valoraciones();
+            valoracionDTO.id_usuario = idUsuario;
+            valoracionDTO.id_actividad = idActividad;
+            valoracionDTO.valoracion = valoracion;
+            new Datos.Repositories.ValoracionRepository().valorarActividad(valoracionDTO);
+
+
+        }
     }
 }

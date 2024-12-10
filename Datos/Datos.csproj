@@ -91,6 +91,7 @@
     <Compile Include="Repositories\ActividadUsuarioRepository.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
     <Compile Include="Repositories\MonitorRepository.cs" />
+    <Compile Include="Repositories\ValoracionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

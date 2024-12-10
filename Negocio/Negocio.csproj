@@ -48,6 +48,7 @@
     <Compile Include="EntitiesDTO\ClientesDTO.cs" />
     <Compile Include="EntitiesDTO\MonitorDTO.cs" />
     <Compile Include="EntitiesDTO\UsuariosDTO.cs" />
+    <Compile Include="EntitiesDTO\ValoracionDTO.cs" />
     <Compile Include="Management\ActividadManagement.cs" />
     <Compile Include="Management\MonitorManagement.cs" />
     <Compile Include="Management\DatosUsuario.cs" />

@@ -233,6 +233,14 @@ namespace Negocio.Management
             return new Datos.Repositories.ActividadUsuarioRepository().ComprobarUsuarioApuntado(idUsuario, idActividad);
         }
 
+        public bool comprobarActividadValorada(string email, string nombreActividad)
+                     
+        {
+            int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+            int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+            return new Datos.Repositories.ActividadUsuarioRepository().ComprobarActividadValorada(idUsuario, idActividad);
+        }
+
         public bool apuntarUsuarioActividad(string email, string nombreActividad)
         {
             int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);

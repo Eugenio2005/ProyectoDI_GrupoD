@@ -74,6 +74,12 @@
     <Compile Include="Vistas\AltaActividad.Designer.cs">
       <DependentUpon>AltaActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ValorarAct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ValorarAct.Designer.cs">
+      <DependentUpon>ValorarAct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\InformacionActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <EmbeddedResource Include="Vistas\RegistroMonitor.resx">
       <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ValorarAct.resx">
+      <DependentUpon>ValorarAct.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Negocio.EntitiesDTO.ActividadesClientesDTO1.datasource" />
     <None Include="Properties\DataSources\Negocio.EntitiesDTO.ActividadesMonitoresDTO.datasource" />
     <None Include="Properties\Settings.settings">
@@ -203,6 +212,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Recursos\star_empty.png" />
+    <None Include="Recursos\star_filled.png" />
     <None Include="Recursos\AltaUnaActividadBlanco.png" />
     <None Include="Recursos\ListarActividadesBlanco.png" />
     <None Include="Recursos\AltaMonitorBlanco.png" />

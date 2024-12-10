@@ -86,5 +86,10 @@ namespace ProyectoDI_GrupoD.Vistas
             this.Hide();
             this.Close();
         }
+
+        private void InformacionActividad_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
