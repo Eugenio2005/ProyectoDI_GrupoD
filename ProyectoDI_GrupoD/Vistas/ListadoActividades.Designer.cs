@@ -85,6 +85,7 @@ namespace ProyectoDI_GrupoD.Vistas
             // 
             // nombreActividadDataGridViewTextBoxColumn
             // 
+<<<<<<< HEAD
             this.nombreActividadDataGridViewTextBoxColumn.DataPropertyName = "NombreActividad";
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
@@ -93,6 +94,16 @@ namespace ProyectoDI_GrupoD.Vistas
             this.nombreActividadDataGridViewTextBoxColumn.HeaderText = "Nombre Actividad";
             this.nombreActividadDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreActividadDataGridViewTextBoxColumn.Name = "nombreActividadDataGridViewTextBoxColumn";
+=======
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnConsultar.Location = new System.Drawing.Point(37, 131);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(108, 41);
+            this.btnConsultar.TabIndex = 1;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+>>>>>>> a7148f3358cc5e10aed54eebf13a3803ce1a5b00
             // 
             // nombreMonitorDataGridViewTextBoxColumn
             // 
