@@ -60,7 +60,7 @@
             // 
             // MisActividades
             // 
-            this.MisActividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.MisActividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.MisActividades.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.ListarActividadesBlanco;
             this.MisActividades.ButtonText = "MIS ACTIVIDADES";
             this.MisActividades.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -73,7 +73,7 @@
             // 
             // ActividadDisponible
             // 
-            this.ActividadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.ActividadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.ActividadDisponible.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.AltaUnaActividadBlanco;
             this.ActividadDisponible.ButtonText = "ACTIVIDADES DISPONIBLES";
             this.ActividadDisponible.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -86,7 +86,7 @@
             // 
             // NombreUsuario
             // 
-            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.NombreUsuario.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.usuario;
             this.NombreUsuario.ButtonText = "NOMBRE";
             this.NombreUsuario.ContextMenuStrip = this.ctxtmsCerrarSesion;
@@ -114,7 +114,7 @@
             // 
             // pnlSuperior
             // 
-            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.pnlSuperior.Controls.Add(this.imgAtras_Re);
             this.pnlSuperior.Controls.Add(this.lblTextoSuperior);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
@@ -173,6 +173,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaPrincipal";
             this.Text = "K A E GYM ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaPrincipal_FormClosing);
             this.pnlBotones.ResumeLayout(false);
             this.ctxtmsCerrarSesion.ResumeLayout(false);

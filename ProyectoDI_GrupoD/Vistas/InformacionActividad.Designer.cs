@@ -97,8 +97,8 @@
             this.btnApuntar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.btnApuntar.BorderRadius = 20;
             this.btnApuntar.FillColor = System.Drawing.Color.Transparent;
-            this.btnApuntar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnApuntar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnApuntar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
+            this.btnApuntar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
             this.btnApuntar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApuntar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApuntar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -119,6 +119,7 @@
             this.txtNombreActividad.BorderSize = 2;
             this.txtNombreActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreActividad.Location = new System.Drawing.Point(86, 113);
+            this.txtNombreActividad.MaxLength = 32767;
             this.txtNombreActividad.Name = "txtNombreActividad";
             this.txtNombreActividad.OnlyAllowNumbers = false;
             this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(10);
@@ -135,6 +136,7 @@
             this.txtDescripActividad.BorderSize = 2;
             this.txtDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripActividad.Location = new System.Drawing.Point(86, 198);
+            this.txtDescripActividad.MaxLength = 32767;
             this.txtDescripActividad.Name = "txtDescripActividad";
             this.txtDescripActividad.OnlyAllowNumbers = false;
             this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(10);
@@ -151,6 +153,7 @@
             this.txtMonitorAsociado.BorderSize = 2;
             this.txtMonitorAsociado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMonitorAsociado.Location = new System.Drawing.Point(86, 287);
+            this.txtMonitorAsociado.MaxLength = 32767;
             this.txtMonitorAsociado.Name = "txtMonitorAsociado";
             this.txtMonitorAsociado.OnlyAllowNumbers = false;
             this.txtMonitorAsociado.Padding = new System.Windows.Forms.Padding(10);

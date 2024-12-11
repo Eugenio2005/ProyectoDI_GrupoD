@@ -41,7 +41,7 @@ namespace ProyectoDI_GrupoD.Vistas
             this.VistaActividades.AllowUserToOrderColumns = true;
             this.VistaActividades.AutoGenerateColumns = false;
             this.VistaActividades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.VistaActividades.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.VistaActividades.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.VistaActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.VistaActividades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreActividad,
@@ -121,9 +121,11 @@ namespace ProyectoDI_GrupoD.Vistas
             this.btnDesapuntar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
             this.btnDesapuntar.BorderRadius = 20;
             this.btnDesapuntar.FillColor = System.Drawing.Color.Transparent;
+            this.btnDesapuntar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
+            this.btnDesapuntar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
             this.btnDesapuntar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnDesapuntar.Image = global::ProyectoDI_GrupoD.Properties.Resources.borrar_usuario_1_;
-            this.btnDesapuntar.Location = new System.Drawing.Point(701, 183);
+            this.btnDesapuntar.Location = new System.Drawing.Point(694, 183);
             this.btnDesapuntar.Name = "btnDesapuntar";
             this.btnDesapuntar.Size = new System.Drawing.Size(79, 75);
             this.btnDesapuntar.TabIndex = 3;

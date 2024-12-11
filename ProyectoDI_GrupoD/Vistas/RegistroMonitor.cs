@@ -76,10 +76,6 @@ namespace ProyectoDI_GrupoD.Vistas
         private void txtEmailRe_TextChanged(object sender, EventArgs e)
         {
 
-            if (!string.IsNullOrEmpty(txtEmailRe.Text) && txtEmailRe.Text != placeholderTextEmail)
-            {
-                txtEmailRe.ForeColor = Color.FromArgb(202, 224, 212); // Cambiar a color normal
-            }
         }
 
         /// <summary>

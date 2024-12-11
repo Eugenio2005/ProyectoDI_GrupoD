@@ -18,7 +18,6 @@ namespace ProyectoDI_GrupoD
         private bool useSystemPasswordChar;
         private string placeholderText;
 
-
         // Constructor
         public TextBoxRedondeado()
         {
@@ -65,6 +64,13 @@ namespace ProyectoDI_GrupoD
         {
             get { return borderColor; }
             set { borderColor = value; this.Invalidate(); }
+        }
+
+        [Category("Custom Properties")]
+        public int MaxLength
+        {
+            get => textBox1.MaxLength;
+            set => textBox1.MaxLength = value; // Establece el MaxLength del TextBox interno
         }
 
         [Category("Custom Properties")]

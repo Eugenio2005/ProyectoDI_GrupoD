@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comBoxMonitores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDescripActividad = new System.Windows.Forms.Label();
             this.lblMonitor = new System.Windows.Forms.Label();
@@ -36,25 +35,15 @@
             this.txtNombreActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtDescripActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.btnBorrar = new ProyectoDI_GrupoD.RoundedButton();
+            this.comBoxMonitores = new ProyectoDI_GrupoD.ComboBoxRedondeado();
             this.SuspendLayout();
-            // 
-            // comBoxMonitores
-            // 
-            this.comBoxMonitores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comBoxMonitores.FormattingEnabled = true;
-            this.comBoxMonitores.Items.AddRange(new object[] {
-            "Sin monitor"});
-            this.comBoxMonitores.Location = new System.Drawing.Point(168, 289);
-            this.comBoxMonitores.Name = "comBoxMonitores";
-            this.comBoxMonitores.Size = new System.Drawing.Size(254, 26);
-            this.comBoxMonitores.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.label1.Location = new System.Drawing.Point(165, 84);
+            this.label1.Location = new System.Drawing.Point(165, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 24);
             this.label1.TabIndex = 6;
@@ -65,7 +54,7 @@
             this.lblDescripActividad.AutoSize = true;
             this.lblDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripActividad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.lblDescripActividad.Location = new System.Drawing.Point(165, 168);
+            this.lblDescripActividad.Location = new System.Drawing.Point(165, 148);
             this.lblDescripActividad.Name = "lblDescripActividad";
             this.lblDescripActividad.Size = new System.Drawing.Size(188, 24);
             this.lblDescripActividad.TabIndex = 7;
@@ -76,7 +65,7 @@
             this.lblMonitor.AutoSize = true;
             this.lblMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.lblMonitor.Location = new System.Drawing.Point(165, 252);
+            this.lblMonitor.Location = new System.Drawing.Point(165, 232);
             this.lblMonitor.Name = "lblMonitor";
             this.lblMonitor.Size = new System.Drawing.Size(154, 24);
             this.lblMonitor.TabIndex = 8;
@@ -88,8 +77,8 @@
             this.btnRegistrar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.btnRegistrar.BorderRadius = 20;
             this.btnRegistrar.FillColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
+            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -108,7 +97,8 @@
             this.txtNombreActividad.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.txtNombreActividad.BorderRadius = 15;
             this.txtNombreActividad.BorderSize = 2;
-            this.txtNombreActividad.Location = new System.Drawing.Point(168, 121);
+            this.txtNombreActividad.Location = new System.Drawing.Point(168, 101);
+            this.txtNombreActividad.MaxLength = 32767;
             this.txtNombreActividad.Name = "txtNombreActividad";
             this.txtNombreActividad.OnlyAllowNumbers = false;
             this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(10);
@@ -123,7 +113,8 @@
             this.txtDescripActividad.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.txtDescripActividad.BorderRadius = 15;
             this.txtDescripActividad.BorderSize = 2;
-            this.txtDescripActividad.Location = new System.Drawing.Point(168, 205);
+            this.txtDescripActividad.Location = new System.Drawing.Point(168, 185);
+            this.txtDescripActividad.MaxLength = 32767;
             this.txtDescripActividad.Name = "txtDescripActividad";
             this.txtDescripActividad.OnlyAllowNumbers = false;
             this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(10);
@@ -137,8 +128,8 @@
             this.btnBorrar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.btnBorrar.BorderRadius = 20;
             this.btnBorrar.FillColor = System.Drawing.Color.Transparent;
-            this.btnBorrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnBorrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
+            this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -149,12 +140,30 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
+            // comBoxMonitores
+            // 
+            this.comBoxMonitores.BackColor = System.Drawing.Color.White;
+            this.comBoxMonitores.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.comBoxMonitores.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.comBoxMonitores.BorderRadius = 15;
+            this.comBoxMonitores.BorderSize = 2;
+            this.comBoxMonitores.DataSource = null;
+            this.comBoxMonitores.DisplayMember = "";
+            this.comBoxMonitores.Location = new System.Drawing.Point(168, 270);
+            this.comBoxMonitores.Name = "comBoxMonitores";
+            this.comBoxMonitores.Padding = new System.Windows.Forms.Padding(10);
+            this.comBoxMonitores.SelectedValue = null;
+            this.comBoxMonitores.Size = new System.Drawing.Size(254, 40);
+            this.comBoxMonitores.TabIndex = 12;
+            this.comBoxMonitores.ValueMember = "";
+            // 
             // AltaActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(579, 450);
+            this.Controls.Add(this.comBoxMonitores);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.txtDescripActividad);
             this.Controls.Add(this.txtNombreActividad);
@@ -162,7 +171,6 @@
             this.Controls.Add(this.lblDescripActividad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.comBoxMonitores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaActividad";
             this.Text = "AltaActividad";
@@ -173,7 +181,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comBoxMonitores;
         private RoundedButton btnRegistrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDescripActividad;
@@ -181,5 +188,6 @@
         private TextBoxRedondeado txtNombreActividad;
         private TextBoxRedondeado txtDescripActividad;
         private RoundedButton btnBorrar;
+        private ComboBoxRedondeado comBoxMonitores;
     }
 }

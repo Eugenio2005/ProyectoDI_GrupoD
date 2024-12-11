@@ -62,7 +62,7 @@
             // 
             // NombreUsuario
             // 
-            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.NombreUsuario.ButtonImage = ((System.Drawing.Image)(resources.GetObject("NombreUsuario.ButtonImage")));
             this.NombreUsuario.ButtonText = "Nombre de usuario";
             this.NombreUsuario.ContextMenuStrip = this.ctxtmsCerrarSesion;
@@ -93,7 +93,7 @@
             // 
             // imgButtonListarActividad
             // 
-            this.imgButtonListarActividad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.imgButtonListarActividad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(80)))), ((int)(((byte)(40)))));
             this.imgButtonListarActividad.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.ListarActividadesBlanco;
             this.imgButtonListarActividad.ButtonText = "LISTAR ACTIVIDADES DISPONIBLES";
             this.imgButtonListarActividad.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -109,7 +109,7 @@
             // 
             // imgButtonDarAltaActividad
             // 
-            this.imgButtonDarAltaActividad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.imgButtonDarAltaActividad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.imgButtonDarAltaActividad.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.AltaUnaActividadBlanco;
             this.imgButtonDarAltaActividad.ButtonText = "DAR DE ALTA UNA ACTIVIDAD";
             this.imgButtonDarAltaActividad.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -125,7 +125,7 @@
             // 
             // imgBtnDarAltaMonitor
             // 
-            this.imgBtnDarAltaMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.imgBtnDarAltaMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.imgBtnDarAltaMonitor.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.AltaMonitorBlanco;
             this.imgBtnDarAltaMonitor.ButtonText = "DAR DE ALTA UN MONITOR";
             this.imgBtnDarAltaMonitor.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -141,13 +141,13 @@
             // 
             // pnlSuperiorDarDeAltaMonitor
             // 
-            this.pnlSuperiorDarDeAltaMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.pnlSuperiorDarDeAltaMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.pnlSuperiorDarDeAltaMonitor.Controls.Add(this.imgAtras_Re);
             this.pnlSuperiorDarDeAltaMonitor.Controls.Add(this.lblTextoSuperior);
             this.pnlSuperiorDarDeAltaMonitor.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperiorDarDeAltaMonitor.Location = new System.Drawing.Point(300, 0);
             this.pnlSuperiorDarDeAltaMonitor.Name = "pnlSuperiorDarDeAltaMonitor";
-            this.pnlSuperiorDarDeAltaMonitor.Size = new System.Drawing.Size(666, 100);
+            this.pnlSuperiorDarDeAltaMonitor.Size = new System.Drawing.Size(662, 100);
             this.pnlSuperiorDarDeAltaMonitor.TabIndex = 8;
             // 
             // imgAtras_Re
@@ -183,7 +183,7 @@
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(300, 100);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(666, 448);
+            this.pnlPrincipal.Size = new System.Drawing.Size(662, 448);
             this.pnlPrincipal.TabIndex = 9;
             // 
             // PantallaPrincipalAdmin

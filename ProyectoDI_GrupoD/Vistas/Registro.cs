@@ -29,7 +29,7 @@ namespace ProyectoDI_GrupoD
         public Registro()
         {
             InitializeComponent();
-            //inicializarPlaceHolder();
+            inicializarPlaceHolder();
             btnRegistrarRe.Enabled = false;
             aplicarEventoComprobarTextBox();
         }
@@ -51,19 +51,19 @@ namespace ProyectoDI_GrupoD
         ///// Inicializa los placeholders para los textBox correspondientes 
         ///// con su respectivo color de texto.
         ///// </summary>
-        //private void inicializarPlaceHolder()
-        //{
-        //    txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Texto de guía al usuario
+        private void inicializarPlaceHolder()
+        {
+            txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Texto de guía al usuario
 
-        //    txtEmailRe.Text = placeholderTextEmail; // Establece el placeholder para el email
-        //}
+            txtEmailRe.Text = placeholderTextEmail; // Establece el placeholder para el email
+        }
 
         /// <summary>
         /// Elimina el placeholder cuando el campo de cuenta corriente se ha seleccionado.
         /// </summary>
         private void txtBoxCuentaCorrienteEliminarPlaceHolder(object sender, EventArgs e)
         {
-            if (txtCuentaCorrienteRe.Text == placeholderTextCuentaCorriente)
+            if (txtCuentaCorrienteRe.Text == placeholderTextEmail)
             {
                 txtCuentaCorrienteRe.Text = ""; // Limpiar el texto
                 txtCuentaCorrienteRe.ForeColor = Color.Black; // Cambiar a color normal

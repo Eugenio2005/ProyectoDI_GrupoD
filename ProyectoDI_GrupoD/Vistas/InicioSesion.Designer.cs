@@ -223,7 +223,7 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaInSe.Padding = new System.Windows.Forms.Padding(10);
             this.txtContraseñaInSe.Size = new System.Drawing.Size(279, 33);
             this.txtContraseñaInSe.TabIndex = 33;
-            this.txtContraseñaInSe.UseSystemPasswordChar = false;
+            this.txtContraseñaInSe.UseSystemPasswordChar = true;
             // 
             // InicioSesion
             // 

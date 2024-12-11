@@ -42,16 +42,16 @@
             this.btnojoCerradoRe = new System.Windows.Forms.Button();
             this.btnojo_abiertoRe = new System.Windows.Forms.Button();
             this.imgKAE_Re = new System.Windows.Forms.PictureBox();
+            this.txtEmailRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtContraseñaRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtDNI_Re = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtValidarContraseñaRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtDireccionRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtTelefonoRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtApellidosRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.txtUsuarioRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.btnRegistrarRe = new ProyectoDI_GrupoD.RoundedButton();
             this.btnBorrarRe = new ProyectoDI_GrupoD.RoundedButton();
-            this.txtUsuarioRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtApellidosRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtTelefonoRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtDireccionRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtValidarContraseñaRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtDNI_Re = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtContraseñaRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
-            this.txtEmailRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             ((System.ComponentModel.ISupportInitialize)(this.imgKAE_Re)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,7 +184,7 @@
             this.btnojoCerradoValidarRe.FlatAppearance.BorderSize = 0;
             this.btnojoCerradoValidarRe.ForeColor = System.Drawing.Color.Transparent;
             this.btnojoCerradoValidarRe.Image = ((System.Drawing.Image)(resources.GetObject("btnojoCerradoValidarRe.Image")));
-            this.btnojoCerradoValidarRe.Location = new System.Drawing.Point(802, 403);
+            this.btnojoCerradoValidarRe.Location = new System.Drawing.Point(804, 404);
             this.btnojoCerradoValidarRe.Name = "btnojoCerradoValidarRe";
             this.btnojoCerradoValidarRe.Size = new System.Drawing.Size(29, 26);
             this.btnojoCerradoValidarRe.TabIndex = 75;
@@ -201,7 +201,7 @@
             this.btnojoAbiertoValidarRe.FlatAppearance.BorderSize = 0;
             this.btnojoAbiertoValidarRe.ForeColor = System.Drawing.Color.Transparent;
             this.btnojoAbiertoValidarRe.Image = ((System.Drawing.Image)(resources.GetObject("btnojoAbiertoValidarRe.Image")));
-            this.btnojoAbiertoValidarRe.Location = new System.Drawing.Point(802, 403);
+            this.btnojoAbiertoValidarRe.Location = new System.Drawing.Point(804, 404);
             this.btnojoAbiertoValidarRe.Name = "btnojoAbiertoValidarRe";
             this.btnojoAbiertoValidarRe.Size = new System.Drawing.Size(29, 26);
             this.btnojoAbiertoValidarRe.TabIndex = 74;
@@ -217,7 +217,7 @@
             this.btnojoCerradoRe.FlatAppearance.BorderSize = 0;
             this.btnojoCerradoRe.ForeColor = System.Drawing.Color.Transparent;
             this.btnojoCerradoRe.Image = ((System.Drawing.Image)(resources.GetObject("btnojoCerradoRe.Image")));
-            this.btnojoCerradoRe.Location = new System.Drawing.Point(434, 403);
+            this.btnojoCerradoRe.Location = new System.Drawing.Point(435, 404);
             this.btnojoCerradoRe.Name = "btnojoCerradoRe";
             this.btnojoCerradoRe.Size = new System.Drawing.Size(29, 26);
             this.btnojoCerradoRe.TabIndex = 69;
@@ -234,7 +234,7 @@
             this.btnojo_abiertoRe.FlatAppearance.BorderSize = 0;
             this.btnojo_abiertoRe.ForeColor = System.Drawing.Color.Transparent;
             this.btnojo_abiertoRe.Image = ((System.Drawing.Image)(resources.GetObject("btnojo_abiertoRe.Image")));
-            this.btnojo_abiertoRe.Location = new System.Drawing.Point(434, 403);
+            this.btnojo_abiertoRe.Location = new System.Drawing.Point(435, 404);
             this.btnojo_abiertoRe.Name = "btnojo_abiertoRe";
             this.btnojo_abiertoRe.Size = new System.Drawing.Size(29, 26);
             this.btnojo_abiertoRe.TabIndex = 68;
@@ -256,6 +256,136 @@
             this.imgKAE_Re.TabIndex = 53;
             this.imgKAE_Re.TabStop = false;
             // 
+            // txtEmailRe
+            // 
+            this.txtEmailRe.BackColor = System.Drawing.Color.White;
+            this.txtEmailRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtEmailRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtEmailRe.BorderRadius = 15;
+            this.txtEmailRe.BorderSize = 2;
+            this.txtEmailRe.Location = new System.Drawing.Point(110, 334);
+            this.txtEmailRe.MaxLength = 0;
+            this.txtEmailRe.Name = "txtEmailRe";
+            this.txtEmailRe.OnlyAllowNumbers = false;
+            this.txtEmailRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtEmailRe.Size = new System.Drawing.Size(322, 33);
+            this.txtEmailRe.TabIndex = 5;
+            this.txtEmailRe.UseSystemPasswordChar = false;
+            this.txtEmailRe.Enter += new System.EventHandler(this.txtBoxEmailEliminarPlaceHolder);
+            this.txtEmailRe.Leave += new System.EventHandler(this.txtBoxEmailAplicarPlaceHolder);
+            // 
+            // txtContraseñaRe
+            // 
+            this.txtContraseñaRe.BackColor = System.Drawing.Color.White;
+            this.txtContraseñaRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtContraseñaRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtContraseñaRe.BorderRadius = 15;
+            this.txtContraseñaRe.BorderSize = 2;
+            this.txtContraseñaRe.Location = new System.Drawing.Point(110, 400);
+            this.txtContraseñaRe.MaxLength = 0;
+            this.txtContraseñaRe.Name = "txtContraseñaRe";
+            this.txtContraseñaRe.OnlyAllowNumbers = false;
+            this.txtContraseñaRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtContraseñaRe.Size = new System.Drawing.Size(322, 33);
+            this.txtContraseñaRe.TabIndex = 7;
+            this.txtContraseñaRe.UseSystemPasswordChar = false;
+            // 
+            // txtDNI_Re
+            // 
+            this.txtDNI_Re.BackColor = System.Drawing.Color.White;
+            this.txtDNI_Re.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtDNI_Re.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDNI_Re.BorderRadius = 15;
+            this.txtDNI_Re.BorderSize = 2;
+            this.txtDNI_Re.Location = new System.Drawing.Point(110, 265);
+            this.txtDNI_Re.MaxLength = 9;
+            this.txtDNI_Re.Name = "txtDNI_Re";
+            this.txtDNI_Re.OnlyAllowNumbers = false;
+            this.txtDNI_Re.Padding = new System.Windows.Forms.Padding(10);
+            this.txtDNI_Re.Size = new System.Drawing.Size(322, 33);
+            this.txtDNI_Re.TabIndex = 3;
+            this.txtDNI_Re.UseSystemPasswordChar = false;
+            // 
+            // txtValidarContraseñaRe
+            // 
+            this.txtValidarContraseñaRe.BackColor = System.Drawing.Color.White;
+            this.txtValidarContraseñaRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtValidarContraseñaRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtValidarContraseñaRe.BorderRadius = 15;
+            this.txtValidarContraseñaRe.BorderSize = 2;
+            this.txtValidarContraseñaRe.Location = new System.Drawing.Point(480, 399);
+            this.txtValidarContraseñaRe.MaxLength = 0;
+            this.txtValidarContraseñaRe.Name = "txtValidarContraseñaRe";
+            this.txtValidarContraseñaRe.OnlyAllowNumbers = false;
+            this.txtValidarContraseñaRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtValidarContraseñaRe.Size = new System.Drawing.Size(322, 33);
+            this.txtValidarContraseñaRe.TabIndex = 8;
+            this.txtValidarContraseñaRe.UseSystemPasswordChar = false;
+            // 
+            // txtDireccionRe
+            // 
+            this.txtDireccionRe.BackColor = System.Drawing.Color.White;
+            this.txtDireccionRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtDireccionRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtDireccionRe.BorderRadius = 15;
+            this.txtDireccionRe.BorderSize = 2;
+            this.txtDireccionRe.Location = new System.Drawing.Point(480, 334);
+            this.txtDireccionRe.MaxLength = 0;
+            this.txtDireccionRe.Name = "txtDireccionRe";
+            this.txtDireccionRe.OnlyAllowNumbers = false;
+            this.txtDireccionRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtDireccionRe.Size = new System.Drawing.Size(322, 33);
+            this.txtDireccionRe.TabIndex = 6;
+            this.txtDireccionRe.UseSystemPasswordChar = false;
+            // 
+            // txtTelefonoRe
+            // 
+            this.txtTelefonoRe.BackColor = System.Drawing.Color.White;
+            this.txtTelefonoRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtTelefonoRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtTelefonoRe.BorderRadius = 15;
+            this.txtTelefonoRe.BorderSize = 2;
+            this.txtTelefonoRe.Location = new System.Drawing.Point(480, 265);
+            this.txtTelefonoRe.MaxLength = 9;
+            this.txtTelefonoRe.Name = "txtTelefonoRe";
+            this.txtTelefonoRe.OnlyAllowNumbers = false;
+            this.txtTelefonoRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtTelefonoRe.Size = new System.Drawing.Size(322, 33);
+            this.txtTelefonoRe.TabIndex = 4;
+            this.txtTelefonoRe.UseSystemPasswordChar = false;
+            // 
+            // txtApellidosRe
+            // 
+            this.txtApellidosRe.BackColor = System.Drawing.Color.White;
+            this.txtApellidosRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtApellidosRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtApellidosRe.BorderRadius = 15;
+            this.txtApellidosRe.BorderSize = 2;
+            this.txtApellidosRe.Location = new System.Drawing.Point(480, 196);
+            this.txtApellidosRe.MaxLength = 0;
+            this.txtApellidosRe.Name = "txtApellidosRe";
+            this.txtApellidosRe.OnlyAllowNumbers = false;
+            this.txtApellidosRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtApellidosRe.Size = new System.Drawing.Size(322, 33);
+            this.txtApellidosRe.TabIndex = 2;
+            this.txtApellidosRe.UseSystemPasswordChar = false;
+            // 
+            // txtUsuarioRe
+            // 
+            this.txtUsuarioRe.BackColor = System.Drawing.Color.White;
+            this.txtUsuarioRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtUsuarioRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtUsuarioRe.BorderRadius = 15;
+            this.txtUsuarioRe.BorderSize = 2;
+            this.txtUsuarioRe.Location = new System.Drawing.Point(110, 195);
+            this.txtUsuarioRe.MaxLength = 0;
+            this.txtUsuarioRe.Name = "txtUsuarioRe";
+            this.txtUsuarioRe.OnlyAllowNumbers = false;
+            this.txtUsuarioRe.Padding = new System.Windows.Forms.Padding(10);
+            this.txtUsuarioRe.Size = new System.Drawing.Size(322, 33);
+            this.txtUsuarioRe.TabIndex = 1;
+            this.txtUsuarioRe.UseSystemPasswordChar = false;
+            // 
             // btnRegistrarRe
             // 
             this.btnRegistrarRe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -266,15 +396,15 @@
             this.btnRegistrarRe.BorderRadius = 20;
             this.btnRegistrarRe.Cursor = System.Windows.Forms.Cursors.No;
             this.btnRegistrarRe.FillColor = System.Drawing.Color.Transparent;
-            this.btnRegistrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnRegistrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnRegistrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
+            this.btnRegistrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
             this.btnRegistrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnRegistrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnRegistrarRe.Location = new System.Drawing.Point(319, 467);
             this.btnRegistrarRe.Name = "btnRegistrarRe";
             this.btnRegistrarRe.Size = new System.Drawing.Size(113, 40);
-            this.btnRegistrarRe.TabIndex = 73;
+            this.btnRegistrarRe.TabIndex = 9;
             this.btnRegistrarRe.Text = "Registrar";
             this.btnRegistrarRe.UseVisualStyleBackColor = false;
             this.btnRegistrarRe.Click += new System.EventHandler(this.btnRegistrarRe_Click);
@@ -290,138 +420,18 @@
             this.btnBorrarRe.BorderRadius = 20;
             this.btnBorrarRe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBorrarRe.FillColor = System.Drawing.Color.Transparent;
-            this.btnBorrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
-            this.btnBorrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnBorrarRe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
+            this.btnBorrarRe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
             this.btnBorrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnBorrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBorrarRe.Location = new System.Drawing.Point(480, 467);
             this.btnBorrarRe.Name = "btnBorrarRe";
             this.btnBorrarRe.Size = new System.Drawing.Size(113, 40);
-            this.btnBorrarRe.TabIndex = 71;
+            this.btnBorrarRe.TabIndex = 10;
             this.btnBorrarRe.Text = "Borrar";
             this.btnBorrarRe.UseVisualStyleBackColor = false;
             this.btnBorrarRe.Click += new System.EventHandler(this.btnBorrarRe_Click);
-            // 
-            // txtUsuarioRe
-            // 
-            this.txtUsuarioRe.BackColor = System.Drawing.Color.White;
-            this.txtUsuarioRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtUsuarioRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtUsuarioRe.BorderRadius = 15;
-            this.txtUsuarioRe.BorderSize = 2;
-            this.txtUsuarioRe.Location = new System.Drawing.Point(110, 195);
-            this.txtUsuarioRe.Name = "txtUsuarioRe";
-            this.txtUsuarioRe.OnlyAllowNumbers = false;
-            this.txtUsuarioRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtUsuarioRe.Size = new System.Drawing.Size(322, 33);
-            this.txtUsuarioRe.TabIndex = 76;
-            this.txtUsuarioRe.UseSystemPasswordChar = false;
-            // 
-            // txtApellidosRe
-            // 
-            this.txtApellidosRe.BackColor = System.Drawing.Color.White;
-            this.txtApellidosRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtApellidosRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtApellidosRe.BorderRadius = 15;
-            this.txtApellidosRe.BorderSize = 2;
-            this.txtApellidosRe.Location = new System.Drawing.Point(480, 196);
-            this.txtApellidosRe.Name = "txtApellidosRe";
-            this.txtApellidosRe.OnlyAllowNumbers = false;
-            this.txtApellidosRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtApellidosRe.Size = new System.Drawing.Size(322, 33);
-            this.txtApellidosRe.TabIndex = 77;
-            this.txtApellidosRe.UseSystemPasswordChar = false;
-            // 
-            // txtTelefonoRe
-            // 
-            this.txtTelefonoRe.BackColor = System.Drawing.Color.White;
-            this.txtTelefonoRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtTelefonoRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtTelefonoRe.BorderRadius = 15;
-            this.txtTelefonoRe.BorderSize = 2;
-            this.txtTelefonoRe.Location = new System.Drawing.Point(480, 265);
-            this.txtTelefonoRe.Name = "txtTelefonoRe";
-            this.txtTelefonoRe.OnlyAllowNumbers = false;
-            this.txtTelefonoRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtTelefonoRe.Size = new System.Drawing.Size(322, 33);
-            this.txtTelefonoRe.TabIndex = 78;
-            this.txtTelefonoRe.UseSystemPasswordChar = false;
-            // 
-            // txtDireccionRe
-            // 
-            this.txtDireccionRe.BackColor = System.Drawing.Color.White;
-            this.txtDireccionRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtDireccionRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtDireccionRe.BorderRadius = 15;
-            this.txtDireccionRe.BorderSize = 2;
-            this.txtDireccionRe.Location = new System.Drawing.Point(480, 334);
-            this.txtDireccionRe.Name = "txtDireccionRe";
-            this.txtDireccionRe.OnlyAllowNumbers = false;
-            this.txtDireccionRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtDireccionRe.Size = new System.Drawing.Size(322, 33);
-            this.txtDireccionRe.TabIndex = 79;
-            this.txtDireccionRe.UseSystemPasswordChar = false;
-            // 
-            // txtValidarContraseñaRe
-            // 
-            this.txtValidarContraseñaRe.BackColor = System.Drawing.Color.White;
-            this.txtValidarContraseñaRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtValidarContraseñaRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtValidarContraseñaRe.BorderRadius = 15;
-            this.txtValidarContraseñaRe.BorderSize = 2;
-            this.txtValidarContraseñaRe.Location = new System.Drawing.Point(480, 399);
-            this.txtValidarContraseñaRe.Name = "txtValidarContraseñaRe";
-            this.txtValidarContraseñaRe.OnlyAllowNumbers = false;
-            this.txtValidarContraseñaRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtValidarContraseñaRe.Size = new System.Drawing.Size(322, 33);
-            this.txtValidarContraseñaRe.TabIndex = 80;
-            this.txtValidarContraseñaRe.UseSystemPasswordChar = false;
-            // 
-            // txtDNI_Re
-            // 
-            this.txtDNI_Re.BackColor = System.Drawing.Color.White;
-            this.txtDNI_Re.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtDNI_Re.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtDNI_Re.BorderRadius = 15;
-            this.txtDNI_Re.BorderSize = 2;
-            this.txtDNI_Re.Location = new System.Drawing.Point(110, 265);
-            this.txtDNI_Re.Name = "txtDNI_Re";
-            this.txtDNI_Re.OnlyAllowNumbers = false;
-            this.txtDNI_Re.Padding = new System.Windows.Forms.Padding(10);
-            this.txtDNI_Re.Size = new System.Drawing.Size(322, 33);
-            this.txtDNI_Re.TabIndex = 81;
-            this.txtDNI_Re.UseSystemPasswordChar = false;
-            // 
-            // txtContraseñaRe
-            // 
-            this.txtContraseñaRe.BackColor = System.Drawing.Color.White;
-            this.txtContraseñaRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtContraseñaRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtContraseñaRe.BorderRadius = 15;
-            this.txtContraseñaRe.BorderSize = 2;
-            this.txtContraseñaRe.Location = new System.Drawing.Point(110, 400);
-            this.txtContraseñaRe.Name = "txtContraseñaRe";
-            this.txtContraseñaRe.OnlyAllowNumbers = false;
-            this.txtContraseñaRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtContraseñaRe.Size = new System.Drawing.Size(322, 33);
-            this.txtContraseñaRe.TabIndex = 82;
-            this.txtContraseñaRe.UseSystemPasswordChar = false;
-            // 
-            // txtEmailRe
-            // 
-            this.txtEmailRe.BackColor = System.Drawing.Color.White;
-            this.txtEmailRe.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.txtEmailRe.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.txtEmailRe.BorderRadius = 15;
-            this.txtEmailRe.BorderSize = 2;
-            this.txtEmailRe.Location = new System.Drawing.Point(110, 334);
-            this.txtEmailRe.Name = "txtEmailRe";
-            this.txtEmailRe.OnlyAllowNumbers = false;
-            this.txtEmailRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtEmailRe.Size = new System.Drawing.Size(322, 33);
-            this.txtEmailRe.TabIndex = 82;
-            this.txtEmailRe.UseSystemPasswordChar = false;
             // 
             // RegistroMonitor
             // 
