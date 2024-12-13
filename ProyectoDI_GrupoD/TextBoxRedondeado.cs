@@ -26,8 +26,18 @@ namespace ProyectoDI_GrupoD
             textBox1.MouseEnter += TextBox1_MouseEnter;
             textBox1.MouseLeave += TextBox1_MouseLeave;
 
-            textBox1.Enter += (sender, e) => { OnTextBoxEnter(); };
-            textBox1.Leave += (sender, e) => { OnTextBoxLeave(); };
+            textBox1.Enter += (sender, e) =>
+            {
+                isFocused = true;
+                OnTextBoxEnter();
+            };
+
+            textBox1.Leave += (sender, e) =>
+            {
+                isFocused = false;
+                OnTextBoxLeave();
+            };
+
 
             textBox1.KeyPress += (sender, e) => { OnTextBoxKeyPressOnlyNumber(e); }; // Event for KeyPress validation
             textBox1.TextChanged += (sender, e) => { OnTextChanged(e); };

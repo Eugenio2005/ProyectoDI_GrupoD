@@ -497,7 +497,7 @@ namespace ProyectoDI_GrupoD
             this.txtCuentaCorrienteRe.BorderSize = 2;
             this.txtCuentaCorrienteRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(33, 332);
-            this.txtCuentaCorrienteRe.MaxLength = 22;
+            this.txtCuentaCorrienteRe.MaxLength = 32767;
             this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
             this.txtCuentaCorrienteRe.OnlyAllowNumbers = false;
             this.txtCuentaCorrienteRe.Padding = new System.Windows.Forms.Padding(10);

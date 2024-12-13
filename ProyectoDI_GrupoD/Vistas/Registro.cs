@@ -63,10 +63,9 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         private void txtBoxCuentaCorrienteEliminarPlaceHolder(object sender, EventArgs e)
         {
-            if (txtCuentaCorrienteRe.Text == placeholderTextEmail)
+            if (txtCuentaCorrienteRe.Text == placeholderTextCuentaCorriente)
             {
                 txtCuentaCorrienteRe.Text = ""; // Limpiar el texto
-                txtCuentaCorrienteRe.ForeColor = Color.Black; // Cambiar a color normal
             }
         }
 
@@ -78,7 +77,6 @@ namespace ProyectoDI_GrupoD
             if (string.IsNullOrWhiteSpace(txtCuentaCorrienteRe.Text))
             {
                 txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaurar texto predeterminado
-                txtCuentaCorrienteRe.ForeColor = Color.Gray; // Volver al color predeterminado
             }
         }
 
@@ -98,7 +96,6 @@ namespace ProyectoDI_GrupoD
             if (txtEmailRe.Text == placeholderTextEmail)
             {
                 txtEmailRe.Text = ""; // Limpiar el texto
-                txtEmailRe.ForeColor = Color.Black; // Cambiar a color normal
             }
         }
 
@@ -107,7 +104,6 @@ namespace ProyectoDI_GrupoD
             if (string.IsNullOrWhiteSpace(txtEmailRe.Text))
             {
                 txtEmailRe.Text = placeholderTextEmail; // Restaurar texto predeterminado
-                txtEmailRe.ForeColor = Color.Gray; // Volver al color predeterminado
             }
         }
 
