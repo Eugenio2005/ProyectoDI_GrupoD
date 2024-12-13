@@ -127,5 +127,15 @@ namespace ProyectoDI_GrupoD.Vistas
                 menuInicio.ShowDialog();
                 Negocio.Management.DatosUsuario.LimpiarDatos();
         }
+
+        private void editarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlSuperior.Visible = true;
+            lblTextoSuperior.Text = "--- EDITAR PERFIL ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperior);
+
+            EditarPerfil editarPerfil = new EditarPerfil();
+            AbrirPanel(editarPerfil, pnlPrincipal);
+        }
     }
 }

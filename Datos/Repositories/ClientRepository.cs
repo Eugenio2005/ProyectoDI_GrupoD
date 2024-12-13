@@ -35,6 +35,72 @@ namespace Datos.Repositories
         }
 
         /// <summary>
+        /// Actualiza los datos de un cliente y su correspondiente usuario en la base de datos.
+        /// </summary>
+        /// <param name="usuario">El objeto que representa al usuario con datos actualizados.</param>
+        /// <param name="cliente">El objeto que representa al cliente con datos actualizados.</param>
+        public void ActualizarCliente(Usuarios usuario, Clientes cliente)
+        {
+            // Actualizar datos del usuario
+            using (var contexto = new equipodEntities())
+            {
+                var usuarioExistente = contexto.Usuarios.FirstOrDefault(u => u.dni == usuario.dni);
+                if (usuarioExistente != null)
+                {
+                    usuarioExistente.nombre = usuario.nombre;
+                    usuarioExistente.apellidos = usuario.apellidos;
+                    usuarioExistente.email = usuario.email;
+                    usuarioExistente.telefono = usuario.telefono;
+                    usuarioExistente.direccion = usuario.direccion;
+                    usuarioExistente.password = usuario.password;
+                }
+                else
+                {
+                    throw new Exception("El usuario no existe en la base de datos.");
+                }
+
+                contexto.SaveChanges();
+            }
+
+            // Actualizar datos del cliente
+            using (var contexto2 = new equipodEntities())
+            {
+                var clienteExistente = contexto2.Clientes.FirstOrDefault(c => c.email == cliente.email);
+                if (clienteExistente != null)
+                {
+                    clienteExistente.email = cliente.email;
+                    clienteExistente.ccc = cliente.ccc;
+                }
+                else
+                {
+                    throw new Exception("El cliente no existe en la base de datos.");
+                }
+
+                contexto2.SaveChanges();
+            }
+        }
+
+        public void UpdateContraseñaCliente(Usuarios usuario)
+        {
+            // Actualizar datos del usuario
+            using (var contexto = new equipodEntities())
+            {
+                var usuarioExistente = contexto.Usuarios.FirstOrDefault(u => u.dni == usuario.dni);
+                if (usuarioExistente != null)
+                {
+                    usuarioExistente.password = usuario.password;
+                }
+                else
+                {
+                    throw new Exception("El usuario no existe en la base de datos.");
+                }
+
+                contexto.SaveChanges();
+            }
+        }
+
+
+        /// <summary>
         /// Consulta un cliente en la base de datos a través de su email.
         /// </summary>
         /// <param name="email">El email del usuario que se desea consultar.</param>
@@ -59,12 +125,21 @@ namespace Datos.Repositories
         /// Devuelve el usuario con el que coincida el DNI introducido.
         /// Si no se encuentra, devuelve null.
         /// </returns>
-        public Usuarios ConsultarClienteDNI(string dni)
+        public Usuarios ConsultarUsuarioDNI(string dni)
         {
             using (var contexto = new equipodEntities())
             {
                 // Devuelve el primer usuario que encuentra con el mismo DNI.
                 return contexto.Usuarios.FirstOrDefault(u => u.dni == dni);
+            }
+        }
+
+        public Clientes ConsultarClienteDNI(string email)
+        {
+            using (var contexto = new equipodEntities())
+            {
+                // Devuelve el primer usuario que encuentra con el mismo DNI.
+                return contexto.Clientes.FirstOrDefault(c => c.email == email);
             }
         }
 

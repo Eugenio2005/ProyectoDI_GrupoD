@@ -86,6 +86,18 @@
     <Compile Include="Vistas\AltaActividad.Designer.cs">
       <DependentUpon>AltaActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\CambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\CambiarContraseña.Designer.cs">
+      <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\EditarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\EditarPerfil.Designer.cs">
+      <DependentUpon>EditarPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\InformacionActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AltaActividad.resx">
       <DependentUpon>AltaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\CambiarContraseña.resx">
+      <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\EditarPerfil.resx">
+      <DependentUpon>EditarPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\InformacionActividad.resx">
       <DependentUpon>InformacionActividad.cs</DependentUpon>
