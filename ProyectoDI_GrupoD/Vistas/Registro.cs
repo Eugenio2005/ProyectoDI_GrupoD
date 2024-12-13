@@ -18,7 +18,7 @@ namespace ProyectoDI_GrupoD
 {
     public partial class Registro : Form
     {
-        private string nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña;
+        private string nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña, contraseñaValidar;
         private const string placeholderTextCuentaCorriente = "Ingrese 22 dígitos",
             placeholderTextEmail = "ejemplo@ejemplo.com";
 
@@ -45,6 +45,7 @@ namespace ProyectoDI_GrupoD
             txtUsuarioRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtCuentaCorrienteRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
+            txtValidarContraseña.TextChanged += new EventHandler(ComprobarTextBox);
         }
 
         ///// <summary>
@@ -381,11 +382,13 @@ namespace ProyectoDI_GrupoD
             dni = txtDNI_Re.Text;
             apellidos = txtApellidosRe.Text;
             cuentaCorriente = txtCuentaCorrienteRe.Text;
+            contraseñaValidar = txtValidarContraseña.Text;
 
             // Habilitar el botón de registro solo si todos los campos están completos
             if (!string.IsNullOrWhiteSpace(contraseña) && !string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(dni) &&
-                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente))
+                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente) && 
+                !string.IsNullOrWhiteSpace(contraseñaValidar))
             {
                 btnRegistrarRe.Enabled = true; // Habilitar el botón de registro
             }
