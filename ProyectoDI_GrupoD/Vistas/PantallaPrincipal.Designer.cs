@@ -40,6 +40,7 @@
             this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.lblTextoSuperior = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.editarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBotones.SuspendLayout();
             this.ctxtmsCerrarSesion.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
@@ -101,9 +102,10 @@
             // 
             this.ctxtmsCerrarSesion.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.ctxtmsCerrarSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSesionToolStripMenuItem});
+            this.cerrarSesionToolStripMenuItem,
+            this.editarPerfilToolStripMenuItem});
             this.ctxtmsCerrarSesion.Name = "ctxtmsCerrarSesion";
-            this.ctxtmsCerrarSesion.Size = new System.Drawing.Size(144, 26);
+            this.ctxtmsCerrarSesion.Size = new System.Drawing.Size(144, 48);
             // 
             // cerrarSesionToolStripMenuItem
             // 
@@ -160,6 +162,13 @@
             this.pnlPrincipal.Size = new System.Drawing.Size(970, 494);
             this.pnlPrincipal.TabIndex = 3;
             // 
+            // editarPerfilToolStripMenuItem
+            // 
+            this.editarPerfilToolStripMenuItem.Name = "editarPerfilToolStripMenuItem";
+            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.editarPerfilToolStripMenuItem.Text = "Editar perfil";
+            this.editarPerfilToolStripMenuItem.Click += new System.EventHandler(this.editarPerfilToolStripMenuItem_Click);
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,5 +204,6 @@
         private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.ContextMenuStrip ctxtmsCerrarSesion;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarPerfilToolStripMenuItem;
     }
 }
