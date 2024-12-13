@@ -52,6 +52,93 @@ namespace Negocio.Management
 
         }
 
+        public bool UpdateCliente(ClientesDTO clienteDTO, UsuariosDTO usuarioDTO)
+        {
+            try
+            {
+                // Obtener el usuario de la base de datos según el DNI
+                Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarUsuarioDNI(usuarioDTO.Dni);
+                if (usuarioBD == null)
+                {
+                    throw new Exception("No se encontró un usuario con el DNI proporcionado.");
+                }
+
+                // Obtener el cliente asociado de la base de datos según el ID
+                Clientes clienteBD = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(usuarioDTO.Dni);
+                if (clienteBD == null)
+                {
+                    throw new Exception("No se encontró un cliente con el email proporcionado.");
+                }
+
+                // Actualizar datos del usuario en base a la información recibida
+                usuarioBD.nombre = usuarioDTO.Nombre;
+                usuarioBD.apellidos = usuarioDTO.Apellidos;
+                usuarioBD.email = usuarioDTO.Email;
+                usuarioBD.telefono = usuarioDTO.Telefono;
+                usuarioBD.direccion = usuarioDTO.Direccion;
+                usuarioBD.password = usuarioDTO.Contraseña;
+
+                // Actualizar datos del cliente
+                clienteBD.ccc = clienteDTO.CuentaCorriente;
+                clienteBD.email = clienteDTO.Email;
+
+
+                //bool usuarioActualizado = new Datos.Repositories.ClientRepository().ActualizarCliente(usuarioBD, clienteBD);
+                new Datos.Repositories.ClientRepository().ActualizarCliente(usuarioBD, clienteBD);
+
+                // Cargar los datos del usuario en DatosUsuario
+                UsuariosDTO usuarioDTONuevo = new UsuariosDTO
+                {
+                    Dni = usuarioBD.dni,
+                    Nombre = usuarioBD.nombre,
+                    Apellidos = usuarioBD.apellidos,
+                    Email = usuarioBD.email,
+                    Telefono = usuarioBD.telefono,
+                    Direccion = usuarioBD.direccion,
+                    Contraseña = usuarioBD.password,
+                    CuentaCorriente = clienteBD.ccc
+                };
+
+                DatosUsuario.SetDatosUsuario(usuarioDTO);
+                    return true;
+                }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al actualizar el cliente: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool UpdateContraseñaCliente(UsuariosDTO usuarioDTO, String nuevaContraseña)
+        {
+            try
+            {
+                // Obtener el usuario de la base de datos según el DNI
+                Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarUsuarioDNI(usuarioDTO.Dni);
+                if (usuarioBD == null)
+                {
+                    throw new Exception("No se encontró un usuario con el DNI proporcionado.");
+                }
+
+                // Actualizar datos del usuario en base a la información recibida
+                usuarioBD.password = encriptarContrasena(nuevaContraseña);
+
+                new Datos.Repositories.ClientRepository().UpdateContraseñaCliente(usuarioBD);
+
+                // Cargar los datos del usuario en DatosUsuario
+                usuarioDTO.Contraseña = nuevaContraseña;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Console.WriteLine($"Error al actualizar el cliente: {ex.Message}");
+                return false;
+            }
+        }
+
         public bool AltaMonitor(UsuariosDTO usuarioDTO, MonitorDTO monitorDTO)
         {
             // Crea un usuario con los datos enviados del registro.
@@ -87,7 +174,7 @@ namespace Negocio.Management
 
         private bool comprobarDNIExistente(string dni)
         {
-            Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(dni);
+            Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarUsuarioDNI(dni);
 
             if (usuarioBD == null)
             {
@@ -118,7 +205,7 @@ namespace Negocio.Management
         /// </summary>
         /// <param name="contrasena">La contraseña a encriptar.</param>
         /// <returns>La contraseña encriptada en formato hexadecimal.</returns>
-        private string encriptarContrasena(string contrasena)
+        public string encriptarContrasena(string contrasena)
         {
             SHA256 sha256 = SHA256Managed.Create(); // Crea una instancia de SHA256
             ASCIIEncoding encoding = new ASCIIEncoding(); // Crea una instancia de ASCIIEncoding
@@ -145,7 +232,7 @@ namespace Negocio.Management
             {
                 // Consulta el usuario en la base de datos
                 Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
-
+                Clientes clientes = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(email);
                 // Encripta la contraseña introducida para compararla con la que se recoge de la base de datos.
                 string contrasenaEncript = encriptarContrasena(contrasena);
 
@@ -161,7 +248,8 @@ namespace Negocio.Management
                         Email = usuarioBD.email,
                         Telefono = usuarioBD.telefono,
                         Direccion = usuarioBD.direccion,
-                        Contraseña = usuarioBD.password
+                        CuentaCorriente = clientes.ccc,
+                        Contraseña = usuarioBD.password                   
                     };
                     DatosUsuario.SetDatosUsuario(usuarioDTO);
                     return true;
@@ -185,7 +273,7 @@ namespace Negocio.Management
         {
             StringBuilder campos = new StringBuilder("");
             Usuarios usuarioBDEmail = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
-            Usuarios usuarioBDDNI = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(dni);
+            Usuarios usuarioBDDNI = new Datos.Repositories.ClientRepository().ConsultarUsuarioDNI(email);
 
             // Verifica si el usuario con el email existe y añade el mensaje correspondiente
             if (usuarioBDEmail != null && usuarioBDEmail.email.Equals(email))

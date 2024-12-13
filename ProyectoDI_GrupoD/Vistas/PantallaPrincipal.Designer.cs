@@ -31,19 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
             this.pnlBotones = new System.Windows.Forms.Panel();
-            this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
-            this.lblTextoSuperior = new System.Windows.Forms.Label();
-            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.MisActividades = new ProyectoDI_GrupoD.ImageButton();
             this.ActividadDisponible = new ProyectoDI_GrupoD.ImageButton();
             this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
             this.ctxtmsCerrarSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
+            this.lblTextoSuperior = new System.Windows.Forms.Label();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlBotones.SuspendLayout();
+            this.ctxtmsCerrarSesion.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
-            this.ctxtmsCerrarSesion.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBotones
@@ -57,6 +58,68 @@
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(301, 594);
             this.pnlBotones.TabIndex = 1;
+            // 
+            // MisActividades
+            // 
+            this.MisActividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.MisActividades.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.ListarActividadesBlanco;
+            this.MisActividades.ButtonText = "MIS ACTIVIDADES";
+            this.MisActividades.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MisActividades.HoverBackColor = System.Drawing.Color.LightGray;
+            this.MisActividades.Location = new System.Drawing.Point(0, 144);
+            this.MisActividades.Name = "MisActividades";
+            this.MisActividades.Size = new System.Drawing.Size(300, 50);
+            this.MisActividades.TabIndex = 2;
+            this.MisActividades.Click += new System.EventHandler(this.MisActividades_Click);
+            // 
+            // ActividadDisponible
+            // 
+            this.ActividadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.ActividadDisponible.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.AltaUnaActividadBlanco;
+            this.ActividadDisponible.ButtonText = "ACTIVIDADES DISPONIBLES";
+            this.ActividadDisponible.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ActividadDisponible.HoverBackColor = System.Drawing.Color.LightGray;
+            this.ActividadDisponible.Location = new System.Drawing.Point(0, 78);
+            this.ActividadDisponible.Name = "ActividadDisponible";
+            this.ActividadDisponible.Size = new System.Drawing.Size(300, 50);
+            this.ActividadDisponible.TabIndex = 1;
+            this.ActividadDisponible.Click += new System.EventHandler(this.ActividadDisponible_Click);
+            // 
+            // NombreUsuario
+            // 
+            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.NombreUsuario.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.usuario;
+            this.NombreUsuario.ButtonText = "NOMBRE";
+            this.NombreUsuario.ContextMenuStrip = this.ctxtmsCerrarSesion;
+            this.NombreUsuario.Cursor = System.Windows.Forms.Cursors.Help;
+            this.NombreUsuario.HoverBackColor = System.Drawing.Color.LightGray;
+            this.NombreUsuario.Location = new System.Drawing.Point(0, 12);
+            this.NombreUsuario.Name = "NombreUsuario";
+            this.NombreUsuario.Size = new System.Drawing.Size(300, 50);
+            this.NombreUsuario.TabIndex = 0;
+            // 
+            // ctxtmsCerrarSesion
+            // 
+            this.ctxtmsCerrarSesion.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.ctxtmsCerrarSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesionToolStripMenuItem,
+            this.editarPerfilToolStripMenuItem});
+            this.ctxtmsCerrarSesion.Name = "ctxtmsCerrarSesion";
+            this.ctxtmsCerrarSesion.Size = new System.Drawing.Size(144, 48);
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            // 
+            // editarPerfilToolStripMenuItem
+            // 
+            this.editarPerfilToolStripMenuItem.Name = "editarPerfilToolStripMenuItem";
+            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.editarPerfilToolStripMenuItem.Text = "Editar Perfil";
+            this.editarPerfilToolStripMenuItem.Click += new System.EventHandler(this.editarPerfilToolStripMenuItem_Click);
             // 
             // pnlSuperior
             // 
@@ -105,60 +168,6 @@
             this.pnlPrincipal.Size = new System.Drawing.Size(970, 494);
             this.pnlPrincipal.TabIndex = 3;
             // 
-            // MisActividades
-            // 
-            this.MisActividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
-            this.MisActividades.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.ListarActividadesBlanco;
-            this.MisActividades.ButtonText = "MIS ACTIVIDADES";
-            this.MisActividades.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MisActividades.HoverBackColor = System.Drawing.Color.LightGray;
-            this.MisActividades.Location = new System.Drawing.Point(0, 144);
-            this.MisActividades.Name = "MisActividades";
-            this.MisActividades.Size = new System.Drawing.Size(300, 50);
-            this.MisActividades.TabIndex = 2;
-            this.MisActividades.Click += new System.EventHandler(this.MisActividades_Click);
-            // 
-            // ActividadDisponible
-            // 
-            this.ActividadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
-            this.ActividadDisponible.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.AltaUnaActividadBlanco;
-            this.ActividadDisponible.ButtonText = "ACTIVIDADES DISPONIBLES";
-            this.ActividadDisponible.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ActividadDisponible.HoverBackColor = System.Drawing.Color.LightGray;
-            this.ActividadDisponible.Location = new System.Drawing.Point(0, 78);
-            this.ActividadDisponible.Name = "ActividadDisponible";
-            this.ActividadDisponible.Size = new System.Drawing.Size(300, 50);
-            this.ActividadDisponible.TabIndex = 1;
-            this.ActividadDisponible.Click += new System.EventHandler(this.ActividadDisponible_Click);
-            // 
-            // NombreUsuario
-            // 
-            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
-            this.NombreUsuario.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.usuario;
-            this.NombreUsuario.ButtonText = "NOMBRE";
-            this.NombreUsuario.ContextMenuStrip = this.ctxtmsCerrarSesion;
-            this.NombreUsuario.Cursor = System.Windows.Forms.Cursors.Help;
-            this.NombreUsuario.HoverBackColor = System.Drawing.Color.LightGray;
-            this.NombreUsuario.Location = new System.Drawing.Point(0, 12);
-            this.NombreUsuario.Name = "NombreUsuario";
-            this.NombreUsuario.Size = new System.Drawing.Size(300, 50);
-            this.NombreUsuario.TabIndex = 0;
-            // 
-            // ctxtmsCerrarSesion
-            // 
-            this.ctxtmsCerrarSesion.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.ctxtmsCerrarSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSesionToolStripMenuItem});
-            this.ctxtmsCerrarSesion.Name = "ctxtmsCerrarSesion";
-            this.ctxtmsCerrarSesion.Size = new System.Drawing.Size(144, 26);
-            // 
-            // cerrarSesionToolStripMenuItem
-            // 
-            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
-            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
-            // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,12 +181,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaPrincipal";
             this.Text = "K A E GYM ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PantallaPrincipal_FormClosing);
             this.pnlBotones.ResumeLayout(false);
+            this.ctxtmsCerrarSesion.ResumeLayout(false);
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
-            this.ctxtmsCerrarSesion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -193,5 +203,6 @@
         private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.ContextMenuStrip ctxtmsCerrarSesion;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarPerfilToolStripMenuItem;
     }
 }
