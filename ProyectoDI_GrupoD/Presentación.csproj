@@ -55,6 +55,12 @@
     <Compile Include="Botones.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ComboBoxRedondeado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboBoxRedondeado.Designer.cs">
+      <DependentUpon>ComboBoxRedondeado.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -62,6 +68,12 @@
       <DependentUpon>ImageButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="TextBoxRedondeado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextBoxRedondeado.Designer.cs">
+      <DependentUpon>TextBoxRedondeado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\ActividadesCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,9 @@
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextBoxRedondeado.resx">
+      <DependentUpon>TextBoxRedondeado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ActividadesCliente.resx">
       <DependentUpon>ActividadesCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +218,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Recursos\Cerrar.png" />
+    <Content Include="Recursos\KAE_GYM novo.png" />
+    <Content Include="Recursos\KAE_GYM_novo re.png" />
+    <Content Include="Recursos\Minimizar.png" />
+    <Content Include="Resources\Cerrar.png" />
+    <None Include="Resources\KAE_GYM novo1.png" />
+    <None Include="Resources\KAE_GYM novo.png" />
     <None Include="Recursos\AltaUnaActividadBlanco.png" />
     <None Include="Recursos\ListarActividadesBlanco.png" />
     <None Include="Recursos\AltaMonitorBlanco.png" />

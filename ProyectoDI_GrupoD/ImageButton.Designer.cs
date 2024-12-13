@@ -31,13 +31,13 @@ namespace ProyectoDI_GrupoD
         private void ImageButton_MouseEnter(object sender, EventArgs e)
         {
             // Cambia el fondo al color que tenías antes en MouseEnter
-            this.BackColor = Color.FromArgb(102, 108, 124);  // Color cuando el mouse entra
+            this.BackColor = Color.FromArgb(180, 142, 102);  // Color cuando el mouse entra
         }
 
         private void ImageButton_MouseLeave(object sender, EventArgs e)
         {
             // Vuelve al color que tenías antes en MouseLeave
-            this.BackColor = Color.FromArgb(136, 49, 50);  // Color cuando el mouse sale
+            this.BackColor = Color.FromArgb(120, 71, 24);  // Color cuando el mouse sale
         }
 
         private void InitializeComponent()

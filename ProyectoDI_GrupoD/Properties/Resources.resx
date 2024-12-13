@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ojo_cerrado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\ojo_cerrado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AltaUnaActividadBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\AltaUnaActividadBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,6 +130,12 @@
   <data name="KAEGYM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\KAEGYM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="inicioFondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\inicioFondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="KAEGYM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\KAEGYM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,9 +144,6 @@
   </data>
   <data name="atras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\atras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="borrar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\borrar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KAEGYM2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\KAEGYM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +157,14 @@
   <data name="AltaUnaActividad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\AltaUnaActividad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="KAE_GYM novo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KAE_GYM novo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="atrasSinFondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\atrasSinFondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="borrar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\borrar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AltaMonitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\AltaMonitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,19 +172,28 @@
   <data name="AltaMonitorBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\AltaMonitorBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Cerrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="agregar-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inicioFondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\inicioFondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="borrar-usuario(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\borrar-usuario(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AltaUnaActividadBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\AltaUnaActividadBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="KAE_GYM_novo re" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\KAE_GYM_novo re.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agregar-usuario(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar-usuario(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="borrar-usuario(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\borrar-usuario(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="KAE_GYM novo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KAE_GYM novo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ojo_cerrado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ojo_cerrado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

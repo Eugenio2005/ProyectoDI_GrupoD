@@ -103,16 +103,31 @@ namespace ProyectoDI_GrupoD
         /// </summary>
         /// <param name="sender">El objeto que genera el evento (el icono de "atrás").</param>
         /// <param name="e">Los argumentos del evento.</param>
-        private void imgAtras_Re_Click(object sender, EventArgs e)
+        private void imgAtras_Re_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             MenuInicio menuInicio = new MenuInicio();
             menuInicio.ShowDialog(); // Muestra la ventana de menú de inicio
         }
 
-        private void InicioSesion_Load(object sender, EventArgs e)
+        private void imgCerrar_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void imgMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void imgCerrar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void imgMinimizar_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
         /// <summary>

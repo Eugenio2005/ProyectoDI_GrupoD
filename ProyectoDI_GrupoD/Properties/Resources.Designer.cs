@@ -173,9 +173,49 @@ namespace ProyectoDI_GrupoD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cerrar {
+            get {
+                object obj = ResourceManager.GetObject("Cerrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap inicioFondo {
             get {
                 object obj = ResourceManager.GetObject("inicioFondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KAE_GYM_novo {
+            get {
+                object obj = ResourceManager.GetObject("KAE_GYM novo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KAE_GYM_novo_re {
+            get {
+                object obj = ResourceManager.GetObject("KAE_GYM_novo re", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KAE_GYM_novo1 {
+            get {
+                object obj = ResourceManager.GetObject("KAE_GYM novo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +276,16 @@ namespace ProyectoDI_GrupoD.Properties {
         internal static System.Drawing.Bitmap ListarActividadesBlanco {
             get {
                 object obj = ResourceManager.GetObject("ListarActividadesBlanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minimizar {
+            get {
+                object obj = ResourceManager.GetObject("Minimizar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

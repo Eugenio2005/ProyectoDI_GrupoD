@@ -46,5 +46,15 @@ namespace ProyectoDI_GrupoD.Vistas
         {
             Application.Exit();
         }
+
+        private void imgCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void imgMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
