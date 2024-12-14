@@ -12,6 +12,7 @@ namespace ProyectoDI_GrupoD.Vistas
 {
     public partial class PantallaPrincipal : Form
     {
+        bool usuarioCollapsed; 
         public PantallaPrincipal()
         {
             InitializeComponent();
@@ -128,7 +129,35 @@ namespace ProyectoDI_GrupoD.Vistas
                 Negocio.Management.DatosUsuario.LimpiarDatos();
         }
 
-        private void editarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        private void usuarioTimer_Tick(object sender, EventArgs e)
+        {
+            if (usuarioCollapsed)
+            {
+                pnlUsuario.Height += 10;
+                if (pnlUsuario.Height == pnlUsuario.MaximumSize.Height)
+                {
+                    usuarioCollapsed = false;
+                    usuarioTimer.Stop();
+                }
+            }
+            else
+            {
+                pnlUsuario.Height -= 10;
+                if (pnlUsuario.Height == pnlUsuario.MinimumSize.Height)
+                {
+                    usuarioCollapsed = true;
+                    usuarioTimer.Stop();
+                }
+            }
+
+        }
+
+        private void NombreUsuario_Click(object sender, EventArgs e)
+        {
+            usuarioTimer.Start();
+        }
+
+        private void EditarPerfil_Load(object sender, EventArgs e)
         {
             pnlSuperior.Visible = true;
             lblTextoSuperior.Text = "--- EDITAR PERFIL ---";
@@ -136,6 +165,14 @@ namespace ProyectoDI_GrupoD.Vistas
 
             EditarPerfil editarPerfil = new EditarPerfil();
             AbrirPanel(editarPerfil, pnlPrincipal);
+        }
+
+        private void CerrarSSesion_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.ShowDialog();
+            Negocio.Management.DatosUsuario.LimpiarDatos();
         }
     }
 }

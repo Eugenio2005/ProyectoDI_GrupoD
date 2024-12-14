@@ -63,7 +63,7 @@ namespace Negocio.Management
                     throw new Exception("No se encontró un usuario con el DNI proporcionado.");
                 }
 
-                // Obtener el cliente asociado de la base de datos según el ID
+                // Obtener el cliente asociado de la base de datos según el Email
                 Clientes clienteBD = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(usuarioDTO.Email);
                 if (clienteBD == null)
                 {
@@ -230,7 +230,16 @@ namespace Negocio.Management
             {
                 // Consulta el usuario en la base de datos
                 Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
-                Clientes clientes = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(email);
+
+                Clientes clienteDB;
+                if (usuarioBD.tipo_usuario.Equals("Cliente"))
+                {
+                    clienteDB = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(email);
+                }
+                else
+                {
+                    clienteDB = null;
+                }
                 // Encripta la contraseña introducida para compararla con la que se recoge de la base de datos.
                 string contrasenaEncript = encriptarContrasena(contrasena);
 
@@ -246,7 +255,7 @@ namespace Negocio.Management
                         Email = usuarioBD.email,
                         Telefono = usuarioBD.telefono,
                         Direccion = usuarioBD.direccion,
-                        CuentaCorriente = clientes.ccc,
+                        CuentaCorriente = clienteDB.ccc,
                         Contraseña = usuarioBD.password                   
                     };
                     DatosUsuario.SetDatosUsuario(usuarioDTO);
