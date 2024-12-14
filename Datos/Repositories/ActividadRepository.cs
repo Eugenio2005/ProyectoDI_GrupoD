@@ -93,7 +93,7 @@ namespace Datos.Repositories
                                                 DescripActividad = a.descripcion,
                                                 NombreMonitor = u.nombre,
                                                 ApellidoMonitor = u.apellidos,
-                                                Valoracion_media = (float?)a.valoracion_media,
+                                                Valoracion_media = (a.valoracion_media ?? 0),
                                             }).ToList();
 
                     return new BindingList<ClientActivityViewModel>(listaActividades);
@@ -121,7 +121,8 @@ namespace Datos.Repositories
                     var listaActividades = (from a in contexto.Usuarios_Actividades
                                             join ac in contexto.Actividades on a.id_actividad equals ac.id_actividad
                                             join u in contexto.Usuarios on a.id_usuario equals u.id_usuario
-                                            join m in contexto.Usuarios on ac.email_monitor equals m.email // Unir con la tabla Usuarios para obtener los datos del monitor                                            where u.email == email // Asegurarse de que el email coincida
+                                            join m in contexto.Usuarios on ac.email_monitor equals m.email
+                                            where u.email == email// Unir con la tabla Usuarios para obtener los datos del monitor                                            where u.email == email // Asegurarse de que el email coincida
                                             select new ClientActivityViewModel
                                             {
                                                 NombreActividad = ac.nombre_actividad,
@@ -175,7 +176,7 @@ namespace Datos.Repositories
         public string DescripActividad { get; set; }
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
-        public float? Valoracion_media {  get; set; }
+        public double? Valoracion_media {  get; set; }
         public int Valoracion {  get; set; }
     }
 }

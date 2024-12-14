@@ -12,6 +12,7 @@ namespace Datos.Repositories
             {
                 contexto.Valoraciones.Add(valoracion);
                 contexto.SaveChanges();
+                ActualizarMediaValoracion(valoracion.id_actividad);
             }
 
             // Verificar si la relación ya existe en la tabla Usuarios_Actividades
@@ -78,6 +79,7 @@ namespace Datos.Repositories
 
                     // Guarda los cambios en ambas tablas
                     contexto.SaveChanges();
+                    ActualizarMediaValoracion(nuevaValoracion.id_actividad);
                 }
                 else
                 {
@@ -85,5 +87,44 @@ namespace Datos.Repositories
                 }
             }
         }
+            private void ActualizarMediaValoracion(int id_actividad)
+            {
+                using (var contexto = new equipodEntities())
+                {
+                    // Calcular la media de las valoraciones para la actividad
+                    var valoraciones = contexto.Valoraciones
+                        .Where(v => v.id_actividad == id_actividad)
+                        .ToList();
+
+                    if (valoraciones.Any())
+                    {
+                        float media = (float)valoraciones.Average(v => v.valoracion);
+
+                        // Obtener la actividad correspondiente
+                        var actividad = contexto.Actividades
+                            .FirstOrDefault(a => a.id_actividad == id_actividad);
+
+                        if (actividad != null)
+                        {
+                            // Verificar si ya existe una valoración media en la actividad
+                            if (actividad.valoracion_media != null)
+                            {
+                                // Si existe, actualizamos la media
+                                actividad.valoracion_media = media;
+                            }
+                            else
+                            {
+                                // Si no existe, asignamos la nueva media
+                                actividad.valoracion_media = media;
+                            }
+
+                            // Guardar los cambios en la tabla Actividades
+                            contexto.SaveChanges();
+                        }
+                    }
+                }
+            }
+
+        }
     }
-}
+

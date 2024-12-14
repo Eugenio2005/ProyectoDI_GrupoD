@@ -167,7 +167,7 @@ namespace Negocio.Management
                 dto.ApellidoMonitor = item.ApellidoMonitor;
                 dto.DescripActividad = item.DescripActividad;
                 dto.NombreActividad = item.NombreActividad;
-                dto.valoracion_media = (float?)item.Valoracion_media;
+                dto.Valoracion_media = (item.Valoracion_media ?? 0);
                 ActividadesClientesDTO.Add(dto);
             }
             return ActividadesClientesDTO;

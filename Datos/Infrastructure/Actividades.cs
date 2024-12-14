@@ -25,7 +25,7 @@ namespace Datos.Infrastructure
         public string nombre_actividad { get; set; }
         public string descripcion { get; set; }
         public string email_monitor { get; set; }
-        public Nullable<double> valoracion_media { get; set; }
+        public double? valoracion_media { get; set; }
     
         public virtual Monitores Monitores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
