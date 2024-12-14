@@ -31,6 +31,13 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void btnDesapuntar_Click(object sender, EventArgs e)
         {
+            // Verificar si hay una celda seleccionada
+            if (VistaActividades.CurrentCell == null)
+            {
+                MessageBox.Show("Por favor, seleccione una actividad para desapuntarse.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Obtener el índice de la fila seleccionada
             int rowIndex = VistaActividades.CurrentCell.RowIndex;
 
@@ -71,8 +78,11 @@ namespace ProyectoDI_GrupoD.Vistas
                 // Si el usuario no está apuntado, muestra un mensaje de error
                 MessageBox.Show($"El usuario no está apuntado a esta actividad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // Recargar la vista
             ListadoActUsuario_Load(sender, e);
         }
+
 
         private ActividadesClientesDTO obtenerActividad(DataGridViewRow selectedRow)
         {

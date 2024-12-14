@@ -73,15 +73,6 @@ namespace ProyectoDI_GrupoD.Vistas
             Application.Exit();
         }
 
-        private void txtEmailRe_TextChanged(object sender, EventArgs e)
-        {
-
-            if (!string.IsNullOrEmpty(txtEmailRe.Text) && txtEmailRe.Text != placeholderTextEmail)
-            {
-                txtEmailRe.ForeColor = Color.FromArgb(202, 224, 212); // Cambiar a color normal
-            }
-        }
-
         /// <summary>
         /// Maneja el evento de clic en el botón de registrar.
         /// Crea un objeto UsuariosDTO y asigna los valores de los campos de entrada,
