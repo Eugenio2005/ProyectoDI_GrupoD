@@ -58,6 +58,23 @@ namespace Negocio.Management
                 return false;
             }
         }
+        public BindingList<ActividadesMonitoresDTO> ObtenerTodasActividades()
+        {
+            BindingList<MonitorActivityViewModel> actividades = new
+            Datos.Repositories.ActividadRepository().ObtenerTodasActividades();
+            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
+
+            // Hacemos el Cast
+            foreach (var item in actividades)
+            {
+                var dto = new ActividadesMonitoresDTO();
+                dto.NombreMonitor = item.NombreMonitor;
+                dto.NombreActividad = item.NombreActividad;
+                dto.ApellidoMonitor = item.ApellidoMonitor;
+                ActividadesMonitoresDTO.Add(dto);
+            }
+            return ActividadesMonitoresDTO;
+        }
 
         /// <summary>
         /// Obtiene todas las actividades junto con la información del monitor asociado.
@@ -97,6 +114,7 @@ namespace Negocio.Management
                 dto.NombreActividad = item.NombreActividad;
                 dto.ApellidoMonitor = item.ApellidoMonitor;
                 dto.DescripActividad = item.DescripActividad;
+                dto.Valoracion = item.Valoracion;
 
                 actividadesClientesDTO.Add(dto);
                 
@@ -108,7 +126,7 @@ namespace Negocio.Management
         /// Elimina una actividad del sistema a partir de su nombre.
         /// </summary>
         /// <param name="actividad">Objeto que contiene la actividad a eliminar.</param>
-        public void EliminarActividad(ActividadesClientesDTO actividad)
+        public void EliminarActividad(ActividadesMonitoresDTO actividad)
         {
             string nombre = actividad.NombreActividad;
             new Datos.Repositories.ActividadRepository().EliminarActividad(nombre);
@@ -149,7 +167,7 @@ namespace Negocio.Management
                 dto.ApellidoMonitor = item.ApellidoMonitor;
                 dto.DescripActividad = item.DescripActividad;
                 dto.NombreActividad = item.NombreActividad;
-
+                dto.valoracion_media = (float?)item.Valoracion_media;
                 ActividadesClientesDTO.Add(dto);
             }
             return ActividadesClientesDTO;
@@ -164,6 +182,18 @@ namespace Negocio.Management
             valoracionDTO.id_actividad = idActividad;
             valoracionDTO.valoracion = valoracion;
             new Datos.Repositories.ValoracionRepository().valorarActividad(valoracionDTO);
+
+
+        }
+        public void actualizarValoracion(string email, string nombreActividad, int valoracion)
+        {
+            int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+            int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+            Valoraciones valoracionDTO = new Valoraciones();
+            valoracionDTO.id_usuario = idUsuario;
+            valoracionDTO.id_actividad = idActividad;
+            valoracionDTO.valoracion = valoracion;
+            new Datos.Repositories.ValoracionRepository().ActualizarValoracion(valoracionDTO);
 
 
         }

@@ -19,6 +19,7 @@ namespace ProyectoDI_GrupoD.Vistas
         private int idUsuario;
         private ActividadesClientesDTO act;
         private BindingList<Negocio.EntitiesDTO.ActividadesClientesDTO> actividadesList;
+        private bool valorada;
 
         public ValorarAct()
         {
@@ -33,14 +34,8 @@ namespace ProyectoDI_GrupoD.Vistas
             aplicarTextoCampos(actividadSeleccionada);
             act = actividadSeleccionada;
             deshabilitarCampos();
-            bool valorada = new Negocio.Management.UsuarioManagement().comprobarActividadValorada(DatosUsuario.Email, act.NombreActividad);
-            if (!valorada)
-            {
-                InicializarEstrellas();
-            }
-
-
-
+            valorada = new Negocio.Management.UsuarioManagement().comprobarActividadValorada(DatosUsuario.Email, act.NombreActividad);
+             InicializarEstrellas();
         }
 
         // Inicializa las estrellas
@@ -84,9 +79,7 @@ namespace ProyectoDI_GrupoD.Vistas
             // Construye las rutas relativas
             string rutaEstrellaLlena = Path.Combine(basePath, "Recursos", "star_filled.png");
             string rutaEstrellaVacia = Path.Combine(basePath, "Recursos", "star_empty.png");
-            bool valorada = new Negocio.Management.UsuarioManagement().comprobarActividadValorada(DatosUsuario.Email, act.NombreActividad);
-            if (!valorada)
-            {
+
                 try
                 {
                     if (llena)
@@ -98,7 +91,6 @@ namespace ProyectoDI_GrupoD.Vistas
                 {
                     MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
            
         }
 
@@ -128,33 +120,52 @@ namespace ProyectoDI_GrupoD.Vistas
         // Evento al hacer clic en el botón de valorar
         private void btnValorar_Click(object sender, EventArgs e)
         {
-           bool valorada = new Negocio.Management.UsuarioManagement().comprobarActividadValorada(DatosUsuario.Email, act.NombreActividad);
-            if (valoracion > 0)
+            if (!valorada)
             {
-                
-                new Negocio.Management.ActividadManagement().valorarActividad(DatosUsuario.Email,act.NombreActividad,valoracion);
-               MessageBox.Show($"Actividad valorada con {valoracion} estrellas.", "Valoración exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                
-                this.Hide();
-                this.Close();
+                if (valoracion > 0)
+                {
+
+                    new Negocio.Management.ActividadManagement().valorarActividad(DatosUsuario.Email, act.NombreActividad, valoracion);
+                    MessageBox.Show($"Actividad valorada con {valoracion} estrellas.", "Valoración exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    this.Hide();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona una valoración de estrellas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una valoración de estrellas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (valoracion > 0)
+                {
+
+                    new Negocio.Management.ActividadManagement().actualizarValoracion(DatosUsuario.Email, act.NombreActividad, valoracion);
+                    MessageBox.Show($"Actividad valorada con {valoracion} estrellas.", "Valoración exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    this.Hide();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona una valoración de estrellas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            
 
         }
 
         private void ValorarAct_Load(object sender, EventArgs e)
         {
-            bool valorada = new Negocio.Management.UsuarioManagement().comprobarActividadValorada(DatosUsuario.Email, act.NombreActividad);
+            
             if (!valorada)
             {
-                btnValorar.Visible = true;
+                btnValorar.Text = "Valorar";
             }
             else
             {
-                btnValorar.Visible = false;
+                btnValorar.Text = "Actualizar valoracion";
             }
         }
 
@@ -198,5 +209,9 @@ namespace ProyectoDI_GrupoD.Vistas
             }
         }
 
+        private void txtNombreActividad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

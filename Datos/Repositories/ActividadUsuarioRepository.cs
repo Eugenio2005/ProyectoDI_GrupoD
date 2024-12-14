@@ -15,7 +15,8 @@ namespace Datos.Repositories
                     contexto.Usuarios_Actividades.Add(new Usuarios_Actividades
                     {
                         id_usuario = idUsuario,
-                        id_actividad = idActividad
+                        id_actividad = idActividad,
+                        valoracion = 0
                     });
 
                     contexto.SaveChanges();

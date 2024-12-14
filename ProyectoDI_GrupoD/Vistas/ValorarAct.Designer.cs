@@ -56,6 +56,7 @@
             this.txtNombreActividad.Name = "txtNombreActividad";
             this.txtNombreActividad.Size = new System.Drawing.Size(254, 24);
             this.txtNombreActividad.TabIndex = 15;
+            this.txtNombreActividad.TextChanged += new System.EventHandler(this.txtNombreActividad_TextChanged);
             // 
             // lblMonitor
             // 
@@ -149,8 +150,9 @@
             this.Controls.Add(this.lblDescripActividad);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ValorarAct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InformacionActividad";
             this.Load += new System.EventHandler(this.ValorarAct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();

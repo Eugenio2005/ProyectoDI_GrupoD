@@ -98,7 +98,5 @@ namespace ProyectoDI_GrupoD.Vistas
             return actividadesClientesDTO;
         }
 
-        
-
     }
 }

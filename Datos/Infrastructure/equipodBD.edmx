@@ -13,6 +13,7 @@
           <Property Name="nombre_actividad" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="email_monitor" Type="varchar" MaxLength="100" />
+          <Property Name="valoracion_media" Type="float" />
         </EntityType>
         <EntityType Name="Administradores">
           <Key>
@@ -54,6 +55,7 @@
           <Property Name="id_ActividadUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="id_actividad" Type="int" Nullable="false" />
+          <Property Name="valoracion" Type="int" />
         </EntityType>
         <EntityType Name="Valoraciones">
           <Key>
@@ -64,7 +66,7 @@
           <Property Name="id_actividad" Type="int" Nullable="false" />
           <Property Name="valoracion" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Actividad__email__32E0915F">
+        <Association Name="FK__Actividad__email__45F365D3">
           <End Role="Monitores" Type="Self.Monitores" Multiplicity="0..1" />
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
           <ReferentialConstraint>
@@ -77,15 +79,15 @@
           </ReferentialConstraint>
         </Association>
         <!--Errores durante la generación:
-advertencia 6035: La relación 'FK__Administr__email__2F10007B' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="FK__Administr__email__2F10007B" />-->
+advertencia 6035: La relación 'FK__Administr__email__4222D4EF' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Administr__email__4222D4EF" />-->
         <!--Errores durante la generación:
-advertencia 6035: La relación 'FK__Clientes__email__29572725' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="FK__Clientes__email__29572725" />-->
+advertencia 6035: La relación 'FK__Clientes__email__3C69FB99' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Clientes__email__3C69FB99" />-->
         <!--Errores durante la generación:
-advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="FK__Monitores__email__2C3393D0" />-->
-        <Association Name="FK__Usuarios___id_ac__3B75D760">
+advertencia 6035: La relación 'FK__Monitores__email__3F466844' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="FK__Monitores__email__3F466844" />-->
+        <Association Name="FK__Usuarios___id_ac__4E88ABD4">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -99,7 +101,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios___id_us__3A81B327">
+        <Association Name="FK__Usuarios___id_us__4D94879B">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -113,7 +115,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_ac__37A5467C">
+        <Association Name="FK__Valoracio__id_ac__4AB81AF0">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -127,7 +129,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_us__36B12243">
+        <Association Name="FK__Valoracio__id_us__49C3F6B7">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -149,23 +151,23 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios_Actividades" EntityType="Self.Usuarios_Actividades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoraciones" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Actividad__email__32E0915F" Association="Self.FK__Actividad__email__32E0915F">
+          <AssociationSet Name="FK__Actividad__email__45F365D3" Association="Self.FK__Actividad__email__45F365D3">
             <End Role="Monitores" EntitySet="Monitores" />
             <End Role="Actividades" EntitySet="Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_ac__3B75D760" Association="Self.FK__Usuarios___id_ac__3B75D760">
+          <AssociationSet Name="FK__Usuarios___id_ac__4E88ABD4" Association="Self.FK__Usuarios___id_ac__4E88ABD4">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_us__3A81B327" Association="Self.FK__Usuarios___id_us__3A81B327">
+          <AssociationSet Name="FK__Usuarios___id_us__4D94879B" Association="Self.FK__Usuarios___id_us__4D94879B">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_ac__37A5467C" Association="Self.FK__Valoracio__id_ac__37A5467C">
+          <AssociationSet Name="FK__Valoracio__id_ac__4AB81AF0" Association="Self.FK__Valoracio__id_ac__4AB81AF0">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_us__36B12243" Association="Self.FK__Valoracio__id_us__36B12243">
+          <AssociationSet Name="FK__Valoracio__id_us__49C3F6B7" Association="Self.FK__Valoracio__id_us__49C3F6B7">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
@@ -183,9 +185,10 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
           <Property Name="nombre_actividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email_monitor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Monitores" Relationship="Self.FK__Actividad__email__32E0915F" FromRole="Actividades" ToRole="Monitores" />
-          <NavigationProperty Name="Usuarios_Actividades" Relationship="Self.FK__Usuarios___id_ac__3B75D760" FromRole="Actividades" ToRole="Usuarios_Actividades" />
-          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_ac__37A5467C" FromRole="Actividades" ToRole="Valoraciones" />
+          <Property Name="valoracion_media" Type="Double" />
+          <NavigationProperty Name="Monitores" Relationship="Self.FK__Actividad__email__45F365D3" FromRole="Actividades" ToRole="Monitores" />
+          <NavigationProperty Name="Usuarios_Actividades" Relationship="Self.FK__Usuarios___id_ac__4E88ABD4" FromRole="Actividades" ToRole="Usuarios_Actividades" />
+          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_ac__4AB81AF0" FromRole="Actividades" ToRole="Valoraciones" />
         </EntityType>
         <EntityType Name="Administradores">
           <Key>
@@ -205,7 +208,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             <PropertyRef Name="email" />
           </Key>
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Actividades" Relationship="Self.FK__Actividad__email__32E0915F" FromRole="Monitores" ToRole="Actividades" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Actividad__email__45F365D3" FromRole="Monitores" ToRole="Actividades" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -220,8 +223,8 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="tipo_usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Usuarios_Actividades" Relationship="Self.FK__Usuarios___id_us__3A81B327" FromRole="Usuarios" ToRole="Usuarios_Actividades" />
-          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_us__36B12243" FromRole="Usuarios" ToRole="Valoraciones" />
+          <NavigationProperty Name="Usuarios_Actividades" Relationship="Self.FK__Usuarios___id_us__4D94879B" FromRole="Usuarios" ToRole="Usuarios_Actividades" />
+          <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_us__49C3F6B7" FromRole="Usuarios" ToRole="Valoraciones" />
         </EntityType>
         <EntityType Name="Usuarios_Actividades">
           <Key>
@@ -230,8 +233,9 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
           <Property Name="id_ActividadUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_actividad" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Actividades" Relationship="Self.FK__Usuarios___id_ac__3B75D760" FromRole="Usuarios_Actividades" ToRole="Actividades" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios___id_us__3A81B327" FromRole="Usuarios_Actividades" ToRole="Usuarios" />
+          <Property Name="valoracion" Type="Int32" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Usuarios___id_ac__4E88ABD4" FromRole="Usuarios_Actividades" ToRole="Actividades" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios___id_us__4D94879B" FromRole="Usuarios_Actividades" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="Valoraciones">
           <Key>
@@ -241,10 +245,10 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_actividad" Type="Int32" Nullable="false" />
           <Property Name="valoracion" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__37A5467C" FromRole="Valoraciones" ToRole="Actividades" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__36B12243" FromRole="Valoraciones" ToRole="Usuarios" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__4AB81AF0" FromRole="Valoraciones" ToRole="Actividades" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__49C3F6B7" FromRole="Valoraciones" ToRole="Usuarios" />
         </EntityType>
-        <Association Name="FK__Actividad__email__32E0915F">
+        <Association Name="FK__Actividad__email__45F365D3">
           <End Role="Monitores" Type="Self.Monitores" Multiplicity="0..1" />
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
           <ReferentialConstraint>
@@ -256,7 +260,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios___id_ac__3B75D760">
+        <Association Name="FK__Usuarios___id_ac__4E88ABD4">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -270,7 +274,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_ac__37A5467C">
+        <Association Name="FK__Valoracio__id_ac__4AB81AF0">
           <End Role="Actividades" Type="Self.Actividades" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -284,7 +288,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios___id_us__3A81B327">
+        <Association Name="FK__Usuarios___id_us__4D94879B">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -298,7 +302,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valoracio__id_us__36B12243">
+        <Association Name="FK__Valoracio__id_us__49C3F6B7">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -320,23 +324,23 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <EntitySet Name="Usuarios_Actividades" EntityType="Self.Usuarios_Actividades" />
           <EntitySet Name="Valoraciones" EntityType="Self.Valoraciones" />
-          <AssociationSet Name="FK__Actividad__email__32E0915F" Association="Self.FK__Actividad__email__32E0915F">
+          <AssociationSet Name="FK__Actividad__email__45F365D3" Association="Self.FK__Actividad__email__45F365D3">
             <End Role="Monitores" EntitySet="Monitores" />
             <End Role="Actividades" EntitySet="Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_ac__3B75D760" Association="Self.FK__Usuarios___id_ac__3B75D760">
+          <AssociationSet Name="FK__Usuarios___id_ac__4E88ABD4" Association="Self.FK__Usuarios___id_ac__4E88ABD4">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_ac__37A5467C" Association="Self.FK__Valoracio__id_ac__37A5467C">
+          <AssociationSet Name="FK__Valoracio__id_ac__4AB81AF0" Association="Self.FK__Valoracio__id_ac__4AB81AF0">
             <End Role="Actividades" EntitySet="Actividades" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios___id_us__3A81B327" Association="Self.FK__Usuarios___id_us__3A81B327">
+          <AssociationSet Name="FK__Usuarios___id_us__4D94879B" Association="Self.FK__Usuarios___id_us__4D94879B">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Usuarios_Actividades" EntitySet="Usuarios_Actividades" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valoracio__id_us__36B12243" Association="Self.FK__Valoracio__id_us__36B12243">
+          <AssociationSet Name="FK__Valoracio__id_us__49C3F6B7" Association="Self.FK__Valoracio__id_us__49C3F6B7">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Valoraciones" EntitySet="Valoraciones" />
           </AssociationSet>
@@ -354,6 +358,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
                 <ScalarProperty Name="nombre_actividad" ColumnName="nombre_actividad" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="email_monitor" ColumnName="email_monitor" />
+                <ScalarProperty Name="valoracion_media" ColumnName="valoracion_media" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -400,6 +405,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
                 <ScalarProperty Name="id_ActividadUsuario" ColumnName="id_ActividadUsuario" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
+                <ScalarProperty Name="valoracion" ColumnName="valoracion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

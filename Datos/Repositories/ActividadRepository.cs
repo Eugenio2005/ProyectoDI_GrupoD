@@ -26,13 +26,39 @@ namespace Datos.Repositories
                 contexto.SaveChanges();
             }
         }
+        public BindingList<MonitorActivityViewModel> ObtenerTodasActividades()
+        {
+            try
+            {
+                using (var contexto = new equipodEntities())
+                {
+                    var listaActividades = (from a in contexto.Actividades
+                                            join u in contexto.Usuarios on a.email_monitor equals u.email
+                                            where u.tipo_usuario == "monitor"
+                                            select new MonitorActivityViewModel
+                                            {
+                                                NombreActividad = a.nombre_actividad,
+                                                NombreMonitor = u.nombre,
+                                                ApellidoMonitor = u.apellidos
+                                            }).ToList();
 
-        /// <summary>
-        /// Elimina una actividad de la base de datos por su nombre.
-        /// Si la actividad no existe, muestra un mensaje indicando que no se encontró.
-        /// </summary>
-        /// <param name="nombreActividad">El nombre de la actividad a eliminar.</param>
-        public void EliminarActividad(string nombreActividad)
+                    return new BindingList<MonitorActivityViewModel>(listaActividades);
+                }
+            }
+            catch (Exception)
+            {
+                return new BindingList<MonitorActivityViewModel>();
+            }
+        }
+    
+
+
+    /// <summary>
+    /// Elimina una actividad de la base de datos por su nombre.
+    /// Si la actividad no existe, muestra un mensaje indicando que no se encontró.
+    /// </summary>
+    /// <param name="nombreActividad">El nombre de la actividad a eliminar.</param>
+    public void EliminarActividad(string nombreActividad)
         {
             using (var contexto = new equipodEntities())
             {
@@ -66,7 +92,8 @@ namespace Datos.Repositories
                                                 NombreActividad = a.nombre_actividad,
                                                 DescripActividad = a.descripcion,
                                                 NombreMonitor = u.nombre,
-                                                ApellidoMonitor = u.apellidos
+                                                ApellidoMonitor = u.apellidos,
+                                                Valoracion_media = (float?)a.valoracion_media,
                                             }).ToList();
 
                     return new BindingList<ClientActivityViewModel>(listaActividades);
@@ -79,13 +106,14 @@ namespace Datos.Repositories
         }
 
 
-            /// <summary>
-            /// Obtiene todas las actividades junto con el nombre y apellido de los monitores asociados.
-            /// </summary>
-            /// <returns>
-            /// Una lista de objetos MonitorActivityViewModel que contiene la actividad y los datos del monitor.
-            /// </returns>
-            public BindingList<ClientActivityViewModel> ObtenerActividadesClienteApuntado(String email){
+        /// <summary>
+        /// Obtiene todas las actividades junto con el nombre y apellido de los monitores asociados.
+        /// </summary>
+        /// <returns>
+        /// Una lista de objetos MonitorActivityViewModel que contiene la actividad y los datos del monitor.
+        /// </returns>
+        public BindingList<ClientActivityViewModel> ObtenerActividadesClienteApuntado(string email)
+        {
             try
             {
                 using (var contexto = new equipodEntities())
@@ -93,24 +121,26 @@ namespace Datos.Repositories
                     var listaActividades = (from a in contexto.Usuarios_Actividades
                                             join ac in contexto.Actividades on a.id_actividad equals ac.id_actividad
                                             join u in contexto.Usuarios on a.id_usuario equals u.id_usuario
-                                            join m in contexto.Usuarios on ac.email_monitor equals m.email // Unir con la tabla Usuarios para obtener los datos del monitor
-                                            where u.email == email // Filtrar por el email del usuario
+                                            join m in contexto.Usuarios on ac.email_monitor equals m.email // Unir con la tabla Usuarios para obtener los datos del monitor                                            where u.email == email // Asegurarse de que el email coincida
                                             select new ClientActivityViewModel
                                             {
                                                 NombreActividad = ac.nombre_actividad,
                                                 NombreMonitor = m.nombre,  // Obtener el nombre del monitor desde la tabla Usuarios
                                                 ApellidoMonitor = m.apellidos, // Obtener el apellido del monitor desde la tabla Usuarios
-                                                DescripActividad = ac.descripcion
+                                                DescripActividad = ac.descripcion,
+                                                Valoracion = a.valoracion // Obtener la valoración de la tabla Valoraciones
                                             }).ToList();
 
                     return new BindingList<ClientActivityViewModel>(listaActividades);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("Error: " + ex.Message);  // Mostrar mensaje de error para depuración
                 return new BindingList<ClientActivityViewModel>();
             }
         }
+
 
         public int ObtenerIDActividad(string nombreActividad)
         {
@@ -124,6 +154,7 @@ namespace Datos.Repositories
             }
         }
     }
+
 
         /// <summary>
         /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
@@ -144,5 +175,7 @@ namespace Datos.Repositories
         public string DescripActividad { get; set; }
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
+        public float? Valoracion_media {  get; set; }
+        public int Valoracion {  get; set; }
     }
 }
