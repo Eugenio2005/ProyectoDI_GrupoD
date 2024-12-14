@@ -47,9 +47,8 @@ CREATE TABLE Actividades (
     id_actividad INT IDENTITY(1,1) PRIMARY KEY,
     nombre_actividad VARCHAR(100) NOT NULL UNIQUE,
     descripcion VARCHAR(100) NOT NULL,
-
     email_monitor VARCHAR(100),
-
+	valoracion_media float,
     FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
@@ -68,9 +67,12 @@ CREATE TABLE Usuarios_Actividades (
     id_ActividadUsuario INT IDENTITY(1,1) PRIMARY KEY,
     id_usuario INT NOT NULL,
     id_actividad INT NOT NULL,
+	valoracion int,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad) ON DELETE CASCADE
 );
+
+
 
 INSERT INTO Usuarios VALUES ('Sin Monitor', '','','','','SinMonitor@sinmonitor.com','Sin Monitor','Monitor');
 INSERT INTO Monitores VALUES ('SinMonitor@sinmonitor.com');
