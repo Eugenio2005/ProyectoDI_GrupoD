@@ -162,9 +162,13 @@ namespace ProyectoDI_GrupoD.Vistas
             // 
             this.actividadesClientesDTOBindingSource2.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
             // 
-            // actividadesClientesDTOBindingSource
+            // Valoracion
             // 
-            this.actividadesClientesDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
+            this.Valoracion.DataPropertyName = "Valoracion";
+            this.Valoracion.HeaderText = "Valoracion";
+            this.Valoracion.MinimumWidth = 6;
+            this.Valoracion.Name = "Valoracion";
+            this.Valoracion.ReadOnly = true;
             // 
             // actividadesMonitoresDTOBindingSource
             // 
