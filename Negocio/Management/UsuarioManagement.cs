@@ -64,7 +64,7 @@ namespace Negocio.Management
                 }
 
                 // Obtener el cliente asociado de la base de datos según el ID
-                Clientes clienteBD = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(usuarioDTO.Dni);
+                Clientes clienteBD = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(usuarioDTO.Email);
                 if (clienteBD == null)
                 {
                     throw new Exception("No se encontró un cliente con el email proporcionado.");
@@ -82,8 +82,6 @@ namespace Negocio.Management
                 clienteBD.ccc = clienteDTO.CuentaCorriente;
                 clienteBD.email = clienteDTO.Email;
 
-
-                //bool usuarioActualizado = new Datos.Repositories.ClientRepository().ActualizarCliente(usuarioBD, clienteBD);
                 new Datos.Repositories.ClientRepository().ActualizarCliente(usuarioBD, clienteBD);
 
                 // Cargar los datos del usuario en DatosUsuario
@@ -100,8 +98,8 @@ namespace Negocio.Management
                 };
 
                 DatosUsuario.SetDatosUsuario(usuarioDTO);
-                    return true;
-                }
+                return true;
+            }
             catch (Exception ex)
             {
                 // Manejo de errores
