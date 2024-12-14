@@ -18,7 +18,7 @@ namespace ProyectoDI_GrupoD
 {
     public partial class Registro : Form
     {
-        private string nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña;
+        private string nombre, apellidos, dni, telefono, email, direccion, cuentaCorriente, contraseña, contraseñaValidar;
         private const string placeholderTextCuentaCorriente = "Ingrese 22 dígitos",
             placeholderTextEmail = "ejemplo@ejemplo.com";
 
@@ -45,19 +45,18 @@ namespace ProyectoDI_GrupoD
             txtUsuarioRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtCuentaCorrienteRe.TextChanged += new EventHandler(ComprobarTextBox);
             txtApellidosRe.TextChanged += new EventHandler(ComprobarTextBox);
+            txtValidarContraseña.TextChanged += new EventHandler(ComprobarTextBox);
         }
 
-        /// <summary>
-        /// Inicializa los placeholders para los textBox correspondientes 
-        /// con su respectivo color de texto.
-        /// </summary>
+        ///// <summary>
+        ///// Inicializa los placeholders para los textBox correspondientes 
+        ///// con su respectivo color de texto.
+        ///// </summary>
         private void inicializarPlaceHolder()
         {
             txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Texto de guía al usuario
-            txtCuentaCorrienteRe.ForeColor = Color.Gray; // Color del texto para el placeholder
 
             txtEmailRe.Text = placeholderTextEmail; // Establece el placeholder para el email
-            txtEmailRe.ForeColor = Color.Gray; // Color del texto para el placeholder
         }
 
         /// <summary>
@@ -68,7 +67,6 @@ namespace ProyectoDI_GrupoD
             if (txtCuentaCorrienteRe.Text == placeholderTextCuentaCorriente)
             {
                 txtCuentaCorrienteRe.Text = ""; // Limpiar el texto
-                txtCuentaCorrienteRe.ForeColor = Color.Black; // Cambiar a color normal
             }
         }
 
@@ -80,7 +78,6 @@ namespace ProyectoDI_GrupoD
             if (string.IsNullOrWhiteSpace(txtCuentaCorrienteRe.Text))
             {
                 txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaurar texto predeterminado
-                txtCuentaCorrienteRe.ForeColor = Color.Gray; // Volver al color predeterminado
             }
         }
 
@@ -100,7 +97,6 @@ namespace ProyectoDI_GrupoD
             if (txtEmailRe.Text == placeholderTextEmail)
             {
                 txtEmailRe.Text = ""; // Limpiar el texto
-                txtEmailRe.ForeColor = Color.Black; // Cambiar a color normal
             }
         }
 
@@ -109,7 +105,6 @@ namespace ProyectoDI_GrupoD
             if (string.IsNullOrWhiteSpace(txtEmailRe.Text))
             {
                 txtEmailRe.Text = placeholderTextEmail; // Restaurar texto predeterminado
-                txtEmailRe.ForeColor = Color.Gray; // Volver al color predeterminado
             }
         }
 
@@ -263,6 +258,30 @@ namespace ProyectoDI_GrupoD
             }
         }
 
+        private void btnVerValidar_Click(object sender, EventArgs e)
+        {
+            txtValidarContraseña.UseSystemPasswordChar = false; // Mostrar la contraseña
+            btnVerValidar.Visible = false;
+            btnOcultarValidar.Visible = true;
+        }
+
+        private void btnOcultarValidar_Click(object sender, EventArgs e)
+        {
+            txtValidarContraseña.UseSystemPasswordChar = true; // Ocultar la contraseña
+            btnVerValidar.Visible = true; // Muestra el icono de ojo abierto
+            btnOcultarValidar.Visible = false; // Esconde el icono de ojo cerrado
+        }
+
+        private void imgCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void imgMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
         public bool validarDNI(string DNI)
         {
             string patternDNI = @"^\d{8}[A-Za-z]$";
@@ -335,10 +354,8 @@ namespace ProyectoDI_GrupoD
             txtDNI_Re.Clear();
             txtTelefonoRe.Clear();
             txtEmailRe.Text = placeholderTextEmail; // Restaura el placeholder para email
-            txtEmailRe.BorderColor = Color.White;
             txtDireccionRe.Clear();
             txtCuentaCorrienteRe.Text = placeholderTextCuentaCorriente; // Restaura placeholder para cuenta corriente
-            txtCuentaCorrienteRe.BorderColor = Color.White;
             txtContraseñaRe.Clear();
             txtContraseñaRe.UseSystemPasswordChar = true;
         }
@@ -365,11 +382,13 @@ namespace ProyectoDI_GrupoD
             dni = txtDNI_Re.Text;
             apellidos = txtApellidosRe.Text;
             cuentaCorriente = txtCuentaCorrienteRe.Text;
+            contraseñaValidar = txtValidarContraseña.Text;
 
             // Habilitar el botón de registro solo si todos los campos están completos
             if (!string.IsNullOrWhiteSpace(contraseña) && !string.IsNullOrWhiteSpace(nombre) &&
                 !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(dni) &&
-                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente))
+                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente) && 
+                !string.IsNullOrWhiteSpace(contraseñaValidar))
             {
                 btnRegistrarRe.Enabled = true; // Habilitar el botón de registro
             }

@@ -36,11 +36,11 @@
             this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
             this.ctxtmsCerrarSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.lblTextoSuperior = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.editarPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBotones.SuspendLayout();
             this.ctxtmsCerrarSesion.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             // MisActividades
             // 
-            this.MisActividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.MisActividades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.MisActividades.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.ListarActividadesBlanco;
             this.MisActividades.ButtonText = "MIS ACTIVIDADES";
             this.MisActividades.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -74,7 +74,7 @@
             // 
             // ActividadDisponible
             // 
-            this.ActividadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.ActividadDisponible.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.ActividadDisponible.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.AltaUnaActividadBlanco;
             this.ActividadDisponible.ButtonText = "ACTIVIDADES DISPONIBLES";
             this.ActividadDisponible.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -87,7 +87,7 @@
             // 
             // NombreUsuario
             // 
-            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(49)))), ((int)(((byte)(50)))));
+            this.NombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
             this.NombreUsuario.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.usuario;
             this.NombreUsuario.ButtonText = "NOMBRE";
             this.NombreUsuario.ContextMenuStrip = this.ctxtmsCerrarSesion;
@@ -114,16 +114,9 @@
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
-            // editarPerfilToolStripMenuItem
-            // 
-            this.editarPerfilToolStripMenuItem.Name = "editarPerfilToolStripMenuItem";
-            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.editarPerfilToolStripMenuItem.Text = "Editar Perfil";
-            this.editarPerfilToolStripMenuItem.Click += new System.EventHandler(this.editarPerfilToolStripMenuItem_Click);
-            // 
             // pnlSuperior
             // 
-            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
             this.pnlSuperior.Controls.Add(this.imgAtras_Re);
             this.pnlSuperior.Controls.Add(this.lblTextoSuperior);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
@@ -162,11 +155,19 @@
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(301, 100);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(970, 494);
             this.pnlPrincipal.TabIndex = 3;
+            // 
+            // editarPerfilToolStripMenuItem
+            // 
+            this.editarPerfilToolStripMenuItem.Name = "editarPerfilToolStripMenuItem";
+            this.editarPerfilToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.editarPerfilToolStripMenuItem.Text = "Editar perfil";
+            this.editarPerfilToolStripMenuItem.Click += new System.EventHandler(this.editarPerfilToolStripMenuItem_Click);
             // 
             // PantallaPrincipal
             // 
