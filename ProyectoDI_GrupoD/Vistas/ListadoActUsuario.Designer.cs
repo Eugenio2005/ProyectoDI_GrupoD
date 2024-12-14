@@ -23,17 +23,22 @@ namespace ProyectoDI_GrupoD.Vistas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.VistaActividades = new System.Windows.Forms.DataGridView();
-            this.NombreActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actividadesClientesDTOBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesClientesDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesMonitoresDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDesapuntar = new ProyectoDI_GrupoD.RoundedButton();
             this.btnValorar = new ProyectoDI_GrupoD.RoundedButton();
+            this.actividadesClientesDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.NombreActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valoracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.VistaActividades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesMonitoresDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // VistaActividades
@@ -48,18 +53,68 @@ namespace ProyectoDI_GrupoD.Vistas
             this.NombreActividad,
             this.NombreMonitor,
             this.ApellidoMonitor,
-            this.DescripActividad});
-            this.VistaActividades.DataSource = this.actividadesClientesDTOBindingSource;
+            this.DescripActividad,
+            this.Valoracion});
+            this.VistaActividades.DataSource = this.actividadesClientesDTOBindingSource2;
             this.VistaActividades.Dock = System.Windows.Forms.DockStyle.Left;
             this.VistaActividades.Location = new System.Drawing.Point(0, 0);
+            this.VistaActividades.Margin = new System.Windows.Forms.Padding(4);
             this.VistaActividades.Name = "VistaActividades";
             this.VistaActividades.ReadOnly = true;
             this.VistaActividades.RowHeadersWidth = 51;
             this.VistaActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.VistaActividades.Size = new System.Drawing.Size(663, 450);
+            this.VistaActividades.Size = new System.Drawing.Size(884, 554);
             this.VistaActividades.TabIndex = 0;
             this.VistaActividades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VistaActividades_CellContentClick);
             this.VistaActividades.Paint += new System.Windows.Forms.PaintEventHandler(this.VistaActividades_Paint);
+            // 
+            // actividadesClientesDTOBindingSource2
+            // 
+            this.actividadesClientesDTOBindingSource2.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
+            // 
+            // actividadesClientesDTOBindingSource
+            // 
+            this.actividadesClientesDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
+            // 
+            // actividadesMonitoresDTOBindingSource
+            // 
+            this.actividadesMonitoresDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadesMonitoresDTO);
+            // 
+            // btnDesapuntar
+            // 
+            this.btnDesapuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnDesapuntar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnDesapuntar.BorderRadius = 20;
+            this.btnDesapuntar.FillColor = System.Drawing.Color.Transparent;
+            this.btnDesapuntar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDesapuntar.Image = global::ProyectoDI_GrupoD.Properties.Resources.borrar_usuario_1_;
+            this.btnDesapuntar.Location = new System.Drawing.Point(929, 292);
+            this.btnDesapuntar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDesapuntar.Name = "btnDesapuntar";
+            this.btnDesapuntar.Size = new System.Drawing.Size(105, 92);
+            this.btnDesapuntar.TabIndex = 3;
+            this.btnDesapuntar.UseVisualStyleBackColor = false;
+            this.btnDesapuntar.Click += new System.EventHandler(this.btnDesapuntar_Click);
+            // 
+            // btnValorar
+            // 
+            this.btnValorar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnValorar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnValorar.BorderRadius = 20;
+            this.btnValorar.FillColor = System.Drawing.Color.Transparent;
+            this.btnValorar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnValorar.Image = global::ProyectoDI_GrupoD.Properties.Resources.positivo;
+            this.btnValorar.Location = new System.Drawing.Point(929, 154);
+            this.btnValorar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnValorar.Name = "btnValorar";
+            this.btnValorar.Size = new System.Drawing.Size(105, 92);
+            this.btnValorar.TabIndex = 4;
+            this.btnValorar.UseVisualStyleBackColor = false;
+            this.btnValorar.Click += new System.EventHandler(this.btnValorar_Click);
+            // 
+            // actividadesClientesDTOBindingSource1
+            // 
+            this.actividadesClientesDTOBindingSource1.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
             // 
             // NombreActividad
             // 
@@ -109,61 +164,34 @@ namespace ProyectoDI_GrupoD.Vistas
             this.DescripActividad.ReadOnly = true;
             this.DescripActividad.Visible = false;
             // 
-            // actividadesClientesDTOBindingSource
+            // Valoracion
             // 
-            this.actividadesClientesDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
-            // 
-            // actividadesMonitoresDTOBindingSource
-            // 
-            this.actividadesMonitoresDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadesMonitoresDTO);
-            // 
-            // btnDesapuntar
-            // 
-            this.btnDesapuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnDesapuntar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnDesapuntar.BorderRadius = 20;
-            this.btnDesapuntar.FillColor = System.Drawing.Color.Transparent;
-            this.btnDesapuntar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDesapuntar.Image = global::ProyectoDI_GrupoD.Properties.Resources.borrar_usuario_1_;
-            this.btnDesapuntar.Location = new System.Drawing.Point(697, 237);
-            this.btnDesapuntar.Name = "btnDesapuntar";
-            this.btnDesapuntar.Size = new System.Drawing.Size(79, 75);
-            this.btnDesapuntar.TabIndex = 3;
-            this.btnDesapuntar.UseVisualStyleBackColor = false;
-            this.btnDesapuntar.Click += new System.EventHandler(this.btnDesapuntar_Click);
-            // 
-            // btnValorar
-            // 
-            this.btnValorar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnValorar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnValorar.BorderRadius = 20;
-            this.btnValorar.FillColor = System.Drawing.Color.Transparent;
-            this.btnValorar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnValorar.Location = new System.Drawing.Point(697, 125);
-            this.btnValorar.Name = "btnValorar";
-            this.btnValorar.Size = new System.Drawing.Size(79, 75);
-            this.btnValorar.TabIndex = 4;
-            this.btnValorar.Text = "Valorar";
-            this.btnValorar.UseVisualStyleBackColor = false;
-            this.btnValorar.Click += new System.EventHandler(this.btnValorar_Click);
+            this.Valoracion.DataPropertyName = "Valoracion";
+            this.Valoracion.HeaderText = "Valoracion";
+            this.Valoracion.MinimumWidth = 6;
+            this.Valoracion.Name = "Valoracion";
+            this.Valoracion.ReadOnly = true;
             // 
             // ListadoActUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnValorar);
             this.Controls.Add(this.btnDesapuntar);
             this.Controls.Add(this.VistaActividades);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListadoActUsuario";
             this.Text = "ListadoActUsuario";
             this.Load += new System.EventHandler(this.ListadoActUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VistaActividades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesMonitoresDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,11 +223,14 @@ private System.Windows.Forms.DataGridView VistaActividades;
         private System.Windows.Forms.BindingSource actividadesMonitoresDTOBindingSource;
         private RoundedButton btnDesapuntar;
         private BindingSource actividadesClientesDTOBindingSource;
+        private RoundedButton btnValorar;
+        private BindingSource actividadesClientesDTOBindingSource1;
+        private BindingSource actividadesClientesDTOBindingSource2;
         private DataGridViewTextBoxColumn NombreActividad;
         private DataGridViewTextBoxColumn NombreMonitor;
         private DataGridViewTextBoxColumn ApellidoMonitor;
         private DataGridViewTextBoxColumn DescripActividad;
-        private RoundedButton btnValorar;
+        private DataGridViewTextBoxColumn Valoracion;
     }
 
 }

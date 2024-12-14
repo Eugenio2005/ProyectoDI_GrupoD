@@ -66,7 +66,8 @@ namespace Datos.Repositories
                                                 NombreActividad = a.nombre_actividad,
                                                 DescripActividad = a.descripcion,
                                                 NombreMonitor = u.nombre,
-                                                ApellidoMonitor = u.apellidos
+                                                ApellidoMonitor = u.apellidos,
+                                                Valoracion_media = (float)a.valoracion_media,
                                             }).ToList();
 
                     return new BindingList<ClientActivityViewModel>(listaActividades);
@@ -100,7 +101,8 @@ namespace Datos.Repositories
                                                 NombreActividad = ac.nombre_actividad,
                                                 NombreMonitor = m.nombre,  // Obtener el nombre del monitor desde la tabla Usuarios
                                                 ApellidoMonitor = m.apellidos, // Obtener el apellido del monitor desde la tabla Usuarios
-                                                DescripActividad = ac.descripcion
+                                                DescripActividad = ac.descripcion,
+                                                Valoracion = (int)a.valoracion
                                             }).ToList();
 
                     return new BindingList<ClientActivityViewModel>(listaActividades);
@@ -144,5 +146,7 @@ namespace Datos.Repositories
         public string DescripActividad { get; set; }
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
+        public float Valoracion_media {  get; set; }
+        public int Valoracion {  get; set; }
     }
 }

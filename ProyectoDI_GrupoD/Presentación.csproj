@@ -212,6 +212,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\positivo.png" />
     <None Include="Recursos\star_empty.png" />
     <None Include="Recursos\star_filled.png" />
     <None Include="Recursos\AltaUnaActividadBlanco.png" />

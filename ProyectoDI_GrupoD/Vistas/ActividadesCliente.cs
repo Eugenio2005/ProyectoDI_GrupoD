@@ -98,7 +98,36 @@ namespace ProyectoDI_GrupoD.Vistas
             return actividadesClientesDTO;
         }
 
-        
+        private void btnValorar_Click(object sender, EventArgs e)
+        {
+            // Obtener el índice de la fila seleccionada
+            int rowIndex = VistaActividadesClientes.CurrentCell.RowIndex;
 
+            // Acceder a la fila seleccionada
+            DataGridViewRow selectedRow = VistaActividadesClientes.Rows[rowIndex];
+            ActividadesClientesDTO actividadesClientesDTO = obtenerActividad(selectedRow);
+
+            // Comprobar si el usuario ya está apuntado a la actividad
+            bool usuarioApuntado = new Negocio.Management.UsuarioManagement().comprobarUsuarioApuntado(emailUsuario, actividadesClientesDTO.NombreActividad);
+
+            if (!usuarioApuntado)
+            {
+                // Si el usuario no está apuntado, muestra la vista de información
+                ValorarAct valorarAct = new ValorarAct(actividadesClientesDTO);
+                valorarAct.ShowDialog();
+            }
+            else
+            {
+                // Si el usuario ya está apuntado, muestra un mensaje de error
+                MessageBox.Show($"El usuario ya está apuntado a esta actividad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

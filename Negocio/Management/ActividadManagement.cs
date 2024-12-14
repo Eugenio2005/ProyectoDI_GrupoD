@@ -97,6 +97,7 @@ namespace Negocio.Management
                 dto.NombreActividad = item.NombreActividad;
                 dto.ApellidoMonitor = item.ApellidoMonitor;
                 dto.DescripActividad = item.DescripActividad;
+                dto.Valoracion = item.Valoracion;
 
                 actividadesClientesDTO.Add(dto);
                 
@@ -149,7 +150,7 @@ namespace Negocio.Management
                 dto.ApellidoMonitor = item.ApellidoMonitor;
                 dto.DescripActividad = item.DescripActividad;
                 dto.NombreActividad = item.NombreActividad;
-
+                dto.valoracion_media = item.Valoracion_media;
                 ActividadesClientesDTO.Add(dto);
             }
             return ActividadesClientesDTO;
@@ -164,6 +165,18 @@ namespace Negocio.Management
             valoracionDTO.id_actividad = idActividad;
             valoracionDTO.valoracion = valoracion;
             new Datos.Repositories.ValoracionRepository().valorarActividad(valoracionDTO);
+
+
+        }
+        public void actualizarValoracion(string email, string nombreActividad, int valoracion)
+        {
+            int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+            int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+            Valoraciones valoracionDTO = new Valoraciones();
+            valoracionDTO.id_usuario = idUsuario;
+            valoracionDTO.id_actividad = idActividad;
+            valoracionDTO.valoracion = valoracion;
+            new Datos.Repositories.ValoracionRepository().ActualizarValoracion(valoracionDTO);
 
 
         }
