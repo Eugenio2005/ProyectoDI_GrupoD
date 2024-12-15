@@ -10,7 +10,9 @@ namespace Negocio.Management
     public static class DatosUsuario
     {
         // Propiedades para almacenar los datos del usuario logueado
-        public static string Dni { get; private set; }
+
+
+    public static string Dni { get; private set; }
         public static string Nombre { get; private set; }
         public static string Apellidos { get; private set; }
         public static string Email { get; private set; }
@@ -21,6 +23,7 @@ namespace Negocio.Management
         // Método para inicializar los datos del usuario desde un objeto UsuariosDTO
         public static void SetDatosUsuario(UsuariosDTO usuarioDTO)
         {
+
             Dni = usuarioDTO.Dni;
             Nombre = usuarioDTO.Nombre;
             Apellidos = usuarioDTO.Apellidos;

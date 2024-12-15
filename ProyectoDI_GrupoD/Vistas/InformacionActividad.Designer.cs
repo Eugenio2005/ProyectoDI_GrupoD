@@ -179,6 +179,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InformacionActividad";
             this.Text = "InformacionActividad";
+            this.Load += new System.EventHandler(this.InformacionActividad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
