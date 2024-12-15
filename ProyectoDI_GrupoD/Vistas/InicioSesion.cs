@@ -35,21 +35,20 @@ namespace ProyectoDI_GrupoD
             // Verifica si el usuario y la contraseña son válidos
             if (new Negocio.Management.UsuarioManagement().validarUsuario(txtUsuarioInSe.Text, txtContraseñaInSe.Text))
             {
-                this.Hide();
+                
                 // Verifica si el usuario es un administrador y muestra la pantalla correspondiente
                 if (emailAdmin.Contains(txtUsuarioInSe.Text))
                 {
+                    this.Hide();
                     PantallaPrincipalAdmin pantallaPrincipalAD = new PantallaPrincipalAdmin();
                     pantallaPrincipalAD.ShowDialog();
                 }
                 else
                 {
+                    this.Hide();
                     PantallaPrincipal pantallaPrincipal = new PantallaPrincipal();
                     pantallaPrincipal.ShowDialog();
-                    //ActividadesCliente actividadesCliente = new ActividadesCliente();
-                    //actividadesCliente.ShowDialog();
                 }
-
             }
             else
             {

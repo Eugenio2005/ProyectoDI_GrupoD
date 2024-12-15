@@ -142,10 +142,10 @@ namespace ProyectoDI_GrupoD
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Negocio.Management.DatosUsuario.LimpiarDatos();
             this.Hide();
             MenuInicio menuInicio = new MenuInicio();
             menuInicio.ShowDialog();
-            Negocio.Management.DatosUsuario.LimpiarDatos();
         }
 
         /// <summary>
