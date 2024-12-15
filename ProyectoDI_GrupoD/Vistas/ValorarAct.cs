@@ -11,90 +11,137 @@ using System.Windows.Forms;
 
 namespace ProyectoDI_GrupoD.Vistas
 {
+    /// <summary>
+    /// Representa la ventana de valoración de una actividad.
+    /// Permite al usuario seleccionar una valoración de estrellas para una actividad.
+    /// </summary>
     public partial class ValorarAct : Form
     {
-        // Declarar el arreglo de PictureBox para las estrellas
+        /// <summary>
+        /// Arreglo de controles PictureBox que representan las estrellas de valoración.
+        /// </summary>
         private PictureBox[] estrellas;
-        private int valoracion = 0; // Valoración actual (1-5)
+
+        /// <summary>
+        /// Valoración actual de la actividad (un valor entre 1 y 5).
+        /// </summary>
+        private int valoracion = 0;
+
+        /// <summary>
+        /// ID del usuario que está realizando la valoración.
+        /// </summary>
         private int idUsuario;
+
+        /// <summary>
+        /// Objeto que representa la actividad a valorar.
+        /// </summary>
         private ActividadesClientesDTO act;
+
+        /// <summary>
+        /// Lista de actividades asociadas al cliente.
+        /// </summary>
         private BindingList<Negocio.EntitiesDTO.ActividadesClientesDTO> actividadesList;
+
+        /// <summary>
+        /// Indica si la actividad ya ha sido valorada por el usuario.
+        /// </summary>
         private bool valorada;
 
+        /// <summary>
+        /// Constructor por defecto de la ventana de valoración.
+        /// Inicializa los componentes de la interfaz y las estrellas de valoración.
+        /// </summary>
         public ValorarAct()
         {
             InitializeComponent();
-            InicializarEstrellas();
-          
+            InicializarEstrellas(); // Inicializa las estrellas en la interfaz
         }
 
+        /// <summary>
+        /// Constructor que recibe una actividad seleccionada y aplica los textos a los campos.
+        /// También deshabilita los campos para evitar la edición y verifica si la actividad ya fue valorada.
+        /// </summary>
+        /// <param name="actividadSeleccionada">Actividad que se va a valorar</param>
         public ValorarAct(ActividadesClientesDTO actividadSeleccionada)
         {
             InitializeComponent();
-            aplicarTextoCampos(actividadSeleccionada);
+            aplicarTextoCampos(actividadSeleccionada); // Aplica los datos de la actividad a los campos
             act = actividadSeleccionada;
-            deshabilitarCampos();
-            valorada = new Negocio.Management.UsuarioManagement().comprobarActividadValorada(DatosUsuario.Email, act.NombreActividad);
-             InicializarEstrellas();
+            deshabilitarCampos(); // Deshabilita los campos para evitar su edición
+            valorada = new Negocio.Management.UsuarioManagement().comprobarActividadValorada(DatosUsuario.Email, act.NombreActividad); // Verifica si ya fue valorada
+            InicializarEstrellas(); // Inicializa las estrellas
         }
 
-        // Inicializa las estrellas
+        /// <summary>
+        /// Inicializa las estrellas de valoración, creando controles PictureBox para cada una.
+        /// </summary>
         private void InicializarEstrellas()
         {
-            // Crear el arreglo de estrellas
-            estrellas = new PictureBox[5];
+            estrellas = new PictureBox[5]; // Crea un arreglo de 5 PictureBox para las estrellas
 
-            // Ubicación inicial de las estrellas
+            // Inicializa la ubicación y tamaño de cada estrella en la interfaz
             for (int i = 0; i < 5; i++)
             {
                 estrellas[i] = new PictureBox();
-                estrellas[i].Size = new Size(40, 40); // Tamaño de la estrella
+                estrellas[i].Size = new Size(40, 40); // Define el tamaño de cada estrella
                 estrellas[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                estrellas[i].Location = new Point(90 + (i * 45), 315); // Espaciado entre las estrellas
-                estrellas[i].Click += Estrella_Click; // Evento de clic para cambiar la valoración
+                estrellas[i].Location = new Point(90 + (i * 45), 315); // Define la ubicación de cada estrella
+                estrellas[i].Click += Estrella_Click; // Asocia el evento de clic para cambiar la valoración
                 this.Controls.Add(estrellas[i]);
-                ActualizarEstrella(i, false); // Inicialmente, todas las estrellas están vacías
+                ActualizarEstrella(i, false); // Inicialmente todas las estrellas están vacías
             }
         }
 
-        // Este método se ejecuta al hacer clic en una estrella
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en una estrella. Cambia la valoración basada en la estrella seleccionada.
+        /// </summary>
+        /// <param name="sender">Objeto que generó el evento</param>
+        /// <param name="e">Argumentos del evento</param>
         private void Estrella_Click(object sender, EventArgs e)
         {
             PictureBox clickedStar = sender as PictureBox;
-            valoracion = Array.IndexOf(estrellas, clickedStar) + 1; // Obtener la posición de la estrella seleccionada
+            valoracion = Array.IndexOf(estrellas, clickedStar) + 1; // Obtiene la posición de la estrella seleccionada
 
-            // Actualizar el estado de todas las estrellas
+            // Actualiza el estado de las estrellas para reflejar la valoración
             for (int i = 0; i < 5; i++)
             {
-                ActualizarEstrella(i, i < valoracion); // Llenar las estrellas hasta la posición seleccionada
+                ActualizarEstrella(i, i < valoracion); // Marca las estrellas hasta la posición seleccionada como llenas
             }
         }
 
-        // Método para actualizar el estado de la estrella (llena o vacía)
+        /// <summary>
+        /// Actualiza el estado de una estrella (llena o vacía) según el índice y el valor de 'llena'.
+        /// </summary>
+        /// <param name="index">Índice de la estrella a actualizar</param>
+        /// <param name="llena">Indica si la estrella debe estar llena o vacía</param>
         private void ActualizarEstrella(int index, bool llena)
         {
-            // Obtén el directorio base de la aplicación
+            // Obtiene el directorio base de la aplicación para construir la ruta de las imágenes
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
 
-            // Construye las rutas relativas
+            // Define las rutas relativas de las imágenes de las estrellas
             string rutaEstrellaLlena = Path.Combine(basePath, "Recursos", "star_filled.png");
             string rutaEstrellaVacia = Path.Combine(basePath, "Recursos", "star_empty.png");
 
-                try
-                {
-                    if (llena)
-                        estrellas[index].Image = Image.FromFile(rutaEstrellaLlena); // Carga la estrella llena
-                    else
-                        estrellas[index].Image = Image.FromFile(rutaEstrellaVacia); // Carga la estrella vacía
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-           
+            try
+            {
+                // Cambia la imagen de la estrella según si está llena o vacía
+                if (llena)
+                    estrellas[index].Image = Image.FromFile(rutaEstrellaLlena); // Carga la imagen de la estrella llena
+                else
+                    estrellas[index].Image = Image.FromFile(rutaEstrellaVacia); // Carga la imagen de la estrella vacía
+            }
+            catch (Exception ex)
+            {
+                // Muestra un mensaje de error si no se puede cargar la imagen
+                MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        // Método para aplicar los textos a los campos de actividad
+        /// <summary>
+        /// Aplica los textos correspondientes a los campos de la interfaz con los datos de la actividad.
+        /// </summary>
+        /// <param name="actividad">Actividad a la que se le aplican los textos</param>
         private void aplicarTextoCampos(ActividadesClientesDTO actividad)
         {
             txtNombreActividad.Text = actividad.NombreActividad;
@@ -102,7 +149,9 @@ namespace ProyectoDI_GrupoD.Vistas
             txtMonitorAsociado.Text = actividad.NombreMonitor;
         }
 
-        // Método para deshabilitar los campos de texto
+        /// <summary>
+        /// Deshabilita los campos de texto para evitar que el usuario edite los datos.
+        /// </summary>
         private void deshabilitarCampos()
         {
             txtNombreActividad.Enabled = false;
@@ -110,24 +159,33 @@ namespace ProyectoDI_GrupoD.Vistas
             txtMonitorAsociado.Enabled = false;
         }
 
-        // Evento de la flecha para volver atrás
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón de "Volver atrás".
+        /// Cierra la ventana actual.
+        /// </summary>
+        /// <param name="sender">Objeto que generó el evento</param>
+        /// <param name="e">Argumentos del evento</param>
         private void imgAtras_Re_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Close();
+            this.Hide(); // Oculta la ventana
+            this.Close(); // Cierra la ventana
         }
 
-        // Evento al hacer clic en el botón de valorar
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón de valorar la actividad.
+        /// Realiza la valoración de la actividad si no ha sido valorada antes.
+        /// </summary>
+        /// <param name="sender">Objeto que generó el evento</param>
+        /// <param name="e">Argumentos del evento</param>
         private void btnValorar_Click(object sender, EventArgs e)
         {
             if (!valorada)
             {
                 if (valoracion > 0)
                 {
-
+                    // Realiza la valoración inicial
                     new Negocio.Management.ActividadManagement().valorarActividad(DatosUsuario.Email, act.NombreActividad, valoracion);
                     MessageBox.Show($"Actividad valorada con {valoracion} estrellas.", "Valoración exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
                     this.Hide();
                     this.Close();
                 }
@@ -140,10 +198,9 @@ namespace ProyectoDI_GrupoD.Vistas
             {
                 if (valoracion > 0)
                 {
-
+                    // Actualiza la valoración existente
                     new Negocio.Management.ActividadManagement().actualizarValoracion(DatosUsuario.Email, act.NombreActividad, valoracion);
                     MessageBox.Show($"Actividad valorada con {valoracion} estrellas.", "Valoración exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
                     this.Hide();
                     this.Close();
                 }
@@ -152,32 +209,40 @@ namespace ProyectoDI_GrupoD.Vistas
                     MessageBox.Show("Por favor, selecciona una valoración de estrellas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
-
         }
 
+        /// <summary>
+        /// Evento que se ejecuta cuando la ventana de valoración se carga.
+        /// Configura el texto del botón dependiendo de si la actividad ya fue valorada o no.
+        /// </summary>
+        /// <param name="sender">Objeto que generó el evento</param>
+        /// <param name="e">Argumentos del evento</param>
         private void ValorarAct_Load(object sender, EventArgs e)
         {
-            
             if (!valorada)
             {
-                btnValorar.Text = "Valorar";
+                btnValorar.Text = "Valorar"; // Si no se ha valorado, el botón muestra "Valorar"
             }
             else
             {
-                btnValorar.Text = "Actualizar valoracion";
+                btnValorar.Text = "Actualizar valoracion"; // Si ya se ha valorado, el botón muestra "Actualizar valoración"
             }
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón de desapuntarse de la actividad.
+        /// Permite al usuario desapuntarse de la actividad si está apuntado.
+        /// </summary>
+        /// <param name="sender">Objeto que generó el evento</param>
+        /// <param name="e">Argumentos del evento</param>
         private void Desapuntar_Click(object sender, EventArgs e)
         {
-
-            // Comprobar si el usuario ya está apuntado a la actividad
+            // Comprueba si el usuario está apuntado a la actividad
             bool usuarioApuntado = new Negocio.Management.UsuarioManagement().comprobarUsuarioApuntado(DatosUsuario.Email, act.NombreActividad);
 
             if (usuarioApuntado)
             {
-                // Preguntar al usuario si está seguro de desapuntarse
+                // Muestra una confirmación antes de desapuntarse
                 DialogResult confirmacion = MessageBox.Show(
                     "¿Está seguro de que desea desapuntarse de esta actividad?",
                     "Confirmación",
@@ -187,7 +252,7 @@ namespace ProyectoDI_GrupoD.Vistas
 
                 if (confirmacion == DialogResult.Yes)
                 {
-                    // Proceder con la desapuntación
+                    // Procede con la desapuntación
                     bool desapuntarUsuario = new Negocio.Management.UsuarioManagement().desapuntarUsuarioActividad(DatosUsuario.Email, act.NombreActividad);
 
                     if (desapuntarUsuario)
@@ -209,6 +274,12 @@ namespace ProyectoDI_GrupoD.Vistas
             }
         }
 
+        /// <summary>
+        /// Evento generado al cambiar el texto del campo de nombre de la actividad.
+        /// Actualmente no tiene lógica asociada.
+        /// </summary>
+        /// <param name="sender">Objeto que generó el evento</param>
+        /// <param name="e">Argumentos del evento</param>
         private void txtNombreActividad_TextChanged(object sender, EventArgs e)
         {
 

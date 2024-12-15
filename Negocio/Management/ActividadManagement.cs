@@ -153,13 +153,19 @@ namespace Negocio.Management
             }
         }
 
+        /// <summary>
+        /// Obtiene la lista de actividades de los clientes, convirtiéndolas a un DTO.
+        /// </summary>
+        /// <returns>
+        /// Una lista enlazada de tipo <see cref="BindingList{ActividadesClientesDTO}"/> que contiene las actividades de los clientes.
+        /// </returns>
         public BindingList<ActividadesClientesDTO> ObtenerActividadesClientes()
         {
-            BindingList<ClientActivityViewModel> actividades = new
-            Datos.Repositories.ActividadRepository().ObtenerActividadesClientes();
+            // Llamada al repositorio para obtener las actividades de los clientes
+            BindingList<ClientActivityViewModel> actividades = new Datos.Repositories.ActividadRepository().ObtenerActividadesClientes();
             BindingList<ActividadesClientesDTO> ActividadesClientesDTO = new BindingList<ActividadesClientesDTO>();
 
-            // Hacemos el Cast
+            // Hacemos el Cast de las actividades obtenidas a DTO
             foreach (var item in actividades)
             {
                 var dto = new ActividadesClientesDTO();
@@ -168,34 +174,58 @@ namespace Negocio.Management
                 dto.DescripActividad = item.DescripActividad;
                 dto.NombreActividad = item.NombreActividad;
                 dto.Valoracion_media = (item.Valoracion_media ?? 0);
-                ActividadesClientesDTO.Add(dto);
+                ActividadesClientesDTO.Add(dto); // Agregar el DTO a la lista
             }
-            return ActividadesClientesDTO;
+            return ActividadesClientesDTO; // Retornar la lista de actividades convertidas a DTO
         }
 
+        /// <summary>
+        /// Permite valorar una actividad por parte de un usuario. Si la actividad no tiene valoración, se asigna una nueva valoración.
+        /// </summary>
+        /// <param name="email">El correo electrónico del usuario que realiza la valoración.</param>
+        /// <param name="nombreActividad">El nombre de la actividad a valorar.</param>
+        /// <param name="valoracion">El valor de la valoración (de 1 a 5).</param>
         public void valorarActividad(string email, string nombreActividad, int valoracion)
         {
+            // Obtener el ID de la actividad a partir del nombre
             int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+
+            // Obtener el ID del usuario a partir del correo electrónico
             int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+
+            // Crear un objeto de tipo Valoraciones con los datos necesarios
             Valoraciones valoracionDTO = new Valoraciones();
             valoracionDTO.id_usuario = idUsuario;
             valoracionDTO.id_actividad = idActividad;
             valoracionDTO.valoracion = valoracion;
+
+            // Llamada al repositorio para guardar la valoración de la actividad
             new Datos.Repositories.ValoracionRepository().valorarActividad(valoracionDTO);
-
-
         }
+
+        /// <summary>
+        /// Actualiza la valoración de una actividad para un usuario específico.
+        /// </summary>
+        /// <param name="email">El correo electrónico del usuario cuya valoración se actualizará.</param>
+        /// <param name="nombreActividad">El nombre de la actividad cuya valoración se actualizará.</param>
+        /// <param name="valoracion">El nuevo valor de la valoración (de 1 a 5).</param>
         public void actualizarValoracion(string email, string nombreActividad, int valoracion)
         {
+            // Obtener el ID de la actividad a partir del nombre
             int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+
+            // Obtener el ID del usuario a partir del correo electrónico
             int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+
+            // Crear un objeto de tipo Valoraciones con los datos necesarios
             Valoraciones valoracionDTO = new Valoraciones();
             valoracionDTO.id_usuario = idUsuario;
             valoracionDTO.id_actividad = idActividad;
             valoracionDTO.valoracion = valoracion;
+
+            // Llamada al repositorio para actualizar la valoración de la actividad
             new Datos.Repositories.ValoracionRepository().ActualizarValoracion(valoracionDTO);
-
-
         }
+
     }
 }
