@@ -1,4 +1,5 @@
 ﻿using Negocio.EntitiesDTO;
+using Negocio.Management;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -144,6 +145,7 @@ namespace ProyectoDI_GrupoD.Vistas
             usuarioDTO.Telefono = txtTelefonoRe.Text;
             usuarioDTO.Email = txtEmailRe.Text;
             usuarioDTO.Direccion = txtDireccionRe.Text;
+            usuarioDTO.Contraseña = DatosUsuario.Contraseña;
 
             clienteDTO.CuentaCorriente = txtCuentaCorrienteRe.Text;
             clienteDTO.Email = txtEmailRe.Text;
@@ -321,12 +323,9 @@ namespace ProyectoDI_GrupoD.Vistas
             email = txtEmailRe.Text;
             apellidos = txtApellidosRe.Text;
             cuentaCorriente = txtCuentaCorrienteRe.Text;
-            telefono = txtTelefonoRe.Text;
-            direccion = txtDireccionRe.Text;
 
             return !string.IsNullOrWhiteSpace(nombre) && !string.IsNullOrWhiteSpace(email) &&
-                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente) &&
-                !string.IsNullOrWhiteSpace(telefono) && !string.IsNullOrWhiteSpace(direccion);
+                !string.IsNullOrWhiteSpace(apellidos) && !string.IsNullOrWhiteSpace(cuentaCorriente);
         }
 
         private bool ComprobarNoIguales()

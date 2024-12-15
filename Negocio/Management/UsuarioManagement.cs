@@ -63,8 +63,8 @@ namespace Negocio.Management
                     throw new Exception("No se encontró un usuario con el DNI proporcionado.");
                 }
 
-                // Obtener el cliente asociado de la base de datos según el ID
-                Clientes clienteBD = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(usuarioDTO.Email);
+                // Obtener el cliente asociado de la base de datos según el Email
+                Clientes clienteBD = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(usuarioDTO.Email);
                 if (clienteBD == null)
                 {
                     throw new Exception("No se encontró un cliente con el email proporcionado.");
@@ -74,6 +74,7 @@ namespace Negocio.Management
                 usuarioBD.nombre = usuarioDTO.Nombre;
                 usuarioBD.apellidos = usuarioDTO.Apellidos;
                 usuarioBD.email = usuarioDTO.Email;
+                usuarioBD.dni = usuarioDTO.Dni;
                 usuarioBD.telefono = usuarioDTO.Telefono;
                 usuarioBD.direccion = usuarioDTO.Direccion;
                 usuarioBD.password = usuarioDTO.Contraseña;
@@ -96,10 +97,10 @@ namespace Negocio.Management
                     Contraseña = usuarioBD.password,
                     CuentaCorriente = clienteBD.ccc
                 };
-
-                DatosUsuario.SetDatosUsuario(usuarioDTO);
-                    return true;
-                }
+                DatosUsuario.LimpiarDatos();
+                DatosUsuario.SetDatosUsuario(usuarioDTONuevo);
+                return true;
+            }
             catch (Exception ex)
             {
                 // Manejo de errores
@@ -186,7 +187,7 @@ namespace Negocio.Management
 
         private bool comprobarEmailExistente(string email)
         {
-            Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
+            Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarUsuarioEmail(email);
 
             if (usuarioBD == null)
             {
@@ -229,37 +230,49 @@ namespace Negocio.Management
             if (!email.Equals("") && !contrasena.Equals(""))
             {
                 // Consulta el usuario en la base de datos
-                Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
-                Clientes clientes = new Datos.Repositories.ClientRepository().ConsultarClienteDNI(email);
-                // Encripta la contraseña introducida para compararla con la que se recoge de la base de datos.
-                string contrasenaEncript = encriptarContrasena(contrasena);
+                Usuarios usuarioBD = new Datos.Repositories.ClientRepository().ConsultarUsuarioEmail(email);
 
-                // Verifica si el usuario existe y si las credenciales son correctas
-                if (usuarioBD != null && usuarioBD.password.Equals(contrasenaEncript))
+                // Verifica si el usuario es de tipo "Cliente" o "Administrador"
+                Clientes clienteDB = null;
+
+                if (usuarioBD != null)
                 {
-                    // Cargar los datos del usuario en DatosUsuario
-                    UsuariosDTO usuarioDTO = new UsuariosDTO
+                    // Si el usuario es de tipo "Cliente", se consulta también al cliente
+                    if (usuarioBD.tipo_usuario.Equals("Cliente"))
                     {
-                        Dni = usuarioBD.dni,
-                        Nombre = usuarioBD.nombre,
-                        Apellidos = usuarioBD.apellidos,
-                        Email = usuarioBD.email,
-                        Telefono = usuarioBD.telefono,
-                        Direccion = usuarioBD.direccion,
-                        CuentaCorriente = clientes.ccc,
-                        Contraseña = usuarioBD.password                   
-                    };
-                    DatosUsuario.SetDatosUsuario(usuarioDTO);
-                    return true;
+                        clienteDB = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
+                    }
+
+                    // Encripta la contraseña introducida para compararla con la que se recoge de la base de datos.
+                    string contrasenaEncript = encriptarContrasena(contrasena);
+
+                    // Verifica si el usuario existe y si las credenciales son correctas
+                    if (usuarioBD.password.Equals(contrasenaEncript))
+                    {
+                        // Cargar los datos del usuario en DatosUsuario
+                        UsuariosDTO usuarioDTO = new UsuariosDTO
+                        {
+                            Dni = usuarioBD.dni,
+                            Nombre = usuarioBD.nombre,
+                            Apellidos = usuarioBD.apellidos,
+                            Email = usuarioBD.email,
+                            Telefono = usuarioBD.telefono,
+                            Direccion = usuarioBD.direccion,
+                            CuentaCorriente = clienteDB?.ccc,  // Solo asignar si clienteDB no es nulo
+                            Contraseña = usuarioBD.password
+                        };
+
+                        DatosUsuario.SetDatosUsuario(usuarioDTO);
+                        return true;
+                    }
                 }
-                else
-                {
-                    return false; // El usuario no existe
-                }
+
+                return false; // El usuario no existe o las credenciales son incorrectas
             }
 
             return false; // Retorna false si alguno de los campos está vacío
         }
+
 
         /// <summary>
         /// Metodo que comprueba si un usuario contiene el mismo email o un usuario con el mismo dni que el que se quiere registrar.
@@ -270,7 +283,7 @@ namespace Negocio.Management
         public string existeUsuario(string email, string dni)
         {
             StringBuilder campos = new StringBuilder("");
-            Usuarios usuarioBDEmail = new Datos.Repositories.ClientRepository().ConsultarClienteEmail(email);
+            Usuarios usuarioBDEmail = new Datos.Repositories.ClientRepository().ConsultarUsuarioEmail(email);
             Usuarios usuarioBDDNI = new Datos.Repositories.ClientRepository().ConsultarUsuarioDNI(email);
 
             // Verifica si el usuario con el email existe y añade el mensaje correspondiente
