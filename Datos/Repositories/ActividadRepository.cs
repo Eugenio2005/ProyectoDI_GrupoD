@@ -26,32 +26,6 @@ namespace Datos.Repositories
                 contexto.SaveChanges();
             }
         }
-        public BindingList<MonitorActivityViewModel> ObtenerTodasActividades()
-        {
-            try
-            {
-                using (var contexto = new equipodEntities())
-                {
-                    var listaActividades = (from a in contexto.Actividades
-                                            join u in contexto.Usuarios on a.email_monitor equals u.email
-                                            where u.tipo_usuario == "monitor"
-                                            select new MonitorActivityViewModel
-                                            {
-                                                NombreActividad = a.nombre_actividad,
-                                                NombreMonitor = u.nombre,
-                                                ApellidoMonitor = u.apellidos
-                                            }).ToList();
-
-                    return new BindingList<MonitorActivityViewModel>(listaActividades);
-                }
-            }
-            catch (Exception)
-            {
-                return new BindingList<MonitorActivityViewModel>();
-            }
-        }
-    
-
 
     /// <summary>
     /// Elimina una actividad de la base de datos por su nombre.

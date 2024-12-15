@@ -193,9 +193,29 @@ namespace ProyectoDI_GrupoD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cerrar_sesion1 {
+            get {
+                object obj = ResourceManager.GetObject("cerrar-sesion1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar1 {
+            get {
+                object obj = ResourceManager.GetObject("editar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

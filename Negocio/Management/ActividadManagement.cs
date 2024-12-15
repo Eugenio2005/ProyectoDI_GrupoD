@@ -58,23 +58,6 @@ namespace Negocio.Management
                 return false;
             }
         }
-        public BindingList<ActividadesMonitoresDTO> ObtenerTodasActividades()
-        {
-            BindingList<MonitorActivityViewModel> actividades = new
-            Datos.Repositories.ActividadRepository().ObtenerTodasActividades();
-            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
-
-            // Hacemos el Cast
-            foreach (var item in actividades)
-            {
-                var dto = new ActividadesMonitoresDTO();
-                dto.NombreMonitor = item.NombreMonitor;
-                dto.NombreActividad = item.NombreActividad;
-                dto.ApellidoMonitor = item.ApellidoMonitor;
-                ActividadesMonitoresDTO.Add(dto);
-            }
-            return ActividadesMonitoresDTO;
-        }
 
         /// <summary>
         /// Obtiene todas las actividades junto con la información del monitor asociado.

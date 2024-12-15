@@ -249,7 +249,9 @@
     <Content Include="Recursos\KAE_GYM novo.png" />
     <Content Include="Recursos\KAE_GYM_novo re.png" />
     <Content Include="Recursos\Minimizar.png" />
+    <None Include="Resources\cerrar-sesion1.png" />
     <Content Include="Resources\Cerrar.png" />
+    <None Include="Resources\editar1.png" />
     <None Include="Resources\KAE_GYM novo1.png" />
     <None Include="Resources\KAE_GYM novo.png" />
     <None Include="Resources\positivo.png" />
