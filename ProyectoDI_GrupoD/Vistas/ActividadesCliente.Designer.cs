@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.VistaActividadesClientes = new System.Windows.Forms.DataGridView();
+            this.nombreActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valoracion_media = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnApuntar = new ProyectoDI_GrupoD.RoundedButton();
-            this.nombreActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actividadesClientesDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actividadDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnApuntar = new ProyectoDI_GrupoD.RoundedButton();
+            this.actividadesClientesDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesMonitoresDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.VistaActividadesClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesMonitoresDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,13 +65,27 @@
             this.VistaActividadesClientes.DataSource = this.actividadDTOBindingSource;
             this.VistaActividadesClientes.Dock = System.Windows.Forms.DockStyle.Left;
             this.VistaActividadesClientes.Location = new System.Drawing.Point(0, 0);
+            this.VistaActividadesClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.VistaActividadesClientes.Name = "VistaActividadesClientes";
             this.VistaActividadesClientes.ReadOnly = true;
             this.VistaActividadesClientes.RowHeadersWidth = 51;
             this.VistaActividadesClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.VistaActividadesClientes.Size = new System.Drawing.Size(656, 450);
+            this.VistaActividadesClientes.Size = new System.Drawing.Size(875, 554);
             this.VistaActividadesClientes.TabIndex = 0;
             this.VistaActividadesClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VistaActividadesClientes_CellClick);
+            // 
+            // nombreActividad
+            // 
+            this.nombreActividad.DataPropertyName = "NombreActividad";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.nombreActividad.DefaultCellStyle = dataGridViewCellStyle1;
+            this.nombreActividad.HeaderText = "Nombre actividad";
+            this.nombreActividad.MinimumWidth = 6;
+            this.nombreActividad.Name = "nombreActividad";
+            this.nombreActividad.ReadOnly = true;
             // 
             // NombreMonitor
             // 
@@ -115,6 +129,10 @@
             this.Valoracion_media.Name = "Valoracion_media";
             this.Valoracion_media.ReadOnly = true;
             // 
+            // actividadDTOBindingSource
+            // 
+            this.actividadDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadDTO);
+            // 
             // btnApuntar
             // 
             this.btnApuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
@@ -123,33 +141,17 @@
             this.btnApuntar.FillColor = System.Drawing.Color.Transparent;
             this.btnApuntar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnApuntar.Image = global::ProyectoDI_GrupoD.Properties.Resources.agregar_usuario_1_;
-            this.btnApuntar.Location = new System.Drawing.Point(694, 182);
+            this.btnApuntar.Location = new System.Drawing.Point(925, 224);
+            this.btnApuntar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnApuntar.Name = "btnApuntar";
-            this.btnApuntar.Size = new System.Drawing.Size(77, 68);
+            this.btnApuntar.Size = new System.Drawing.Size(103, 84);
             this.btnApuntar.TabIndex = 1;
             this.btnApuntar.UseVisualStyleBackColor = false;
             this.btnApuntar.Click += new System.EventHandler(this.btnApuntar_Click);
             // 
-            // nombreActividad
-            // 
-            this.nombreActividad.DataPropertyName = "NombreActividad";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.nombreActividad.DefaultCellStyle = dataGridViewCellStyle1;
-            this.nombreActividad.HeaderText = "Nombre actividad";
-            this.nombreActividad.MinimumWidth = 6;
-            this.nombreActividad.Name = "nombreActividad";
-            this.nombreActividad.ReadOnly = true;
-            // 
             // actividadesClientesDTOBindingSource
             // 
             this.actividadesClientesDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
-            // 
-            // actividadDTOBindingSource
-            // 
-            this.actividadDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadDTO);
             // 
             // actividadesMonitoresDTOBindingSource
             // 
@@ -157,19 +159,20 @@
             // 
             // ActividadesCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnApuntar);
             this.Controls.Add(this.VistaActividadesClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ActividadesCliente";
             this.Text = "ActividadesCliente";
             this.Load += new System.EventHandler(this.ActividadesCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VistaActividadesClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesMonitoresDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 

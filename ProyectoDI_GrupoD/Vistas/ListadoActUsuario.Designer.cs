@@ -23,24 +23,24 @@ namespace ProyectoDI_GrupoD.Vistas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.VistaActividades = new System.Windows.Forms.DataGridView();
-            this.DescripActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valoracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnValorar = new ProyectoDI_GrupoD.RoundedButton();
-            this.btnDesapuntar = new ProyectoDI_GrupoD.RoundedButton();
             this.NombreActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMonitor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valoracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actividadesClientesDTOBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnValorar = new ProyectoDI_GrupoD.RoundedButton();
+            this.btnDesapuntar = new ProyectoDI_GrupoD.RoundedButton();
             this.actividadesClientesDTOBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesClientesDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesMonitoresDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actividadesClientesDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.actividadesClientesDTOBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.VistaActividades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesMonitoresDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // VistaActividades
@@ -69,55 +69,6 @@ namespace ProyectoDI_GrupoD.Vistas
             this.VistaActividades.TabIndex = 0;
             this.VistaActividades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VistaActividades_CellContentClick);
             this.VistaActividades.Paint += new System.Windows.Forms.PaintEventHandler(this.VistaActividades_Paint);
-            // 
-            // DescripActividad
-            // 
-            this.DescripActividad.DataPropertyName = "DescripActividad";
-            this.DescripActividad.HeaderText = "DescripActividad";
-            this.DescripActividad.MinimumWidth = 6;
-            this.DescripActividad.Name = "DescripActividad";
-            this.DescripActividad.ReadOnly = true;
-            this.DescripActividad.Visible = false;
-            // 
-            // Valoracion
-            // 
-            this.Valoracion.DataPropertyName = "Valoracion";
-            this.Valoracion.HeaderText = "Valoracion";
-            this.Valoracion.MinimumWidth = 6;
-            this.Valoracion.Name = "Valoracion";
-            this.Valoracion.ReadOnly = true;
-            // 
-            // btnValorar
-            // 
-            this.btnValorar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnValorar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnValorar.BorderRadius = 20;
-            this.btnValorar.FillColor = System.Drawing.Color.Transparent;
-            this.btnValorar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnValorar.Image = global::ProyectoDI_GrupoD.Properties.Resources.positivo;
-            this.btnValorar.Location = new System.Drawing.Point(929, 154);
-            this.btnValorar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnValorar.Name = "btnValorar";
-            this.btnValorar.Size = new System.Drawing.Size(105, 92);
-            this.btnValorar.TabIndex = 4;
-            this.btnValorar.UseVisualStyleBackColor = false;
-            this.btnValorar.Click += new System.EventHandler(this.btnValorar_Click);
-            // 
-            // btnDesapuntar
-            // 
-            this.btnDesapuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnDesapuntar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
-            this.btnDesapuntar.BorderRadius = 20;
-            this.btnDesapuntar.FillColor = System.Drawing.Color.Transparent;
-            this.btnDesapuntar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDesapuntar.Image = global::ProyectoDI_GrupoD.Properties.Resources.borrar_usuario_1_;
-            this.btnDesapuntar.Location = new System.Drawing.Point(929, 292);
-            this.btnDesapuntar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDesapuntar.Name = "btnDesapuntar";
-            this.btnDesapuntar.Size = new System.Drawing.Size(105, 92);
-            this.btnDesapuntar.TabIndex = 3;
-            this.btnDesapuntar.UseVisualStyleBackColor = false;
-            this.btnDesapuntar.Click += new System.EventHandler(this.btnDesapuntar_Click);
             // 
             // NombreActividad
             // 
@@ -158,9 +109,14 @@ namespace ProyectoDI_GrupoD.Vistas
             this.ApellidoMonitor.Name = "ApellidoMonitor";
             this.ApellidoMonitor.ReadOnly = true;
             // 
-            // actividadesClientesDTOBindingSource2
+            // DescripActividad
             // 
-            this.actividadesClientesDTOBindingSource2.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
+            this.DescripActividad.DataPropertyName = "DescripActividad";
+            this.DescripActividad.HeaderText = "DescripActividad";
+            this.DescripActividad.MinimumWidth = 6;
+            this.DescripActividad.Name = "DescripActividad";
+            this.DescripActividad.ReadOnly = true;
+            this.DescripActividad.Visible = false;
             // 
             // Valoracion
             // 
@@ -170,6 +126,46 @@ namespace ProyectoDI_GrupoD.Vistas
             this.Valoracion.Name = "Valoracion";
             this.Valoracion.ReadOnly = true;
             // 
+            // actividadesClientesDTOBindingSource3
+            // 
+            this.actividadesClientesDTOBindingSource3.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
+            // 
+            // btnValorar
+            // 
+            this.btnValorar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnValorar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnValorar.BorderRadius = 20;
+            this.btnValorar.FillColor = System.Drawing.Color.Transparent;
+            this.btnValorar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnValorar.Image = global::ProyectoDI_GrupoD.Properties.Resources.positivo;
+            this.btnValorar.Location = new System.Drawing.Point(929, 154);
+            this.btnValorar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnValorar.Name = "btnValorar";
+            this.btnValorar.Size = new System.Drawing.Size(105, 92);
+            this.btnValorar.TabIndex = 4;
+            this.btnValorar.UseVisualStyleBackColor = false;
+            this.btnValorar.Click += new System.EventHandler(this.btnValorar_Click);
+            // 
+            // btnDesapuntar
+            // 
+            this.btnDesapuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnDesapuntar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(110)))), ((int)(((byte)(84)))));
+            this.btnDesapuntar.BorderRadius = 20;
+            this.btnDesapuntar.FillColor = System.Drawing.Color.Transparent;
+            this.btnDesapuntar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDesapuntar.Image = global::ProyectoDI_GrupoD.Properties.Resources.borrar_usuario_1_;
+            this.btnDesapuntar.Location = new System.Drawing.Point(929, 292);
+            this.btnDesapuntar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDesapuntar.Name = "btnDesapuntar";
+            this.btnDesapuntar.Size = new System.Drawing.Size(105, 92);
+            this.btnDesapuntar.TabIndex = 3;
+            this.btnDesapuntar.UseVisualStyleBackColor = false;
+            this.btnDesapuntar.Click += new System.EventHandler(this.btnDesapuntar_Click);
+            // 
+            // actividadesClientesDTOBindingSource2
+            // 
+            this.actividadesClientesDTOBindingSource2.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
+            // 
             // actividadesMonitoresDTOBindingSource
             // 
             this.actividadesMonitoresDTOBindingSource.DataSource = typeof(Negocio.EntitiesDTO.ActividadesMonitoresDTO);
@@ -178,15 +174,11 @@ namespace ProyectoDI_GrupoD.Vistas
             // 
             this.actividadesClientesDTOBindingSource1.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
             // 
-            // actividadesClientesDTOBindingSource3
-            // 
-            this.actividadesClientesDTOBindingSource3.DataSource = typeof(Negocio.EntitiesDTO.ActividadesClientesDTO);
-            // 
             // ListadoActUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnValorar);
             this.Controls.Add(this.btnDesapuntar);
@@ -198,11 +190,11 @@ namespace ProyectoDI_GrupoD.Vistas
             this.Text = "ListadoActUsuario";
             this.Load += new System.EventHandler(this.ListadoActUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VistaActividades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesMonitoresDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actividadesClientesDTOBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -19,11 +19,20 @@ namespace KAETesting
             // Instanciar las capas de negocio y objetos necesarios
             actividadManagement = new ActividadManagement();
             usuarioManagement = new UsuarioManagement();
+
+            
         }
 
         [TestMethod]
         public void CP1_1_1_ApuntarActividad()
         {
+            ActividadDTO actividad = new ActividadDTO();
+            actividad.NombreActividad = "Zumba";
+            actividad.DescripActividad = "Calentamiento";
+            actividad.MonitorAsociado = "SinMonitor@sinmonitor.com";
+
+            new ActividadManagement().AltaActividad(actividad);
+
             bool usuarioApuntado = usuarioManagement.apuntarUsuarioActividad("apastraher@gmail.com", "Zumba");
 
             Assert.IsTrue(usuarioApuntado, "El usuario ha sido apuntado exitosamente");
