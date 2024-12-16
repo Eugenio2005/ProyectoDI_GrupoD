@@ -184,7 +184,7 @@ namespace ProyectoDI_GrupoD.Vistas
                 if (valoracion > 0)
                 {
                     // Realiza la valoración inicial
-                    new Negocio.Management.ActividadManagement().valorarActividad(DatosUsuario.Email, act.NombreActividad, valoracion);
+                    bool result = new Negocio.Management.ActividadManagement().ValorarActividad(DatosUsuario.Email, act.NombreActividad, valoracion);
                     MessageBox.Show($"Actividad valorada con {valoracion} estrellas.", "Valoración exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Hide();
                     this.Close();

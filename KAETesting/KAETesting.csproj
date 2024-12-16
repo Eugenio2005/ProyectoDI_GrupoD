@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="ApuntarDesapuntarActividades.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValorarActividadTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

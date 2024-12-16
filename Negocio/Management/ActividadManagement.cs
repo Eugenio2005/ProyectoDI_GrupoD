@@ -186,23 +186,50 @@ namespace Negocio.Management
         /// <param name="email">El correo electrónico del usuario que realiza la valoración.</param>
         /// <param name="nombreActividad">El nombre de la actividad a valorar.</param>
         /// <param name="valoracion">El valor de la valoración (de 1 a 5).</param>
-        public void valorarActividad(string email, string nombreActividad, int valoracion)
+        /// <returns>Devuelve true si la valoración se registró correctamente; false en caso contrario.</returns>
+        public bool ValorarActividad(string email, string nombreActividad, int valoracion)
         {
-            // Obtener el ID de la actividad a partir del nombre
-            int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
+            try
+            {
+                // Obtener el ID de la actividad a partir del nombre
+                int idActividad = new Datos.Repositories.ActividadRepository().ObtenerIDActividad(nombreActividad);
 
-            // Obtener el ID del usuario a partir del correo electrónico
-            int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
+                if (idActividad == 0)
+                {
+                    // No se encontró la actividad
+                    return false;
+                }
 
-            // Crear un objeto de tipo Valoraciones con los datos necesarios
-            Valoraciones valoracionDTO = new Valoraciones();
-            valoracionDTO.id_usuario = idUsuario;
-            valoracionDTO.id_actividad = idActividad;
-            valoracionDTO.valoracion = valoracion;
+                // Obtener el ID del usuario a partir del correo electrónico
+                int idUsuario = new Datos.Repositories.ClientRepository().ObtenerIDUsuario(email);
 
-            // Llamada al repositorio para guardar la valoración de la actividad
-            new Datos.Repositories.ValoracionRepository().valorarActividad(valoracionDTO);
+                if (idUsuario == 0)
+                {
+                    // No se encontró el usuario
+                    return false;
+                }
+
+                // Crear un objeto de tipo Valoraciones con los datos necesarios
+                Valoraciones valoracionDTO = new Valoraciones
+                {
+                    id_usuario = idUsuario,
+                    id_actividad = idActividad,
+                    valoracion = valoracion
+                };
+
+                // Llamada al repositorio para guardar la valoración de la actividad
+                new Datos.Repositories.ValoracionRepository().valorarActividad(valoracionDTO);
+
+                // Si llega aquí, la operación fue exitosa
+                return true;
+            }
+            catch (Exception)
+            {
+                // Manejar errores si es necesario
+                return false;
+            }
         }
+
 
         /// <summary>
         /// Actualiza la valoración de una actividad para un usuario específico.
