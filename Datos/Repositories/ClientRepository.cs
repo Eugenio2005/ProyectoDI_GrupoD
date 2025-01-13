@@ -1,6 +1,7 @@
 ﻿using Datos.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -58,7 +59,7 @@ namespace Datos.Repositories
                 {
                     throw new Exception("El usuario no existe en la base de datos.");
                 }
-
+                contexto.Usuarios.AddOrUpdate(usuarioExistente);
                 contexto.SaveChanges();
             }
 
@@ -75,7 +76,7 @@ namespace Datos.Repositories
                 {
                     throw new Exception("El cliente no existe en la base de datos.");
                 }
-
+                contexto2.Clientes.AddOrUpdate(clienteExistente);
                 contexto2.SaveChanges();
             }
         }
