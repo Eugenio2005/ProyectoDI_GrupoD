@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,6 +52,7 @@ namespace Datos.Repositories
                     usuarioExistente.nombre = usuario.nombre;
                     usuarioExistente.apellidos = usuario.apellidos;
                     usuarioExistente.email = usuario.email;
+                    usuarioExistente.dni = usuario.dni;
                     usuarioExistente.telefono = usuario.telefono;
                     usuarioExistente.direccion = usuario.direccion;
                     usuarioExistente.password = usuario.password;
@@ -109,7 +111,7 @@ namespace Datos.Repositories
         /// Devuelve el usuario con el que coincida el email introducido.
         /// Si no se encuentra, devuelve null.
         /// </returns>
-        public Usuarios ConsultarClienteEmail(string email)
+        public Usuarios ConsultarUsuarioEmail(string email)
         {
             using (var contexto = new equipodEntities())
             {
@@ -135,7 +137,7 @@ namespace Datos.Repositories
             }
         }
 
-        public Clientes ConsultarClienteDNI(string email)
+        public Clientes ConsultarClienteEmail(string email)
         {
             using (var contexto = new equipodEntities())
             {

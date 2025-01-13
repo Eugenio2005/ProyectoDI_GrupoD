@@ -49,9 +49,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             imgKAE_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
             imgKAE_Re.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAE_GYM_novo_re;
-            imgKAE_Re.Location = new System.Drawing.Point(60, 44);
+            imgKAE_Re.Location = new System.Drawing.Point(80, 54);
+            imgKAE_Re.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             imgKAE_Re.Name = "imgKAE_Re";
-            imgKAE_Re.Size = new System.Drawing.Size(255, 157);
+            imgKAE_Re.Size = new System.Drawing.Size(340, 193);
             imgKAE_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             imgKAE_Re.TabIndex = 2;
             imgKAE_Re.TabStop = false;
@@ -63,9 +64,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             imgCerrar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
             imgCerrar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Cerrar;
-            imgCerrar.Location = new System.Drawing.Point(335, 12);
+            imgCerrar.Location = new System.Drawing.Point(447, 15);
+            imgCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             imgCerrar.Name = "imgCerrar";
-            imgCerrar.Size = new System.Drawing.Size(27, 26);
+            imgCerrar.Size = new System.Drawing.Size(36, 32);
             imgCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             imgCerrar.TabIndex = 5;
             imgCerrar.TabStop = false;
@@ -78,9 +80,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             imgMinimizar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
             imgMinimizar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Minimizar;
-            imgMinimizar.Location = new System.Drawing.Point(291, 12);
+            imgMinimizar.Location = new System.Drawing.Point(388, 15);
+            imgMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             imgMinimizar.Name = "imgMinimizar";
-            imgMinimizar.Size = new System.Drawing.Size(27, 26);
+            imgMinimizar.Size = new System.Drawing.Size(36, 32);
             imgMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             imgMinimizar.TabIndex = 6;
             imgMinimizar.TabStop = false;
@@ -96,10 +99,10 @@
             this.btnInicioSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(206)))), ((int)(((byte)(164)))));
             this.btnInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicioSesion.ForeColor = System.Drawing.Color.Black;
-            this.btnInicioSesion.Location = new System.Drawing.Point(128, 217);
-            this.btnInicioSesion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInicioSesion.Location = new System.Drawing.Point(171, 267);
+            this.btnInicioSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInicioSesion.Name = "btnInicioSesion";
-            this.btnInicioSesion.Size = new System.Drawing.Size(118, 41);
+            this.btnInicioSesion.Size = new System.Drawing.Size(157, 50);
             this.btnInicioSesion.TabIndex = 3;
             this.btnInicioSesion.Text = "Iniciar sesión";
             this.btnInicioSesion.UseVisualStyleBackColor = false;
@@ -111,10 +114,9 @@
             this.linklblRegistro.AutoSize = true;
             this.linklblRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
             this.linklblRegistro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.linklblRegistro.Location = new System.Drawing.Point(125, 277);
-            this.linklblRegistro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linklblRegistro.Location = new System.Drawing.Point(167, 341);
             this.linklblRegistro.Name = "linklblRegistro";
-            this.linklblRegistro.Size = new System.Drawing.Size(121, 26);
+            this.linklblRegistro.Size = new System.Drawing.Size(146, 32);
             this.linklblRegistro.TabIndex = 4;
             this.linklblRegistro.TabStop = true;
             this.linklblRegistro.Text = "¿No tienes una cuenta?\r\nRegistrate aquí";
@@ -123,10 +125,10 @@
             // 
             // MenuInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(374, 328);
+            this.ClientSize = new System.Drawing.Size(499, 404);
             this.Controls.Add(imgMinimizar);
             this.Controls.Add(imgCerrar);
             this.Controls.Add(this.linklblRegistro);
@@ -134,7 +136,7 @@
             this.Controls.Add(imgKAE_Re);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "MenuInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

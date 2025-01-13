@@ -12,13 +12,13 @@ namespace ProyectoDI_GrupoD.Vistas
 {
     public partial class PantallaPrincipal : Form
     {
-        bool usuarioCollapsed; 
+        private bool usuarioCollapsed;
+
         public PantallaPrincipal()
         {
             InitializeComponent();
 
             NombreUsuario.ButtonText = $"Bienvenido, {Negocio.Management.DatosUsuario.Nombre}";
-
             pnlSuperior.Visible = false;
         }
 
@@ -29,34 +29,35 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void ActividadDisponible_Click(object sender, EventArgs e)
         {
-            pnlSuperior.Visible = true;
-            lblTextoSuperior.Text = "--- ACTIVIDADES DISPONIBLES ---";
-            CentrarLabel(lblTextoSuperior, pnlSuperior);
-
-            ActividadesCliente actividadesCliente = new ActividadesCliente();
-            AbrirPanel(actividadesCliente, pnlPrincipal);
+            MostrarPanel("--- ACTIVIDADES DISPONIBLES ---", new ActividadesCliente());
         }
 
         private void MisActividades_Click(object sender, EventArgs e)
         {
-            pnlSuperior.Visible = true;
-            lblTextoSuperior.Text = "--- MIS ACTIVIDADES ---";
-            CentrarLabel(lblTextoSuperior, pnlSuperior);
-
-            ListadoActUsuario listadoActUsuario = new ListadoActUsuario();
-            AbrirPanel(listadoActUsuario, pnlPrincipal);
+            MostrarPanel("--- MIS ACTIVIDADES ---", new ListadoActUsuario());
         }
 
         /// <summary>
-        /// Maneja el evento de clic en el botón de retroceder.
-        /// Oculta el panel de alta de monitor y limpia el panel principal.
+        /// Oculta el panel superior y limpia el contenido del panel principal.
         /// </summary>
         private void imgAtras_Re_Click(object sender, EventArgs e)
         {
             pnlSuperior.Visible = false;
             lblTextoSuperior.Text = "";
-
             LimpiarPanel(pnlPrincipal);
+        }
+
+        /// <summary>
+        /// Método reutilizable para mostrar un formulario dentro de un panel, con título opcional.
+        /// </summary>
+        /// <param name="titulo">Título del panel superior.</param>
+        /// <param name="formularioHijo">Formulario a mostrar en el panel.</param>
+        private void MostrarPanel(string titulo, Form formularioHijo)
+        {
+            pnlSuperior.Visible = true;
+            lblTextoSuperior.Text = titulo;
+            CentrarLabel(lblTextoSuperior, pnlSuperior);
+            AbrirPanel(formularioHijo, pnlPrincipal);
         }
 
         /// <summary>
@@ -67,28 +68,21 @@ namespace ProyectoDI_GrupoD.Vistas
         /// <param name="panelDestino">El panel en el que se abrirá el formulario hijo.</param>
         private void AbrirPanel(Form formularioHijo, Panel panelDestino)
         {
-            // Cerrar cualquier formulario ya abierto dentro del panel
             if (panelDestino.Controls.Count > 0)
                 panelDestino.Controls[0].Dispose();
 
-            // Configurar el formulario hijo sin bordes y no como ventana superior
             formularioHijo.TopLevel = false;
             formularioHijo.FormBorderStyle = FormBorderStyle.None;
-
-            // Ajustar el tamaño del formulario hijo manualmente (opcional, si deseas un tamaño específico)
             formularioHijo.AutoSize = false;
 
-            // Añadir el formulario hijo al panel destino
             panelDestino.Controls.Add(formularioHijo);
             panelDestino.Tag = formularioHijo;
 
-            // Centrar el formulario hijo en el panel
             formularioHijo.Location = new Point(
                 (panelDestino.Width - formularioHijo.Width) / 2,
                 (panelDestino.Height - formularioHijo.Height) / 2
             );
 
-            // Mostrar el formulario hijo
             formularioHijo.BringToFront();
             formularioHijo.Show();
         }
@@ -98,9 +92,8 @@ namespace ProyectoDI_GrupoD.Vistas
         /// </summary>
         /// <param name="label">El label que se desea centrar.</param>
         /// <param name="panel">El panel dentro del cual se centrará el label.</param>
-        private void CentrarLabel(System.Windows.Forms.Label label, Panel panel)
+        private void CentrarLabel(Label label, Panel panel)
         {
-            // Calcula la posición para centrar el Label
             label.Location = new Point(
                 (panel.Width - label.Width) / 2,
                 (panel.Height - label.Height) / 2
@@ -116,17 +109,12 @@ namespace ProyectoDI_GrupoD.Vistas
             panelDestino.Controls.Clear();
         }
 
-        private void ActividadDisponible_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                this.Hide();
-                MenuInicio menuInicio = new MenuInicio();
-                menuInicio.ShowDialog();
-                Negocio.Management.DatosUsuario.LimpiarDatos();
+            this.Hide();
+            MenuInicio menuInicio = new MenuInicio();
+            menuInicio.ShowDialog();
+            Negocio.Management.DatosUsuario.LimpiarDatos();
         }
 
         private void usuarioTimer_Tick(object sender, EventArgs e)
@@ -149,7 +137,6 @@ namespace ProyectoDI_GrupoD.Vistas
                     usuarioTimer.Stop();
                 }
             }
-
         }
 
         private void NombreUsuario_Click(object sender, EventArgs e)
@@ -157,22 +144,17 @@ namespace ProyectoDI_GrupoD.Vistas
             usuarioTimer.Start();
         }
 
-        private void EditarPerfil_Load(object sender, EventArgs e)
-        {
-            pnlSuperior.Visible = true;
-            lblTextoSuperior.Text = "--- EDITAR PERFIL ---";
-            CentrarLabel(lblTextoSuperior, pnlSuperior);
-
-            EditarPerfil editarPerfil = new EditarPerfil();
-            AbrirPanel(editarPerfil, pnlPrincipal);
-        }
-
-        private void CerrarSSesion_Load(object sender, EventArgs e)
+        private void CerrarSSesion_Click(object sender, EventArgs e)
         {
             this.Hide();
             MenuInicio menuInicio = new MenuInicio();
             menuInicio.ShowDialog();
             Negocio.Management.DatosUsuario.LimpiarDatos();
+        }
+
+        private void EditarPerfil_Click(object sender, EventArgs e)
+        {
+            MostrarPanel("--- EDITAR PERFIL ---", new EditarPerfil());
         }
     }
 }
