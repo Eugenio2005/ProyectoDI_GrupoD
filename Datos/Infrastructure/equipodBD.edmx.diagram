@@ -4,12 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="224b215eb1a048b69a623dace46a3135" Name="Diagram1">
+      <Diagram DiagramId="cf7c5af5f6514dc98d6d15570eb7c929" Name="Diagram1">
         <EntityTypeShape EntityType="equipodModel.Actividades" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="equipodModel.Administradores" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="equipodModel.Clientes" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="equipodModel.Monitores" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="equipodModel.Usuarios" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="equipodModel.Usuarios_Actividades" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="equipodModel.Valoraciones" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />

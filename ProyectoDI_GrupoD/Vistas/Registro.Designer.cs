@@ -60,6 +60,7 @@ namespace ProyectoDI_GrupoD
             this.btnBorrarRe = new ProyectoDI_GrupoD.RoundedButton();
             this.txtEmailRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtCuentaCorrienteRe = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.label1 = new System.Windows.Forms.Label();
             imgMinimizar = new System.Windows.Forms.PictureBox();
             imgCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(imgMinimizar)).BeginInit();
@@ -75,9 +76,10 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Right)));
             imgMinimizar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
             imgMinimizar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Minimizar;
-            imgMinimizar.Location = new System.Drawing.Point(1038, 12);
+            imgMinimizar.Location = new System.Drawing.Point(1384, 15);
+            imgMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             imgMinimizar.Name = "imgMinimizar";
-            imgMinimizar.Size = new System.Drawing.Size(27, 26);
+            imgMinimizar.Size = new System.Drawing.Size(36, 32);
             imgMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             imgMinimizar.TabIndex = 45;
             imgMinimizar.TabStop = false;
@@ -90,9 +92,10 @@ namespace ProyectoDI_GrupoD
             | System.Windows.Forms.AnchorStyles.Right)));
             imgCerrar.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
             imgCerrar.Image = global::ProyectoDI_GrupoD.Properties.Resources.Cerrar;
-            imgCerrar.Location = new System.Drawing.Point(1082, 12);
+            imgCerrar.Location = new System.Drawing.Point(1443, 15);
+            imgCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             imgCerrar.Name = "imgCerrar";
-            imgCerrar.Size = new System.Drawing.Size(27, 26);
+            imgCerrar.Size = new System.Drawing.Size(36, 32);
             imgCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             imgCerrar.TabIndex = 44;
             imgCerrar.TabStop = false;
@@ -106,9 +109,10 @@ namespace ProyectoDI_GrupoD
             this.imgKAE_Re.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.imgKAE_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.KAEGYM1;
             this.imgKAE_Re.Image = global::ProyectoDI_GrupoD.Properties.Resources.KAE_GYM_novo_re;
-            this.imgKAE_Re.Location = new System.Drawing.Point(221, -1);
+            this.imgKAE_Re.Location = new System.Drawing.Point(295, -1);
+            this.imgKAE_Re.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.imgKAE_Re.Name = "imgKAE_Re";
-            this.imgKAE_Re.Size = new System.Drawing.Size(660, 161);
+            this.imgKAE_Re.Size = new System.Drawing.Size(880, 198);
             this.imgKAE_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgKAE_Re.TabIndex = 1;
             this.imgKAE_Re.TabStop = false;
@@ -122,9 +126,10 @@ namespace ProyectoDI_GrupoD
             this.lblEmailRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblEmailRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblEmailRe.Location = new System.Drawing.Point(37, 227);
+            this.lblEmailRe.Location = new System.Drawing.Point(39, 278);
+            this.lblEmailRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmailRe.Name = "lblEmailRe";
-            this.lblEmailRe.Size = new System.Drawing.Size(57, 24);
+            this.lblEmailRe.Size = new System.Drawing.Size(74, 29);
             this.lblEmailRe.TabIndex = 10;
             this.lblEmailRe.Text = "Email";
             // 
@@ -134,9 +139,10 @@ namespace ProyectoDI_GrupoD
             this.lblNombreRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblNombreRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblNombreRe.Location = new System.Drawing.Point(29, 153);
+            this.lblNombreRe.Location = new System.Drawing.Point(39, 188);
+            this.lblNombreRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreRe.Name = "lblNombreRe";
-            this.lblNombreRe.Size = new System.Drawing.Size(79, 24);
+            this.lblNombreRe.Size = new System.Drawing.Size(101, 29);
             this.lblNombreRe.TabIndex = 9;
             this.lblNombreRe.Text = "Nombre";
             // 
@@ -149,9 +155,10 @@ namespace ProyectoDI_GrupoD
             this.lblCuentaCorrienteRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblCuentaCorrienteRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuentaCorrienteRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblCuentaCorrienteRe.Location = new System.Drawing.Point(29, 304);
+            this.lblCuentaCorrienteRe.Location = new System.Drawing.Point(39, 374);
+            this.lblCuentaCorrienteRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuentaCorrienteRe.Name = "lblCuentaCorrienteRe";
-            this.lblCuentaCorrienteRe.Size = new System.Drawing.Size(152, 24);
+            this.lblCuentaCorrienteRe.Size = new System.Drawing.Size(195, 29);
             this.lblCuentaCorrienteRe.TabIndex = 14;
             this.lblCuentaCorrienteRe.Text = "Cuenta Corriente";
             // 
@@ -161,9 +168,10 @@ namespace ProyectoDI_GrupoD
             this.lblDNI_Re.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblDNI_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDNI_Re.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblDNI_Re.Location = new System.Drawing.Point(759, 153);
+            this.lblDNI_Re.Location = new System.Drawing.Point(1012, 188);
+            this.lblDNI_Re.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDNI_Re.Name = "lblDNI_Re";
-            this.lblDNI_Re.Size = new System.Drawing.Size(41, 24);
+            this.lblDNI_Re.Size = new System.Drawing.Size(54, 29);
             this.lblDNI_Re.TabIndex = 13;
             this.lblDNI_Re.Text = "DNI";
             // 
@@ -176,9 +184,10 @@ namespace ProyectoDI_GrupoD
             this.lblContraseñaRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblContraseñaRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContraseñaRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblContraseñaRe.Location = new System.Drawing.Point(395, 304);
+            this.lblContraseñaRe.Location = new System.Drawing.Point(527, 374);
+            this.lblContraseñaRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContraseñaRe.Name = "lblContraseñaRe";
-            this.lblContraseñaRe.Size = new System.Drawing.Size(106, 24);
+            this.lblContraseñaRe.Size = new System.Drawing.Size(136, 29);
             this.lblContraseñaRe.TabIndex = 22;
             this.lblContraseñaRe.Text = "Contraseña";
             // 
@@ -188,9 +197,10 @@ namespace ProyectoDI_GrupoD
             this.lblDirecciónRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblDirecciónRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDirecciónRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblDirecciónRe.Location = new System.Drawing.Point(759, 230);
+            this.lblDirecciónRe.Location = new System.Drawing.Point(1012, 283);
+            this.lblDirecciónRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDirecciónRe.Name = "lblDirecciónRe";
-            this.lblDirecciónRe.Size = new System.Drawing.Size(90, 24);
+            this.lblDirecciónRe.Size = new System.Drawing.Size(115, 29);
             this.lblDirecciónRe.TabIndex = 21;
             this.lblDirecciónRe.Text = "Dirección";
             // 
@@ -203,9 +213,10 @@ namespace ProyectoDI_GrupoD
             this.lblTelefonoRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblTelefonoRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefonoRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblTelefonoRe.Location = new System.Drawing.Point(395, 226);
+            this.lblTelefonoRe.Location = new System.Drawing.Point(527, 278);
+            this.lblTelefonoRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefonoRe.Name = "lblTelefonoRe";
-            this.lblTelefonoRe.Size = new System.Drawing.Size(85, 24);
+            this.lblTelefonoRe.Size = new System.Drawing.Size(110, 29);
             this.lblTelefonoRe.TabIndex = 18;
             this.lblTelefonoRe.Text = "Telefono";
             // 
@@ -215,9 +226,10 @@ namespace ProyectoDI_GrupoD
             this.lblApellidosRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblApellidosRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidosRe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblApellidosRe.Location = new System.Drawing.Point(395, 153);
+            this.lblApellidosRe.Location = new System.Drawing.Point(527, 188);
+            this.lblApellidosRe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidosRe.Name = "lblApellidosRe";
-            this.lblApellidosRe.Size = new System.Drawing.Size(88, 24);
+            this.lblApellidosRe.Size = new System.Drawing.Size(114, 29);
             this.lblApellidosRe.TabIndex = 17;
             this.lblApellidosRe.Text = "Apellidos";
             // 
@@ -228,9 +240,10 @@ namespace ProyectoDI_GrupoD
             this.btnojo_abiertoRe.FlatAppearance.BorderSize = 0;
             this.btnojo_abiertoRe.ForeColor = System.Drawing.Color.Transparent;
             this.btnojo_abiertoRe.Image = ((System.Drawing.Image)(resources.GetObject("btnojo_abiertoRe.Image")));
-            this.btnojo_abiertoRe.Location = new System.Drawing.Point(681, 336);
+            this.btnojo_abiertoRe.Location = new System.Drawing.Point(908, 414);
+            this.btnojo_abiertoRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnojo_abiertoRe.Name = "btnojo_abiertoRe";
-            this.btnojo_abiertoRe.Size = new System.Drawing.Size(30, 26);
+            this.btnojo_abiertoRe.Size = new System.Drawing.Size(40, 32);
             this.btnojo_abiertoRe.TabIndex = 26;
             this.btnojo_abiertoRe.UseVisualStyleBackColor = false;
             this.btnojo_abiertoRe.Click += new System.EventHandler(this.ojo_abiertoRe_Click);
@@ -242,9 +255,10 @@ namespace ProyectoDI_GrupoD
             this.btnojoCerradoRe.FlatAppearance.BorderSize = 0;
             this.btnojoCerradoRe.ForeColor = System.Drawing.Color.Transparent;
             this.btnojoCerradoRe.Image = ((System.Drawing.Image)(resources.GetObject("btnojoCerradoRe.Image")));
-            this.btnojoCerradoRe.Location = new System.Drawing.Point(681, 336);
+            this.btnojoCerradoRe.Location = new System.Drawing.Point(908, 414);
+            this.btnojoCerradoRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnojoCerradoRe.Name = "btnojoCerradoRe";
-            this.btnojoCerradoRe.Size = new System.Drawing.Size(30, 26);
+            this.btnojoCerradoRe.Size = new System.Drawing.Size(40, 32);
             this.btnojoCerradoRe.TabIndex = 27;
             this.btnojoCerradoRe.UseVisualStyleBackColor = false;
             this.btnojoCerradoRe.Visible = false;
@@ -256,10 +270,10 @@ namespace ProyectoDI_GrupoD
             this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
             this.imgAtras_Re.ImageLocation = "0;0";
             this.imgAtras_Re.InitialImage = null;
-            this.imgAtras_Re.Location = new System.Drawing.Point(9, 12);
+            this.imgAtras_Re.Location = new System.Drawing.Point(12, 15);
             this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
             this.imgAtras_Re.Name = "imgAtras_Re";
-            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
+            this.imgAtras_Re.Size = new System.Drawing.Size(93, 69);
             this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgAtras_Re.TabIndex = 30;
             this.imgAtras_Re.TabStop = false;
@@ -274,9 +288,10 @@ namespace ProyectoDI_GrupoD
             this.lblVolverContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.lblVolverContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVolverContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
-            this.lblVolverContraseña.Location = new System.Drawing.Point(759, 305);
+            this.lblVolverContraseña.Location = new System.Drawing.Point(1012, 375);
+            this.lblVolverContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVolverContraseña.Name = "lblVolverContraseña";
-            this.lblVolverContraseña.Size = new System.Drawing.Size(166, 24);
+            this.lblVolverContraseña.Size = new System.Drawing.Size(212, 29);
             this.lblVolverContraseña.TabIndex = 40;
             this.lblVolverContraseña.Text = "Validar contraseña";
             // 
@@ -287,9 +302,10 @@ namespace ProyectoDI_GrupoD
             this.btnVerValidar.FlatAppearance.BorderSize = 0;
             this.btnVerValidar.ForeColor = System.Drawing.Color.Transparent;
             this.btnVerValidar.Image = ((System.Drawing.Image)(resources.GetObject("btnVerValidar.Image")));
-            this.btnVerValidar.Location = new System.Drawing.Point(1041, 336);
+            this.btnVerValidar.Location = new System.Drawing.Point(1388, 414);
+            this.btnVerValidar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerValidar.Name = "btnVerValidar";
-            this.btnVerValidar.Size = new System.Drawing.Size(30, 26);
+            this.btnVerValidar.Size = new System.Drawing.Size(40, 32);
             this.btnVerValidar.TabIndex = 41;
             this.btnVerValidar.UseVisualStyleBackColor = false;
             this.btnVerValidar.Click += new System.EventHandler(this.btnVerValidar_Click);
@@ -301,9 +317,10 @@ namespace ProyectoDI_GrupoD
             this.btnOcultarValidar.FlatAppearance.BorderSize = 0;
             this.btnOcultarValidar.ForeColor = System.Drawing.Color.Transparent;
             this.btnOcultarValidar.Image = ((System.Drawing.Image)(resources.GetObject("btnOcultarValidar.Image")));
-            this.btnOcultarValidar.Location = new System.Drawing.Point(1041, 336);
+            this.btnOcultarValidar.Location = new System.Drawing.Point(1388, 414);
+            this.btnOcultarValidar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOcultarValidar.Name = "btnOcultarValidar";
-            this.btnOcultarValidar.Size = new System.Drawing.Size(30, 26);
+            this.btnOcultarValidar.Size = new System.Drawing.Size(40, 32);
             this.btnOcultarValidar.TabIndex = 42;
             this.btnOcultarValidar.UseVisualStyleBackColor = false;
             this.btnOcultarValidar.Visible = false;
@@ -317,12 +334,13 @@ namespace ProyectoDI_GrupoD
             this.txtValidarContraseña.BorderRadius = 15;
             this.txtValidarContraseña.BorderSize = 2;
             this.txtValidarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValidarContraseña.Location = new System.Drawing.Point(759, 332);
+            this.txtValidarContraseña.Location = new System.Drawing.Point(1012, 409);
+            this.txtValidarContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValidarContraseña.MaxLength = 32767;
             this.txtValidarContraseña.Name = "txtValidarContraseña";
             this.txtValidarContraseña.OnlyAllowNumbers = false;
-            this.txtValidarContraseña.Padding = new System.Windows.Forms.Padding(10);
-            this.txtValidarContraseña.Size = new System.Drawing.Size(322, 33);
+            this.txtValidarContraseña.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtValidarContraseña.Size = new System.Drawing.Size(429, 41);
             this.txtValidarContraseña.TabIndex = 9;
             this.txtValidarContraseña.UseSystemPasswordChar = true;
             // 
@@ -334,12 +352,13 @@ namespace ProyectoDI_GrupoD
             this.txtContraseñaRe.BorderRadius = 15;
             this.txtContraseñaRe.BorderSize = 2;
             this.txtContraseñaRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseñaRe.Location = new System.Drawing.Point(399, 332);
+            this.txtContraseñaRe.Location = new System.Drawing.Point(532, 409);
+            this.txtContraseñaRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContraseñaRe.MaxLength = 32767;
             this.txtContraseñaRe.Name = "txtContraseñaRe";
             this.txtContraseñaRe.OnlyAllowNumbers = false;
-            this.txtContraseñaRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtContraseñaRe.Size = new System.Drawing.Size(322, 33);
+            this.txtContraseñaRe.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtContraseñaRe.Size = new System.Drawing.Size(429, 41);
             this.txtContraseñaRe.TabIndex = 8;
             this.txtContraseñaRe.UseSystemPasswordChar = true;
             // 
@@ -351,12 +370,13 @@ namespace ProyectoDI_GrupoD
             this.txtDireccionRe.BorderRadius = 15;
             this.txtDireccionRe.BorderSize = 2;
             this.txtDireccionRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccionRe.Location = new System.Drawing.Point(759, 257);
+            this.txtDireccionRe.Location = new System.Drawing.Point(1012, 316);
+            this.txtDireccionRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccionRe.MaxLength = 32767;
             this.txtDireccionRe.Name = "txtDireccionRe";
             this.txtDireccionRe.OnlyAllowNumbers = false;
-            this.txtDireccionRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtDireccionRe.Size = new System.Drawing.Size(322, 33);
+            this.txtDireccionRe.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtDireccionRe.Size = new System.Drawing.Size(429, 41);
             this.txtDireccionRe.TabIndex = 6;
             this.txtDireccionRe.UseSystemPasswordChar = false;
             // 
@@ -368,12 +388,13 @@ namespace ProyectoDI_GrupoD
             this.txtTelefonoRe.BorderRadius = 15;
             this.txtTelefonoRe.BorderSize = 2;
             this.txtTelefonoRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoRe.Location = new System.Drawing.Point(399, 257);
+            this.txtTelefonoRe.Location = new System.Drawing.Point(532, 316);
+            this.txtTelefonoRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefonoRe.MaxLength = 9;
             this.txtTelefonoRe.Name = "txtTelefonoRe";
             this.txtTelefonoRe.OnlyAllowNumbers = true;
-            this.txtTelefonoRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtTelefonoRe.Size = new System.Drawing.Size(322, 33);
+            this.txtTelefonoRe.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtTelefonoRe.Size = new System.Drawing.Size(429, 41);
             this.txtTelefonoRe.TabIndex = 5;
             this.txtTelefonoRe.UseSystemPasswordChar = false;
             // 
@@ -385,12 +406,13 @@ namespace ProyectoDI_GrupoD
             this.txtDNI_Re.BorderRadius = 15;
             this.txtDNI_Re.BorderSize = 2;
             this.txtDNI_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI_Re.Location = new System.Drawing.Point(759, 180);
+            this.txtDNI_Re.Location = new System.Drawing.Point(1012, 222);
+            this.txtDNI_Re.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDNI_Re.MaxLength = 9;
             this.txtDNI_Re.Name = "txtDNI_Re";
             this.txtDNI_Re.OnlyAllowNumbers = false;
-            this.txtDNI_Re.Padding = new System.Windows.Forms.Padding(10);
-            this.txtDNI_Re.Size = new System.Drawing.Size(322, 33);
+            this.txtDNI_Re.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtDNI_Re.Size = new System.Drawing.Size(429, 41);
             this.txtDNI_Re.TabIndex = 3;
             this.txtDNI_Re.UseSystemPasswordChar = false;
             // 
@@ -402,12 +424,13 @@ namespace ProyectoDI_GrupoD
             this.txtApellidosRe.BorderRadius = 15;
             this.txtApellidosRe.BorderSize = 2;
             this.txtApellidosRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidosRe.Location = new System.Drawing.Point(399, 180);
+            this.txtApellidosRe.Location = new System.Drawing.Point(532, 222);
+            this.txtApellidosRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellidosRe.MaxLength = 32767;
             this.txtApellidosRe.Name = "txtApellidosRe";
             this.txtApellidosRe.OnlyAllowNumbers = false;
-            this.txtApellidosRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtApellidosRe.Size = new System.Drawing.Size(322, 33);
+            this.txtApellidosRe.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtApellidosRe.Size = new System.Drawing.Size(429, 41);
             this.txtApellidosRe.TabIndex = 2;
             this.txtApellidosRe.UseSystemPasswordChar = false;
             // 
@@ -419,12 +442,13 @@ namespace ProyectoDI_GrupoD
             this.txtUsuarioRe.BorderRadius = 15;
             this.txtUsuarioRe.BorderSize = 2;
             this.txtUsuarioRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioRe.Location = new System.Drawing.Point(33, 180);
+            this.txtUsuarioRe.Location = new System.Drawing.Point(44, 222);
+            this.txtUsuarioRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuarioRe.MaxLength = 32767;
             this.txtUsuarioRe.Name = "txtUsuarioRe";
             this.txtUsuarioRe.OnlyAllowNumbers = false;
-            this.txtUsuarioRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtUsuarioRe.Size = new System.Drawing.Size(322, 33);
+            this.txtUsuarioRe.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtUsuarioRe.Size = new System.Drawing.Size(429, 41);
             this.txtUsuarioRe.TabIndex = 1;
             this.txtUsuarioRe.UseSystemPasswordChar = false;
             // 
@@ -440,9 +464,10 @@ namespace ProyectoDI_GrupoD
             this.btnRegistrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnRegistrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegistrarRe.Location = new System.Drawing.Point(438, 405);
+            this.btnRegistrarRe.Location = new System.Drawing.Point(584, 498);
+            this.btnRegistrarRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrarRe.Name = "btnRegistrarRe";
-            this.btnRegistrarRe.Size = new System.Drawing.Size(100, 40);
+            this.btnRegistrarRe.Size = new System.Drawing.Size(133, 49);
             this.btnRegistrarRe.TabIndex = 10;
             this.btnRegistrarRe.Text = "Registrar";
             this.btnRegistrarRe.UseVisualStyleBackColor = false;
@@ -461,9 +486,10 @@ namespace ProyectoDI_GrupoD
             this.btnBorrarRe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnBorrarRe.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBorrarRe.Location = new System.Drawing.Point(581, 405);
+            this.btnBorrarRe.Location = new System.Drawing.Point(775, 498);
+            this.btnBorrarRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBorrarRe.Name = "btnBorrarRe";
-            this.btnBorrarRe.Size = new System.Drawing.Size(102, 40);
+            this.btnBorrarRe.Size = new System.Drawing.Size(136, 49);
             this.btnBorrarRe.TabIndex = 11;
             this.btnBorrarRe.Text = "Borrar";
             this.btnBorrarRe.UseVisualStyleBackColor = false;
@@ -477,12 +503,13 @@ namespace ProyectoDI_GrupoD
             this.txtEmailRe.BorderRadius = 15;
             this.txtEmailRe.BorderSize = 2;
             this.txtEmailRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailRe.Location = new System.Drawing.Point(33, 257);
+            this.txtEmailRe.Location = new System.Drawing.Point(44, 316);
+            this.txtEmailRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmailRe.MaxLength = 32767;
             this.txtEmailRe.Name = "txtEmailRe";
             this.txtEmailRe.OnlyAllowNumbers = false;
-            this.txtEmailRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtEmailRe.Size = new System.Drawing.Size(322, 33);
+            this.txtEmailRe.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtEmailRe.Size = new System.Drawing.Size(429, 41);
             this.txtEmailRe.TabIndex = 4;
             this.txtEmailRe.UseSystemPasswordChar = false;
             this.txtEmailRe.Enter += new System.EventHandler(this.txtBoxEmailEliminarPlaceHolder);
@@ -496,23 +523,39 @@ namespace ProyectoDI_GrupoD
             this.txtCuentaCorrienteRe.BorderRadius = 15;
             this.txtCuentaCorrienteRe.BorderSize = 2;
             this.txtCuentaCorrienteRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(33, 332);
-            this.txtCuentaCorrienteRe.MaxLength = 32767;
+            this.txtCuentaCorrienteRe.Location = new System.Drawing.Point(44, 409);
+            this.txtCuentaCorrienteRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCuentaCorrienteRe.MaxLength = 22;
             this.txtCuentaCorrienteRe.Name = "txtCuentaCorrienteRe";
-            this.txtCuentaCorrienteRe.OnlyAllowNumbers = false;
-            this.txtCuentaCorrienteRe.Padding = new System.Windows.Forms.Padding(10);
-            this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(322, 33);
+            this.txtCuentaCorrienteRe.OnlyAllowNumbers = true;
+            this.txtCuentaCorrienteRe.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtCuentaCorrienteRe.Size = new System.Drawing.Size(429, 41);
             this.txtCuentaCorrienteRe.TabIndex = 7;
             this.txtCuentaCorrienteRe.UseSystemPasswordChar = false;
             this.txtCuentaCorrienteRe.Enter += new System.EventHandler(this.txtBoxCuentaCorrienteEliminarPlaceHolder);
             this.txtCuentaCorrienteRe.Leave += new System.EventHandler(this.txtBoxCuentaCorrienteAplicarPlaceHolder);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(125)))), ((int)(((byte)(68)))));
+            this.label1.Location = new System.Drawing.Point(1013, 457);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 100);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "La contraseña debe contener:\r\n    - 8 carácteres o más.\r\n    - Una mayúscula y un" +
+    "a minúscula.\r\n    - Un caracter especial.\r\n    - Un número.";
+            // 
             // Registro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(1121, 460);
+            this.ClientSize = new System.Drawing.Size(1495, 566);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCuentaCorrienteRe);
             this.Controls.Add(this.txtEmailRe);
             this.Controls.Add(imgMinimizar);
@@ -543,6 +586,7 @@ namespace ProyectoDI_GrupoD
             this.Controls.Add(this.imgKAE_Re);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
@@ -584,5 +628,6 @@ namespace ProyectoDI_GrupoD
         private TextBoxRedondeado txtValidarContraseña;
         private TextBoxRedondeado txtEmailRe;
         private TextBoxRedondeado txtCuentaCorrienteRe;
+        private System.Windows.Forms.Label label1;
     }
 }

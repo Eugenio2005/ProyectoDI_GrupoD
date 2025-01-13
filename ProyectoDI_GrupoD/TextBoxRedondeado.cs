@@ -29,14 +29,19 @@ namespace ProyectoDI_GrupoD
             textBox1.Enter += (sender, e) =>
             {
                 isFocused = true;
+                borderColor = borderFocusColor;  
                 OnTextBoxEnter();
+                this.Invalidate();
             };
 
             textBox1.Leave += (sender, e) =>
             {
                 isFocused = false;
+                borderColor = Color.FromArgb(203, 156, 99); 
                 OnTextBoxLeave();
+                this.Invalidate();
             };
+
 
 
             textBox1.KeyPress += (sender, e) => { OnTextBoxKeyPressOnlyNumber(e); }; // Event for KeyPress validation
@@ -64,6 +69,7 @@ namespace ProyectoDI_GrupoD
             {
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.FromArgb(0, 0, 0); // Color normal cuando el usuario escribe
+                
                 UpdatePasswordChar(); // Activa el enmascarado si corresponde
             }
         }

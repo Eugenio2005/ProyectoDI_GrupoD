@@ -71,6 +71,7 @@ namespace ProyectoDI_GrupoD.Vistas
             // 
             // nombreActividadDataGridViewTextBoxColumn
             // 
+
             this.nombreActividadDataGridViewTextBoxColumn.DataPropertyName = "NombreActividad";
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
@@ -79,6 +80,8 @@ namespace ProyectoDI_GrupoD.Vistas
             this.nombreActividadDataGridViewTextBoxColumn.HeaderText = "Nombre Actividad";
             this.nombreActividadDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreActividadDataGridViewTextBoxColumn.Name = "nombreActividadDataGridViewTextBoxColumn";
+
+
             // 
             // nombreMonitorDataGridViewTextBoxColumn
             // 

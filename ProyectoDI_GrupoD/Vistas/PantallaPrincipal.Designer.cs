@@ -36,7 +36,6 @@
             this.ctxtmsCerrarSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.lblTextoSuperior = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.FlowLayoutPanel();
@@ -46,13 +45,20 @@
             this.pnlActividadesDisponibles = new System.Windows.Forms.Panel();
             this.plMisActividades = new System.Windows.Forms.Panel();
             this.usuarioTimer = new System.Windows.Forms.Timer(this.components);
+
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
+            this.CerrarSSesion = new ProyectoDI_GrupoD.ImageButton();
+            this.EditarPerfil = new ProyectoDI_GrupoD.ImageButton();
+            this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
+            this.ActividadDisponible = new ProyectoDI_GrupoD.ImageButton();
+            this.MisActividades = new ProyectoDI_GrupoD.ImageButton();
             this.ctxtmsCerrarSesion.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.pnlBotones.SuspendLayout();
             this.pnlUsuario.SuspendLayout();
             this.pnlActividadesDisponibles.SuspendLayout();
             this.plMisActividades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
             // 
             // MisActividades
@@ -123,7 +129,7 @@
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(661, 100);
             this.pnlSuperior.TabIndex = 2;
-            // 
+            //     
             // imgAtras_Re
             // 
             this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -186,10 +192,49 @@
             this.pnlUsuario.Size = new System.Drawing.Size(300, 170);
             this.pnlUsuario.TabIndex = 0;
             // 
+            // pnlActividadesDisponibles
+            // 
+            this.pnlActividadesDisponibles.Controls.Add(this.ActividadDisponible);
+            this.pnlActividadesDisponibles.Location = new System.Drawing.Point(2, 79);
+            this.pnlActividadesDisponibles.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlActividadesDisponibles.Name = "pnlActividadesDisponibles";
+            this.pnlActividadesDisponibles.Size = new System.Drawing.Size(399, 76);
+            this.pnlActividadesDisponibles.TabIndex = 1;
+            // 
+            // plMisActividades
+            // 
+            this.plMisActividades.Controls.Add(this.MisActividades);
+            this.plMisActividades.Location = new System.Drawing.Point(2, 159);
+            this.plMisActividades.Margin = new System.Windows.Forms.Padding(2);
+            this.plMisActividades.Name = "plMisActividades";
+            this.plMisActividades.Size = new System.Drawing.Size(399, 76);
+            this.plMisActividades.TabIndex = 1;
+            // 
+            // usuarioTimer
+            // 
+            this.usuarioTimer.Interval = 10;
+            this.usuarioTimer.Tick += new System.EventHandler(this.usuarioTimer_Tick);
+            // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = null;
+            this.imgAtras_Re.Location = new System.Drawing.Point(28, 19);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(93, 69);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 28;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
+            // 
+
             // CerrarSSesion
             // 
             this.CerrarSSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
-            this.CerrarSSesion.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.usuario;
+            this.CerrarSSesion.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.cerrar_sesion1;
             this.CerrarSSesion.ButtonText = "CERRAR SESION";
             this.CerrarSSesion.ContextMenuStrip = this.ctxtmsCerrarSesion;
             this.CerrarSSesion.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -204,7 +249,7 @@
             // EditarPerfil
             // 
             this.EditarPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
-            this.EditarPerfil.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.usuario;
+            this.EditarPerfil.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.editar1;
             this.EditarPerfil.ButtonText = "EDITAR PERFIL";
             this.EditarPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EditarPerfil.HoverBackColor = System.Drawing.Color.LightGray;
@@ -256,11 +301,11 @@
             this.ctxtmsCerrarSesion.ResumeLayout(false);
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.pnlBotones.ResumeLayout(false);
             this.pnlUsuario.ResumeLayout(false);
             this.pnlActividadesDisponibles.ResumeLayout(false);
             this.plMisActividades.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
 
         }

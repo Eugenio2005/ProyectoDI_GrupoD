@@ -77,9 +77,6 @@
     <Compile Include="Infrastructure\Monitores.cs">
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\sysdiagrams.cs">
-      <DependentUpon>equipodBD.tt</DependentUpon>
-    </Compile>
     <Compile Include="Infrastructure\Usuarios.cs">
       <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
@@ -94,6 +91,7 @@
     <Compile Include="Repositories\ActividadUsuarioRepository.cs" />
     <Compile Include="Repositories\ClientRepository.cs" />
     <Compile Include="Repositories\MonitorRepository.cs" />
+    <Compile Include="Repositories\ValoracionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

@@ -15,7 +15,8 @@ namespace Datos.Repositories
                     contexto.Usuarios_Actividades.Add(new Usuarios_Actividades
                     {
                         id_usuario = idUsuario,
-                        id_actividad = idActividad
+                        id_actividad = idActividad,
+                        valoracion = 0
                     });
 
                     contexto.SaveChanges();
@@ -34,6 +35,15 @@ namespace Datos.Repositories
             {
                 // Verificar si el usuario está apuntado a la actividad directamente en el return
                 return contexto.Usuarios_Actividades
+                    .Any(ua => ua.id_usuario == idUsuario && ua.id_actividad == idActividad);
+            }
+        }
+        public bool ComprobarActividadValorada(int idUsuario, int idActividad)
+        {
+            using (var contexto = new equipodEntities())
+            {
+                // Verificar si el usuario a valorado la actividad directamente en el return
+                return contexto.Valoraciones
                     .Any(ua => ua.id_usuario == idUsuario && ua.id_actividad == idActividad);
             }
         }

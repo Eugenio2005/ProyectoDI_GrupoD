@@ -26,18 +26,18 @@ namespace ProyectoDI_GrupoD.Vistas
         private void ListadoActUsuario_Load(object sender, EventArgs e)
         {
             actividadesList = new Negocio.Management.ActividadManagement().ObtenerActividadesClienteApuntado(DatosUsuario.Email);
+           
             VistaActividades.DataSource = actividadesList;
         }
 
         private void btnDesapuntar_Click(object sender, EventArgs e)
         {
-            // Verificar si hay una celda seleccionada
             if (VistaActividades.CurrentCell == null)
             {
-                MessageBox.Show("Por favor, seleccione una actividad para desapuntarse.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                // Si no hay celda seleccionada, mostrar un mensaje de error
+                MessageBox.Show("Por favor, seleccione una actividad antes de continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir de la función si no hay selección
             }
-
             // Obtener el índice de la fila seleccionada
             int rowIndex = VistaActividades.CurrentCell.RowIndex;
 
@@ -78,11 +78,8 @@ namespace ProyectoDI_GrupoD.Vistas
                 // Si el usuario no está apuntado, muestra un mensaje de error
                 MessageBox.Show($"El usuario no está apuntado a esta actividad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Recargar la vista
             ListadoActUsuario_Load(sender, e);
         }
-
 
         private ActividadesClientesDTO obtenerActividad(DataGridViewRow selectedRow)
         {
@@ -97,6 +94,29 @@ namespace ProyectoDI_GrupoD.Vistas
             actividadesClientesDTO.DescripActividad = descripActividad;
 
             return actividadesClientesDTO;
+        }
+
+        private void VistaActividades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+   
+            // Comprobar si el usuario ya está apuntado a la actividad
+
+        }
+
+        private void btnValorar_Click(object sender, EventArgs e)
+        {
+            if (VistaActividades.CurrentCell == null)
+            {
+                // Si no hay celda seleccionada, mostrar un mensaje de error
+                MessageBox.Show("Por favor, seleccione una actividad antes de continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir de la función si no hay selección
+            }
+            int rowIndex = VistaActividades.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = VistaActividades.Rows[rowIndex];
+            ActividadesClientesDTO actividadesClientesDTO = obtenerActividad(selectedRow);
+            ValorarAct valorarAct = new ValorarAct(actividadesClientesDTO);
+            valorarAct.ShowDialog();
+            ListadoActUsuario_Load(sender, e);
         }
     }
 }
