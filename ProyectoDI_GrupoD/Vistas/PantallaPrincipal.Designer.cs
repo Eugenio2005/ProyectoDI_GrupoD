@@ -199,7 +199,7 @@
             this.CerrarSSesion.Name = "CerrarSSesion";
             this.CerrarSSesion.Size = new System.Drawing.Size(300, 50);
             this.CerrarSSesion.TabIndex = 2;
-            this.CerrarSSesion.Click += new System.EventHandler(this.CerrarSSesion_Load);
+            this.CerrarSSesion.Click += new System.EventHandler(this.CerrarSSesion_Click);
             // 
             // EditarPerfil
             // 
@@ -213,7 +213,7 @@
             this.EditarPerfil.Name = "EditarPerfil";
             this.EditarPerfil.Size = new System.Drawing.Size(300, 50);
             this.EditarPerfil.TabIndex = 1;
-            this.EditarPerfil.Load += new System.EventHandler(this.EditarPerfil_Load);
+            this.EditarPerfil.Load += new System.EventHandler(this.EditarPerfil_Click);
             // 
             // pnlActividadesDisponibles
             // 
