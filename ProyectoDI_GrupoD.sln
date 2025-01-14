@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KAETesting", "KAETesting\KAETesting.csproj", "{ECFE786E-D6D2-40D2-A0C2-D5DBE01D39F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormularioTOP5", "FormularioTOP5\FormularioTOP5.csproj", "{A4351FAB-5561-46D6-9421-99521A58992C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ECFE786E-D6D2-40D2-A0C2-D5DBE01D39F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECFE786E-D6D2-40D2-A0C2-D5DBE01D39F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECFE786E-D6D2-40D2-A0C2-D5DBE01D39F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4351FAB-5561-46D6-9421-99521A58992C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A4351FAB-5561-46D6-9421-99521A58992C}.Debug|Any CPU.Build.0 = Debug|x86
+		{A4351FAB-5561-46D6-9421-99521A58992C}.Release|Any CPU.ActiveCfg = Release|x86
+		{A4351FAB-5561-46D6-9421-99521A58992C}.Release|Any CPU.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

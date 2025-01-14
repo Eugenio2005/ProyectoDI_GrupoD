@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoDI_GrupoD.Properties {
+namespace FormularioTOP5.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,22 +26,11 @@ namespace ProyectoDI_GrupoD.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C02PC03\\SQLEXPRESS;Initial Catalog=equipod;Integrated Security=True;E" +
-            "ncrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C02PC02\\SQLEXPRESS01;Initial Catalog=equipod;Integrated Security=True" +
+            ";TrustServerCertificate=True")]
         public string equipodConnectionString {
             get {
                 return ((string)(this["equipodConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C02PC02\\SQLEXPRESS01;Initial Catalog=equipod;Integrated Security=True" +
-            ";TrustServerCertificate=True")]
-        public string equipodConnectionString1 {
-            get {
-                return ((string)(this["equipodConnectionString1"]));
             }
         }
     }

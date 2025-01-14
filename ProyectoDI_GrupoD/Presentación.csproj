@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework">
       <HintPath>..\Datos\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,6 +57,11 @@
   <ItemGroup>
     <Compile Include="Botones.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="equipodDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>equipodDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ImageButton.cs">
       <SubType>UserControl</SubType>
@@ -187,6 +195,17 @@
     <EmbeddedResource Include="Vistas\ValorarAct.resx">
       <DependentUpon>ValorarAct.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="equipodDataSet.xsc">
+      <DependentUpon>equipodDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="equipodDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>equipodDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="equipodDataSet.xss">
+      <DependentUpon>equipodDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\Negocio.EntitiesDTO.ActividadesClientesDTO1.datasource" />
     <None Include="Properties\DataSources\Negocio.EntitiesDTO.ActividadesMonitoresDTO.datasource" />
     <None Include="Properties\Settings.settings">
@@ -229,6 +248,9 @@
     <None Include="Recursos\ojo.png" />
     <None Include="Recursos\KAEGYM_Ampliado.png" />
     <None Include="Recursos\inicioFondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
