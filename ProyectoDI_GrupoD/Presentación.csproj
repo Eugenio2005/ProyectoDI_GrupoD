@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework">
       <HintPath>..\Datos\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
@@ -41,6 +45,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="ComboBoxRedondeado.Designer.cs">
       <DependentUpon>ComboBoxRedondeado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Facturas.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ImageButton.cs">
       <SubType>UserControl</SubType>
@@ -97,6 +109,12 @@
     </Compile>
     <Compile Include="Vistas\EditarPerfil.Designer.cs">
       <DependentUpon>EditarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\ValorarAct.cs">
       <SubType>Form</SubType>
@@ -162,6 +180,10 @@
     <Compile Include="Vistas\RegistroMonitor.Designer.cs">
       <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Facturas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Facturas.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\EditarPerfil.resx">
       <DependentUpon>EditarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\InformacionActividad.resx">
       <DependentUpon>InformacionActividad.cs</DependentUpon>
@@ -271,6 +296,9 @@
     <None Include="Recursos\ojo.png" />
     <None Include="Recursos\KAEGYM_Ampliado.png" />
     <None Include="Recursos\inicioFondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

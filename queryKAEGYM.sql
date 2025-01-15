@@ -1,6 +1,3 @@
-USE equipod;
-
--- Tabla Usuarios
 CREATE TABLE Usuarios (
     id_usuario INT IDENTITY(1,1) PRIMARY KEY, -- IDENTITY(1,1) es igual que el auto_increment
     nombre VARCHAR(100) NOT NULL,
@@ -49,6 +46,7 @@ CREATE TABLE Actividades (
     descripcion VARCHAR(100) NOT NULL,
     email_monitor VARCHAR(100),
 	valoracion_media float,
+	precio_actividad float,
     FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
@@ -68,6 +66,7 @@ CREATE TABLE Usuarios_Actividades (
     id_usuario INT NOT NULL,
     id_actividad INT NOT NULL,
 	valoracion int,
+	cantidad_servicios int,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad) ON DELETE CASCADE
 );
