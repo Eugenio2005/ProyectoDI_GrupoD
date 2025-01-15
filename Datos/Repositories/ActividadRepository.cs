@@ -103,7 +103,7 @@ namespace Datos.Repositories
                                                 NombreMonitor = m.nombre,  // Obtener el nombre del monitor desde la tabla Usuarios
                                                 ApellidoMonitor = m.apellidos, // Obtener el apellido del monitor desde la tabla Usuarios
                                                 DescripActividad = ac.descripcion,
-                                                Valoracion = a.valoracion // Obtener la valoración de la tabla Valoraciones
+                                                Valoracion = (int)a.valoracion // Obtener la valoración de la tabla Valoraciones
                                             }).ToList();
 
                     return new BindingList<ClientActivityViewModel>(listaActividades);
@@ -142,7 +142,10 @@ namespace Datos.Repositories
                                             {
                                                 NombreActividad = a.nombre_actividad,
                                                 NombreMonitor = u.nombre,
-                                                ApellidoMonitor = u.apellidos
+                                                ApellidoMonitor = u.apellidos,
+                                                // Asignar un valor predeterminado en caso de null
+                                                NumUsuariosApuntados = a.numUsuariosApuntados ?? 0, // Si es null, asignamos 0
+                                                ValoracionMedia = a.valoracion_media.HasValue ? a.valoracion_media.Value : 0.0 // Si es null, asignamos 0.0
                                             }).ToList();
 
                     return new BindingList<MonitorActivityViewModel>(listaActividades);
@@ -153,17 +156,21 @@ namespace Datos.Repositories
                 return new BindingList<MonitorActivityViewModel>();
             }
         }
+
+
     }
 
 
-        /// <summary>
-        /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
-        /// </summary>
-        public class MonitorActivityViewModel
+    /// <summary>
+    /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
+    /// </summary>
+    public class MonitorActivityViewModel
     {
         public string NombreActividad { get; set; }
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
+        public int NumUsuariosApuntados { get; set; }
+        public double ValoracionMedia { get; set; }
     }
 
     /// <summary>

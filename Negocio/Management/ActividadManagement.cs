@@ -65,23 +65,23 @@ namespace Negocio.Management
         /// <returns>
         /// Una lista de objetos ActividadesMonitoresDTO que contiene el nombre y apellido del monitor y el nombre de la actividad.
         /// </returns>
-        public BindingList<ActividadesMonitoresDTO> ObtenerActividades(String email)
-        {
-            BindingList<ClientActivityViewModel> actividades = new
-            Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
-            BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
+        //public BindingList<ActividadesMonitoresDTO> ObtenerActividades(String email)
+        //{
+        //    BindingList<ClientActivityViewModel> actividades = new
+        //    Datos.Repositories.ActividadRepository().ObtenerActividadesClienteApuntado(email);
+        //    BindingList<ActividadesMonitoresDTO> ActividadesMonitoresDTO = new BindingList<ActividadesMonitoresDTO>();
 
-            // Hacemos el Cast
-            foreach (var item in actividades)
-            {
-                var dto = new ActividadesMonitoresDTO();
-                dto.NombreMonitor = item.NombreMonitor;
-                dto.NombreActividad = item.NombreActividad;
-                dto.ApellidoMonitor = item.ApellidoMonitor;
-                ActividadesMonitoresDTO.Add(dto);
-            }
-            return ActividadesMonitoresDTO;
-        }
+        //    // Hacemos el Cast
+        //    foreach (var item in actividades)
+        //    {
+        //        var dto = new ActividadesMonitoresDTO();
+        //        dto.NombreMonitor = item.NombreMonitor;
+        //        dto.NombreActividad = item.NombreActividad;
+        //        dto.ApellidoMonitor = item.ApellidoMonitor;
+        //        ActividadesMonitoresDTO.Add(dto);
+        //    }
+        //    return ActividadesMonitoresDTO;
+        //}
 
         public BindingList<ActividadesClientesDTO> ObtenerActividadesClienteApuntado(String email)
         {
@@ -175,6 +175,8 @@ namespace Negocio.Management
                 dto.NombreMonitor = item.NombreMonitor;
                 dto.NombreActividad = item.NombreActividad;
                 dto.ApellidoMonitor = item.ApellidoMonitor;
+                dto.ValoracionMedia = (float)item.ValoracionMedia;
+                dto.NumUsuariosApuntados = item.NumUsuariosApuntados;
                 ActividadesMonitoresDTO.Add(dto);
             }
             return ActividadesMonitoresDTO;
