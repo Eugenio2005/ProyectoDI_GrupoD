@@ -86,11 +86,10 @@ namespace ProyectoDI_GrupoD.Vistas
             }
         }
 
-        private void btnExportar_Click(object sender, EventArgs e)
+        private void btnExportarPDF_Click(object sender, EventArgs e)
         {
             var actividades = ObtenerDatosActividades(); 
             ExportarAPDF(actividades);
-            ExportarAExcel(actividades);
         }
 
         private List<ActividadDTO> ObtenerDatosActividades()
@@ -212,6 +211,10 @@ namespace ProyectoDI_GrupoD.Vistas
             }
         }
 
-
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            var actividades = ObtenerDatosActividades();
+            ExportarAExcel(actividades);
+        }
     }
 }

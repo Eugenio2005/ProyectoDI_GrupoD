@@ -31,21 +31,22 @@ namespace ProyectoDI_GrupoD.Vistas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.VistaActividades = new System.Windows.Forms.DataGridView();
-            this.actividadesMonitoresDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnExportar = new ProyectoDI_GrupoD.RoundedButton();
             this.nombreActividadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreMonitorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoMonitorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuarios_apuntados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valoracion_media = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.actividadesMonitoresDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExportarPDF = new ProyectoDI_GrupoD.RoundedButton();
+            this.btnExportarExcel = new ProyectoDI_GrupoD.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.VistaActividades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesMonitoresDTOBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -73,33 +74,14 @@ namespace ProyectoDI_GrupoD.Vistas
             this.VistaActividades.TabIndex = 0;
             this.VistaActividades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaActividades_ClicContenidoEliminarActividad);
             // 
-            // actividadesMonitoresDTOBindingSource1
-            // 
-            this.actividadesMonitoresDTOBindingSource1.DataSource = typeof(Negocio.EntitiesDTO.ActividadesMonitoresDTO);
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.btnExportar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.btnExportar.BorderRadius = 20;
-            this.btnExportar.FillColor = System.Drawing.Color.Transparent;
-            this.btnExportar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExportar.Location = new System.Drawing.Point(868, 204);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(125, 52);
-            this.btnExportar.TabIndex = 1;
-            this.btnExportar.Text = "Exportar a...";
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
             // nombreActividadDataGridViewTextBoxColumn
             // 
             this.nombreActividadDataGridViewTextBoxColumn.DataPropertyName = "NombreActividad";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.nombreActividadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.nombreActividadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.nombreActividadDataGridViewTextBoxColumn.HeaderText = "Nombre Actividad";
             this.nombreActividadDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreActividadDataGridViewTextBoxColumn.Name = "nombreActividadDataGridViewTextBoxColumn";
@@ -107,11 +89,11 @@ namespace ProyectoDI_GrupoD.Vistas
             // nombreMonitorDataGridViewTextBoxColumn
             // 
             this.nombreMonitorDataGridViewTextBoxColumn.DataPropertyName = "NombreMonitor";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.nombreMonitorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.nombreMonitorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.nombreMonitorDataGridViewTextBoxColumn.HeaderText = "Nombre Monitor";
             this.nombreMonitorDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreMonitorDataGridViewTextBoxColumn.Name = "nombreMonitorDataGridViewTextBoxColumn";
@@ -119,10 +101,10 @@ namespace ProyectoDI_GrupoD.Vistas
             // apellidoMonitorDataGridViewTextBoxColumn
             // 
             this.apellidoMonitorDataGridViewTextBoxColumn.DataPropertyName = "ApellidoMonitor";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.apellidoMonitorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.apellidoMonitorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.apellidoMonitorDataGridViewTextBoxColumn.HeaderText = "Apellido Monitor";
             this.apellidoMonitorDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.apellidoMonitorDataGridViewTextBoxColumn.Name = "apellidoMonitorDataGridViewTextBoxColumn";
@@ -130,31 +112,31 @@ namespace ProyectoDI_GrupoD.Vistas
             // Usuarios_apuntados
             // 
             this.Usuarios_apuntados.DataPropertyName = "NumUsuariosApuntados";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.Usuarios_apuntados.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.Usuarios_apuntados.DefaultCellStyle = dataGridViewCellStyle10;
             this.Usuarios_apuntados.HeaderText = "Usuarios apuntados";
             this.Usuarios_apuntados.Name = "Usuarios_apuntados";
             // 
             // Valoracion_media
             // 
             this.Valoracion_media.DataPropertyName = "ValoracionMedia";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.Valoracion_media.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.Valoracion_media.DefaultCellStyle = dataGridViewCellStyle11;
             this.Valoracion_media.HeaderText = "Valoración";
             this.Valoracion_media.Name = "Valoracion_media";
             // 
             // btnEliminar
             // 
             this.btnEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.DefaultCellStyle = dataGridViewCellStyle12;
             this.btnEliminar.HeaderText = "Eliminar";
             this.btnEliminar.MinimumWidth = 6;
             this.btnEliminar.Name = "btnEliminar";
@@ -162,13 +144,48 @@ namespace ProyectoDI_GrupoD.Vistas
             this.btnEliminar.UseColumnTextForButtonValue = true;
             this.btnEliminar.Width = 170;
             // 
+            // actividadesMonitoresDTOBindingSource1
+            // 
+            this.actividadesMonitoresDTOBindingSource1.DataSource = typeof(Negocio.EntitiesDTO.ActividadesMonitoresDTO);
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnExportarPDF.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnExportarPDF.BorderRadius = 20;
+            this.btnExportarPDF.FillColor = System.Drawing.Color.Transparent;
+            this.btnExportarPDF.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExportarPDF.Location = new System.Drawing.Point(870, 165);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(125, 52);
+            this.btnExportarPDF.TabIndex = 1;
+            this.btnExportarPDF.Text = "Exportar a PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = false;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnExportarExcel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnExportarExcel.BorderRadius = 20;
+            this.btnExportarExcel.FillColor = System.Drawing.Color.Transparent;
+            this.btnExportarExcel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExportarExcel.Location = new System.Drawing.Point(870, 241);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(125, 52);
+            this.btnExportarExcel.TabIndex = 2;
+            this.btnExportarExcel.Text = "Exportar a Excel";
+            this.btnExportarExcel.UseVisualStyleBackColor = false;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
+            // 
             // ListadoActividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1023, 450);
-            this.Controls.Add(this.btnExportar);
+            this.Controls.Add(this.btnExportarExcel);
+            this.Controls.Add(this.btnExportarPDF);
             this.Controls.Add(this.VistaActividades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListadoActividades";
@@ -184,7 +201,7 @@ namespace ProyectoDI_GrupoD.Vistas
         #endregion
 
         private System.Windows.Forms.DataGridView VistaActividades;
-        private RoundedButton btnExportar;
+        private RoundedButton btnExportarPDF;
         private BindingSource actividadesMonitoresDTOBindingSource1;
         private DataGridViewTextBoxColumn nombreActividadDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreMonitorDataGridViewTextBoxColumn;
@@ -192,5 +209,6 @@ namespace ProyectoDI_GrupoD.Vistas
         private DataGridViewTextBoxColumn Usuarios_apuntados;
         private DataGridViewTextBoxColumn Valoracion_media;
         private DataGridViewButtonColumn btnEliminar;
+        private RoundedButton btnExportarExcel;
     }
 }
