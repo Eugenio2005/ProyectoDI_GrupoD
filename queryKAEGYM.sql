@@ -49,6 +49,7 @@ CREATE TABLE Actividades (
     descripcion VARCHAR(100) NOT NULL,
     email_monitor VARCHAR(100),
 	valoracion_media float,
+	numUsuariosApuntados INT, 
     FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
