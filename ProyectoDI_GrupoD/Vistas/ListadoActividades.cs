@@ -107,7 +107,7 @@ namespace ProyectoDI_GrupoD.Vistas
                 var actividad = new ActividadDTO
                 {
                     NombreActividad = row.Cells["nombreActividadDataGridViewTextBoxColumn"].Value?.ToString() ?? "N/A",
-                    MonitorAsociado = row.Cells["nombreMonitorDataGridViewTextBoxColumn"].Value?.ToString() ?? "N/A",
+                    MonitorAsociado = row.Cells["nombreMonitorDataGridViewTextBoxColumn"].Value?.ToString() == "Sin Monitor" ? "N/A" : row.Cells["nombreMonitorDataGridViewTextBoxColumn"].Value?.ToString(),
                     numUsuariosApuntados = int.TryParse(row.Cells["Usuarios_apuntados"].Value?.ToString(), out int usuarios) ? usuarios : 0,
                     Valoracion_media = float.TryParse(row.Cells["Valoracion_media"].Value?.ToString(), out float valoracion) ? valoracion : 0f
                 };
@@ -117,7 +117,6 @@ namespace ProyectoDI_GrupoD.Vistas
 
             return actividades;
         }
-
 
         private void ExportarAExcel(List<ActividadDTO> actividades)
         {
