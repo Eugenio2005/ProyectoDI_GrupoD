@@ -96,7 +96,7 @@ namespace Datos.Repositories
                                             join ac in contexto.Actividades on a.id_actividad equals ac.id_actividad
                                             join u in contexto.Usuarios on a.id_usuario equals u.id_usuario
                                             join m in contexto.Usuarios on ac.email_monitor equals m.email
-                                            where u.email == email// Unir con la tabla Usuarios para obtener los datos del monitor                                            where u.email == email // Asegurarse de que el email coincida
+                                            where u.email == email// Unir con la tabla Usuarios para obtener los datos del monitor                                           
                                             select new ClientActivityViewModel
                                             {
                                                 NombreActividad = ac.nombre_actividad,
@@ -143,7 +143,6 @@ namespace Datos.Repositories
                                                 NombreActividad = a.nombre_actividad,
                                                 NombreMonitor = u.nombre,
                                                 ApellidoMonitor = u.apellidos,
-                                                // Asignar un valor predeterminado en caso de null
                                                 NumUsuariosApuntados = a.numUsuariosApuntados ?? 0, // Si es null, asignamos 0
                                                 ValoracionMedia = a.valoracion_media.HasValue ? a.valoracion_media.Value : 0.0 // Si es null, asignamos 0.0
                                             }).ToList();
@@ -156,8 +155,6 @@ namespace Datos.Repositories
                 return new BindingList<MonitorActivityViewModel>();
             }
         }
-
-
     }
 
 

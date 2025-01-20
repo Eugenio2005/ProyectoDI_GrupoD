@@ -38,8 +38,8 @@ namespace ProyectoDI_GrupoD.Vistas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.VistaActividades = new System.Windows.Forms.DataGridView();
-            this.btnExportar = new ProyectoDI_GrupoD.RoundedButton();
             this.actividadesMonitoresDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExportar = new ProyectoDI_GrupoD.RoundedButton();
             this.nombreActividadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreMonitorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoMonitorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +73,10 @@ namespace ProyectoDI_GrupoD.Vistas
             this.VistaActividades.TabIndex = 0;
             this.VistaActividades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vistaActividades_ClicContenidoEliminarActividad);
             // 
+            // actividadesMonitoresDTOBindingSource1
+            // 
+            this.actividadesMonitoresDTOBindingSource1.DataSource = typeof(Negocio.EntitiesDTO.ActividadesMonitoresDTO);
+            // 
             // btnExportar
             // 
             this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
@@ -87,10 +91,6 @@ namespace ProyectoDI_GrupoD.Vistas
             this.btnExportar.Text = "Exportar a...";
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // actividadesMonitoresDTOBindingSource1
-            // 
-            this.actividadesMonitoresDTOBindingSource1.DataSource = typeof(Negocio.EntitiesDTO.ActividadesMonitoresDTO);
             // 
             // nombreActividadDataGridViewTextBoxColumn
             // 
@@ -129,7 +129,7 @@ namespace ProyectoDI_GrupoD.Vistas
             // 
             // Usuarios_apuntados
             // 
-            this.Usuarios_apuntados.DataPropertyName = "NombreActividad";
+            this.Usuarios_apuntados.DataPropertyName = "NumUsuariosApuntados";
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));
@@ -140,7 +140,7 @@ namespace ProyectoDI_GrupoD.Vistas
             // 
             // Valoracion_media
             // 
-            this.Valoracion_media.DataPropertyName = "NombreActividad";
+            this.Valoracion_media.DataPropertyName = "ValoracionMedia";
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))));

@@ -121,75 +121,98 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void ExportarAExcel(List<ActividadDTO> actividades)
         {
-            using (var package = new ExcelPackage())
+            // Configurar la licencia de EPPlus
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                var worksheet = package.Workbook.Worksheets.Add("Actividades");
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog.Title = "Guardar archivo Excel";
+                saveFileDialog.FileName = "Actividades.xlsx";
 
-                // Cabecera
-                worksheet.Cells[1, 1].Value = "Nombre Actividad";
-                worksheet.Cells[1, 2].Value = "Nombre Monitor";
-                worksheet.Cells[1, 3].Value = "Usuarios Apuntados";
-                worksheet.Cells[1, 4].Value = "Valoración Media";
-
-                int row = 2;
-                foreach (var actividad in actividades)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    worksheet.Cells[row, 1].Value = actividad.NombreActividad;
-                    worksheet.Cells[row, 2].Value = actividad.MonitorAsociado ?? "N/A";
-                    worksheet.Cells[row, 3].Value = actividad.numUsuariosApuntados;
-                    worksheet.Cells[row, 4].Value = actividad.Valoracion_media > 0
-                        ? actividad.Valoracion_media.ToString("F2")
-                        : "N/A";
-                    row++;
+                    using (var package = new ExcelPackage())
+                    {
+                        var worksheet = package.Workbook.Worksheets.Add("Actividades");
+
+                        // Cabecera
+                        worksheet.Cells[1, 1].Value = "Nombre Actividad";
+                        worksheet.Cells[1, 2].Value = "Nombre Monitor";
+                        worksheet.Cells[1, 3].Value = "Usuarios Apuntados";
+                        worksheet.Cells[1, 4].Value = "Valoración Media";
+
+                        int row = 2;
+                        foreach (var actividad in actividades)
+                        {
+                            worksheet.Cells[row, 1].Value = actividad.NombreActividad;
+                            worksheet.Cells[row, 2].Value = actividad.MonitorAsociado ?? "N/A";
+                            worksheet.Cells[row, 3].Value = actividad.numUsuariosApuntados;
+                            worksheet.Cells[row, 4].Value = actividad.Valoracion_media > 0
+                                ? actividad.Valoracion_media.ToString("F2")
+                                : "N/A";
+                            row++;
+                        }
+
+                        package.SaveAs(new FileInfo(saveFileDialog.FileName));
+                    }
+
+                    MessageBox.Show("Excel generado con éxito.");
                 }
-
-                var saveFile = "Actividades.xlsx";
-                package.SaveAs(new FileInfo(saveFile));
             }
-
-            MessageBox.Show("Excel generado con éxito.");
         }
-
 
         private void ExportarAPDF(List<ActividadDTO> actividades)
         {
-            using (var writer = new PdfWriter("Actividades.pdf"))
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                var pdf = new PdfDocument(writer);
-                var document = new Document(pdf);
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Guardar archivo PDF";
+                saveFileDialog.FileName = "Actividades.pdf";
 
-                // Crear fuente en negrita
-                var boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-
-                // Crear el párrafo con estilo
-                var titulo = new Paragraph("Listado de Actividades")
-                    .SetFont(boldFont) // Asignar la fuente en negrita
-                    .SetFontSize(16);
-
-                document.Add(titulo);
-
-                // Tabla
-                var table = new Table(4); // 4 columnas
-                table.AddHeaderCell("Nombre Actividad");
-                table.AddHeaderCell("Nombre Monitor");
-                table.AddHeaderCell("Usuarios Apuntados");
-                table.AddHeaderCell("Valoración Media");
-
-                foreach (var actividad in actividades)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    table.AddCell(actividad.NombreActividad);
-                    table.AddCell(actividad.MonitorAsociado ?? "N/A");
-                    table.AddCell(actividad.numUsuariosApuntados.ToString());
-                    table.AddCell(actividad.Valoracion_media > 0
-                        ? actividad.Valoracion_media.ToString("F2")
-                        : "N/A");
+                    using (var writer = new PdfWriter(saveFileDialog.FileName))
+                    {
+                        var pdf = new PdfDocument(writer);
+                        var document = new Document(pdf);
+
+                        // Crear fuente en negrita
+                        var boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+
+                        // Crear el párrafo con estilo
+                        var titulo = new Paragraph("Listado de Actividades")
+                            .SetFont(boldFont) // Asignar la fuente en negrita
+                            .SetFontSize(16);
+
+                        document.Add(titulo);
+
+                        // Tabla
+                        var table = new Table(4); // 4 columnas
+                        table.AddHeaderCell("Nombre Actividad");
+                        table.AddHeaderCell("Nombre Monitor");
+                        table.AddHeaderCell("Usuarios Apuntados");
+                        table.AddHeaderCell("Valoración Media");
+
+                        foreach (var actividad in actividades)
+                        {
+                            table.AddCell(actividad.NombreActividad);
+                            table.AddCell(actividad.MonitorAsociado ?? "N/A");
+                            table.AddCell(actividad.numUsuariosApuntados.ToString());
+                            table.AddCell(actividad.Valoracion_media > 0
+                                ? actividad.Valoracion_media.ToString("F2")
+                                : "N/A");
+                        }
+
+                        document.Add(table);
+                        document.Close();
+                    }
+
+                    MessageBox.Show("PDF generado con éxito.");
                 }
-
-                document.Add(table);
-                document.Close();
             }
-
-            MessageBox.Show("PDF generado con éxito.");
         }
+
+
     }
 }
