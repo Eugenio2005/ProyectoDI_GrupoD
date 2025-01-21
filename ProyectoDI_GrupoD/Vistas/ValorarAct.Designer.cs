@@ -38,6 +38,7 @@
             this.txtNombreActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtDescripActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.txtMonitorAsociado = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.btnDesapuntar = new ProyectoDI_GrupoD.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,10 +47,9 @@
             this.lblMonitor.AutoSize = true;
             this.lblMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.lblMonitor.Location = new System.Drawing.Point(111, 300);
-            this.lblMonitor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMonitor.Location = new System.Drawing.Point(83, 244);
             this.lblMonitor.Name = "lblMonitor";
-            this.lblMonitor.Size = new System.Drawing.Size(198, 29);
+            this.lblMonitor.Size = new System.Drawing.Size(154, 24);
             this.lblMonitor.TabIndex = 14;
             this.lblMonitor.Text = "Monitor asociado";
             // 
@@ -58,10 +58,9 @@
             this.lblDescripActividad.AutoSize = true;
             this.lblDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripActividad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.lblDescripActividad.Location = new System.Drawing.Point(111, 197);
-            this.lblDescripActividad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripActividad.Location = new System.Drawing.Point(83, 160);
             this.lblDescripActividad.Name = "lblDescripActividad";
-            this.lblDescripActividad.Size = new System.Drawing.Size(242, 29);
+            this.lblDescripActividad.Size = new System.Drawing.Size(188, 24);
             this.lblDescripActividad.TabIndex = 13;
             this.lblDescripActividad.Text = "Descripción actividad";
             // 
@@ -70,10 +69,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.label1.Location = new System.Drawing.Point(111, 94);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(83, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 29);
+            this.label1.Size = new System.Drawing.Size(157, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nombre actividad";
             // 
@@ -83,10 +81,10 @@
             this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
             this.imgAtras_Re.ImageLocation = "0;0";
             this.imgAtras_Re.InitialImage = null;
-            this.imgAtras_Re.Location = new System.Drawing.Point(9, 9);
+            this.imgAtras_Re.Location = new System.Drawing.Point(7, 7);
             this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
             this.imgAtras_Re.Name = "imgAtras_Re";
-            this.imgAtras_Re.Size = new System.Drawing.Size(93, 69);
+            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
             this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgAtras_Re.TabIndex = 27;
             this.imgAtras_Re.TabStop = false;
@@ -107,10 +105,9 @@
             this.btnValorar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValorar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValorar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnValorar.Location = new System.Drawing.Point(204, 463);
-            this.btnValorar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnValorar.Location = new System.Drawing.Point(227, 376);
             this.btnValorar.Name = "btnValorar";
-            this.btnValorar.Size = new System.Drawing.Size(147, 54);
+            this.btnValorar.Size = new System.Drawing.Size(110, 44);
             this.btnValorar.TabIndex = 28;
             this.btnValorar.Text = "Valorar";
             this.btnValorar.UseVisualStyleBackColor = false;
@@ -124,12 +121,13 @@
             this.txtNombreActividad.BorderRadius = 15;
             this.txtNombreActividad.BorderSize = 2;
             this.txtNombreActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreActividad.Location = new System.Drawing.Point(115, 140);
+            this.txtNombreActividad.Location = new System.Drawing.Point(86, 114);
+            this.txtNombreActividad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreActividad.MaxLength = 32767;
             this.txtNombreActividad.Name = "txtNombreActividad";
             this.txtNombreActividad.OnlyAllowNumbers = false;
-            this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(10);
-            this.txtNombreActividad.Size = new System.Drawing.Size(337, 35);
+            this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.txtNombreActividad.Size = new System.Drawing.Size(253, 28);
             this.txtNombreActividad.TabIndex = 30;
             this.txtNombreActividad.UseSystemPasswordChar = false;
             // 
@@ -141,12 +139,13 @@
             this.txtDescripActividad.BorderRadius = 15;
             this.txtDescripActividad.BorderSize = 2;
             this.txtDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripActividad.Location = new System.Drawing.Point(115, 241);
+            this.txtDescripActividad.Location = new System.Drawing.Point(86, 196);
+            this.txtDescripActividad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDescripActividad.MaxLength = 32767;
             this.txtDescripActividad.Name = "txtDescripActividad";
             this.txtDescripActividad.OnlyAllowNumbers = false;
-            this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(10);
-            this.txtDescripActividad.Size = new System.Drawing.Size(337, 35);
+            this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.txtDescripActividad.Size = new System.Drawing.Size(253, 28);
             this.txtDescripActividad.TabIndex = 31;
             this.txtDescripActividad.UseSystemPasswordChar = false;
             // 
@@ -158,21 +157,46 @@
             this.txtMonitorAsociado.BorderRadius = 15;
             this.txtMonitorAsociado.BorderSize = 2;
             this.txtMonitorAsociado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonitorAsociado.Location = new System.Drawing.Point(115, 351);
+            this.txtMonitorAsociado.Location = new System.Drawing.Point(86, 285);
+            this.txtMonitorAsociado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMonitorAsociado.MaxLength = 32767;
             this.txtMonitorAsociado.Name = "txtMonitorAsociado";
             this.txtMonitorAsociado.OnlyAllowNumbers = false;
-            this.txtMonitorAsociado.Padding = new System.Windows.Forms.Padding(10);
-            this.txtMonitorAsociado.Size = new System.Drawing.Size(337, 35);
+            this.txtMonitorAsociado.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.txtMonitorAsociado.Size = new System.Drawing.Size(253, 28);
             this.txtMonitorAsociado.TabIndex = 32;
             this.txtMonitorAsociado.UseSystemPasswordChar = false;
             // 
+            // btnDesapuntar
+            // 
+            this.btnDesapuntar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDesapuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnDesapuntar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.btnDesapuntar.BorderRadius = 20;
+            this.btnDesapuntar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesapuntar.FillColor = System.Drawing.Color.Transparent;
+            this.btnDesapuntar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnDesapuntar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(108)))), ((int)(((byte)(124)))));
+            this.btnDesapuntar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesapuntar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesapuntar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDesapuntar.Location = new System.Drawing.Point(87, 376);
+            this.btnDesapuntar.Name = "btnDesapuntar";
+            this.btnDesapuntar.Size = new System.Drawing.Size(110, 44);
+            this.btnDesapuntar.TabIndex = 33;
+            this.btnDesapuntar.Text = "Desapuntar";
+            this.btnDesapuntar.UseVisualStyleBackColor = false;
+            this.btnDesapuntar.Click += new System.EventHandler(this.btnDesapuntar_Click);
+            // 
             // ValorarAct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(563, 551);
+            this.ClientSize = new System.Drawing.Size(422, 448);
+            this.Controls.Add(this.btnDesapuntar);
             this.Controls.Add(this.txtMonitorAsociado);
             this.Controls.Add(this.txtDescripActividad);
             this.Controls.Add(this.txtNombreActividad);
@@ -182,7 +206,7 @@
             this.Controls.Add(this.lblDescripActividad);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ValorarAct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InformacionActividad";
@@ -203,5 +227,6 @@
         private TextBoxRedondeado txtNombreActividad;
         private TextBoxRedondeado txtDescripActividad;
         private TextBoxRedondeado txtMonitorAsociado;
+        private RoundedButton btnDesapuntar;
     }
 }
