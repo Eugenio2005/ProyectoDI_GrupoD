@@ -154,13 +154,34 @@ namespace Datos.Repositories
                                .FirstOrDefault(); // Obtén el primer resultado o un valor predeterminado (null si no encuentra).
             }
         }
+    
+        public List<Actividades> ObtenerTop5Actividades()
+        {
+            try
+            {
+                using (var contexto = new equipodEntities())
+                {
+                    var top5Actividades = contexto.Actividades
+                                                  .OrderByDescending(a => a.valoracion_media)
+                                                  .Take(5)
+                                                  .ToList();
+                    return top5Actividades;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);  // Mostrar mensaje de error para depuración
+                return new List<Actividades>();
+            }
+        }
     }
 
 
-        /// <summary>
-        /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
-        /// </summary>
-        public class MonitorActivityViewModel
+
+    /// <summary>
+    /// ViewModel utilizado para mostrar la actividad y el monitor asociado.
+    /// </summary>
+    public class MonitorActivityViewModel
     {
         public string NombreActividad { get; set; }
         public string NombreMonitor { get; set; }
@@ -177,6 +198,6 @@ namespace Datos.Repositories
         public string NombreMonitor { get; set; }
         public string ApellidoMonitor { get; set; }
         public double? Valoracion_media {  get; set; }
-        public int Valoracion {  get; set; }
+        public int? Valoracion {  get; set; }
     }
 }

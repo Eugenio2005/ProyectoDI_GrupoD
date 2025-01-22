@@ -227,5 +227,26 @@ namespace Negocio.Management
             new Datos.Repositories.ValoracionRepository().ActualizarValoracion(valoracionDTO);
         }
 
+
+ 
+
+        public List<ActividadDTO> ObtenerTop5Actividades()
+        {
+            var actividadRepo = new ActividadRepository();
+            var top5Actividades = actividadRepo.ObtenerTop5Actividades();
+
+            var actividadesDTO = top5Actividades.Select(a => new ActividadDTO
+            {
+                NombreActividad = a.nombre_actividad,
+                DescripActividad = a.descripcion,
+                MonitorAsociado = a.email_monitor,
+                Valoracion_media = a.valoracion_media ?? 0
+            }).ToList();
+
+            return actividadesDTO;
+        }
     }
-}
+
+
+    }
+

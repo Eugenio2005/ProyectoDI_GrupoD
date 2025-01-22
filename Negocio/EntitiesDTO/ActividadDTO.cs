@@ -14,6 +14,6 @@ namespace Negocio.EntitiesDTO
         public string NombreActividad { get; set; }
         public string DescripActividad { get; set; }
         public string MonitorAsociado { get; set; }
-        public float Valoracion_media { get; set; }
+        public double Valoracion_media { get; set; }
     }
 }
