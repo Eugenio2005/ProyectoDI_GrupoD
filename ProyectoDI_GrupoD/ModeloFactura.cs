@@ -16,14 +16,14 @@ namespace ProyectoDI_GrupoD {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Facturas : ReportClass {
+    public class ModeloFactura : ReportClass {
         
-        public Facturas() {
+        public ModeloFactura() {
         }
         
         public override string ResourceName {
             get {
-                return "Facturas.rpt";
+                return "ModeloFactura.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ProyectoDI_GrupoD {
         
         public override string FullResourceName {
             get {
-                return "ProyectoDI_GrupoD.Facturas.rpt";
+                return "ProyectoDI_GrupoD.ModeloFactura.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ProyectoDI_GrupoD {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedFacturas : Component, ICachedReport {
+    public class CachedModeloFactura : Component, ICachedReport {
         
-        public CachedFacturas() {
+        public CachedModeloFactura() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ProyectoDI_GrupoD {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Facturas rpt = new Facturas();
+            ModeloFactura rpt = new ModeloFactura();
             rpt.Site = this.Site;
             return rpt;
         }
