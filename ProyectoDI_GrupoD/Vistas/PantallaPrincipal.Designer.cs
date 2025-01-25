@@ -33,26 +33,27 @@
             this.ctxtmsCerrarSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
             this.lblTextoSuperior = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlUsuario = new System.Windows.Forms.Panel();
+            this.pnlActividadesDisponibles = new System.Windows.Forms.Panel();
+            this.plMisActividades = new System.Windows.Forms.Panel();
+            this.usuarioTimer = new System.Windows.Forms.Timer(this.components);
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
+            this.imageButton1 = new ProyectoDI_GrupoD.ImageButton();
             this.CerrarSSesion = new ProyectoDI_GrupoD.ImageButton();
             this.EditarPerfil = new ProyectoDI_GrupoD.ImageButton();
             this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
-            this.pnlActividadesDisponibles = new System.Windows.Forms.Panel();
             this.ActividadDisponible = new ProyectoDI_GrupoD.ImageButton();
-            this.plMisActividades = new System.Windows.Forms.Panel();
             this.MisActividades = new ProyectoDI_GrupoD.ImageButton();
-            this.usuarioTimer = new System.Windows.Forms.Timer(this.components);
             this.ctxtmsCerrarSesion.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.pnlBotones.SuspendLayout();
             this.pnlUsuario.SuspendLayout();
             this.pnlActividadesDisponibles.SuspendLayout();
             this.plMisActividades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).BeginInit();
             this.SuspendLayout();
             // 
             // ctxtmsCerrarSesion
@@ -81,21 +82,6 @@
             this.pnlSuperior.Size = new System.Drawing.Size(661, 100);
             this.pnlSuperior.TabIndex = 2;
             // 
-            // imgAtras_Re
-            // 
-            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
-            this.imgAtras_Re.ImageLocation = "0;0";
-            this.imgAtras_Re.InitialImage = null;
-            this.imgAtras_Re.Location = new System.Drawing.Point(21, 15);
-            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
-            this.imgAtras_Re.Name = "imgAtras_Re";
-            this.imgAtras_Re.Size = new System.Drawing.Size(70, 56);
-            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.imgAtras_Re.TabIndex = 28;
-            this.imgAtras_Re.TabStop = false;
-            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
-            // 
             // lblTextoSuperior
             // 
             this.lblTextoSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -115,7 +101,7 @@
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(301, 100);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(661, 448);
+            this.pnlPrincipal.Size = new System.Drawing.Size(661, 452);
             this.pnlPrincipal.TabIndex = 3;
             // 
             // pnlBotones
@@ -127,21 +113,75 @@
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBotones.Location = new System.Drawing.Point(0, 0);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(301, 548);
+            this.pnlBotones.Size = new System.Drawing.Size(301, 552);
             this.pnlBotones.TabIndex = 1;
             // 
             // pnlUsuario
             // 
+            this.pnlUsuario.Controls.Add(this.imageButton1);
             this.pnlUsuario.Controls.Add(this.CerrarSSesion);
             this.pnlUsuario.Controls.Add(this.EditarPerfil);
             this.pnlUsuario.Controls.Add(this.NombreUsuario);
             this.pnlUsuario.Location = new System.Drawing.Point(2, 2);
             this.pnlUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlUsuario.MaximumSize = new System.Drawing.Size(300, 170);
+            this.pnlUsuario.MaximumSize = new System.Drawing.Size(300, 220);
             this.pnlUsuario.MinimumSize = new System.Drawing.Size(300, 59);
             this.pnlUsuario.Name = "pnlUsuario";
-            this.pnlUsuario.Size = new System.Drawing.Size(300, 59);
+            this.pnlUsuario.Size = new System.Drawing.Size(300, 220);
             this.pnlUsuario.TabIndex = 0;
+            // 
+            // pnlActividadesDisponibles
+            // 
+            this.pnlActividadesDisponibles.Controls.Add(this.ActividadDisponible);
+            this.pnlActividadesDisponibles.Location = new System.Drawing.Point(2, 226);
+            this.pnlActividadesDisponibles.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlActividadesDisponibles.Name = "pnlActividadesDisponibles";
+            this.pnlActividadesDisponibles.Size = new System.Drawing.Size(300, 61);
+            this.pnlActividadesDisponibles.TabIndex = 1;
+            // 
+            // plMisActividades
+            // 
+            this.plMisActividades.Controls.Add(this.MisActividades);
+            this.plMisActividades.Location = new System.Drawing.Point(2, 291);
+            this.plMisActividades.Margin = new System.Windows.Forms.Padding(2);
+            this.plMisActividades.Name = "plMisActividades";
+            this.plMisActividades.Size = new System.Drawing.Size(300, 61);
+            this.plMisActividades.TabIndex = 1;
+            // 
+            // usuarioTimer
+            // 
+            this.usuarioTimer.Interval = 10;
+            this.usuarioTimer.Tick += new System.EventHandler(this.usuarioTimer_Tick);
+            // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = null;
+            this.imgAtras_Re.Location = new System.Drawing.Point(28, 19);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(93, 69);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 28;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
+            // 
+            // imageButton1
+            // 
+            this.imageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(71)))), ((int)(((byte)(24)))));
+            this.imageButton1.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.factura;
+            this.imageButton1.ButtonText = "MIS FACTURAS";
+            this.imageButton1.ContextMenuStrip = this.ctxtmsCerrarSesion;
+            this.imageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButton1.HoverBackColor = System.Drawing.Color.LightGray;
+            this.imageButton1.Location = new System.Drawing.Point(-1, 115);
+            this.imageButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.imageButton1.Name = "imageButton1";
+            this.imageButton1.Size = new System.Drawing.Size(300, 50);
+            this.imageButton1.TabIndex = 3;
+            this.imageButton1.Click += new System.EventHandler(this.imageButton1_Click);
             // 
             // CerrarSSesion
             // 
@@ -151,8 +191,8 @@
             this.CerrarSSesion.ContextMenuStrip = this.ctxtmsCerrarSesion;
             this.CerrarSSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CerrarSSesion.HoverBackColor = System.Drawing.Color.LightGray;
-            this.CerrarSSesion.Location = new System.Drawing.Point(0, 116);
-            this.CerrarSSesion.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CerrarSSesion.Location = new System.Drawing.Point(0, 170);
+            this.CerrarSSesion.Margin = new System.Windows.Forms.Padding(6);
             this.CerrarSSesion.Name = "CerrarSSesion";
             this.CerrarSSesion.Size = new System.Drawing.Size(300, 50);
             this.CerrarSSesion.TabIndex = 2;
@@ -165,8 +205,8 @@
             this.EditarPerfil.ButtonText = "EDITAR PERFIL";
             this.EditarPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EditarPerfil.HoverBackColor = System.Drawing.Color.LightGray;
-            this.EditarPerfil.Location = new System.Drawing.Point(-1, 60);
-            this.EditarPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.EditarPerfil.Location = new System.Drawing.Point(0, 60);
+            this.EditarPerfil.Margin = new System.Windows.Forms.Padding(6);
             this.EditarPerfil.Name = "EditarPerfil";
             this.EditarPerfil.Size = new System.Drawing.Size(300, 50);
             this.EditarPerfil.TabIndex = 1;
@@ -180,21 +220,12 @@
             this.NombreUsuario.ContextMenuStrip = this.ctxtmsCerrarSesion;
             this.NombreUsuario.Cursor = System.Windows.Forms.Cursors.Cross;
             this.NombreUsuario.HoverBackColor = System.Drawing.Color.LightGray;
-            this.NombreUsuario.Location = new System.Drawing.Point(-1, 5);
-            this.NombreUsuario.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NombreUsuario.Location = new System.Drawing.Point(0, 5);
+            this.NombreUsuario.Margin = new System.Windows.Forms.Padding(6);
             this.NombreUsuario.Name = "NombreUsuario";
             this.NombreUsuario.Size = new System.Drawing.Size(300, 50);
             this.NombreUsuario.TabIndex = 0;
             this.NombreUsuario.Click += new System.EventHandler(this.NombreUsuario_Click);
-            // 
-            // pnlActividadesDisponibles
-            // 
-            this.pnlActividadesDisponibles.Controls.Add(this.ActividadDisponible);
-            this.pnlActividadesDisponibles.Location = new System.Drawing.Point(2, 65);
-            this.pnlActividadesDisponibles.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlActividadesDisponibles.Name = "pnlActividadesDisponibles";
-            this.pnlActividadesDisponibles.Size = new System.Drawing.Size(299, 62);
-            this.pnlActividadesDisponibles.TabIndex = 1;
             // 
             // ActividadDisponible
             // 
@@ -203,21 +234,12 @@
             this.ActividadDisponible.ButtonText = "ACTIVIDADES DISPONIBLES";
             this.ActividadDisponible.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActividadDisponible.HoverBackColor = System.Drawing.Color.LightGray;
-            this.ActividadDisponible.Location = new System.Drawing.Point(-1, 6);
-            this.ActividadDisponible.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ActividadDisponible.Location = new System.Drawing.Point(0, 6);
+            this.ActividadDisponible.Margin = new System.Windows.Forms.Padding(6);
             this.ActividadDisponible.Name = "ActividadDisponible";
             this.ActividadDisponible.Size = new System.Drawing.Size(300, 50);
             this.ActividadDisponible.TabIndex = 1;
             this.ActividadDisponible.Click += new System.EventHandler(this.ActividadDisponible_Click);
-            // 
-            // plMisActividades
-            // 
-            this.plMisActividades.Controls.Add(this.MisActividades);
-            this.plMisActividades.Location = new System.Drawing.Point(2, 131);
-            this.plMisActividades.Margin = new System.Windows.Forms.Padding(2);
-            this.plMisActividades.Name = "plMisActividades";
-            this.plMisActividades.Size = new System.Drawing.Size(299, 62);
-            this.plMisActividades.TabIndex = 1;
             // 
             // MisActividades
             // 
@@ -227,23 +249,18 @@
             this.MisActividades.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MisActividades.HoverBackColor = System.Drawing.Color.LightGray;
             this.MisActividades.Location = new System.Drawing.Point(0, 6);
-            this.MisActividades.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MisActividades.Margin = new System.Windows.Forms.Padding(6);
             this.MisActividades.Name = "MisActividades";
             this.MisActividades.Size = new System.Drawing.Size(300, 50);
             this.MisActividades.TabIndex = 2;
             this.MisActividades.Click += new System.EventHandler(this.MisActividades_Click);
-            // 
-            // usuarioTimer
-            // 
-            this.usuarioTimer.Interval = 10;
-            this.usuarioTimer.Tick += new System.EventHandler(this.usuarioTimer_Tick);
             // 
             // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(962, 548);
+            this.ClientSize = new System.Drawing.Size(962, 552);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlSuperior);
             this.Controls.Add(this.pnlBotones);
@@ -256,11 +273,11 @@
             this.ctxtmsCerrarSesion.ResumeLayout(false);
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.pnlBotones.ResumeLayout(false);
             this.pnlUsuario.ResumeLayout(false);
             this.pnlActividadesDisponibles.ResumeLayout(false);
             this.plMisActividades.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +299,6 @@
         private System.Windows.Forms.Timer usuarioTimer;
         private ImageButton CerrarSSesion;
         private ImageButton EditarPerfil;
+        private ImageButton imageButton1;
     }
 }
