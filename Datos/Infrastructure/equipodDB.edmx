@@ -15,6 +15,7 @@
           <Property Name="email_monitor" Type="varchar" MaxLength="100" />
           <Property Name="valoracion_media" Type="float" />
           <Property Name="numUsuariosApuntados" Type="int" />
+          <Property Name="precio_actividad" Type="float" />
         </EntityType>
         <EntityType Name="Administradores">
           <Key>
@@ -57,6 +58,7 @@
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="id_actividad" Type="int" Nullable="false" />
           <Property Name="valoracion" Type="int" />
+          <Property Name="cantidad_servicios" Type="int" />
         </EntityType>
         <EntityType Name="Valoraciones">
           <Key>
@@ -66,6 +68,7 @@
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="id_actividad" Type="int" Nullable="false" />
           <Property Name="valoracion" Type="int" Nullable="false" />
+          <Property Name="mes_valoracion" Type="varchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK__Actividad__email__45F365D3">
           <End Role="Monitores" Type="Self.Monitores" Multiplicity="0..1" />
@@ -188,6 +191,7 @@ advertencia 6035: La relación 'FK__Monitores__email__3F466844' tiene columnas q
           <Property Name="email_monitor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="valoracion_media" Type="Double" />
           <Property Name="numUsuariosApuntados" Type="Int32" />
+          <Property Name="precio_actividad" Type="Double" />
           <NavigationProperty Name="Monitores" Relationship="Self.FK__Actividad__email__45F365D3" FromRole="Actividades" ToRole="Monitores" />
           <NavigationProperty Name="Usuarios_Actividades" Relationship="Self.FK__Usuarios___id_ac__4E88ABD4" FromRole="Actividades" ToRole="Usuarios_Actividades" />
           <NavigationProperty Name="Valoraciones" Relationship="Self.FK__Valoracio__id_ac__4AB81AF0" FromRole="Actividades" ToRole="Valoraciones" />
@@ -236,6 +240,7 @@ advertencia 6035: La relación 'FK__Monitores__email__3F466844' tiene columnas q
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_actividad" Type="Int32" Nullable="false" />
           <Property Name="valoracion" Type="Int32" />
+          <Property Name="cantidad_servicios" Type="Int32" />
           <NavigationProperty Name="Actividades" Relationship="Self.FK__Usuarios___id_ac__4E88ABD4" FromRole="Usuarios_Actividades" ToRole="Actividades" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios___id_us__4D94879B" FromRole="Usuarios_Actividades" ToRole="Usuarios" />
         </EntityType>
@@ -247,6 +252,7 @@ advertencia 6035: La relación 'FK__Monitores__email__3F466844' tiene columnas q
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_actividad" Type="Int32" Nullable="false" />
           <Property Name="valoracion" Type="Int32" Nullable="false" />
+          <Property Name="mes_valoracion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__4AB81AF0" FromRole="Valoraciones" ToRole="Actividades" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__49C3F6B7" FromRole="Valoraciones" ToRole="Usuarios" />
         </EntityType>
@@ -362,6 +368,7 @@ advertencia 6035: La relación 'FK__Monitores__email__3F466844' tiene columnas q
                 <ScalarProperty Name="email_monitor" ColumnName="email_monitor" />
                 <ScalarProperty Name="valoracion_media" ColumnName="valoracion_media" />
                 <ScalarProperty Name="numUsuariosApuntados" ColumnName="numUsuariosApuntados" />
+                <ScalarProperty Name="precio_actividad" ColumnName="precio_actividad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -409,6 +416,7 @@ advertencia 6035: La relación 'FK__Monitores__email__3F466844' tiene columnas q
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
                 <ScalarProperty Name="valoracion" ColumnName="valoracion" />
+                <ScalarProperty Name="cantidad_servicios" ColumnName="cantidad_servicios" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -419,6 +427,7 @@ advertencia 6035: La relación 'FK__Monitores__email__3F466844' tiene columnas q
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
                 <ScalarProperty Name="valoracion" ColumnName="valoracion" />
+                <ScalarProperty Name="mes_valoracion" ColumnName="mes_valoracion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

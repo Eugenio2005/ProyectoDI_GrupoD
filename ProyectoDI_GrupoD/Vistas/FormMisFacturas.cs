@@ -185,5 +185,10 @@ namespace ProyectoDI_GrupoD.Vistas
                 MessageBox.Show($"Error al cargar el informe: {ex.Message}");
             }
         }
+
+        private void FormMisFacturas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
