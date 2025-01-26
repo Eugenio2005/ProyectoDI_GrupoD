@@ -9,7 +9,7 @@ namespace Negocio.EntitiesDTO
     public class ActividadDTO
     {
         private string nombreActividad, descripActividad, monitorAsociado;
-        private float valoracion_media;
+        private float valoracion_media, precioActividad;
         public int numUsuariosApuntados;
 
         public string NombreActividad { get; set; }
@@ -17,5 +17,6 @@ namespace Negocio.EntitiesDTO
         public string MonitorAsociado { get; set; }
         public int NumUsuariosApuntados { get; set; }
         public float Valoracion_media { get; set; }
+        public float PrecioActividad { get; set; }
     }
 }

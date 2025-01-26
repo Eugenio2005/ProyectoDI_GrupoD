@@ -36,6 +36,8 @@
             this.txtDescripActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
             this.btnBorrar = new ProyectoDI_GrupoD.RoundedButton();
             this.comBoxMonitores = new ProyectoDI_GrupoD.ComboBoxRedondeado();
+            this.txtPrecioActividad = new ProyectoDI_GrupoD.TextBoxRedondeado();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -43,9 +45,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.label1.Location = new System.Drawing.Point(165, 64);
+            this.label1.Location = new System.Drawing.Point(215, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(202, 29);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nombre actividad";
             // 
@@ -54,9 +57,10 @@
             this.lblDescripActividad.AutoSize = true;
             this.lblDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripActividad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.lblDescripActividad.Location = new System.Drawing.Point(165, 148);
+            this.lblDescripActividad.Location = new System.Drawing.Point(215, 135);
+            this.lblDescripActividad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripActividad.Name = "lblDescripActividad";
-            this.lblDescripActividad.Size = new System.Drawing.Size(188, 24);
+            this.lblDescripActividad.Size = new System.Drawing.Size(242, 29);
             this.lblDescripActividad.TabIndex = 7;
             this.lblDescripActividad.Text = "Descripción actividad";
             // 
@@ -65,9 +69,10 @@
             this.lblMonitor.AutoSize = true;
             this.lblMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.lblMonitor.Location = new System.Drawing.Point(165, 232);
+            this.lblMonitor.Location = new System.Drawing.Point(217, 350);
+            this.lblMonitor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMonitor.Name = "lblMonitor";
-            this.lblMonitor.Size = new System.Drawing.Size(154, 24);
+            this.lblMonitor.Size = new System.Drawing.Size(198, 29);
             this.lblMonitor.TabIndex = 8;
             this.lblMonitor.Text = "Monitor asociado";
             // 
@@ -82,10 +87,11 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnRegistrar.Location = new System.Drawing.Point(100, 364);
+            this.btnRegistrar.Location = new System.Drawing.Point(133, 512);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(145, 43);
-            this.btnRegistrar.TabIndex = 4;
+            this.btnRegistrar.Size = new System.Drawing.Size(193, 53);
+            this.btnRegistrar.TabIndex = 13;
             this.btnRegistrar.Text = "Registrar Actividad";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -98,12 +104,13 @@
             this.txtNombreActividad.BorderRadius = 15;
             this.txtNombreActividad.BorderSize = 2;
             this.txtNombreActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreActividad.Location = new System.Drawing.Point(168, 101);
+            this.txtNombreActividad.Location = new System.Drawing.Point(219, 77);
+            this.txtNombreActividad.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreActividad.MaxLength = 32767;
             this.txtNombreActividad.Name = "txtNombreActividad";
             this.txtNombreActividad.OnlyAllowNumbers = false;
-            this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.txtNombreActividad.Size = new System.Drawing.Size(254, 33);
+            this.txtNombreActividad.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtNombreActividad.Size = new System.Drawing.Size(339, 41);
             this.txtNombreActividad.TabIndex = 9;
             this.txtNombreActividad.UseSystemPasswordChar = false;
             // 
@@ -115,12 +122,13 @@
             this.txtDescripActividad.BorderRadius = 15;
             this.txtDescripActividad.BorderSize = 2;
             this.txtDescripActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripActividad.Location = new System.Drawing.Point(168, 185);
+            this.txtDescripActividad.Location = new System.Drawing.Point(219, 181);
+            this.txtDescripActividad.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripActividad.MaxLength = 32767;
             this.txtDescripActividad.Name = "txtDescripActividad";
             this.txtDescripActividad.OnlyAllowNumbers = false;
-            this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
-            this.txtDescripActividad.Size = new System.Drawing.Size(254, 33);
+            this.txtDescripActividad.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtDescripActividad.Size = new System.Drawing.Size(339, 41);
             this.txtDescripActividad.TabIndex = 10;
             this.txtDescripActividad.UseSystemPasswordChar = false;
             // 
@@ -135,10 +143,11 @@
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBorrar.Location = new System.Drawing.Point(352, 364);
+            this.btnBorrar.Location = new System.Drawing.Point(469, 512);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(122, 43);
-            this.btnBorrar.TabIndex = 11;
+            this.btnBorrar.Size = new System.Drawing.Size(163, 53);
+            this.btnBorrar.TabIndex = 14;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
@@ -152,20 +161,53 @@
             this.comBoxMonitores.DataSource = null;
             this.comBoxMonitores.DisplayMember = "";
             this.comBoxMonitores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comBoxMonitores.Location = new System.Drawing.Point(168, 270);
+            this.comBoxMonitores.Location = new System.Drawing.Point(221, 396);
+            this.comBoxMonitores.Margin = new System.Windows.Forms.Padding(4);
             this.comBoxMonitores.Name = "comBoxMonitores";
-            this.comBoxMonitores.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.comBoxMonitores.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.comBoxMonitores.SelectedValue = null;
-            this.comBoxMonitores.Size = new System.Drawing.Size(254, 40);
+            this.comBoxMonitores.Size = new System.Drawing.Size(339, 49);
             this.comBoxMonitores.TabIndex = 12;
             this.comBoxMonitores.ValueMember = "";
             // 
+            // txtPrecioActividad
+            // 
+            this.txtPrecioActividad.BackColor = System.Drawing.Color.White;
+            this.txtPrecioActividad.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.txtPrecioActividad.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.txtPrecioActividad.BorderRadius = 15;
+            this.txtPrecioActividad.BorderSize = 2;
+            this.txtPrecioActividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioActividad.Location = new System.Drawing.Point(219, 293);
+            this.txtPrecioActividad.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecioActividad.MaxLength = 32767;
+            this.txtPrecioActividad.Name = "txtPrecioActividad";
+            this.txtPrecioActividad.OnlyAllowNumbers = false;
+            this.txtPrecioActividad.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.txtPrecioActividad.Size = new System.Drawing.Size(339, 41);
+            this.txtPrecioActividad.TabIndex = 11;
+            this.txtPrecioActividad.UseSystemPasswordChar = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.label2.Location = new System.Drawing.Point(215, 247);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(184, 29);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Precio actividad";
+            // 
             // AltaActividad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(579, 450);
+            this.ClientSize = new System.Drawing.Size(772, 642);
+            this.Controls.Add(this.txtPrecioActividad);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.comBoxMonitores);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.txtDescripActividad);
@@ -175,6 +217,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AltaActividad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaActividad";
@@ -193,5 +236,7 @@
         private TextBoxRedondeado txtDescripActividad;
         private RoundedButton btnBorrar;
         private ComboBoxRedondeado comBoxMonitores;
+        private TextBoxRedondeado txtPrecioActividad;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -33,6 +33,7 @@ namespace Negocio.Management
             {
                 nombre_actividad = actividadDTO.NombreActividad,
                 descripcion = actividadDTO.DescripActividad,
+                precio_actividad = actividadDTO.PrecioActividad,
                 email_monitor = string.IsNullOrWhiteSpace(actividadDTO.MonitorAsociado) ? "Sin monitor" : actividadDTO.MonitorAsociado
             };
 
