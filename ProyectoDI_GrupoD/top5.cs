@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoDI_GrupoD.Informe {
+namespace ProyectoDI_GrupoD {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace ProyectoDI_GrupoD.Informe {
         
         public override string FullResourceName {
             get {
-                return "ProyectoDI_GrupoD.Informe.top5.rpt";
+                return "ProyectoDI_GrupoD.top5.rpt";
             }
             set {
                 // Do nothing

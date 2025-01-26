@@ -18,7 +18,7 @@ namespace Datos.Infrastructure
         public int id_usuario { get; set; }
         public int id_actividad { get; set; }
         public int valoracion { get; set; }
-        public string mes_valoracion { get; set; }
+        public Nullable<System.DateTime> fecha_valoracion { get; set; }
     
         public virtual Actividades Actividades { get; set; }
         public virtual Usuarios Usuarios { get; set; }

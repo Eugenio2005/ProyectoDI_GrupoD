@@ -291,6 +291,12 @@
     <Compile Include="TextBoxRedondeado.Designer.cs">
       <DependentUpon>TextBoxRedondeado.cs</DependentUpon>
     </Compile>
+    <Compile Include="top5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>top5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Vistas\ActividadesCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -416,6 +422,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TextBoxRedondeado.resx">
       <DependentUpon>TextBoxRedondeado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="top5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>top5.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ActividadesCliente.resx">
       <DependentUpon>ActividadesCliente.cs</DependentUpon>
