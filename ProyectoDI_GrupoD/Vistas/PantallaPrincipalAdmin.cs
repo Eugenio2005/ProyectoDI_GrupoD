@@ -148,6 +148,21 @@ namespace ProyectoDI_GrupoD
             menuInicio.ShowDialog();
         }
 
+        private void imageButton1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void imageButtonTop5_Click(object sender, EventArgs e)
+        {
+            pnlSuperiorDarDeAltaMonitor.Visible = true;
+            lblTextoSuperior.Text = "--- TOP ACTIVIDADES ---";
+            CentrarLabel(lblTextoSuperior, pnlSuperiorDarDeAltaMonitor);
+
+            VistaTop5 vistaTop = new VistaTop5();
+            AbrirPanel(vistaTop, pnlPrincipal);
+        }
+
+
         /// <summary>
         /// Maneja el evento de cierre del formulario principal.
         /// Cierra la aplicación cuando se intenta cerrar el formulario.

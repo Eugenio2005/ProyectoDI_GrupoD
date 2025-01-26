@@ -391,11 +391,11 @@
     <Compile Include="Vistas\RegistroMonitor.Designer.cs">
       <DependentUpon>RegistroMonitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\vistaTop5.cs">
+    <Compile Include="Vistas\VistaTop5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\vistaTop5.Designer.cs">
-      <DependentUpon>vistaTop5.cs</DependentUpon>
+    <Compile Include="Vistas\VistaTop5.Designer.cs">
+      <DependentUpon>VistaTop5.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="graficoTop5.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -482,8 +482,8 @@
     <EmbeddedResource Include="Vistas\ValorarAct.resx">
       <DependentUpon>ValorarAct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\vistaTop5.resx">
-      <DependentUpon>vistaTop5.cs</DependentUpon>
+    <EmbeddedResource Include="Vistas\VistaTop5.resx">
+      <DependentUpon>VistaTop5.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Negocio.EntitiesDTO.ActividadesClientesDTO1.datasource" />
@@ -515,6 +515,9 @@
     <Content Include="Recursos\KAE_GYM novo.png" />
     <Content Include="Recursos\KAE_GYM_novo re.png" />
     <Content Include="Recursos\Minimizar.png" />
+    <None Include="Resources\icons8-gráfico-combinado-50 %281%29.png" />
+    <None Include="Resources\icons8-gráfico-combinado-50.png" />
+    <None Include="Resources\icons8-gráfico-50.png" />
     <None Include="Resources\factura.png" />
     <None Include="Resources\cerrar-sesion1.png" />
     <Content Include="Resources\Cerrar.png" />
