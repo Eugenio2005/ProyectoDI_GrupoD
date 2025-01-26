@@ -296,7 +296,6 @@ namespace ProyectoDI_GrupoD.Vistas
             txtDNI_Re.Clear();
             txtTelefonoRe.Clear();
             txtEmailRe.Text = placeholderTextEmail; // Restaura el placeholder para email
-            txtEmailRe.BorderColor = Color.White;
             txtDireccionRe.Clear();
             txtContraseñaRe.Clear();
             txtContraseñaRe.UseSystemPasswordChar = true;

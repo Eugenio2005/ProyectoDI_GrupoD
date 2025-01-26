@@ -30,59 +30,6 @@ namespace ProyectoDI_GrupoD.Vistas
             VistaActividadesClientes.DataSource = actividadesList;
         }
 
-        private void VistaActividadesClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Verificar si se hace clic en una fila válida
-            if (e.RowIndex >= 0) // Asegurarse de que la fila no sea el encabezado
-            {
-                // Obtener la fila seleccionada
-                DataGridViewRow selectedRow = VistaActividadesClientes.Rows[e.RowIndex];
-
-                // Obtener el valor de la celda correspondiente al nombre de la actividad
-                string nombreActividad = selectedRow.Cells["nombreActividad"].Value?.ToString() ?? string.Empty;
-
-                // Verificar si el usuario está apuntado a la actividad
-                bool usuarioApuntado = new Negocio.Management.UsuarioManagement().comprobarUsuarioApuntado(emailUsuario, nombreActividad);
-
-                // Activar o desactivar botones según el estado del usuario
-                if (usuarioApuntado)
-                {
-                    btnApuntar.Enabled = false;
-                }
-                else
-                {
-                    btnApuntar.Enabled = true;
-                }
-            }
-        }
-
-        private void btnApuntar_Click(object sender, EventArgs e)
-        {
-            // Obtener el índice de la fila seleccionada
-            int rowIndex = VistaActividadesClientes.CurrentCell.RowIndex;
-
-            // Acceder a la fila seleccionada
-            DataGridViewRow selectedRow = VistaActividadesClientes.Rows[rowIndex];
-            ActividadesClientesDTO actividadesClientesDTO = obtenerActividad(selectedRow);
-
-            // Comprobar si el usuario ya está apuntado a la actividad
-            bool usuarioApuntado = new Negocio.Management.UsuarioManagement().comprobarUsuarioApuntado(emailUsuario, actividadesClientesDTO.NombreActividad);
-
-            if (!usuarioApuntado)
-            {
-                // Si el usuario no está apuntado, muestra la vista de información
-                InformacionActividad informacionActividad = new InformacionActividad(actividadesClientesDTO);
-                informacionActividad.ShowDialog();
-            }
-            else
-            {
-                // Si el usuario ya está apuntado, muestra un mensaje de error
-                MessageBox.Show($"El usuario ya está apuntado a esta actividad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-        }
-
         private ActividadesClientesDTO obtenerActividad(DataGridViewRow selectedRow)
         {
             // Obtener los valores de las celdas correspondientes a la fila seleccionada
@@ -96,6 +43,46 @@ namespace ProyectoDI_GrupoD.Vistas
             actividadesClientesDTO.DescripActividad = descripActividad;
 
             return actividadesClientesDTO;
+        }
+
+        private void VistaActividadesClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar si se hace doble clic en una fila válida
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Obtener el índice de la fila seleccionada y establecerlo como la celda actual
+                VistaActividadesClientes.CurrentCell = VistaActividadesClientes.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                // Verificar si la celda actual no es nula
+                if (VistaActividadesClientes.CurrentCell != null)
+                {
+                    // Obtener el índice de la fila seleccionada
+                    int rowIndex = VistaActividadesClientes.CurrentCell.RowIndex;
+
+                    // Verificar si el índice de la fila es válido
+                    if (rowIndex >= 0 && rowIndex < VistaActividadesClientes.Rows.Count)
+                    {
+                        // Acceder a la fila seleccionada
+                        DataGridViewRow selectedRow = VistaActividadesClientes.Rows[rowIndex];
+                        ActividadesClientesDTO actividadesClientesDTO = obtenerActividad(selectedRow);
+
+                        // Comprobar si el usuario ya está apuntado a la actividad
+                        bool usuarioApuntado = new Negocio.Management.UsuarioManagement().comprobarUsuarioApuntado(emailUsuario, actividadesClientesDTO.NombreActividad);
+
+                        if (!usuarioApuntado)
+                        {
+                            // Si el usuario no está apuntado, muestra la vista de información
+                            InformacionActividad informacionActividad = new InformacionActividad(actividadesClientesDTO);
+                            informacionActividad.ShowDialog();
+                        }
+                        else
+                        {
+                            // Si el usuario ya está apuntado, muestra un mensaje de error
+                            MessageBox.Show($"El usuario ya está apuntado a esta actividad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
         }
 
     }

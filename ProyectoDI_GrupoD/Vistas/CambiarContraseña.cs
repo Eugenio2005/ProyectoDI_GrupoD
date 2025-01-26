@@ -20,7 +20,6 @@ namespace ProyectoDI_GrupoD.Vistas
         {
             InitializeComponent();
             aplicarEventoComprobarTextBox();
-            btnRegistrarRe.Enabled = false;
         }
 
         /// <summary>

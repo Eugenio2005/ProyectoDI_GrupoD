@@ -29,7 +29,7 @@ namespace ProyectoDI_GrupoD.Vistas
 
         private void ActividadDisponible_Click(object sender, EventArgs e)
         {
-            MostrarPanel("--- ACTIVIDADES DISPONIBLES ---", new ActividadesCliente());
+           MostrarPanel("--- ACTIVIDADES DISPONIBLES ---", new ActividadesCliente());
         }
 
         private void MisActividades_Click(object sender, EventArgs e)
@@ -155,6 +155,11 @@ namespace ProyectoDI_GrupoD.Vistas
         private void EditarPerfil_Click(object sender, EventArgs e)
         {
             MostrarPanel("--- EDITAR PERFIL ---", new EditarPerfil());
+        }
+
+        private void imageButton1_Click(object sender, EventArgs e)
+        {
+            MostrarPanel("--- GUARDAR FACTURA ---", new FormMisFacturas());
         }
     }
 }

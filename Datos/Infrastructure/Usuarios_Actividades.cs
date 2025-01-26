@@ -17,7 +17,8 @@ namespace Datos.Infrastructure
         public int id_ActividadUsuario { get; set; }
         public int id_usuario { get; set; }
         public int id_actividad { get; set; }
-        public int valoracion { get; set; }
+        public Nullable<int> valoracion { get; set; }
+        public Nullable<int> cantidad_servicios { get; set; }
     
         public virtual Actividades Actividades { get; set; }
         public virtual Usuarios Usuarios { get; set; }

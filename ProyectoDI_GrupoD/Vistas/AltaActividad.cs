@@ -41,6 +41,9 @@ namespace ProyectoDI_GrupoD.Vistas
         {
             actividadDTO.NombreActividad = txtNombreActividad.Text;
             actividadDTO.DescripActividad = txtDescripActividad.Text;
+            actividadDTO.PrecioActividad = (float)Math.Round(float.Parse(txtPrecioActividad.Text, System.Globalization.CultureInfo.InvariantCulture), 2);
+
+
             string nombreApellidoMonitor = comBoxMonitores.Text;
 
             if (nombreApellidoMonitor.Equals("Sin Monitor "))

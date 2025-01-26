@@ -1,8 +1,19 @@
-﻿using Negocio.Management;
+﻿using iText.IO.Font.Constants;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using Negocio.EntitiesDTO;
+using Negocio.Management;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ProyectoDI_GrupoD.Vistas
 {
@@ -73,6 +84,137 @@ namespace ProyectoDI_GrupoD.Vistas
                     }
                 }
             }
+        }
+
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            var actividades = ObtenerDatosActividades(); 
+            ExportarAPDF(actividades);
+        }
+
+        private List<ActividadDTO> ObtenerDatosActividades()
+        {
+            var actividades = new List<ActividadDTO>();
+
+            // Recorremos cada fila del DataGridView
+            foreach (DataGridViewRow row in VistaActividades.Rows)
+            {
+                // Evitar procesar filas nuevas vacías (si AllowUserToAddRows está habilitado)
+                if (row.IsNewRow) continue;
+
+                // Crear una nueva actividad con los datos de la fila
+                var actividad = new ActividadDTO
+                {
+                    NombreActividad = row.Cells["nombreActividadDataGridViewTextBoxColumn"].Value?.ToString() ?? "N/A",
+                    MonitorAsociado = row.Cells["nombreMonitorDataGridViewTextBoxColumn"].Value?.ToString() == "Sin Monitor" ? "N/A" : row.Cells["nombreMonitorDataGridViewTextBoxColumn"].Value?.ToString(),
+                    numUsuariosApuntados = int.TryParse(row.Cells["Usuarios_apuntados"].Value?.ToString(), out int usuarios) ? usuarios : 0,
+                    Valoracion_media = float.TryParse(row.Cells["Valoracion_media"].Value?.ToString(), out float valoracion) ? valoracion : 0f
+                };
+
+                actividades.Add(actividad);
+            }
+
+            return actividades;
+        }
+
+        private void ExportarAExcel(List<ActividadDTO> actividades)
+        {
+            // Configurar la licencia de EPPlus
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog.Title = "Guardar archivo Excel";
+                saveFileDialog.FileName = "Actividades.xlsx";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var package = new ExcelPackage())
+                    {
+                        var worksheet = package.Workbook.Worksheets.Add("Actividades");
+
+                        // Cabecera
+                        worksheet.Cells[1, 1].Value = "Nombre Actividad";
+                        worksheet.Cells[1, 2].Value = "Nombre Monitor";
+                        worksheet.Cells[1, 3].Value = "Usuarios Apuntados";
+                        worksheet.Cells[1, 4].Value = "Valoración Media";
+
+                        int row = 2;
+                        foreach (var actividad in actividades)
+                        {
+                            worksheet.Cells[row, 1].Value = actividad.NombreActividad;
+                            worksheet.Cells[row, 2].Value = actividad.MonitorAsociado ?? "N/A";
+                            worksheet.Cells[row, 3].Value = actividad.numUsuariosApuntados;
+                            worksheet.Cells[row, 4].Value = actividad.Valoracion_media > 0
+                                ? actividad.Valoracion_media.ToString("F2")
+                                : "N/A";
+                            row++;
+                        }
+
+                        package.SaveAs(new FileInfo(saveFileDialog.FileName));
+                    }
+
+                    MessageBox.Show("Excel generado con éxito.");
+                }
+            }
+        }
+
+        private void ExportarAPDF(List<ActividadDTO> actividades)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+                saveFileDialog.Title = "Guardar archivo PDF";
+                saveFileDialog.FileName = "Actividades.pdf";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (var writer = new PdfWriter(saveFileDialog.FileName))
+                    {
+                        var pdf = new PdfDocument(writer);
+                        var document = new Document(pdf);
+
+                        // Crear fuente en negrita
+                        var boldFont = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+
+                        // Crear el párrafo con estilo
+                        var titulo = new Paragraph("Listado de Actividades")
+                            .SetFont(boldFont) // Asignar la fuente en negrita
+                            .SetFontSize(16);
+
+                        document.Add(titulo);
+
+                        // Tabla
+                        var table = new Table(4); // 4 columnas
+                        table.AddHeaderCell("Nombre Actividad");
+                        table.AddHeaderCell("Nombre Monitor");
+                        table.AddHeaderCell("Usuarios Apuntados");
+                        table.AddHeaderCell("Valoración Media");
+
+                        foreach (var actividad in actividades)
+                        {
+                            table.AddCell(actividad.NombreActividad);
+                            table.AddCell(actividad.MonitorAsociado ?? "N/A");
+                            table.AddCell(actividad.numUsuariosApuntados.ToString());
+                            table.AddCell(actividad.Valoracion_media > 0
+                                ? actividad.Valoracion_media.ToString("F2")
+                                : "N/A");
+                        }
+
+                        document.Add(table);
+                        document.Close();
+                    }
+
+                    MessageBox.Show("PDF generado con éxito.");
+                }
+            }
+        }
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            var actividades = ObtenerDatosActividades();
+            ExportarAExcel(actividades);
         }
     }
 }

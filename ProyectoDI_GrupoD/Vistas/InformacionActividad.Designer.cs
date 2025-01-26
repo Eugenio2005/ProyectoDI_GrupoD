@@ -178,6 +178,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InformacionActividad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InformacionActividad";
             this.Load += new System.EventHandler(this.InformacionActividad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgAtras_Re)).EndInit();

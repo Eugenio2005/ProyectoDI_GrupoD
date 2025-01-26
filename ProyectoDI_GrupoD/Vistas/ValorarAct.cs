@@ -235,7 +235,7 @@ namespace ProyectoDI_GrupoD.Vistas
         /// </summary>
         /// <param name="sender">Objeto que generó el evento</param>
         /// <param name="e">Argumentos del evento</param>
-        private void Desapuntar_Click(object sender, EventArgs e)
+        private void btnDesapuntar_Click(object sender, EventArgs e)
         {
             // Comprueba si el usuario está apuntado a la actividad
             bool usuarioApuntado = new Negocio.Management.UsuarioManagement().comprobarUsuarioApuntado(DatosUsuario.Email, act.NombreActividad);
@@ -272,17 +272,6 @@ namespace ProyectoDI_GrupoD.Vistas
                 // Si el usuario no está apuntado, muestra un mensaje de error
                 MessageBox.Show($"El usuario no está apuntado a esta actividad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        /// <summary>
-        /// Evento generado al cambiar el texto del campo de nombre de la actividad.
-        /// Actualmente no tiene lógica asociada.
-        /// </summary>
-        /// <param name="sender">Objeto que generó el evento</param>
-        /// <param name="e">Argumentos del evento</param>
-        private void txtNombreActividad_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
