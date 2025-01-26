@@ -51,12 +51,14 @@ CREATE TABLE Actividades (
     FOREIGN KEY (email_monitor) REFERENCES Monitores(email) ON DELETE SET NULL
 );
 
--- Tabla Valoraciones
+
+-- Tabla Valoraciones actualizada
 CREATE TABLE Valoraciones (
     id_valoracion INT IDENTITY(1,1) PRIMARY KEY,
     id_usuario INT NOT NULL,
     id_actividad INT NOT NULL,
     valoracion INT NOT NULL CHECK (valoracion BETWEEN 1 AND 5),
+    fecha_valoracion DATE, -- Nueva columna para almacenar la fecha de valoración
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_actividad) REFERENCES Actividades(id_actividad) ON DELETE CASCADE
 );
