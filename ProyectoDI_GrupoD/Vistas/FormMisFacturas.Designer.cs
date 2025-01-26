@@ -42,7 +42,7 @@
             this.comboBoxAnios.FormattingEnabled = true;
             this.comboBoxAnios.Location = new System.Drawing.Point(12, 274);
             this.comboBoxAnios.Name = "comboBoxAnios";
-            this.comboBoxAnios.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxAnios.Size = new System.Drawing.Size(200, 24);
             this.comboBoxAnios.TabIndex = 0;
             this.comboBoxAnios.SelectedIndexChanged += new System.EventHandler(this.comboBoxAnios_SelectedIndexChanged);
             // 
@@ -53,15 +53,15 @@
             this.comboBoxMeses.FormattingEnabled = true;
             this.comboBoxMeses.Location = new System.Drawing.Point(12, 323);
             this.comboBoxMeses.Name = "comboBoxMeses";
-            this.comboBoxMeses.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxMeses.Size = new System.Drawing.Size(200, 24);
             this.comboBoxMeses.TabIndex = 1;
             this.comboBoxMeses.SelectedIndexChanged += new System.EventHandler(this.comboBoxMeses_SelectedIndexChanged);
             // 
             // buttonDescargarFactura
             // 
             this.buttonDescargarFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.buttonDescargarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDescargarFactura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.buttonDescargarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDescargarFactura.Location = new System.Drawing.Point(12, 369);
             this.buttonDescargarFactura.Name = "buttonDescargarFactura";
             this.buttonDescargarFactura.Size = new System.Drawing.Size(200, 30);
@@ -94,6 +94,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMisFacturas";
             this.Text = "Mis Facturas";
+            this.Load += new System.EventHandler(this.FormMisFacturas_Load);
             this.ResumeLayout(false);
 
         }

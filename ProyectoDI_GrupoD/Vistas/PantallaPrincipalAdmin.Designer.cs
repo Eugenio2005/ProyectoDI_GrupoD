@@ -1,4 +1,6 @@
-﻿namespace ProyectoDI_GrupoD
+﻿using System;
+
+namespace ProyectoDI_GrupoD
 {
     partial class PantallaPrincipalAdmin
     {
@@ -31,16 +33,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipalAdmin));
             this.pnlBotones = new System.Windows.Forms.Panel();
-            this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
             this.ctxtmsCerrarSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlSuperiorDarDeAltaMonitor = new System.Windows.Forms.Panel();
+            this.lblTextoSuperior = new System.Windows.Forms.Label();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
+            this.imageButtonTop5 = new ProyectoDI_GrupoD.ImageButton();
+            this.NombreUsuario = new ProyectoDI_GrupoD.ImageButton();
             this.imgButtonListarActividad = new ProyectoDI_GrupoD.ImageButton();
             this.imgButtonDarAltaActividad = new ProyectoDI_GrupoD.ImageButton();
             this.imgBtnDarAltaMonitor = new ProyectoDI_GrupoD.ImageButton();
-            this.pnlSuperiorDarDeAltaMonitor = new System.Windows.Forms.Panel();
-            this.imgAtras_Re = new System.Windows.Forms.PictureBox();
-            this.lblTextoSuperior = new System.Windows.Forms.Label();
-            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.pnlBotones.SuspendLayout();
             this.ctxtmsCerrarSesion.SuspendLayout();
             this.pnlSuperiorDarDeAltaMonitor.SuspendLayout();
@@ -50,16 +53,100 @@
             // pnlBotones
             // 
             this.pnlBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(216)))), ((int)(((byte)(207)))));
+            this.pnlBotones.Controls.Add(this.imageButtonTop5);
             this.pnlBotones.Controls.Add(this.NombreUsuario);
             this.pnlBotones.Controls.Add(this.imgButtonListarActividad);
             this.pnlBotones.Controls.Add(this.imgButtonDarAltaActividad);
             this.pnlBotones.Controls.Add(this.imgBtnDarAltaMonitor);
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBotones.Location = new System.Drawing.Point(0, 0);
-            this.pnlBotones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBotones.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(400, 674);
             this.pnlBotones.TabIndex = 6;
+            // 
+            // ctxtmsCerrarSesion
+            // 
+            this.ctxtmsCerrarSesion.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.ctxtmsCerrarSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesionToolStripMenuItem});
+            this.ctxtmsCerrarSesion.Name = "ctxtmsCerrarSesion";
+            this.ctxtmsCerrarSesion.Size = new System.Drawing.Size(166, 28);
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
+            // 
+            // pnlSuperiorDarDeAltaMonitor
+            // 
+            this.pnlSuperiorDarDeAltaMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
+            this.pnlSuperiorDarDeAltaMonitor.Controls.Add(this.imgAtras_Re);
+            this.pnlSuperiorDarDeAltaMonitor.Controls.Add(this.lblTextoSuperior);
+            this.pnlSuperiorDarDeAltaMonitor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorDarDeAltaMonitor.Location = new System.Drawing.Point(400, 0);
+            this.pnlSuperiorDarDeAltaMonitor.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlSuperiorDarDeAltaMonitor.Name = "pnlSuperiorDarDeAltaMonitor";
+            this.pnlSuperiorDarDeAltaMonitor.Size = new System.Drawing.Size(883, 123);
+            this.pnlSuperiorDarDeAltaMonitor.TabIndex = 8;
+            // 
+            // lblTextoSuperior
+            // 
+            this.lblTextoSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTextoSuperior.AutoSize = true;
+            this.lblTextoSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextoSuperior.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTextoSuperior.Location = new System.Drawing.Point(397, 36);
+            this.lblTextoSuperior.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTextoSuperior.Name = "lblTextoSuperior";
+            this.lblTextoSuperior.Size = new System.Drawing.Size(151, 54);
+            this.lblTextoSuperior.TabIndex = 1;
+            this.lblTextoSuperior.Text = "---  ---";
+            this.lblTextoSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnlPrincipal
+            // 
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.Location = new System.Drawing.Point(400, 123);
+            this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(883, 551);
+            this.pnlPrincipal.TabIndex = 9;
+            // 
+            // imgAtras_Re
+            // 
+            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
+            this.imgAtras_Re.ImageLocation = "0;0";
+            this.imgAtras_Re.InitialImage = null;
+            this.imgAtras_Re.Location = new System.Drawing.Point(31, 21);
+            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
+            this.imgAtras_Re.Name = "imgAtras_Re";
+            this.imgAtras_Re.Size = new System.Drawing.Size(93, 69);
+            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgAtras_Re.TabIndex = 26;
+            this.imgAtras_Re.TabStop = false;
+            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
+            // 
+            // imageButtonTop5
+            // 
+            this.imageButtonTop5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(80)))), ((int)(((byte)(40)))));
+            this.imageButtonTop5.ButtonImage = global::ProyectoDI_GrupoD.Properties.Resources.icons8_gráfico_combinado_50__1_;
+            this.imageButtonTop5.ButtonText = "TOP 5 ACTIVIDADES";
+            this.imageButtonTop5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButtonTop5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imageButtonTop5.ForeColor = System.Drawing.Color.White;
+            this.imageButtonTop5.HoverBackColor = System.Drawing.Color.LightGray;
+            this.imageButtonTop5.Location = new System.Drawing.Point(0, 306);
+            this.imageButtonTop5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.imageButtonTop5.Name = "imageButtonTop5";
+            this.imageButtonTop5.Size = new System.Drawing.Size(400, 62);
+            this.imageButtonTop5.TabIndex = 6;
+            this.imageButtonTop5.Load += new System.EventHandler(this.imageButton1_Load);
+            this.imageButtonTop5.Click += new System.EventHandler(this.imageButtonTop5_Click);
             // 
             // NombreUsuario
             // 
@@ -76,21 +163,6 @@
             this.NombreUsuario.Name = "NombreUsuario";
             this.NombreUsuario.Size = new System.Drawing.Size(400, 62);
             this.NombreUsuario.TabIndex = 2;
-            // 
-            // ctxtmsCerrarSesion
-            // 
-            this.ctxtmsCerrarSesion.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.ctxtmsCerrarSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSesionToolStripMenuItem});
-            this.ctxtmsCerrarSesion.Name = "ctxtmsCerrarSesion";
-            this.ctxtmsCerrarSesion.Size = new System.Drawing.Size(166, 28);
-            // 
-            // cerrarSesionToolStripMenuItem
-            // 
-            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
-            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
-            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // imgButtonListarActividad
             // 
@@ -140,57 +212,6 @@
             this.imgBtnDarAltaMonitor.TabIndex = 5;
             this.imgBtnDarAltaMonitor.Click += new System.EventHandler(this.imgBtnDarAltaMonitor_Click);
             // 
-            // pnlSuperiorDarDeAltaMonitor
-            // 
-            this.pnlSuperiorDarDeAltaMonitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(156)))), ((int)(((byte)(99)))));
-            this.pnlSuperiorDarDeAltaMonitor.Controls.Add(this.imgAtras_Re);
-            this.pnlSuperiorDarDeAltaMonitor.Controls.Add(this.lblTextoSuperior);
-            this.pnlSuperiorDarDeAltaMonitor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuperiorDarDeAltaMonitor.Location = new System.Drawing.Point(400, 0);
-            this.pnlSuperiorDarDeAltaMonitor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlSuperiorDarDeAltaMonitor.Name = "pnlSuperiorDarDeAltaMonitor";
-            this.pnlSuperiorDarDeAltaMonitor.Size = new System.Drawing.Size(883, 123);
-            this.pnlSuperiorDarDeAltaMonitor.TabIndex = 8;
-            // 
-            // imgAtras_Re
-            // 
-            this.imgAtras_Re.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgAtras_Re.ErrorImage = global::ProyectoDI_GrupoD.Properties.Resources.atrasSinFondo;
-            this.imgAtras_Re.ImageLocation = "0;0";
-            this.imgAtras_Re.InitialImage = null;
-            this.imgAtras_Re.Location = new System.Drawing.Point(31, 21);
-            this.imgAtras_Re.Margin = new System.Windows.Forms.Padding(0);
-            this.imgAtras_Re.Name = "imgAtras_Re";
-            this.imgAtras_Re.Size = new System.Drawing.Size(93, 69);
-            this.imgAtras_Re.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.imgAtras_Re.TabIndex = 26;
-            this.imgAtras_Re.TabStop = false;
-            this.imgAtras_Re.Click += new System.EventHandler(this.imgAtras_Re_Click);
-            // 
-            // lblTextoSuperior
-            // 
-            this.lblTextoSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTextoSuperior.AutoSize = true;
-            this.lblTextoSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextoSuperior.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTextoSuperior.Location = new System.Drawing.Point(397, 36);
-            this.lblTextoSuperior.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTextoSuperior.Name = "lblTextoSuperior";
-            this.lblTextoSuperior.Size = new System.Drawing.Size(151, 54);
-            this.lblTextoSuperior.TabIndex = 1;
-            this.lblTextoSuperior.Text = "---  ---";
-            this.lblTextoSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnlPrincipal
-            // 
-            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(239)))));
-            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipal.Location = new System.Drawing.Point(400, 123);
-            this.pnlPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(883, 551);
-            this.pnlPrincipal.TabIndex = 9;
-            // 
             // PantallaPrincipalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -201,7 +222,7 @@
             this.Controls.Add(this.pnlSuperiorDarDeAltaMonitor);
             this.Controls.Add(this.pnlBotones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PantallaPrincipalAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "K A E GYM ADMIN";
@@ -228,5 +249,6 @@
         private System.Windows.Forms.PictureBox imgAtras_Re;
         private System.Windows.Forms.ContextMenuStrip ctxtmsCerrarSesion;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private ImageButton imageButtonTop5;
     }
 }

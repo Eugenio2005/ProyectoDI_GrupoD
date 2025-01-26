@@ -233,6 +233,36 @@ namespace ProyectoDI_GrupoD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_gráfico_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gráfico-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_gráfico_combinado_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gráfico-combinado-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_gráfico_combinado_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gráfico-combinado-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap inicioFondo {
             get {
                 object obj = ResourceManager.GetObject("inicioFondo", resourceCulture);
