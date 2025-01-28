@@ -14,6 +14,7 @@ namespace Datos.Repositories
         /// <param name="valoracion">Objeto de tipo <see cref="Valoraciones"/> que contiene la información de la valoración.</param>
         public void valorarActividad(Valoraciones valoracion)
         {
+            valoracion.fecha_valoracion = DateTime.Now;
             // Guardar la valoración en la tabla Valoraciones
             using (var contexto = new equipodEntities())
             {

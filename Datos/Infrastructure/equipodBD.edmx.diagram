@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1e1f9d6cca04442a974b20858477a951" Name="Diagram1">
-        <EntityTypeShape EntityType="equipodModel.Actividades" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Administradores" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Clientes" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Monitores" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Usuarios" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Usuarios_Actividades" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="equipodModel.Valoraciones" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="c71f945a3a1e466e9dcefbb840674c49" Name="Diagram1">
+        <EntityTypeShape EntityType="equipodModel.Actividades" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Administradores" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Clientes" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Monitores" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Usuarios" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Usuarios_Actividades" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="equipodModel.Valoraciones" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
         <AssociationConnector Association="equipodModel.FK__Actividad__email__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="equipodModel.FK__Usuarios___id_ac__3B75D760" ManuallyRouted="false" />
         <AssociationConnector Association="equipodModel.FK__Valoracio__id_ac__37A5467C" ManuallyRouted="false" />

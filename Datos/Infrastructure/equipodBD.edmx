@@ -68,6 +68,7 @@
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="id_actividad" Type="int" Nullable="false" />
           <Property Name="valoracion" Type="int" Nullable="false" />
+          <Property Name="fecha_valoracion" Type="date" />
         </EntityType>
         <Association Name="FK__Actividad__email__32E0915F">
           <End Role="Monitores" Type="Self.Monitores" Multiplicity="0..1" />
@@ -251,6 +252,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_actividad" Type="Int32" Nullable="false" />
           <Property Name="valoracion" Type="Int32" Nullable="false" />
+          <Property Name="fecha_valoracion" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Actividades" Relationship="Self.FK__Valoracio__id_ac__37A5467C" FromRole="Valoraciones" ToRole="Actividades" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK__Valoracio__id_us__36B12243" FromRole="Valoraciones" ToRole="Usuarios" />
         </EntityType>
@@ -425,6 +427,7 @@ advertencia 6035: La relación 'FK__Monitores__email__2C3393D0' tiene columnas q
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="id_actividad" ColumnName="id_actividad" />
                 <ScalarProperty Name="valoracion" ColumnName="valoracion" />
+                <ScalarProperty Name="fecha_valoracion" ColumnName="fecha_valoracion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

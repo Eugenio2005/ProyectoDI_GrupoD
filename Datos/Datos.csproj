@@ -139,40 +139,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\Actividades.cs">
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Administradores.cs">
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Clientes.cs">
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\equipodDB.Context.cs">
+    <Compile Include="Infrastructure\equipodBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>equipodDB.Context.tt</DependentUpon>
+      <DependentUpon>equipodBD.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\equipodDB.cs">
+    <Compile Include="Infrastructure\equipodBD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\equipodDB.Designer.cs">
+    <Compile Include="Infrastructure\equipodBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>equipodDB.edmx</DependentUpon>
+      <DependentUpon>equipodBD.edmx</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Monitores.cs">
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Usuarios.cs">
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Usuarios_Actividades.cs">
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Valoraciones.cs">
-      <DependentUpon>equipodDB.tt</DependentUpon>
+      <DependentUpon>equipodBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActividadRepository.cs" />
@@ -183,29 +183,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Infrastructure\equipodDB.edmx">
+    <EntityDeploy Include="Infrastructure\equipodBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>equipodDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>equipodBD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Infrastructure\equipodDB.edmx.diagram">
-      <DependentUpon>equipodDB.edmx</DependentUpon>
+    <None Include="Infrastructure\equipodBD.edmx.diagram">
+      <DependentUpon>equipodBD.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Infrastructure\equipodDB.Context.tt">
+    <Content Include="Infrastructure\equipodBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>equipodDB.edmx</DependentUpon>
-      <LastGenOutput>equipodDB.Context.cs</LastGenOutput>
+      <DependentUpon>equipodBD.edmx</DependentUpon>
+      <LastGenOutput>equipodBD.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Infrastructure\equipodDB.tt">
+    <Content Include="Infrastructure\equipodBD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>equipodDB.edmx</DependentUpon>
-      <LastGenOutput>equipodDB.cs</LastGenOutput>
+      <DependentUpon>equipodBD.edmx</DependentUpon>
+      <LastGenOutput>equipodBD.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
